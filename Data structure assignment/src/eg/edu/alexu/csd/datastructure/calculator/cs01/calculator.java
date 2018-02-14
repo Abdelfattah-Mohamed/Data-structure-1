@@ -13,8 +13,8 @@ public class calculator implements ICalculator {
 	@Override
 	public float divide(int x, int y) throws RuntimeException {
 		// TODO Auto-generated method stub
-		throw 
-		return (flout) x / y ;
+		return (float) x / y ;
+		
 	}
 
 }
