@@ -3,7 +3,7 @@ package eg.edu.alexu.csd.datastructure.calculator.cs26;
 import eg.edu.alexu.csd.datastructure.calculator.ICalculator;
 
 /**
- * 
+ *
  * @author Abd El Fattah
  *
  */
