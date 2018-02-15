@@ -11,9 +11,10 @@ import eg.edu.alexu.csd.datastructure.calculator.ICalculator;
 public class Calculator implements ICalculator {
 
 	@Override
-   	public int add(final int x, final int y) {
+	public int add(final int x, final int y) {
 		return x + y;
 	}
+	// TODO Auto-generated method stub
 
 	@Override
 	public float divide(final int x, final int y) throws RuntimeException {
@@ -23,5 +24,5 @@ public class Calculator implements ICalculator {
 
 		return (float) x / y;
 	}
-
+	// TODO Auto-generated method stub
 }
