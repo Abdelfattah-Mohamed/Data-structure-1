@@ -23,6 +23,6 @@ public class Calculator implements ICalculator {
 			throw new RuntimeException("Division by zero!");
 		}
 
-		return (float) (x / y) ;
+		return (float) x / y ;
 	}
 }
