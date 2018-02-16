@@ -17,12 +17,12 @@ public class Calculator implements ICalculator {
 	}
 
 	@Override
-	public float divide(final int x, final int y) throws RuntimeException {
+	public float divide(int x, int y) throws RuntimeException {
 		// TODO Auto-generated method stub
 		if (y == 0) {
 			throw new RuntimeException("Division by zero!");
 		}
 
-		return (float) x / y ;
+		return (float) x / y;
 	}
 }
