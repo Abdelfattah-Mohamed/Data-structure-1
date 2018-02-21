@@ -10,9 +10,9 @@ public class Hangman implements IHangman {
 	int length;
 	String new_array[];
 	char[] chars;
-	char[] chars_1 = new char[100];
+	char[] chars_1;
 	int flag = 0;
-	int max_1;
+	public int max_1;
 
 	@Override
 	public void setDictionary(String[] words) {
@@ -28,19 +28,21 @@ public class Hangman implements IHangman {
 		if (new_array[h] != null) {
 			word = new_array[h];
 			length = word.length();
+			chars_1 = new char[length];
 			for (int i = 0; i < length; i++) {
 				chars_1[i] = '-';
 			}
 			chars = word.toCharArray();
 			return new_array[h];
 		}
+
 		return null;
 	}
 
 	@Override
 	public String guess(Character c) throws Exception {
 		// TODO Auto-generated method stub
-		if (max_1 != 0) {
+		if (max_1 != 1 || word_1 != word) {
 			for (int i = 0; i < word.length(); i++) {
 				if (c == word.charAt(i) || c + 32 == word.charAt(i) || c - 32 == word.charAt(i)) {
 					chars_1[i] = word.charAt(i);
@@ -55,7 +57,7 @@ public class Hangman implements IHangman {
 			max_1--;
 			return word_1;
 		} else {
-			throw new RuntimeException("null");
+			throw new RuntimeException();
 		}
 
 	}
