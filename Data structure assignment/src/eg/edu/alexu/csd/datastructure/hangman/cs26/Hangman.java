@@ -49,7 +49,7 @@ public class Hangman implements IHangman {
 			throw new UnsupportedOperationException();
 		}
 		if (c == null) {
-			return null;
+			return "-----";
 		}
 		if (max_1 == 1) {
 			return null;
