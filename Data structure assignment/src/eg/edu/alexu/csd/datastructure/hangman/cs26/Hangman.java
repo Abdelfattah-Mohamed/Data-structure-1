@@ -12,6 +12,7 @@ public class Hangman implements IHangman {
 	char[] chars;
 	char[] chars_1 = new char[100];
 	int flag = 0, flag_1 = 0;
+	int max_1;
 
 	@Override
 	public void setDictionary(String[] words) {
@@ -40,11 +41,15 @@ public class Hangman implements IHangman {
 	public String guess(Character c) throws Exception {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < word.length(); i++) {
-			if (c.equals(word.charAt(i))) {
+			if (c == word.charAt(i) || c+32 == word.charAt(i) || c-32 == word.charAt(i)) {
 				chars_1[i] = word.charAt(i);
 				flag = 1;
 				flag_1 = 1;
 			}
+			System.out.println(flag);
+			System.out.println(c);
+			System.out.println(word.charAt(i));
+			System.out.println(word);
 		}
 		word_1 = String.valueOf(chars_1);
 		if (flag == 1) {
@@ -59,7 +64,7 @@ public class Hangman implements IHangman {
 		// TODO Auto-generated method stub
 		if (flag_1 == 0) {
 			flag_1 = 0;
-			max--;
+			max_1--;
 		}
 	}
 

@@ -10,11 +10,11 @@ public class Hangman_tester  {
         hangman.setDictionary(dictionary);
         hangman.selectRandomSecretWord();
         hangman.setMaxWrongGuesses(2);
-        System.out.println(hangman.guess('y')); // will return --Y--
-        System.out.println(hangman.guess('m')); // will return --Y--
-        System.out.println(hangman.guess('n')); // will return --Y--
-        System.out.println(hangman.guess('g')); // will return --Y--
-        System.out.println(hangman.guess('m')); // will return --Y--
+        java.util.Scanner s = new java.util.Scanner(System.in);
+        for(int i = 0 ; i<8;i++) {
+        	char c = s.next().charAt(0);
+            System.out.println(hangman.guess( c )); // will return --Y--
+        }
     }
 
 }
