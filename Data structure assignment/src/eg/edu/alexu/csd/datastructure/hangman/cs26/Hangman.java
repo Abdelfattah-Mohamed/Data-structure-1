@@ -42,7 +42,7 @@ public class Hangman implements IHangman {
 	@Override
 	public String guess(Character c) throws Exception {
 		// TODO Auto-generated method stub
-		if (max_1 != 1 || word_1 != word) {
+		if (max_1 != 1 && word_1 != word) {
 			for (int i = 0; i < word.length(); i++) {
 				if (c == word.charAt(i) || c + 32 == word.charAt(i) || c - 32 == word.charAt(i)) {
 					chars_1[i] = word.charAt(i);
