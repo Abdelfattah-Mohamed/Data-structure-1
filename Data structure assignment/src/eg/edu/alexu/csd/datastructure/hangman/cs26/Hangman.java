@@ -6,7 +6,7 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class Hangman implements IHangman {
 
-	private static String word, word_1;
+	private static String word, word_1, word_2;
 	int length;
 	String new_array[];
 	char[] chars;
@@ -36,6 +36,7 @@ public class Hangman implements IHangman {
 				chars_1[i] = '-';
 			}
 			chars = word.toCharArray();
+			word_2 = word_1 ;
 			return new_array[h];
 		}
 
@@ -49,7 +50,7 @@ public class Hangman implements IHangman {
 			throw new UnsupportedOperationException();
 		}
 		if (c == null) {
-			return "------";
+			return word_2;
 		}
 		if (max_1 == 1) {
 			return null;
