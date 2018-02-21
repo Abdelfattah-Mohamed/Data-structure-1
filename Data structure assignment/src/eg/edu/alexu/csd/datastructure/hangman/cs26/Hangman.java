@@ -10,16 +10,13 @@ public class Hangman implements IHangman {
 	int length;
 	String new_array[];
 	char[] chars;
-	char[] chars_1 = new char[100] ;
+	char[] chars_1 ;
 	int flag = 0, flag_1 = 0;
 
 	@Override
 	public void setDictionary(String[] words) {
 		// TODO Auto-generated method stub
 		new_array = words;
-		if(words == null) {
-			throw new RuntimeException("null");
-		}
 	}
 
 	@Override
@@ -43,9 +40,6 @@ public class Hangman implements IHangman {
 	@Override
 	public String guess(Character c) throws Exception {
 		// TODO Auto-generated method stub
-		if (c == null || word == null) {
-			throw new RuntimeException("null");
-		}
 		c = Character.toUpperCase(c);
 		for (int i = 0; i < word.length(); i++) {
 			if (c == word.charAt(i)) {
@@ -69,7 +63,6 @@ public class Hangman implements IHangman {
 			flag_1 = 0;
 			max--;
 		}
-		System.out.println(max);
 	}
 
 }
