@@ -35,6 +35,7 @@ public class Hangman implements IHangman {
 			chars_1 = new char[length];
 			for (int i = 0; i < length; i++) {
 				chars_1[i] += '-';
+				word_1 += "-";
 			}
 			chars = word.toCharArray();
 			return new_array[h];
