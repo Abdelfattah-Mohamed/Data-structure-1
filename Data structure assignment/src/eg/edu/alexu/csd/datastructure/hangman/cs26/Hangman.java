@@ -6,12 +6,12 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class Hangman implements IHangman {
 
-	private static String word ,word_1 = "-----";
+	private static String word, word_1 = "-----";
 	int length;
-	String new_array[] ;
-	char[] chars ;
-	char[] chars_1 = {'-' ,'-' ,'-' ,'-' ,'-' };
-	int flag = 0 ,flag_1 = 0; 
+	String new_array[];
+	char[] chars;
+	char[] chars_1 = new char[100] ;
+	int flag = 0, flag_1 = 0;
 
 	@Override
 	public void setDictionary(String[] words) {
@@ -27,6 +27,9 @@ public class Hangman implements IHangman {
 		if (new_array[h] != null) {
 			word = new_array[h];
 			length = word.length();
+			for(int i=0 ;i < length ; i++) {
+				chars_1[i] = '-' ;
+			}
 			word.toLowerCase();
 			chars = word.toCharArray();
 			return new_array[h];
@@ -37,21 +40,21 @@ public class Hangman implements IHangman {
 	@Override
 	public String guess(Character c) throws Exception {
 		// TODO Auto-generated method stub
-		if (c == null || word == null ) {
+		if (c == null || word == null) {
 			throw new RuntimeException("null");
 		}
 		c = Character.toUpperCase(c);
 		for (int i = 0; i < word.length(); i++) {
 			if (c == word.charAt(i)) {
-				chars_1[i] = word.charAt(i) ;
-				flag = 1 ;
+				chars_1[i] = word.charAt(i);
+				flag = 1;
 				flag_1 = 1;
 			}
 		}
 		word_1 = String.valueOf(chars_1);
-		if(flag == 1) {
+		if (flag == 1) {
 			flag = 0;
-			return word_1 ;
+			return word_1;
 		}
 		return null;
 	}
@@ -59,11 +62,10 @@ public class Hangman implements IHangman {
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
-		if(flag_1 == 0) {
-			flag_1 = 0 ;
+		if (flag_1 == 0) {
+			flag_1 = 0;
 			max--;
 		}
 	}
-	
 
 }
