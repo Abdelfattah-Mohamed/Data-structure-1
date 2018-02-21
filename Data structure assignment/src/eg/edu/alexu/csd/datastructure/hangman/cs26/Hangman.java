@@ -23,6 +23,9 @@ public class Hangman implements IHangman {
 	@Override
 	public String selectRandomSecretWord() {
 		// TODO Auto-generated method stub
+		if (new_array == null) {
+			return null;
+		}
 		Random rand = new Random();
 		int h = rand.nextInt(new_array.length);
 		if (new_array[h] != null) {
@@ -76,6 +79,9 @@ public class Hangman implements IHangman {
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
+		if (max == null) {
+			throw new UnsupportedOperationException();
+		}
 		max_1 = max;
 	}
 
