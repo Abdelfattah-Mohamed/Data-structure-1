@@ -51,7 +51,7 @@ public class Hangman implements IHangman {
 			flag = 0;
 			return word_1;
 		}
-		return null;
+		return word_1;
 	}
 
 	@Override
