@@ -6,7 +6,7 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class Hangman implements IHangman {
 
-	private static String word, word_1 ;
+	private static String word, word_1;
 	int length;
 	String new_array[];
 	char[] chars;
@@ -27,8 +27,8 @@ public class Hangman implements IHangman {
 		if (new_array[h] != null) {
 			word = new_array[h];
 			length = word.length();
-			for(int i = 0 ;i < length ; i++) {
-				 chars_1[i] = '-' ;
+			for (int i = 0; i < length; i++) {
+				chars_1[i] = '-';
 			}
 			chars = word.toCharArray();
 			return new_array[h];
@@ -40,7 +40,7 @@ public class Hangman implements IHangman {
 	public String guess(Character c) throws Exception {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < word.length(); i++) {
-			if ( c.equals( word.charAt(i) ) ) {
+			if (c.equals(word.charAt(i))) {
 				chars_1[i] = word.charAt(i);
 				flag = 1;
 				flag_1 = 1;
