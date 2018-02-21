@@ -30,12 +30,10 @@ public class Hangman implements IHangman {
 		int h = rand.nextInt(new_array.length);
 		if (new_array[h] != null) {
 			word = new_array[h];
-			//word_2 = word_1 ;
 			length = word.length();
 			chars_1 = new char[length];
 			for (int i = 0; i < length; i++) {
 				chars_1[i] += '-';
-				word_1 += "-";
 			}
 			chars = word.toCharArray();
 			return new_array[h];
@@ -47,11 +45,11 @@ public class Hangman implements IHangman {
 	@Override
 	public String guess(Character c) throws Exception {
 		// TODO Auto-generated method stub
-		if (word.charAt(0) == ' ') {
+		if (word.charAt(0) == ' ' || word.length() == 0) {
 			throw new UnsupportedOperationException();
 		}
 		if (c == null) {
-			return word_1;
+			return "------";
 		}
 		if (max_1 == 1) {
 			return null;
