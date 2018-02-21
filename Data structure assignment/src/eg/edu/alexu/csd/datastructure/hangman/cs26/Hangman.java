@@ -57,7 +57,7 @@ public class Hangman implements IHangman {
 			max_1--;
 			return word_1;
 		} else {
-			throw new RuntimeException();
+			throw new RuntimeException("null");
 		}
 
 	}
