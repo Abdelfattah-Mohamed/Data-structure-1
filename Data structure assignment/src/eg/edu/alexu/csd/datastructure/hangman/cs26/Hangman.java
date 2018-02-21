@@ -49,7 +49,7 @@ public class Hangman implements IHangman {
 			throw new UnsupportedOperationException();
 		}
 		if (c == null) {
-			return word_1;
+			return null;
 		}
 		if (max_1 == 1) {
 			return null;
@@ -82,8 +82,6 @@ public class Hangman implements IHangman {
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
-
 		max_1 = max;
 	}
-
 }
