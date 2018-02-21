@@ -45,6 +45,12 @@ public class Hangman implements IHangman {
 		if (word.charAt(0) == ' ') {
 			throw new UnsupportedOperationException();
 		}
+		if (c == null) {
+			return word_1;
+		}
+		if (max_1 == 0) {
+			return null;
+		}
 
 		if (c != null && max_1 != 1 && word_1 != word) {
 			for (int i = 0; i < word.length(); i++) {
@@ -61,10 +67,6 @@ public class Hangman implements IHangman {
 				return word_1;
 			}
 			max_1--;
-			return word_1;
-		} else if (max_1 == 0) {
-			return null;
-		} else if (c == null) {
 			return word_1;
 		}
 		return null;
