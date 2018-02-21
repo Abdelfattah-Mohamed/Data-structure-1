@@ -48,8 +48,10 @@ public class Hangman implements IHangman {
 		if (c == null) {
 			return word_1;
 		}
-		System.out.println(max_1);
 		if (max_1 == 1) {
+			return null;
+		}
+		if (word_1 == null) {
 			return null;
 		}
 

@@ -6,7 +6,7 @@ public class Hangman_tester  {
         Hangman hangman = new Hangman();
         // Read from file here
         // String dictionary[] = readFile();
-        String dictionary[] = new String[] { "aAzZ" };
+        String dictionary[] = new String[] { "ahmed" };
         hangman.setDictionary(dictionary);
         hangman.selectRandomSecretWord();
         hangman.setMaxWrongGuesses(2);
