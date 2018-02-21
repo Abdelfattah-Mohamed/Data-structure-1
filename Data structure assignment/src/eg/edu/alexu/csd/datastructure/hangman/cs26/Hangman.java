@@ -54,6 +54,9 @@ public class Hangman implements IHangman {
 		if (max_1 == 1) {
 			return null;
 		}
+		if (word == "") {
+			throw new Exception();
+		}
 
 		if (c != null && max_1 != 1 && word_1 != word) {
 			for (int i = 0; i < word.length(); i++) {
