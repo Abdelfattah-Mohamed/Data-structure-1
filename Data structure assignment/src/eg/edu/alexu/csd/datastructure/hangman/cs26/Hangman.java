@@ -11,7 +11,7 @@ public class Hangman implements IHangman {
 	String new_array[];
 	char[] chars;
 	char[] chars_1 = new char[100];
-	int flag = 0, flag_1 = 0;
+	int flag = 0;
 	int max_1;
 
 	@Override
@@ -40,32 +40,30 @@ public class Hangman implements IHangman {
 	@Override
 	public String guess(Character c) throws Exception {
 		// TODO Auto-generated method stub
-		for (int i = 0; i < word.length(); i++) {
-			if (c == word.charAt(i) || c+32 == word.charAt(i) || c-32 == word.charAt(i)) {
-				chars_1[i] = word.charAt(i);
-				flag = 1;
-				flag_1 = 1;
+		if (max_1 != 0) {
+			for (int i = 0; i < word.length(); i++) {
+				if (c == word.charAt(i) || c + 32 == word.charAt(i) || c - 32 == word.charAt(i)) {
+					chars_1[i] = word.charAt(i);
+					flag = 1;
+				}
 			}
-			System.out.println(flag);
-			System.out.println(c);
-			System.out.println(word.charAt(i));
-			System.out.println(word);
-		}
-		word_1 = String.valueOf(chars_1);
-		if (flag == 1) {
-			flag = 0;
+			word_1 = String.valueOf(chars_1);
+			if (flag == 1) {
+				flag = 0;
+				return word_1;
+			}
+			max_1--;
 			return word_1;
+		} else {
+			throw new RuntimeException("null");
 		}
-		return word_1;
+
 	}
 
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
-		if (flag_1 == 0) {
-			flag_1 = 0;
-			max_1--;
-		}
+		max_1 = max;
 	}
 
 }
