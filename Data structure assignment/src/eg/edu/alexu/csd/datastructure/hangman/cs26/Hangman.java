@@ -49,11 +49,11 @@ public class Hangman implements IHangman {
 			return word_1;
 		}
 		System.out.println(max_1);
-		if (max_1 == 0) {
+		if (max_1 == 1) {
 			return null;
 		}
 
-		if (c != null && max_1 != 0 && word_1 != word) {
+		if (c != null && max_1 != 1 && word_1 != word) {
 			for (int i = 0; i < word.length(); i++) {
 				if (c == word.charAt(i) || c + 32 == word.charAt(i) || c - 32 == word.charAt(i)) {
 					chars_1[i] = word.charAt(i);
