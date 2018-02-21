@@ -42,13 +42,19 @@ public class Hangman implements IHangman {
 	@Override
 	public String guess(Character c) throws Exception {
 		// TODO Auto-generated method stub
-		if (max_1 != 1 && word_1 != word) {
+		if (word.charAt(0) == ' ') {
+			throw new UnsupportedOperationException();
+		}
+
+		if (c != null && max_1 != 1 && word_1 != word) {
 			for (int i = 0; i < word.length(); i++) {
 				if (c == word.charAt(i) || c + 32 == word.charAt(i) || c - 32 == word.charAt(i)) {
 					chars_1[i] = word.charAt(i);
 					flag = 1;
 				}
+
 			}
+
 			word_1 = String.valueOf(chars_1);
 			if (flag == 1) {
 				flag = 0;
@@ -56,17 +62,12 @@ public class Hangman implements IHangman {
 			}
 			max_1--;
 			return word_1;
-		} 
-		else if (max_1 == 1 ) {
-			return null ;
+		} else if (max_1 == 0) {
+			return null;
+		} else if (c == null) {
+			return word_1;
 		}
-		else if( c == null) {
-			throw new RuntimeException("Failed to complete the test");
-		}
-		
-		else {
-			throw new RuntimeException();
-		}
+		return null;
 
 	}
 
