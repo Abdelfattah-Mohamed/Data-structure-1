@@ -57,8 +57,11 @@ public class Hangman implements IHangman {
 			max_1--;
 			return word_1;
 		} 
-		else if (max_1 ==1 ) {
+		else if (max_1 == 1 ) {
 			return null ;
+		}
+		else if( c == null) {
+			throw new RuntimeException("Failed to complete the test");
 		}
 		
 		else {
