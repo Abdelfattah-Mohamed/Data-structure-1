@@ -17,6 +17,9 @@ public class Hangman implements IHangman {
 	public void setDictionary(String[] words) {
 		// TODO Auto-generated method stub
 		new_array = words;
+		if(words == null) {
+			throw new RuntimeException("null");
+		}
 	}
 
 	@Override
@@ -66,6 +69,7 @@ public class Hangman implements IHangman {
 			flag_1 = 0;
 			max--;
 		}
+		System.out.println(max);
 	}
 
 }
