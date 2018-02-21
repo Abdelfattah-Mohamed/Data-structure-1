@@ -37,7 +37,7 @@ public class Hangman implements IHangman {
 	@Override
 	public String guess(Character c) throws Exception {
 		// TODO Auto-generated method stub
-		if (c == null) {
+		if (c == null || word == null ) {
 			throw new RuntimeException("null");
 		}
 		c = Character.toUpperCase(c);
