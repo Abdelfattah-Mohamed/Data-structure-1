@@ -30,13 +30,13 @@ public class Hangman implements IHangman {
 		int h = rand.nextInt(new_array.length);
 		if (new_array[h] != null) {
 			word = new_array[h];
+			word_2 = word_1 ;
 			length = word.length();
 			chars_1 = new char[length];
 			for (int i = 0; i < length; i++) {
 				chars_1[i] = '-';
 			}
 			chars = word.toCharArray();
-			word_2 = word_1 ;
 			return new_array[h];
 		}
 
