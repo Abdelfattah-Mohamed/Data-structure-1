@@ -12,7 +12,8 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 public class Hangman implements IHangman {
 
 	/**
-	 * The String of bla bla bla
+	 * The String of word
+	 * 
 	 */
 	private static String word, word1;
 	int length;
