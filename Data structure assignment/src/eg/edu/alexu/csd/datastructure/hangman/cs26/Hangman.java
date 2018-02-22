@@ -12,8 +12,7 @@ public class Hangman implements IHangman {
 	char[] chars;
 	char[] chars_1;
 	int flag = 0;
-	@SuppressWarnings("null")
-	private int max_1 = (Integer) null;
+	private Integer max_1 = null;
 
 	@Override
 	public void setDictionary(String[] words) {
@@ -43,7 +42,6 @@ public class Hangman implements IHangman {
 		return null;
 	}
 
-	@SuppressWarnings("unused")
 	@Override
 	public String guess(Character c) throws Exception {
 		// TODO Auto-generated method stub
@@ -56,7 +54,7 @@ public class Hangman implements IHangman {
 		if (word == "") {
 			throw new Exception();
 		}
-		if ((Integer)max_1 == null) {
+		if (max_1 == null) {
 			throw new UnsupportedOperationException();
 		}
 
@@ -75,7 +73,7 @@ public class Hangman implements IHangman {
 				return word1;
 			}
 			max_1--;
-			if (max_1 == 0 ) {
+			if (max_1 == 0) {
 				return null;
 			}
 			return word1;
