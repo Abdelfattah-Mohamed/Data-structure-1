@@ -9,7 +9,7 @@ public class Hangman_tester {
 		String dictionary[] = new String[] { "aAbBzZ" };
 		hangman.setDictionary(dictionary);
 		hangman.selectRandomSecretWord();
-		hangman.setMaxWrongGuesses(2);
+		hangman.setMaxWrongGuesses(null);
 		System.out.println(hangman.guess('y')); // will return --Y--
 	}
 }
