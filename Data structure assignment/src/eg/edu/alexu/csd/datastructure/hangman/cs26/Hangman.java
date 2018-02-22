@@ -10,9 +10,9 @@ public class Hangman implements IHangman {
 	int length;
 	String newArray[];
 	char[] chars;
-	char[] chars_1;
+	char[] chars1;
 	int flag = 0;
-	private Integer max_1 = null;
+	private Integer max1 = null;
 
 	@Override
 	public void setDictionary(String[] words) {
@@ -31,9 +31,9 @@ public class Hangman implements IHangman {
 		if (newArray[h] != null) {
 			word = newArray[h];
 			length = word.length();
-			chars_1 = new char[length];
+			chars1 = new char[length];
 			for (int i = 0; i < length; i++) {
-				chars_1[i] += '-';
+				chars1[i] += '-';
 			}
 			chars = word.toCharArray();
 			return newArray[h];
@@ -54,26 +54,26 @@ public class Hangman implements IHangman {
 		if (word == "") {
 			throw new Exception();
 		}
-		if (max_1 == null) {
+		if (max1 == null) {
 			throw new UnsupportedOperationException();
 		}
 
-		if (c != null && max_1 > 0 && word1 != word) {
+		if (c != null && max1 > 0 && word1 != word) {
 			for (int i = 0; i < word.length(); i++) {
 				if (c == word.charAt(i) || c + 32 == word.charAt(i) || c - 32 == word.charAt(i)) {
-					chars_1[i] = word.charAt(i);
+					chars1[i] = word.charAt(i);
 					flag = 1;
 				}
 
 			}
 
-			word1 = String.valueOf(chars_1);
+			word1 = String.valueOf(chars1);
 			if (flag == 1) {
 				flag = 0;
 				return word1;
 			}
-			max_1--;
-			if (max_1 == 0) {
+			max1--;
+			if (max1 == 0) {
 				return null;
 			}
 			return word1;
@@ -86,9 +86,9 @@ public class Hangman implements IHangman {
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
 		if (max == null) {
-			max_1 = 1;
+			max1 = 1;
 		} else
-			max_1 = max;
+			max1 = max;
 
 	}
 }
