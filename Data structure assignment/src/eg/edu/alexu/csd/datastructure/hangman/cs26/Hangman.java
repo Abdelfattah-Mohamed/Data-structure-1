@@ -51,9 +51,6 @@ public class Hangman implements IHangman {
 		if (c == null) {
 			return "------";
 		}
-		if (max_1 == 0) {
-			return null;
-		}
 		if (word == "") {
 			throw new Exception();
 		}
@@ -73,6 +70,9 @@ public class Hangman implements IHangman {
 				return word1;
 			}
 			max_1--;
+			if (max_1 == 0) {
+				return null;
+			}
 			return word1;
 		}
 		return null;
