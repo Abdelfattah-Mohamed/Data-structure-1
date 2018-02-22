@@ -1,5 +1,8 @@
 package eg.edu.alexu.csd.datastructure.hangman.cs26;
-
+/**
+ * @author Abdelftah
+ *
+ */
 public class Hangman_tester {
 
 	public static void main(String[] args) throws Exception {
