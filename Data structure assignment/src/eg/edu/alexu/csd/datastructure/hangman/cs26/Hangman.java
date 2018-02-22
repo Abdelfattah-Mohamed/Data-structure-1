@@ -51,14 +51,14 @@ public class Hangman implements IHangman {
 		if (c == null) {
 			return "------";
 		}
-		if (max_1 == 1) {
+		if (max_1 == 0) {
 			return null;
 		}
 		if (word == "") {
 			throw new Exception();
 		}
 
-		if (c != null && max_1 != 1 && word1 != word) {
+		if (c != null && max_1 > 0 && word1 != word) {
 			for (int i = 0; i < word.length(); i++) {
 				if (c == word.charAt(i) || c + 32 == word.charAt(i) || c - 32 == word.charAt(i)) {
 					chars_1[i] = word.charAt(i);
@@ -83,7 +83,10 @@ public class Hangman implements IHangman {
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
 		max_1 = max;
-		if (max == null || max == 0) {
+		if (max == null) {
+			throw new UnsupportedOperationException();
+		}
+		if (max == 0) {
 			throw new UnsupportedOperationException("null");
 		}
 	}
