@@ -8,7 +8,7 @@ public class Hangman implements IHangman {
 
 	private static String word, word1;
 	int length;
-	String new_array[];
+	String newArray[];
 	char[] chars;
 	char[] chars_1;
 	int flag = 0;
@@ -17,26 +17,26 @@ public class Hangman implements IHangman {
 	@Override
 	public void setDictionary(String[] words) {
 		// TODO Auto-generated method stub
-		new_array = words;
+		newArray = words;
 	}
 
 	@Override
 	public String selectRandomSecretWord() {
 		// TODO Auto-generated method stub
-		if (new_array == null) {
+		if (newArray == null) {
 			return null;
 		}
 		Random rand = new Random();
-		int h = rand.nextInt(new_array.length);
-		if (new_array[h] != null) {
-			word = new_array[h];
+		int h = rand.nextInt(newArray.length);
+		if (newArray[h] != null) {
+			word = newArray[h];
 			length = word.length();
 			chars_1 = new char[length];
 			for (int i = 0; i < length; i++) {
 				chars_1[i] += '-';
 			}
 			chars = word.toCharArray();
-			return new_array[h];
+			return newArray[h];
 		}
 
 		return null;
