@@ -12,7 +12,7 @@ public class Hangman implements IHangman {
 	char[] chars;
 	char[] chars_1;
 	int flag = 0;
-	private int max_1;
+	private int max_1 = 1;
 
 	@Override
 	public void setDictionary(String[] words) {
@@ -70,12 +70,12 @@ public class Hangman implements IHangman {
 				return word1;
 			}
 			max_1--;
-			if (max_1 == 0) {
+			if (max_1 == 0 ) {
 				return null;
 			}
 			return word1;
 		}
-		throw new UnsupportedOperationException("null");
+		return null;
 
 	}
 
