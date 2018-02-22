@@ -2,14 +2,6 @@ package eg.edu.alexu.csd.datastructure.hangman.cs26;
 
 import java.util.Random;
 
-/**
- * 
- *
- * @author Abd El Fattah
- * @version 1.0
- * @since   2018-02-22 
- *
- */
 import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class Hangman implements IHangman {
