@@ -84,8 +84,8 @@ public class Hangman implements IHangman {
 		// TODO Auto-generated method stub
 		if (max == null) {
 			max_1 = 1;
-		} else {
+		} else
 			max_1 = max;
-		}
+
 	}
 }
