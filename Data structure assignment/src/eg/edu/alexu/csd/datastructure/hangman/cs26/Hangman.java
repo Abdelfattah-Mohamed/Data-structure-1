@@ -13,7 +13,7 @@ public class Hangman implements IHangman {
 
 	private static String word, word1;
 	int length;
-	String newArray[];
+	String[] newArray;
 	char[] chars;
 	char[] chars1;
 	int flag = 0;
