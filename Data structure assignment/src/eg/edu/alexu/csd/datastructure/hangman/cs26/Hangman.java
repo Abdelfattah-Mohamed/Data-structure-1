@@ -89,6 +89,5 @@ public class Hangman implements IHangman {
 			max1 = 1;
 		} else
 			max1 = max;
-
 	}
 }
