@@ -83,13 +83,8 @@ public class Hangman implements IHangman {
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
 		max_1 = max;
-		if(max == null) {
-			try {
-				throw new Exception();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		if (max == null) {
+			throw new UnsupportedOperationException("null");
 		}
 	}
 }
