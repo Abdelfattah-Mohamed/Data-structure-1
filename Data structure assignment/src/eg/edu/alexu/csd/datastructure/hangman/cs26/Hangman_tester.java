@@ -6,10 +6,10 @@ public class Hangman_tester {
 		Hangman hangman = new Hangman();
 		// Read from file here
 		// String dictionary[] = readFile();
-		String dictionary[] = new String[] { "egypt"};
+		String dictionary[] = new String[] { "egYpt"};
 		hangman.setDictionary(dictionary);
 		hangman.selectRandomSecretWord();
-		hangman.setMaxWrongGuesses(1);
+		hangman.setMaxWrongGuesses(2);
 		System.out.println(hangman.guess('y')); // will return --Y--
 	}
 }

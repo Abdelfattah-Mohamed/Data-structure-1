@@ -7,6 +7,7 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 public class Hangman implements IHangman {
 
 	private static String word, word1;
+	char m ;
 	int length;
 	String newArray[];
 	char[] chars;
@@ -42,9 +43,11 @@ public class Hangman implements IHangman {
 		return null;
 	}
 
+	@SuppressWarnings("static-access")
 	@Override
 	public String guess(Character c) throws Exception {
 		// TODO Auto-generated method stub
+		m=c;
 		if (word.charAt(0) == ' ' || word.length() == 0) {
 			throw new UnsupportedOperationException();
 		}
@@ -60,8 +63,7 @@ public class Hangman implements IHangman {
 
 		if (c != null && max1 > 0 && word1 != word) {
 			for (int i = 0; i < word.length(); i++) {
-				if (c == word.charAt(i) || c + 32 == word.charAt(i) 
-						|| c - 32 == word.charAt(i)) {
+				if (c.toLowerCase(c) == word.charAt(i) || c.toUpperCase(c) == word.charAt(i) ) {
 					chars1[i] = word.charAt(i);
 					flag = 1;
 				}
