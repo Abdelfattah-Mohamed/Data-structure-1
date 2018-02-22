@@ -82,10 +82,9 @@ public class Hangman implements IHangman {
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
-		if (max == null ) {
-			max_1 = 1 ;
-		}
-		else {
+		if (max == null) {
+			max_1 = 1;
+		} else {
 			max_1 = max;
 		}
 	}
