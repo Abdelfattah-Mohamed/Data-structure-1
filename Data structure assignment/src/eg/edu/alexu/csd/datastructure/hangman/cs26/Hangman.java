@@ -71,7 +71,7 @@ public class Hangman implements IHangman {
 			}
 			max_1--;
 			if (max_1 == 0) {
-				throw new UnsupportedOperationException("null");
+				return null;
 			}
 			return word1;
 		}
