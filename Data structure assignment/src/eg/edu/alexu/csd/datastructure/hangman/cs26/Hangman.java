@@ -84,7 +84,7 @@ public class Hangman implements IHangman {
 		// TODO Auto-generated method stub
 		max_1 = max;
 		if (max == null) {
-			throw new UnsupportedOperationException();
+			throw new UnsupportedOperationException("null");
 		}
 		if (max == 0) {
 			throw new UnsupportedOperationException("null");
