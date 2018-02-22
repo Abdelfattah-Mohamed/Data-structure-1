@@ -9,8 +9,7 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
  *
  */
 
-public class Hangman implements IHangman{
-
+public class Hangman implements IHangman {
 	private static String word, word1;
 	int length;
 	String[] newArray;
