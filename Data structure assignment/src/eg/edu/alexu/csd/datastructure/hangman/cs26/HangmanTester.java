@@ -3,7 +3,7 @@ package eg.edu.alexu.csd.datastructure.hangman.cs26;
  * @author Abdelftah
  *
  */
-public class Hangman_tester {
+public class HangmanTester {
 
 	public static void main(String[] args) throws Exception {
 		Hangman hangman = new Hangman();
