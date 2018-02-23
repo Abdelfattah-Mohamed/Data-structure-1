@@ -53,9 +53,8 @@ public class Hangman implements IHangman {
 		int h = rand.nextInt(newArray.length);
 		if (newArray[h] != null) {
 			word = newArray[h];
-			length = word.length();
-			chars1 = new char[length];
-			for (int i = 0; i < length; i++) {
+			chars1 = new char[word.length()];
+			for (int i = 0; i < word.length(); i++) {
 				chars1[i] += '-';
 			}
 			chars = word.toCharArray();
