@@ -13,6 +13,7 @@ public class Hangman implements IHangman {
 	private static String word, word1;
 	private static int length;
 	private static String[] newArray;
+	@SuppressWarnings("unused")
 	private static char[] chars;
 	private static char[] chars1;
 	private static int flag = 0;
