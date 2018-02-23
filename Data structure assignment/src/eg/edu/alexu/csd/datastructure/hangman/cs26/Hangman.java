@@ -11,9 +11,15 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class Hangman implements IHangman {
 
+	/**
+	 * to store dictionary word
+	 */
 	private static String word, word1;
+	/**
+	 * Length of string
+	 */
 	int length;
-	String newArray[];
+	String[] newArray;
 	char[] chars;
 	char[] chars1;
 	int flag = 0;
