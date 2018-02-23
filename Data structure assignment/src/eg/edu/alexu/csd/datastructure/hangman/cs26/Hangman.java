@@ -85,7 +85,6 @@ public class Hangman implements IHangman {
 					chars1[i] = word.charAt(i);
 					flag = 1;
 				}
-
 			}
 
 			word1 = String.valueOf(chars1);
