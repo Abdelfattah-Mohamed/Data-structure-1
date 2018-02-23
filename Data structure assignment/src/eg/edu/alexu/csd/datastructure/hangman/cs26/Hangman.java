@@ -10,45 +10,39 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
  */
 
 public class Hangman implements IHangman {
-	/** 
-	 * to store dictionary words 
+	/**
+	 *to store dictionary words
 	 */
 	private static String word, word1;
 	/**
-	 * to store dictionary words
+	 *to store dictionary words
 	 */
 	private static String[] newArray;
 	/**
-	 * store letter of the random word
+	 *store letter of the random word
 	 */
 	@SuppressWarnings("unused")
 	private static char[] chars;
 	/**
-	 * to print dashes 
+	 *to print dashes
 	 */
 	private static char[] chars1;
 	/**
-	 * to know wrong or write guess
+	 *to know wrong or write guess
 	 */
 	private static int flag = 0;
 	/**
-	 * to store max number of guess
+	 *to store max number of guess
 	 */
 	private static Integer max1 = null;
 
 	@Override
-	/**
-	 * 
-	 */
 	public void setDictionary(final String[] words) {
 		// TODO Auto-generated method stub
 		newArray = words;
 	}
 
 	@Override
-	/**
-	 * 
-	 */
 	public String selectRandomSecretWord() {
 		// TODO Auto-generated method stub
 		if (newArray == null) {
@@ -70,9 +64,6 @@ public class Hangman implements IHangman {
 	}
 
 	@Override
-	/**
-	 * 
-	 */
 	public String guess(final Character c) throws Exception {
 		// TODO Auto-generated method stub
 		if (word.charAt(0) == ' ' || word.length() == 0) {
@@ -113,9 +104,6 @@ public class Hangman implements IHangman {
 	}
 
 	@Override
-	/**
-	 * 
-	 */
 	public void setMaxWrongGuesses(final Integer max) {
 		// TODO Auto-generated method stub
 		if (max == null) {
