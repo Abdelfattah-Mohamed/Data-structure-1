@@ -11,15 +11,15 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class Hangman implements IHangman {
 	/**
-	 *to store dictionary words
+	 * to store dictionary words
 	 */
 	private static String word, word1;
 	/**
-	 *to store dictionary words
+	 * to store dictionary words
 	 */
 	private static String[] newArray;
 	/**
-	 *store letter of the random word
+	 * store letter of the random word
 	 */
 	@SuppressWarnings("unused")
 	private static char[] chars;
@@ -28,11 +28,11 @@ public class Hangman implements IHangman {
 	 */
 	private static char[] chars1;
 	/**
-	 *to know wrong or write guess
+	 * to know wrong or write guess
 	 */
 	private static int flag = 0;
 	/**
-	 *to store max number of guess
+	 * to store max number of guess
 	 */
 	private static Integer max1 = null;
 
