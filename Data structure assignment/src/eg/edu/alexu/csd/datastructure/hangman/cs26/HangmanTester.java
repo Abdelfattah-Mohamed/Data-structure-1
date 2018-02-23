@@ -5,6 +5,11 @@ package eg.edu.alexu.csd.datastructure.hangman.cs26;
  */
 public class HangmanTester {
 
+	/**
+	 * 
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(final String[] args) throws Exception {
 		Hangman hangman = new Hangman();
 		// Read from file here
