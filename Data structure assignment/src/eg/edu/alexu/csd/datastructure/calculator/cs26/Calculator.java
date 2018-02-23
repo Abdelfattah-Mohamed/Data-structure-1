@@ -17,7 +17,7 @@ public class Calculator implements ICalculator {
 	}
 
 	@Override
-	public float divide(final int x, final int y) throws RuntimeException {
+	public float divide(final int x, final int y) {
 		// TODO Auto-generated method stub
 		if (y == 0) {
 			throw new RuntimeException("Division by zero!");
