@@ -81,14 +81,13 @@ public class Hangman implements IHangman {
 
 		if (c != null && max1 > 0 && word1 != wor) {
 			for (int i = 0; i < wor.length(); i++) {
-				if (Character.toUpperCase(c) == wor.charAt(i) ) {
+				if (Character.toUpperCase(c) == wor.charAt(i)) {
 					chars1[i] = wor.charAt(i);
 					flag = 1;
-				}else if( Character.toLowerCase(c) == wor.charAt(i)) {
+				} else if (Character.toLowerCase(c) == wor.charAt(i)) {
 					chars1[i] = wor.charAt(i);
 					flag = 1;
-				}
-				else if(c == wor.charAt(i)) {
+				} else if (c == wor.charAt(i)) {
 					chars1[i] = wor.charAt(i);
 					flag = 1;
 				}
