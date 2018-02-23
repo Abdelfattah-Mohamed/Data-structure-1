@@ -17,7 +17,7 @@ public class Hangman implements IHangman {
 	/**
 	 * to store dictionary words.
 	 */
-	private static String[] newArray;
+	private static String[] newArray = null;
 	/**
 	 * store letter of the random word.
 	 */
