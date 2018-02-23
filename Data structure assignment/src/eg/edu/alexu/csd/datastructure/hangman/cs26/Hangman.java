@@ -24,7 +24,7 @@ public class Hangman implements IHangman {
 	@SuppressWarnings("unused")
 	private static char[] chars;
 	/**
-	 *to print dashes
+	 * to print dashes
 	 */
 	private static char[] chars1;
 	/**
