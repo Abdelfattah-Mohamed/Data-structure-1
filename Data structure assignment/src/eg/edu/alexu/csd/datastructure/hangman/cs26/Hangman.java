@@ -39,6 +39,10 @@ public class Hangman implements IHangman {
 	 * to use max number of guess.
 	 */
 	private Integer max1 = null;
+	/**
+	 * to fill c in this.
+	 */
+	char m;
 
 	@Override
 	public void setDictionary(final String[] words) {
@@ -86,13 +90,13 @@ public class Hangman implements IHangman {
 
 		if (c != null && max1 > 0 && word1 != word) {
 			for (int i = 0; i < word.length(); i++) {
-				Character.toUpperCase(c);
-				if (c == word.charAt(i)) {
+				m = Character.toUpperCase(c);
+				if (m == word.charAt(i)) {
 					chars1[i] = word.charAt(i);
 					flag = 1;
 				}
-				Character.toLowerCase(c);
-				if (c == word.charAt(i)) {
+				m = Character.toLowerCase(c);
+				if (m == word.charAt(i)) {
 					chars1[i] = word.charAt(i);
 					flag = 1;
 				}
