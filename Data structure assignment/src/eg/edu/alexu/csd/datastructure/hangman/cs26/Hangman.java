@@ -12,17 +12,32 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 public class Hangman implements IHangman {
 
 	/**
-	 * to store dictionary word
+	 * to store dictionary word.
 	 */
 	private static String word, word1;
 	/**
-	 * Length of string
+	 * Length of string.
 	 */
 	int length;
+	/**
+	 * to store words from dictionary.
+	 */
 	String[] newArray;
+	/**
+	 * to store characters of word.
+	 */
 	char[] chars;
+	/**
+	 * to display dashes.
+	 */
 	char[] chars1;
+	/**
+	 * to know wrong or right guess.
+	 */
 	int flag = 0;
+	/**
+	 * to use max number of guess.
+	 */
 	private Integer max1 = null;
 
 	@Override
