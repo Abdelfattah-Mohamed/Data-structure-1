@@ -70,7 +70,7 @@ public class Hangman implements IHangman {
 			throw new RuntimeException();
 		}
 		if (c == null) {
-			return "------";
+			return word1;
 		}
 		if (word == "") {
 			throw new Exception();
