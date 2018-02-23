@@ -84,8 +84,7 @@ public class Hangman implements IHangman {
 				if (Character.toUpperCase(c) == word.charAt(i)) {
 					chars1[i] = word.charAt(i);
 					flag = 1;
-				}
-				else if ( Character.toLowerCase(c) == word.charAt(i)) {
+				} else if (Character.toLowerCase(c) == word.charAt(i)) {
 					chars1[i] = word.charAt(i);
 					flag = 1;
 				}
