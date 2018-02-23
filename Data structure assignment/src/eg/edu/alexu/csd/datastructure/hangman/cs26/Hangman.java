@@ -13,7 +13,7 @@ public class Hangman implements IHangman {
 	/**
 	 * to store dictionary words.
 	 */
-	private static String wor, word1;
+	private static String word, word1;
 	/**
 	 * to store dictionary words.
 	 */
@@ -51,12 +51,12 @@ public class Hangman implements IHangman {
 		Random rand = new Random();
 		int h = rand.nextInt(newArray.length);
 		if (newArray[h] != null) {
-			wor = newArray[h];
-			chars1 = new char[wor.length()];
-			for (int i = 0; i < wor.length(); i++) {
+			word = newArray[h];
+			chars1 = new char[word.length()];
+			for (int i = 0; i < word.length(); i++) {
 				chars1[i] += '-';
 			}
-			chars = wor.toCharArray();
+			chars = word.toCharArray();
 			return newArray[h];
 		}
 
@@ -66,29 +66,23 @@ public class Hangman implements IHangman {
 	@Override
 	public String guess(final Character c) throws Exception {
 		// TODO Auto-generated method stub
-		if (wor.charAt(0) == ' ' || wor.length() == 0) {
+		if (word.charAt(0) == ' ' || word.length() == 0) {
 			throw new RuntimeException();
 		}
 		if (c == null) {
 			return "------";
 		}
-		if (wor == "") {
+		if (word == "") {
 			throw new Exception();
 		}
 		if (max1 == null) {
 			throw new UnsupportedOperationException();
 		}
 
-		if (c != null && max1 > 0 && word1 != wor) {
-			for (int i = 0; i < wor.length(); i++) {
-				if (Character.toUpperCase(c) == wor.charAt(i)) {
-					chars1[i] = wor.charAt(i);
-					flag = 1;
-				} else if (Character.toLowerCase(c) == wor.charAt(i)) {
-					chars1[i] = wor.charAt(i);
-					flag = 1;
-				} else if (c == wor.charAt(i)) {
-					chars1[i] = wor.charAt(i);
+		if (c != null && max1 > 0 && word1 != word) {
+			for (int i = 0; i < word.length(); i++) {
+				if (Character.toUpperCase(c) == word.charAt(i) || Character.toLowerCase(c) == word.charAt(i)) {
+					chars1[i] = word.charAt(i);
 					flag = 1;
 				}
 
