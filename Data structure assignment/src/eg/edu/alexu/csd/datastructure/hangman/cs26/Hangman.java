@@ -69,7 +69,7 @@ public class Hangman implements IHangman {
 	}
 
 	@Override
-	public String guess(final Character c) throws Exception {
+	public String guess(Character c) throws Exception {
 		// TODO Auto-generated method stub
 		if (word.charAt(0) == ' ' || word.length() == 0) {
 			throw new UnsupportedOperationException();
@@ -86,11 +86,16 @@ public class Hangman implements IHangman {
 
 		if (c != null && max1 > 0 && word1 != word) {
 			for (int i = 0; i < word.length(); i++) {
-				if (Character.toUpperCase(c) == word.charAt(i) || Character.toLowerCase(c) == word.charAt(i)) {
+				c = Character.toUpperCase(c) ;
+				if (c == word.charAt(i) ) {
 					chars1[i] = word.charAt(i);
 					flag = 1;
 				}
-
+				c = Character.toLowerCase(c) ;
+				if (c == word.charAt(i)) {
+					chars1[i] = word.charAt(i);
+					flag = 1;
+				}
 			}
 
 			word1 = String.valueOf(chars1);
