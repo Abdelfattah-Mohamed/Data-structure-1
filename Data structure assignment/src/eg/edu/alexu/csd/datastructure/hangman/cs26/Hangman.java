@@ -11,12 +11,12 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class Hangman implements IHangman {
 	private static String word, word1;
-	int length;
-	String[] newArray;
-	char[] chars;
-	char[] chars1;
-	int flag = 0;
-	private Integer max1 = null;
+	private static int length;
+	private static String[] newArray;
+	private static char[] chars;
+	private static char[] chars1;
+	private static int flag = 0;
+	private static Integer max1 = null;
 
 	@Override
 	public void setDictionary(final String[] words) {
