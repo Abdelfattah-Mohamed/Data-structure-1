@@ -6,17 +6,23 @@ import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
 public class Icehocky implements IPlayersFinder {
 
+	/**
+	 * 
+	 */
 	int counter = 0;
+	/**
+	 * 
+	 */
 	int maxI = 0, maxJ = 0;
+	/**
+	 * 
+	 */
 	int minI = 0, minJ = 0;
+	/**
+	 * 
+	 */
 	int center_x = 0, center_y = 0;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@SuppressWarnings("null")
 	@Override
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
