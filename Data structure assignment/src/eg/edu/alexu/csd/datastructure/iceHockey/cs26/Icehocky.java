@@ -61,7 +61,7 @@ public class Icehocky implements IPlayersFinder {
 		for (i = 0; i < (photo.length); i++) {
 			for (j = 0; j < (photo[i].length() ) ; j++) {
 				if (photo[i].charAt(j) == team) {
-					photoArray[i][j] = photo[i].charAt(j);
+					photoArray[i][j] = team;
 				} else {
 					photoArray[i][j] = 0;
 				}
@@ -70,6 +70,9 @@ public class Icehocky implements IPlayersFinder {
 	}
 
 	private void recursion(int i, int j, int[][] photoArray, int team, int threshold) {
+		if (photoArray[i][j + 1] != team && photoArray[i + 1][j] != team && photoArray[i][j - 1] != team && photoArray[i - 1][j] != team) {
+			return;
+		}
 		if (i > maxI) {
 			maxI = i;
 		}
@@ -106,7 +109,7 @@ public class Icehocky implements IPlayersFinder {
 			center_x = (minI + maxI + 1);
 			center_y = (minJ + maxJ + 1);
 		}
-		return;
+		
 	}
 
 	private void sortPoint(Point[] line, int storeCounter) {
