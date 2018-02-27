@@ -112,9 +112,8 @@ public class Icehocky implements IPlayersFinder {
 					temp = line[i].y;
 					line[i].y = line[j].y;
 					line[j].y = temp;
-				}
-				else if(line[i].x == line[j].x) {
-					if(line[i].y < line[j].y) {
+				} else if (line[i].x == line[j].x) {
+					if (line[i].y > line[j].y) {
 						// swap x
 						temp = line[i].x;
 						line[i].x = line[j].x;
