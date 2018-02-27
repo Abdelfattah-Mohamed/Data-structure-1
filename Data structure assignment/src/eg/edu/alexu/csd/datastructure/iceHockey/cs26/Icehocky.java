@@ -43,6 +43,7 @@ public class Icehocky implements IPlayersFinder {
 				counter = 0;
 			}
 		}
+		sortPoint(line, storeCounter);
 		if (storeCounter != 0) {
 			return line;
 		}
@@ -102,4 +103,23 @@ public class Icehocky implements IPlayersFinder {
 		return;
 	}
 
+	private void sortPoint(Point[] line, int storeCounter) {
+		// TODO Auto-generated method stub
+		int i, j;
+		int temp;
+		for (i = 0; i < storeCounter - 1; i++) {
+			for (j = i + 1; j < storeCounter; j++) {
+				if (line[j - 1].x > line[j].x) {
+					// swap x
+					temp = line[j - 1].x;
+					line[j - 1].x = line[j].x;
+					line[j].x = temp;
+					// swap y
+					temp = line[j - 1].y;
+					line[j - 1].y = line[j].y;
+					line[j].y = temp;
+				}
+			}
+		}
+	}
 }
