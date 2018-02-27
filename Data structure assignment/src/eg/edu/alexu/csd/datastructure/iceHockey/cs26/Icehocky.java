@@ -26,7 +26,7 @@ public class Icehocky implements IPlayersFinder {
 	@Override
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
-		int[][] photoArray = null;
+		char[][] photoArray = null;
 		int storeCounter = 0;
 		Point[] line = new Point[50];
 		for (int i = 0; i < line.length; i++) {
@@ -35,7 +35,7 @@ public class Icehocky implements IPlayersFinder {
 		storePhoteIn2DimintionArray(photo, photoArray, team);
 		for (int i = 0; i < (photo.length); i++) {
 			for (int j = 0; photo[i].charAt(j) != '\0'; j++) {
-				if (photoArray[i][j] == team) {
+				if (photoArray[i][j] == (char) team) {
 					counter = 1;
 					maxI = i;
 					maxJ = j;
@@ -56,20 +56,19 @@ public class Icehocky implements IPlayersFinder {
 		return null;
 	}
 
-	private void storePhoteIn2DimintionArray(String[] photo, int[][] photoArray, int team) {
+	private void storePhoteIn2DimintionArray(String[] photo, char[][] photoArray, int team) {
 		for (int i = 0; i < (photo.length); i++) {
 			for (int j = 0; j < (photo[i].length()); j++) {
-				photoArray[i][j] = photo[i].charAt(j);
-
-				/*
-				 * if (photo[i].charAt(j) == team) { photoArray[i][j] = team; } else {
-				 * photoArray[i][j] = -1; }
-				 */
+				if (photo[i].charAt(j) == team) {
+					photoArray[i][j] = (char) team;
+				} else {
+					photoArray[i][j] = (char) 0;
+				}
 			}
 		}
 	}
 
-	private void recursion(int i, int j, int[][] photoArray, int team, int threshold) {
+	private void recursion(int i, int j, char[][] photoArray, int team, int threshold) {
 		if (photoArray[i][j] != team) {
 			return;
 		}
@@ -86,7 +85,7 @@ public class Icehocky implements IPlayersFinder {
 			minJ = j;
 		}
 		counter++;
-		photoArray[i][j + 1] = team - 1;
+		photoArray[i][j + 1] = (char) (team - 1);
 		recursion(i, j + 1, photoArray, team, threshold);
 		recursion(i, j - 1, photoArray, team, threshold);
 		recursion(i + 1, j, photoArray, team, threshold);
