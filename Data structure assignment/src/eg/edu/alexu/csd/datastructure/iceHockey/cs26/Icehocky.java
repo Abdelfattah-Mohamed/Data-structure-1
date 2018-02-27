@@ -62,7 +62,7 @@ public class Icehocky implements IPlayersFinder {
 				if (photo[i].charAt(j) == team) {
 					photoArray[i][j] = team;
 				} else {
-					photoArray[i][j] = 0;
+					photoArray[i][j] = -1;
 				}
 			}
 		}
