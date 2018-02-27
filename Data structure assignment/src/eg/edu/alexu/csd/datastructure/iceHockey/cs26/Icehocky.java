@@ -4,11 +4,13 @@ import java.awt.Point;
 
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
+
 public class Icehocky implements IPlayersFinder {
 
 	int counter = 0;
 	int maxI = 0, maxJ = 0;
 	int minI = 0, minJ = 0;
+	int center_x = 0, center_y = 0;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -29,9 +31,10 @@ public class Icehocky implements IPlayersFinder {
 					maxJ = j;
 					minI = i;
 					minJ = j;
-					counter = recursion(i, j, photoArray, team, threshold);
+					recursion(i, j, photoArray, team, threshold);
 				}
 				counter = 0;
+				
 			}
 		}
 		return null;
@@ -51,7 +54,7 @@ public class Icehocky implements IPlayersFinder {
 	}
 
 	@SuppressWarnings("null")
-	private int recursion(int i, int j, int[][] photoArray, int team, int threshold) {
+	private void recursion(int i, int j, int[][] photoArray, int team, int threshold) {
 		if (i > maxI) {
 			maxI = i;
 		}
@@ -84,10 +87,11 @@ public class Icehocky implements IPlayersFinder {
 			photoArray[i - 1][j] = team - 1;
 			recursion(i - 1, j, photoArray, team, threshold);
 		}
-		if (counter / 4 >= threshold) {
-			return counter;
+		if (counter * 4 >= threshold) {
+			center_x = (minI + maxI + 1);
+			center_y = (minJ + maxJ + 1);
 		}
-		return (Integer) null;
+		return;
 	}
 
 }
