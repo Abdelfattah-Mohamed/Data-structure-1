@@ -4,7 +4,6 @@ import java.awt.Point;
 
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
-
 public class Icehocky implements IPlayersFinder {
 
 	int counter = 0;
@@ -22,6 +21,11 @@ public class Icehocky implements IPlayersFinder {
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
 		int photoArray[][] = null;
+		int storeCounter = 0;
+		Point[] line = new Point[50];
+		for (int i = 0; i < line.length; i++) {
+			line[i] = new Point();
+		}
 		storePhoteIn2DimintionArray(photo, photoArray, team);
 		for (int i = 0; i < (photo.length); i++) {
 			for (int j = 0; photo[i].charAt(j) != '\0'; j++) {
@@ -32,10 +36,15 @@ public class Icehocky implements IPlayersFinder {
 					minI = i;
 					minJ = j;
 					recursion(i, j, photoArray, team, threshold);
+					line[storeCounter].x = center_x;
+					line[storeCounter].y = center_y;
+					storeCounter++;
 				}
 				counter = 0;
-				
 			}
+		}
+		if (storeCounter != 0) {
+			return line;
 		}
 		return null;
 	}
@@ -53,7 +62,6 @@ public class Icehocky implements IPlayersFinder {
 		}
 	}
 
-	@SuppressWarnings("null")
 	private void recursion(int i, int j, int[][] photoArray, int team, int threshold) {
 		if (i > maxI) {
 			maxI = i;
