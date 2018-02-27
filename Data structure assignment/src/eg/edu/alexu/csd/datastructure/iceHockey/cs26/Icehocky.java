@@ -70,7 +70,7 @@ public class Icehocky implements IPlayersFinder {
 	}
 
 	private void recursion(int i, int j, int[][] photoArray, int team, int threshold) {
-		if (photoArray[i][j + 1] != team && photoArray[i + 1][j] != team && photoArray[i][j - 1] != team && photoArray[i - 1][j] != team) {
+		if (photoArray[i][j] != team ) {
 			return;
 		}
 		if (i > maxI) {
@@ -85,26 +85,12 @@ public class Icehocky implements IPlayersFinder {
 		if (j < minJ) {
 			minJ = j;
 		}
-		if (photoArray[i][j + 1] == team) {
-			counter++;
-			photoArray[i][j + 1] = team - 1;
-			recursion(i, j + 1, photoArray, team, threshold);
-		}
-		if (photoArray[i + 1][j] == team) {
-			counter++;
-			photoArray[i + 1][j] = team - 1;
-			recursion(i + 1, j, photoArray, team, threshold);
-		}
-		if (photoArray[i][j - 1] == team) {
-			counter++;
-			photoArray[i][j - 1] = team - 1;
-			recursion(i, j - 1, photoArray, team, threshold);
-		}
-		if (photoArray[i - 1][j] == team) {
-			counter++;
-			photoArray[i - 1][j] = team - 1;
-			recursion(i - 1, j, photoArray, team, threshold);
-		}
+		counter++;
+		photoArray[i][j + 1] = team - 1;
+		recursion(i, j + 1, photoArray, team, threshold);
+		recursion(i, j - 1, photoArray, team, threshold);
+		recursion(i + 1, j, photoArray, team, threshold);
+		recursion(i - 1, j, photoArray, team, threshold);
 		if (counter * 4 >= threshold) {
 			center_x = (minI + maxI + 1);
 			center_y = (minJ + maxJ + 1);
