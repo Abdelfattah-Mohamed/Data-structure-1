@@ -26,7 +26,7 @@ public class Icehocky implements IPlayersFinder {
 	@Override
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
-		char[][] photoArray = { { 0, 0 } };
+		char[][] photoArray = null ;
 		int storeCounter = 0;
 		Point[] line = new Point[50];
 		for (int i = 0; i < line.length; i++) {
