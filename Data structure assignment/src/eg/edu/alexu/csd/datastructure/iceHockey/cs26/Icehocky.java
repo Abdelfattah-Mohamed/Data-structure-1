@@ -7,19 +7,19 @@ import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 public class Icehocky implements IPlayersFinder {
 
 	/**
-	 * 
+	 * TO KNOW AREA OF PLAYERS.
 	 */
 	int counter = 0;
 	/**
-	 * 
+	 * TO KNOW MAX BOUNDRY.
 	 */
 	int maxI = 0, maxJ = 0;
 	/**
-	 * 
+	 * TO KNOW MIN BOUNDRY.
 	 */
 	int minI = 0, minJ = 0;
 	/**
-	 * 
+	 * TO KNOW CENTER OF BOUNDRY.
 	 */
 	int center_x = 0, center_y = 0;
 
