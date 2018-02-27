@@ -23,6 +23,7 @@ public class Icehocky implements IPlayersFinder {
 	 */
 	int center_x = 0, center_y = 0;
 
+	@SuppressWarnings("null")
 	@Override
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
