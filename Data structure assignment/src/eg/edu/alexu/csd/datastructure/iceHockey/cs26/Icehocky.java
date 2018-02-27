@@ -26,7 +26,7 @@ public class Icehocky implements IPlayersFinder {
 	@Override
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
-		char[][] photoArray = null;
+		char[][] photoArray = { { 0, 0 } };
 		int storeCounter = 0;
 		Point[] line = new Point[50];
 		for (int i = 0; i < line.length; i++) {
@@ -34,7 +34,7 @@ public class Icehocky implements IPlayersFinder {
 		}
 		storePhoteIn2DimintionArray(photo, photoArray, team);
 		for (int i = 0; i < (photo.length); i++) {
-			for (int j = 0; photo[i].charAt(j) != '\0'; j++) {
+			for (int j = 0; j < (photo[i].length()); j++) {
 				if (photoArray[i][j] == (char) team) {
 					counter = 1;
 					maxI = i;
