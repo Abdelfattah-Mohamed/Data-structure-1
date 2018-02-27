@@ -57,9 +57,8 @@ public class Icehocky implements IPlayersFinder {
 	}
 
 	private void storePhoteIn2DimintionArray(String[] photo, int[][] photoArray, int team) {
-		int i, j;
-		for (i = 0; i < (photo.length); i++) {
-			for (j = 0; j < (photo[i].length()); j++) {
+		for (int i = 0; i < (photo.length); i++) {
+			for (int j = 0; j < (photo[i].length()); j++) {
 				if (photo[i].charAt(j) == team) {
 					photoArray[i][j] = team;
 				} else {
@@ -99,10 +98,9 @@ public class Icehocky implements IPlayersFinder {
 
 	private void sortPoint(Point[] line, int storeCounter) {
 		// TODO Auto-generated method stub
-		int i, j;
 		int temp;
-		for (i = 0; i < storeCounter - 1; i++) {
-			for (j = i + 1; j < storeCounter; j++) {
+		for (int i = 0; i < storeCounter - 1; i++) {
+			for (int j = i + 1; j < storeCounter; j++) {
 				if (line[i].x > line[j].x) {
 					// swap x
 					temp = line[i].x;
