@@ -59,11 +59,12 @@ public class Icehocky implements IPlayersFinder {
 	private void storePhoteIn2DimintionArray(String[] photo, int[][] photoArray, int team) {
 		for (int i = 0; i < (photo.length); i++) {
 			for (int j = 0; j < (photo[i].length()); j++) {
-				if (photo[i].charAt(j) == team) {
-					photoArray[i][j] = team;
-				} else {
-					photoArray[i][j] = -1;
-				}
+				photoArray[i][j] = photo[i].charAt(j);
+
+				/*
+				 * if (photo[i].charAt(j) == team) { photoArray[i][j] = team; } else {
+				 * photoArray[i][j] = -1; }
+				 */
 			}
 		}
 	}
