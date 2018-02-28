@@ -25,11 +25,10 @@ public class Icehocky implements IPlayersFinder {
 	int bou_i = 0;
 	int bou_j = 0;
 
-	@SuppressWarnings("null")
 	@Override
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
-		int[][] photoArray = null;
+		char[][] photoArray = new char[50][50];
 		int storeCounter = 0;
 		Point[] line = new Point[50];
 		for (int i = 0; i < line.length; i++) {
@@ -38,7 +37,7 @@ public class Icehocky implements IPlayersFinder {
 		storePhoteIn2DimintionArray(photo, photoArray, team);
 		for (int i = 0; i < (photo.length); i++) {
 			for (int j = 0; j < (photo[i].length()); j++) {
-				if (photoArray[i][j] == team) {
+				if (photoArray[i][j] == (char) (team + 48 )) {
 					counter = 1;
 					maxI = i;
 					maxJ = j;
@@ -59,12 +58,12 @@ public class Icehocky implements IPlayersFinder {
 		return null;
 	}
 
-	private void storePhoteIn2DimintionArray(String[] photo, int[][] photoArray, int team) {
+	private void storePhoteIn2DimintionArray(String[] photo, char[][] photoArray, int team) {
 		int i = 0, j = 0;
 		for (i = 0; i < (photo.length); i++) {
 			for (j = 0; j < (photo[i].length()); j++) {
-				if (photo[i].charAt(j) == team) {
-					photoArray[i][j] = team;
+				if (photo[i].charAt(j) == (char) (team + 48 )) {
+					photoArray[i][j] = (char) (team + 48 );
 				}
 			}
 		}
@@ -73,8 +72,8 @@ public class Icehocky implements IPlayersFinder {
 		bou_j = j;
 	}
 
-	private void recursion(int i, int j, int[][] photoArray, int team, int threshold) {
-		if (photoArray[i][j] != team || i < 0 || j < 0 || i >= bou_i || j >= bou_j) {
+	private void recursion(int i, int j, char[][] photoArray, int team, int threshold) {
+		if (photoArray[i][j] != (char) (team + 48 ) || i < 0 || j < 0 || i >= bou_i || j >= bou_j) {
 			return;
 		}
 		if (i > maxI) {
@@ -90,7 +89,7 @@ public class Icehocky implements IPlayersFinder {
 			minJ = j;
 		}
 		counter++;
-		photoArray[i][j] = (team - 1);
+		photoArray[i][j] = (char) (team + 48 - 1);
 		recursion(i, j + 1, photoArray, team, threshold);
 		recursion(i, j - 1, photoArray, team, threshold);
 		recursion(i + 1, j, photoArray, team, threshold);
