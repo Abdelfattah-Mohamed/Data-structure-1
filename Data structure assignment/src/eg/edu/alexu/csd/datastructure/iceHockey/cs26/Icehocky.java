@@ -28,6 +28,9 @@ public class Icehocky implements IPlayersFinder {
 	@Override
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
+		if (photo == null) {
+			return null ;
+		}
 		char[][] photoArray = new char[50][50];
 		int storeCounter = 0;
 		Point[] line = new Point[50];
