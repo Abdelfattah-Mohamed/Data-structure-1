@@ -22,12 +22,13 @@ public class Icehocky implements IPlayersFinder {
 	 * TO KNOW CENTER OF BOUNDRY.
 	 */
 	int center_x = 0, center_y = 0;
+	int bou_i = 0;
+	int bou_j = 0;
 
-	@SuppressWarnings("null")
 	@Override
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
-		char[][] photoArray = null ;
+		char[][] photoArray = null;
 		int storeCounter = 0;
 		Point[] line = new Point[50];
 		for (int i = 0; i < line.length; i++) {
@@ -58,19 +59,21 @@ public class Icehocky implements IPlayersFinder {
 	}
 
 	private void storePhoteIn2DimintionArray(String[] photo, char[][] photoArray, int team) {
-		for (int i = 0; i < (photo.length); i++) {
-			for (int j = 0; j < (photo[i].length()); j++) {
-				if (photo[i].charAt(j) == team) {
+		int i = 0, j = 0;
+		for (i = 0; i < (photo.length); i++) {
+			for (j = 0; j < (photo[i].length()); j++) {
+				if (photo[i].charAt(j) == (char) team) {
 					photoArray[i][j] = (char) team;
-				} else {
-					photoArray[i][j] = (char) 0;
 				}
 			}
 		}
+
+		bou_i = i;
+		bou_j = j;
 	}
 
 	private void recursion(int i, int j, char[][] photoArray, int team, int threshold) {
-		if (photoArray[i][j] != team) {
+		if (photoArray[i][j] != (char) team || i < 0 || j < 0 || i >= bou_i || j >= bou_j) {
 			return;
 		}
 		if (i > maxI) {
@@ -86,7 +89,7 @@ public class Icehocky implements IPlayersFinder {
 			minJ = j;
 		}
 		counter++;
-		photoArray[i][j + 1] = (char) (team - 1);
+		photoArray[i][j] = (char) (team - 1);
 		recursion(i, j + 1, photoArray, team, threshold);
 		recursion(i, j - 1, photoArray, team, threshold);
 		recursion(i + 1, j, photoArray, team, threshold);
@@ -99,28 +102,21 @@ public class Icehocky implements IPlayersFinder {
 
 	private void sortPoint(Point[] line, int storeCounter) {
 		// TODO Auto-generated method stub
-		int temp;
+		Point temp;
 		for (int i = 0; i < storeCounter - 1; i++) {
 			for (int j = i + 1; j < storeCounter; j++) {
 				if (line[i].x > line[j].x) {
-					// swap x
-					temp = line[i].x;
-					line[i].x = line[j].x;
-					line[j].x = temp;
-					// swap y
-					temp = line[i].y;
-					line[i].y = line[j].y;
-					line[j].y = temp;
+					// swap.
+					temp = line[i];
+					line[i] = line[j];
+					line[j] = temp;
 				} else if (line[i].x == line[j].x) {
 					if (line[i].y > line[j].y) {
-						// swap x
-						temp = line[i].x;
-						line[i].x = line[j].x;
-						line[j].x = temp;
-						// swap y
-						temp = line[i].y;
-						line[i].y = line[j].y;
-						line[j].y = temp;
+						// swap
+						temp = line[i];
+						line[i] = line[j];
+						line[j] = temp;
+
 					}
 				}
 			}
