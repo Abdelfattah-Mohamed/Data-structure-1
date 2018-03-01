@@ -71,11 +71,11 @@ public class Icehocky implements IPlayersFinder {
 		}
 		/*
 		Point[] line2 = new Point[storeCounter];
-		sortPoint(line, storeCounter);
 		for (int i = 0; i < storeCounter; i++) {
 			line2[i] = line[i];
 		}
 		*/
+		sortPoint(line, storeCounter);
 		if (storeCounter >= 0) {
 			return Arrays.copyOfRange(line ,0 ,storeCounter ) ;
 		} else {
