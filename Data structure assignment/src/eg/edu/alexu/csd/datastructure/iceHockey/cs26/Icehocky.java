@@ -29,12 +29,16 @@ public class Icehocky implements IPlayersFinder {
 	static int bou_i = 0;
 	static int bou_j = 0;
 	static int storeCounter = 0;
-	static Point[] line = new Point [75];
+	static Point[] line;
+	static Point[] line2;
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
 		if (photo == null) {
 			return null;
+		}
+		for (int i = 0; i < line.length; i++) {
+			line[i] = new Point();
 		}
 		char[][] photoArray = new char[100][100];
 		storePhoteIn2DimintionArray(photo, photoArray, team);
@@ -49,7 +53,6 @@ public class Icehocky implements IPlayersFinder {
 					recursion(i, j, photoArray, team, threshold);
 					if (center_x > 0 || center_y > 0) {
 						if ((counter * 4) >= threshold) {
-							line[storeCounter] = new Point() ;
 							line[storeCounter].y = center_x;
 							line[storeCounter].x = center_y;
 							storeCounter++;
@@ -60,8 +63,11 @@ public class Icehocky implements IPlayersFinder {
 			}
 		}
 		sortPoint(line, storeCounter);
+		for (int i = 0; i < storeCounter; i++) {
+			line2[i] = new Point();
+		}
 		if (storeCounter != 0) {
-			return line;
+			return line2;
 		} else {
 			return null;
 		}
