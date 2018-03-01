@@ -6,6 +6,9 @@ package eg.edu.alexu.csd.datastructure.iceHockey.cs26;
 
 import java.awt.Point;
 import java.util.Arrays;
+import java.util.Vector;
+
+import org.junit.platform.engine.TestDescriptor.Visitor;
 
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
@@ -34,6 +37,7 @@ public class Icehocky implements IPlayersFinder {
 	static int bou_j = 0;
 	static int storeCounter = 0;
 	static Point[] line = new Point[2500];
+	static Vector<Point> point = new Vector<Point>();
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
@@ -69,15 +73,17 @@ public class Icehocky implements IPlayersFinder {
 				counter = 0;
 			}
 		}
-		/*
-		Point[] line2 = new Point[storeCounter];
+
+		// Point[] line2 = new Point[storeCounter];
 		for (int i = 0; i < storeCounter; i++) {
-			line2[i] = line[i];
+			point.add(new Point(line[i]));
 		}
-		*/
+		for (int i = 0; i < point.size(); i++) {
+			line[i] = point.elementAt(i);
+		}
 		sortPoint(line, storeCounter);
 		if (storeCounter >= 0) {
-			return Arrays.copyOfRange(line ,0 ,storeCounter ) ;
+			return line;
 		} else {
 			return null;
 		}
@@ -135,7 +141,7 @@ public class Icehocky implements IPlayersFinder {
 		}
 	}
 
-	private void sortPoint(Point[] line , int storeCounter) {
+	private void sortPoint(Point[] line, int storeCounter) {
 		// TODO Auto-generated method stub
 		Point temp;
 		for (int i = 0; i < storeCounter - 1; i++) {
