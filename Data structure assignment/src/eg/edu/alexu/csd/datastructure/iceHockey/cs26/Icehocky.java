@@ -1,6 +1,7 @@
 package eg.edu.alexu.csd.datastructure.iceHockey.cs26;
 
 import java.awt.Point;
+import java.util.Arrays;
 
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
@@ -23,12 +24,12 @@ public class Icehocky implements IPlayersFinder {
 	/**
 	 * TO KNOW CENTER OF BOUNDRY.
 	 */
-	int center_x = 0;
-	int center_y = 0;
-	int bou_i = 0;
-	int bou_j = 0;
-	int storeCounter = 0;
-	Point[] line;
+	static int center_x = 0;
+	static int center_y = 0;
+	static int bou_i = 0;
+	static int bou_j = 0;
+	static int storeCounter = 0;
+	static Point[] line;
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
@@ -51,8 +52,8 @@ public class Icehocky implements IPlayersFinder {
 					recursion(i, j, photoArray, team, threshold);
 					if (center_x > 0 || center_y > 0) {
 						if ((counter * 4) >= threshold) {
-							line[storeCounter].y = center_x;
-							line[storeCounter].x = center_y;
+							line[storeCounter].x = center_x;
+							line[storeCounter].y = center_y;
 							storeCounter++;
 						}
 					}
@@ -66,7 +67,7 @@ public class Icehocky implements IPlayersFinder {
 			line2[i] = line[i];
 		}
 		if (storeCounter != 0) {
-			return line2;
+			return Arrays.copyOfRange(line, 0, storeCounter);
 		} else {
 			return null;
 		}
@@ -119,8 +120,8 @@ public class Icehocky implements IPlayersFinder {
 			recursion(i - 1, j, photoArray, team, threshold);
 		}
 		if ((counter * 4) >= threshold) {
-			center_x = (minI + maxI + 1);
-			center_y = (minJ + maxJ + 1);
+			center_x = (minJ + maxJ + 1);
+			center_y = (minI + maxI + 1);
 		}
 	}
 
