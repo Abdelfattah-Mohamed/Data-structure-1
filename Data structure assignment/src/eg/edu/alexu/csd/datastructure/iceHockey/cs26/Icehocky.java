@@ -30,7 +30,7 @@ public class Icehocky implements IPlayersFinder {
 	static int bou_j = 0;
 	static int storeCounter = 0;
 	static Point[] line;
-	static Point[] line2;
+	Point[] line2;
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
