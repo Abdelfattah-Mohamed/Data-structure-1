@@ -151,7 +151,7 @@ public class Icehocky implements IPlayersFinder {
 			recursion(i, j + 1, photoArray, team, threshold);
 		}
 		if (i < bouI) {
-			recursion(i + 1 , j, photoArray, team, threshold);
+			recursion(i + 1, j, photoArray, team, threshold);
 		}
 		if (j > 0) {
 			recursion(i, j - 1, photoArray, team, threshold);
@@ -192,5 +192,4 @@ public class Icehocky implements IPlayersFinder {
 			}
 		}
 	}
-
 }
