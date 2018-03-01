@@ -28,7 +28,7 @@ public class Icehocky implements IPlayersFinder {
 	static int bou_i = 0;
 	static int bou_j = 0;
 	static int storeCounter = 0;
-	static Point[] line = new Point[51];
+	static Point[] line = new Point[100];
 
 	/*
 	 * public static void main(String[] args) {
@@ -45,10 +45,10 @@ public class Icehocky implements IPlayersFinder {
 		if (photo == null) {
 			return null;
 		}
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < line.length; i++) {
 			line[i] = new Point();
 		}
-		char[][] photoArray = new char[51][51];
+		char[][] photoArray = new char[100][100];
 		storePhoteIn2DimintionArray(photo, photoArray, team);
 		for (int i = 0; i < (photo.length); i++) {
 			for (int j = 0; j < (photo[i].length()); j++) {
