@@ -18,17 +18,18 @@ public class MyJUnitTest {
     public void iceHockeyTest() {
         IPlayersFinder playersFinder = new Icehocky ();
         String[] image = {
-                "3333333333333333333333333333333333333333", 
-                };
+        		
+        		};
         		
         Point[] answer = 
             new Point[]{
-                new Point(1, 40),
-               // new Point(8, 15),
-               // new Point(8, 24),
+            		new Point(5, 5),
+            		new Point(5, 5),
+                
+           
             };
-        int team = 3;
-        int threashold = 16;
+        int team = 1;
+        int threashold = 3;
         Assert.assertArrayEquals(answer, playersFinder.findPlayers(image, team, threashold));
     }
 }
