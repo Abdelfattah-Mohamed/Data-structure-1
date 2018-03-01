@@ -18,26 +18,14 @@ public class MyJUnitTest {
     public void iceHockeyTest() {
         IPlayersFinder playersFinder = new Icehocky ();
         String[] image = {
-                "33333333", 
-                "33333333", 
-                "33333333", 
-                "33333333",
-                "33333333", 
-                "44444444", 
-                "33333333", 
-                "33333333", 
-                "33333333", 
-                "44444444", 
-                "33333333", 
-                "33333333", 
-                "33333333", 
-                "33333333"};
+                "3333333333333333333333333333333333333333", 
+                };
         		
         Point[] answer = 
             new Point[]{
-                new Point(8, 6),
-                new Point(8, 15),
-                new Point(8, 24),
+                new Point(1, 40),
+               // new Point(8, 15),
+               // new Point(8, 24),
             };
         int team = 3;
         int threashold = 16;
