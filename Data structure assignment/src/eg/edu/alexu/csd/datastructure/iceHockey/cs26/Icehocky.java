@@ -72,12 +72,8 @@ public class Icehocky implements IPlayersFinder {
 			line2[i] = line[i];
 		}
 		*/
-		int c = 0 ;
-		for(int i = 0 ; line[i] != null ;i++) {
-			c++ ;
-		}
 		if (storeCounter >= 0) {
-			return Arrays.copyOfRange(line ,0 ,c ) ;
+			return Arrays.copyOfRange(line ,0 ,storeCounter ) ;
 		} else {
 			return null;
 		}
