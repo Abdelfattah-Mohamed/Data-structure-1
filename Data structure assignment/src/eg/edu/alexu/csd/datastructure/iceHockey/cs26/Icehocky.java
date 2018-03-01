@@ -128,7 +128,7 @@ public class Icehocky implements IPlayersFinder {
 	 */
 	private void recursion(final int i, final int j, final char[][] photoArray, final int team, final int threshold) {
 
-		if (photoArray[i][j] != (char) (team + 48) || i < 0 || j < 0 || i >= bouI || j >= bouJ) {
+		if (photoArray[i][j] != (char) (team + '0') || i < 0 || j < 0 || i >= bouI || j >= bouJ) {
 			return;
 		}
 		if (i > maxI) {
