@@ -71,7 +71,7 @@ public class Icehocky implements IPlayersFinder {
 			}
 		}
 
-		// Point[] line2 = new Point[storeCounter];
+		Point[] line2 = new Point[point.size()];
 		for (int i = 0; i < storeCounter; i++) {
 			point.add(new Point(line[i]));
 		}
@@ -80,7 +80,7 @@ public class Icehocky implements IPlayersFinder {
 		}
 		sortPoint(line, storeCounter);
 		if (storeCounter >= 0) {
-			return line;
+			return line2;
 		} else {
 			return null;
 		}
