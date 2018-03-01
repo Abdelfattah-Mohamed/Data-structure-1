@@ -20,8 +20,8 @@ public class MyJUnitTest {
 		String[] image = {};
 
 		Point[] answer = new Point[] {};
-		int team = 1;
-		int threashold = 3;
+		final int team = 1;
+		final int threashold = 3;
 		Assert.assertArrayEquals(answer, playersFinder.findPlayers(image, team, threashold));
 	}
 }
