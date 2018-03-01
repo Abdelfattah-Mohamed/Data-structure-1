@@ -73,7 +73,9 @@ public class Icehocky implements IPlayersFinder {
 
 		Point[] line2 = new Point[point.size()];
 		for (int i = 0; i < storeCounter; i++) {
-			point.add(new Point(line[i]));
+			if( line[i] != null ) {
+				point.add(new Point(line[i]));
+			}
 		}
 		for (int i = 0; i < point.size(); i++) {
 			line2[i] = point.elementAt(i);
