@@ -1,7 +1,6 @@
 package eg.edu.alexu.csd.datastructure.iceHockey.cs26;
 
 
-
 import java.awt.Point;
 
 import org.junit.Assert;
@@ -15,13 +14,13 @@ public class IcehochyTester {
 	@Test
 	void test() {
 		IPlayersFinder playersFinder = new Icehocky();
-        String[] image = {
+        String[] image = null ;/*{
                 "33JUBU33", 
                 "3U3O4433", 
                 "O33P44NB", 
                 "PO3NSDP3", 
                 "VNDSD333", 
-                "OINFD33X"};
+                "OINFD33X"};*/
         Point[] answer = 
             new Point[]{
                 new Point(4, 5),
