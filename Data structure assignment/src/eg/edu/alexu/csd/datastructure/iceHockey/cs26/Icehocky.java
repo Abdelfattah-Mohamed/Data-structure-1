@@ -29,14 +29,24 @@ public class Icehocky implements IPlayersFinder {
 	static int bou_j = 0;
 	static int storeCounter = 0;
 	static Point[] line = new Point[50];
-	
 
+	/*
+	 * public static void main(String[] args) {
+	 * 
+	 * for (int i = 0; i < line.length; i++) { line[i] = new Point(); }
+	 * 
+	 * findPlayers(photo, team, threashold); for (int i = 0; i < storeCounter; i++)
+	 * { System.out.println(line[i]); }
+	 * 
+	 * }
+	 */
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
+		if (photo == null) {
+			return null;
+		}
 		char[][] photoArray = new char[50][50];
-		
 		storePhoteIn2DimintionArray(photo, photoArray, team);
-		
 		for (int i = 0; i < (photo.length); i++) {
 			for (int j = 0; j < (photo[i].length()); j++) {
 				if (photoArray[i][j] == (char) (team + 48)) {
@@ -46,31 +56,32 @@ public class Icehocky implements IPlayersFinder {
 					minI = i;
 					minJ = j;
 					recursion(i, j, photoArray, team, threshold);
-					if(center_x > 0 || center_y > 0) {
-						line[storeCounter].y = center_x;
-						line[storeCounter].x = center_y;
-						storeCounter++;
+					if (center_x > 0 || center_y > 0) {
+						if ((counter * 4) >= threshold) {
+							line[storeCounter].y = center_x;
+							line[storeCounter].x = center_y;
+							storeCounter++;
+						}
 					}
 				}
 				counter = 0;
 			}
 		}
-
 		sortPoint(line, storeCounter);
 		if (storeCounter != 0) {
 			return line;
 		}
-		
+
 		return null;
 	}
 
 	private static void storePhoteIn2DimintionArray(String[] photo, char[][] photoArray, int team) {
 		int i = 0, j = 0;
-		for (i = 0; i < (photo.length)  ; i++) {
-			for (j = 0; j < (photo[i].length() ) ; j++) {
+		for (i = 0; i < (photo.length); i++) {
+			for (j = 0; j < (photo[i].length()); j++) {
 				if (photo[i].charAt(j) == (char) (team + 48)) {
 					photoArray[i][j] = (char) (team + 48);
-				}else {
+				} else {
 					photoArray[i][j] = '0';
 				}
 			}
@@ -81,8 +92,8 @@ public class Icehocky implements IPlayersFinder {
 	}
 
 	private static void recursion(int i, int j, char[][] photoArray, int team, int threshold) {
-		
-		if (photoArray[i][j] != (char) (team + 48 ) || i < 0 || j < 0 || i >= bou_i || j >= bou_j) {
+
+		if (photoArray[i][j] != (char) (team + 48) || i < 0 || j < 0 || i >= bou_i || j >= bou_j) {
 			return;
 		}
 		if (i > maxI) {
@@ -99,19 +110,19 @@ public class Icehocky implements IPlayersFinder {
 		}
 		counter++;
 		photoArray[i][j] = 'a';
-		if ( j+1 < bou_j ) {
+		if (j < bou_j) {
 			recursion(i, j + 1, photoArray, team, threshold);
 		}
-		if ( i+1 < bou_i ) {
+		if (i < bou_i) {
 			recursion(i + 1, j, photoArray, team, threshold);
 		}
-		if ( j > 0 ) {
+		if (j > 0) {
 			recursion(i, j - 1, photoArray, team, threshold);
 		}
-		if ( i > 0 ) {
+		if (i > 0) {
 			recursion(i - 1, j, photoArray, team, threshold);
 		}
-		if ( ( counter * 4 ) >= threshold) {
+		if ((counter * 4) >= threshold) {
 			center_x = (minI + maxI + 1);
 			center_y = (minJ + maxJ + 1);
 		}
