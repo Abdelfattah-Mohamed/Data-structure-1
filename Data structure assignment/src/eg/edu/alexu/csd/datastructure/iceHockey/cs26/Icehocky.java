@@ -57,7 +57,7 @@ public class Icehocky implements IPlayersFinder {
 	 */
 	static Vector<Point> point = new Vector<Point>();
 
-	public Point[] findPlayers(final String[] photo, int team, int threshold) {
+	public Point[] findPlayers(final String[] photo, final int team, final int threshold) {
 		// TODO Auto-generated method stub
 		if (photo == null) {
 			return null;
@@ -106,7 +106,7 @@ public class Icehocky implements IPlayersFinder {
 	 * @param photoArray
 	 * @param team
 	 */
-	private void storePhoteIn2DimintionArray(String[] photo, char[][] photoArray, int team) {
+	private void storePhoteIn2DimintionArray(final String[] photo, final char[][] photoArray, final int team) {
 		int i = 0, j = 0;
 		for (i = 0; i < (photo.length); i++) {
 			for (j = 0; j < (photo[i].length()); j++) {
@@ -129,7 +129,7 @@ public class Icehocky implements IPlayersFinder {
 	 * @param team
 	 * @param threshold
 	 */
-	private void recursion(int i, int j, char[][] photoArray, int team, int threshold) {
+	private void recursion(final int i, final int j, final char[][] photoArray, final int team, final int threshold) {
 
 		if (photoArray[i][j] != (char) (team + 48) || i < 0 || j < 0 || i >= bouI || j >= bouJ) {
 			return;
@@ -171,7 +171,7 @@ public class Icehocky implements IPlayersFinder {
 	 * @param line
 	 * @param storeCounter
 	 */
-	private void sortPoint(Point[] line, int storeCounter) {
+	private void sortPoint(final Point[] line, final int storeCounter) {
 		// TODO Auto-generated method stub
 		Point temp;
 		for (int i = 0; i < storeCounter - 1; i++) {
