@@ -28,7 +28,7 @@ public class Icehocky implements IPlayersFinder {
 	static int bou_i = 0;
 	static int bou_j = 0;
 	static int storeCounter = 0;
-	static Point[] line = new Point[100];
+	static Point[] line = new Point[75];
 
 	/*
 	 * public static void main(String[] args) {
