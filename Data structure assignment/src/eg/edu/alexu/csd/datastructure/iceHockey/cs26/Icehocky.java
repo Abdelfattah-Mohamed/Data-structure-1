@@ -61,8 +61,7 @@ public class Icehocky implements IPlayersFinder {
 					recursion(i, j, photoArray, team, threshold);
 					if (center_x > 0 || center_y > 0) {
 						if ((counter * 4) >= threshold) {
-							line[storeCounter].x = center_x;
-							line[storeCounter].y = center_y;
+							point.add( new Point (center_x,center_y) ) ;
 							storeCounter++;
 						}
 					}
@@ -71,12 +70,13 @@ public class Icehocky implements IPlayersFinder {
 			}
 		}
 
-		Point[] line2 = new Point[((CharSequence) point).length()];
+		Point[] line2 = new Point[point.size()];
+		/*
 		for (int i = 0; i < storeCounter; i++) {
 			if( line[i] != null ) {
 				point.add(new Point(line[i]));
 			}
-		}
+		}*/
 		for (int i = 0; i < point.size(); i++) {
 			line2[i] = point.elementAt(i);
 		}
