@@ -6,9 +6,7 @@ import java.util.Vector;
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
 /**
- * 
  * @author Abd El Fattah
- *
  */
 public class Icehocky implements IPlayersFinder {
 
@@ -66,7 +64,8 @@ public class Icehocky implements IPlayersFinder {
 		if ((photo.length) <= 0) {
 			throw new IllegalArgumentException("Empty");
 		}
-		final char[][] photoArray = new char[101][101];
+		final int x = 101 ;
+		char[][] photoArray = new char[x][x];
 		storePhoteIn2DimintionArray(photo, photoArray, team);
 		for (int i = 0; i < (photo.length); i++) {
 			for (int j = 0; j < (photo[i].length()); j++) {
