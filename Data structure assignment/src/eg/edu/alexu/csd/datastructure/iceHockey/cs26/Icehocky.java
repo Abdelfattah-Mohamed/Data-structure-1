@@ -1,14 +1,15 @@
 package eg.edu.alexu.csd.datastructure.iceHockey.cs26;
 
-/**
- * @author Abdelftah
- */
-
 import java.awt.Point;
 import java.util.Vector;
 
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
+/**
+ * 
+ * @author Abd El Fattah
+ *
+ */
 public class Icehocky implements IPlayersFinder {
 
 	/**
@@ -34,19 +35,19 @@ public class Icehocky implements IPlayersFinder {
 	/**
 	 * TO KNOW CENTER OF BOUNDRY x.
 	 */
-	static int center_x = 0;
+	static int centerX = 0;
 	/**
 	 * TO KNOW CENTER OF BOUNDRY y.
 	 */
-	static int center_y = 0;
+	static int centerY = 0;
 	/**
 	 * To BOUNDRY.
 	 */
-	static int bou_i = 0;
+	static int bouI = 0;
 	/**
 	 * TO BOUNDRY.
 	 */
-	static int bou_j = 0;
+	static int bouJ = 0;
 	/**
 	 * to store points.
 	 */
@@ -56,7 +57,7 @@ public class Icehocky implements IPlayersFinder {
 	 */
 	static Vector<Point> point = new Vector<Point>();
 
-	public Point[] findPlayers(String[] photo, int team, int threshold) {
+	public Point[] findPlayers(final String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
 		if (photo == null) {
 			return null;
@@ -76,9 +77,9 @@ public class Icehocky implements IPlayersFinder {
 					minI = i;
 					minJ = j;
 					recursion(i, j, photoArray, team, threshold);
-					if (center_x >= 0 || center_y >= 0) {
+					if (centerX >= 0 || centerY >= 0) {
 						if ((counter * 4) >= threshold) {
-							point.add(new Point(center_x, center_y));
+							point.add(new Point(centerX, centerY));
 						}
 					}
 				}
@@ -116,8 +117,8 @@ public class Icehocky implements IPlayersFinder {
 				}
 			}
 		}
-		bou_i = i;
-		bou_j = j;
+		bouI = i;
+		bouJ = j;
 	}
 
 	/**
@@ -130,7 +131,7 @@ public class Icehocky implements IPlayersFinder {
 	 */
 	private void recursion(int i, int j, char[][] photoArray, int team, int threshold) {
 
-		if (photoArray[i][j] != (char) (team + 48) || i < 0 || j < 0 || i >= bou_i || j >= bou_j) {
+		if (photoArray[i][j] != (char) (team + 48) || i < 0 || j < 0 || i >= bouI || j >= bouJ) {
 			return;
 		}
 		if (i > maxI) {
@@ -147,10 +148,10 @@ public class Icehocky implements IPlayersFinder {
 		}
 		counter++;
 		photoArray[i][j] = 'a';
-		if (j < bou_j) {
+		if (j < bouJ) {
 			recursion(i, j + 1, photoArray, team, threshold);
 		}
-		if (i < bou_i) {
+		if (i < bouI) {
 			recursion(i + 1, j, photoArray, team, threshold);
 		}
 		if (j > 0) {
@@ -160,8 +161,8 @@ public class Icehocky implements IPlayersFinder {
 			recursion(i - 1, j, photoArray, team, threshold);
 		}
 		if ((counter * 4) >= threshold) {
-			center_x = (minJ + maxJ + 1);
-			center_y = (minI + maxI + 1);
+			centerX = (minJ + maxJ + 1);
+			centerY = (minI + maxI + 1);
 		}
 	}
 

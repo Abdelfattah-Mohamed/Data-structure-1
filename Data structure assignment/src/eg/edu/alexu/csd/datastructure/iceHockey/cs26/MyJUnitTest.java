@@ -1,8 +1,5 @@
 package eg.edu.alexu.csd.datastructure.iceHockey.cs26;
 
-/**
- * @author Abdelftah
- */
 
 import java.awt.Point;
 
@@ -11,7 +8,11 @@ import org.junit.Test;
 
 
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
-
+/**
+ * 
+ * @author Abd El Fattah
+ *
+ */
 public class MyJUnitTest {
 
     @Test
