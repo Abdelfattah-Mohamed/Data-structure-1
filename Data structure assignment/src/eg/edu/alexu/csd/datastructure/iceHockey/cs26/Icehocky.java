@@ -66,11 +66,11 @@ public class Icehocky implements IPlayersFinder {
 		if ((photo.length) <= 0) {
 			throw new IllegalArgumentException("Empty");
 		}
-		char[][] photoArray = new char[101][101];
+		final char[][] photoArray = new char[101][101];
 		storePhoteIn2DimintionArray(photo, photoArray, team);
 		for (int i = 0; i < (photo.length); i++) {
 			for (int j = 0; j < (photo[i].length()); j++) {
-				if (photoArray[i][j] == (char) (team + 48)) {
+				if (photoArray[i][j] == (char) (team + '0')) {
 					counter = 0;
 					maxI = i;
 					maxJ = j;
