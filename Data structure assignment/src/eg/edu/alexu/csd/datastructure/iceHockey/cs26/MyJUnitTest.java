@@ -8,9 +8,7 @@ import org.junit.Test;
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
 /**
- * 
  * @author Abd El Fattah
- *
  */
 public class MyJUnitTest {
 
@@ -18,10 +16,10 @@ public class MyJUnitTest {
 	public void iceHockeyTest() {
 		IPlayersFinder playersFinder = new Icehocky();
 		String[] image = {};
-
 		Point[] answer = new Point[] {};
 		final int team = 1;
 		final int threashold = 3;
-		Assert.assertArrayEquals(answer, playersFinder.findPlayers(image, team, threashold));
+		Assert.assertArrayEquals(answer, 
+				playersFinder.findPlayers(image, team, threashold));
 	}
 }
