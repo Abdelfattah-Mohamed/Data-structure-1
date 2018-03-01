@@ -30,24 +30,14 @@ public class Icehocky implements IPlayersFinder {
 	static int storeCounter = 0;
 	static Point[] line ;
 
-	/*
-	 * public static void main(String[] args) {
-	 * 
-	 * for (int i = 0; i < line.length; i++) { line[i] = new Point(); }
-	 * 
-	 * findPlayers(photo, team, threashold); for (int i = 0; i < storeCounter; i++)
-	 * { System.out.println(line[i]); }
-	 * 
-	 * }
-	 */
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
 		if (photo == null) {
 			return null;
 		}
-		for (int i = 0; i < line.length; i++) {
+		/*for (int i = 0; i < line.length; i++) {
 			line[i] = new Point() ;
-		}
+		}*/
 		char[][] photoArray = new char[100][100];
 		storePhoteIn2DimintionArray(photo, photoArray, team);
 		for (int i = 0; i < (photo.length); i++) {
