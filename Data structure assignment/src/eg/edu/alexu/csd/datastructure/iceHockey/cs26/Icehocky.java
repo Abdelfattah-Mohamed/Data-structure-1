@@ -99,8 +99,7 @@ public class Icehocky implements IPlayersFinder {
 		}
 	}
 
-	/**
-	 * 
+	/** 
 	 * @param photo
 	 * @param photoArray
 	 * @param team
@@ -120,8 +119,7 @@ public class Icehocky implements IPlayersFinder {
 		bouJ = j;
 	}
 
-	/**
-	 * 
+	/** 
 	 * @param i
 	 * @param j
 	 * @param photoArray
@@ -165,8 +163,7 @@ public class Icehocky implements IPlayersFinder {
 		}
 	}
 
-	/**
-	 * 
+	/** 
 	 * @param line
 	 * @param storeCounter
 	 */
