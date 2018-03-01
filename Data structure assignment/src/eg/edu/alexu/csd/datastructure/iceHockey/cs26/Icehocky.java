@@ -74,6 +74,7 @@ public class Icehocky implements IPlayersFinder {
 		for (int i = 0; i < point.size(); i++) {
 			line2[i] = point.elementAt(i);
 		}
+		
 		sortPoint(line, storeCounter);
 		if (storeCounter >= 0) {
 			return line2;
