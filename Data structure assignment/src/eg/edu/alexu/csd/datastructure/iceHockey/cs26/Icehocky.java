@@ -135,7 +135,7 @@ public class Icehocky implements IPlayersFinder {
 		}
 	}
 
-	private void sortPoint(Point[] line, int storeCounter) {
+	private void sortPoint(Point[] line , int storeCounter) {
 		// TODO Auto-generated method stub
 		Point temp;
 		for (int i = 0; i < storeCounter - 1; i++) {
