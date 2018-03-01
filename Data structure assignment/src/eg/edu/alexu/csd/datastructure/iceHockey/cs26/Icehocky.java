@@ -36,6 +36,11 @@ public class Icehocky implements IPlayersFinder {
 		if (photo == null) {
 			return null;
 		}
+		
+		if( ( photo.length ) == 0 ){
+			throw new IllegalArgumentException ( "EMPTY" );
+		}
+		
 		for (int i = 0; i < line.length; i++) {
 			line[i] = new Point();
 		}
