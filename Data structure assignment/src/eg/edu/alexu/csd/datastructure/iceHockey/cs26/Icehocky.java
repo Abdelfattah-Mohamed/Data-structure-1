@@ -109,7 +109,7 @@ public class Icehocky implements IPlayersFinder {
 		int i = 0, j = 0;
 		for (i = 0; i < (photo.length); i++) {
 			for (j = 0; j < (photo[i].length()); j++) {
-				if (photo[i].charAt(j) == (char) (team + 48)) {
+				if (photo[i].charAt(j) == (char) (team + '0')) {
 					photoArray[i][j] = (char) (team + 48);
 				} else {
 					photoArray[i][j] = 'b';
@@ -151,7 +151,7 @@ public class Icehocky implements IPlayersFinder {
 			recursion(i, j + 1, photoArray, team, threshold);
 		}
 		if (i < bouI) {
-			recursion(i + 1, j, photoArray, team, threshold);
+			recursion(i + 1 , j, photoArray, team, threshold);
 		}
 		if (j > 0) {
 			recursion(i, j - 1, photoArray, team, threshold);
