@@ -46,7 +46,8 @@ public class Icehocky implements IPlayersFinder {
 			return null;
 		}
 		for (int i = 0; i < line.length; i++) {
-			line[i] = new Point();
+			line[i] = new Point() ;
+			line[i] = null ;
 		}
 		char[][] photoArray = new char[100][100];
 		storePhoteIn2DimintionArray(photo, photoArray, team);
