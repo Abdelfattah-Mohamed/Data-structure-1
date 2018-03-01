@@ -33,7 +33,7 @@ public class Icehocky implements IPlayersFinder {
 	static int bou_i = 0;
 	static int bou_j = 0;
 	static int storeCounter = 0;
-	static Point[] line = new Point[2500];
+	static Point[] line;
 	static Vector<Point> point = new Vector<Point>();
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
@@ -44,9 +44,6 @@ public class Icehocky implements IPlayersFinder {
 
 		if ((photo.length) <= 0) {
 			throw new IllegalArgumentException("Empty");
-		}
-		for (int i = 0; i < line.length; i++) {
-			line[i] = new Point();
 		}
 		char[][] photoArray = new char[101][101];
 		storePhoteIn2DimintionArray(photo, photoArray, team);
@@ -70,13 +67,13 @@ public class Icehocky implements IPlayersFinder {
 			}
 		}
 
-		Point[] line2 = new Point[point.size()];
+		line = new Point[point.size()];
 		for (int i = 0; i < point.size(); i++) {
-			line2[i] = point.elementAt(i);
+			line[i] = point.elementAt(i);
 		}
 		sortPoint(line, storeCounter);
 		if (storeCounter >= 0) {
-			return line2;
+			return line;
 		} else {
 			return null;
 		}
