@@ -5,10 +5,7 @@ package eg.edu.alexu.csd.datastructure.iceHockey.cs26;
  */
 
 import java.awt.Point;
-import java.util.Arrays;
 import java.util.Vector;
-
-import org.junit.platform.engine.TestDescriptor.Visitor;
 
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
