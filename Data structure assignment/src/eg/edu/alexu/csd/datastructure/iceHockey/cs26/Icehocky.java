@@ -61,7 +61,7 @@ public class Icehocky implements IPlayersFinder {
 					recursion(i, j, photoArray, team, threshold);
 					if (center_x > 0 || center_y > 0) {
 						if ((counter * 4) >= threshold) {
-							point.add(new Point(center_y, center_x));
+							point.add(new Point(center_x, center_y));
 							storeCounter++;
 						}
 					}
