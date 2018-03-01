@@ -19,14 +19,20 @@ public class MyJUnitTest {
 		 */
 		IPlayersFinder playersFinder = new Icehocky();
 		/**
-		 * image
+		 * image.
 		 */
 		String[] image = {};
 		/**
-		 * result
+		 * result.
 		 */
 		Point[] answer = new Point[] {};
+		/**
+		 * number of team.
+		 */
 		final int team = 1;
+		/**
+		 * area of player.
+		 */
 		final int threashold = 3;
 		Assert.assertArrayEquals(answer,
 				playersFinder.findPlayers(image,
