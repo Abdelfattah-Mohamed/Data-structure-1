@@ -36,11 +36,11 @@ public class Icehocky implements IPlayersFinder {
 		if (photo == null) {
 			return null;
 		}
-		
-		if( ( photo.length ) == 0 ){
-			throw new IllegalArgumentException ( "EMPTY" );
+
+		if ((photo.length) == 0) {
+			throw new IllegalArgumentException("EMPTY");
 		}
-		
+
 		for (int i = 0; i < line.length; i++) {
 			line[i] = new Point();
 		}
@@ -78,7 +78,7 @@ public class Icehocky implements IPlayersFinder {
 		}
 	}
 
-	private  void storePhoteIn2DimintionArray(String[] photo, char[][] photoArray, int team) {
+	private void storePhoteIn2DimintionArray(String[] photo, char[][] photoArray, int team) {
 		int i = 0, j = 0;
 		for (i = 0; i < (photo.length); i++) {
 			for (j = 0; j < (photo[i].length()); j++) {
@@ -93,7 +93,7 @@ public class Icehocky implements IPlayersFinder {
 		bou_j = j;
 	}
 
-	private  void recursion(int i, int j, char[][] photoArray, int team, int threshold) {
+	private void recursion(int i, int j, char[][] photoArray, int team, int threshold) {
 
 		if (photoArray[i][j] != (char) (team + 48) || i < 0 || j < 0 || i >= bou_i || j >= bou_j) {
 			return;
@@ -130,7 +130,7 @@ public class Icehocky implements IPlayersFinder {
 		}
 	}
 
-	private  void sortPoint(Point[] line, int storeCounter) {
+	private void sortPoint(Point[] line, int storeCounter) {
 		// TODO Auto-generated method stub
 		Point temp;
 		for (int i = 0; i < storeCounter - 1; i++) {
