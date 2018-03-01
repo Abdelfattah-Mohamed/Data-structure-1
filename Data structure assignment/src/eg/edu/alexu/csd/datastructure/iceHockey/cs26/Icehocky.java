@@ -37,8 +37,8 @@ public class Icehocky implements IPlayersFinder {
 			return null;
 		}
 
-		if ((photo.length) == 0) {
-			throw new IllegalArgumentException("EMPTY");
+		if ((photo.length) <= 0) {
+			throw new IllegalArgumentException("Empty");
 		}
 		for (int i = 0; i < line.length; i++) {
 			line[i] = new Point();
@@ -70,8 +70,8 @@ public class Icehocky implements IPlayersFinder {
 		for (int i = 0; i < storeCounter; i++) {
 			line2[i] = line[i];
 		}
-		if (storeCounter != 0) {
-			return line ;
+		if (storeCounter >= 0) {
+			return Arrays.copyOfRange(line ,0 ,storeCounter ) ;
 		} else {
 			return null;
 		}
