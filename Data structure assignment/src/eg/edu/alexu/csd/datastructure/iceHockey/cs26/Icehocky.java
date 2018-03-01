@@ -30,7 +30,6 @@ public class Icehocky implements IPlayersFinder {
 	static int bou_j = 0;
 	static int storeCounter = 0;
 	static Point[] line;
-	Point[] line2;
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
@@ -62,6 +61,7 @@ public class Icehocky implements IPlayersFinder {
 				counter = 0;
 			}
 		}
+		Point[] line2 = new Point[storeCounter];
 		sortPoint(line, storeCounter);
 		for (int i = 0; i < storeCounter; i++) {
 			line2[i] = new Point();
