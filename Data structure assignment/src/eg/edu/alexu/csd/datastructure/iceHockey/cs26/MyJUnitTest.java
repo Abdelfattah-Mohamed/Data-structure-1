@@ -1,13 +1,12 @@
 package eg.edu.alexu.csd.datastructure.iceHockey.cs26;
 
-
 import java.awt.Point;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
+
 /**
  * 
  * @author Abd El Fattah
@@ -15,22 +14,14 @@ import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
  */
 public class MyJUnitTest {
 
-    @Test
-    public void iceHockeyTest() {
-        IPlayersFinder playersFinder = new Icehocky ();
-        String[] image = {
-        		
-        		};
-        		
-        Point[] answer = 
-            new Point[]{
-            		new Point(5, 5),
-            		new Point(5, 5),
-                
-           
-            };
-        int team = 1;
-        int threashold = 3;
-        Assert.assertArrayEquals(answer, playersFinder.findPlayers(image, team, threashold));
-    }
+	@Test
+	public void iceHockeyTest() {
+		IPlayersFinder playersFinder = new Icehocky();
+		String[] image = {};
+
+		Point[] answer = new Point[] {};
+		int team = 1;
+		int threashold = 3;
+		Assert.assertArrayEquals(answer, playersFinder.findPlayers(image, team, threashold));
+	}
 }
