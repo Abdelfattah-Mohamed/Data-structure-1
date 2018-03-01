@@ -1,5 +1,9 @@
 package eg.edu.alexu.csd.datastructure.iceHockey.cs26;
 
+/**
+ * @author Abdelftah
+ */
+
 import java.awt.Point;
 import java.util.Arrays;
 
