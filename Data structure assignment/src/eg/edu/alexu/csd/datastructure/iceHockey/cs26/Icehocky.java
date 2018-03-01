@@ -1,6 +1,5 @@
 package eg.edu.alexu.csd.datastructure.iceHockey.cs26;
 
-import java.awt.Paint;
 import java.awt.Point;
 
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
@@ -24,12 +23,12 @@ public class Icehocky implements IPlayersFinder {
 	/**
 	 * TO KNOW CENTER OF BOUNDRY.
 	 */
-	static int center_x = 0;
-	static int center_y = 0;
-	static int bou_i = 0;
-	static int bou_j = 0;
-	static int storeCounter = 0;
-	static Point[] line;
+	int center_x = 0;
+	int center_y = 0;
+	int bou_i = 0;
+	int bou_j = 0;
+	int storeCounter = 0;
+	Point[] line;
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
