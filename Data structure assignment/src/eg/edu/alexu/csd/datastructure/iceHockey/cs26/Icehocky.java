@@ -16,24 +16,44 @@ public class Icehocky implements IPlayersFinder {
 	 */
 	static int counter = 0;
 	/**
-	 * TO KNOW MAX BOUNDRY.
+	 * TO KNOW MAX BOUNDRY of y.
 	 */
 	static int maxI = 0;
+	/**
+	 * TO KNOW MAX BOUNDRY of x.
+	 */
 	static int maxJ = 0;
 	/**
 	 * TO KNOW MIN BOUNDRY.
 	 */
 	static int minI = 0;
+	/**
+	 * TO KNOW MIN BOUNDRY of y.
+	 */
 	static int minJ = 0;
 	/**
-	 * TO KNOW CENTER OF BOUNDRY.
+	 * TO KNOW CENTER OF BOUNDRY x.
 	 */
 	static int center_x = 0;
+	/**
+	 * TO KNOW CENTER OF BOUNDRY y.
+	 */
 	static int center_y = 0;
+	/**
+	 * To BOUNDRY.
+	 */
 	static int bou_i = 0;
+	/**
+	 * TO BOUNDRY.
+	 */
 	static int bou_j = 0;
-	static int storeCounter = 0;
+	/**
+	 * to store points.
+	 */
 	static Point[] line;
+	/**
+	 * to know size no. of point.
+	 */
 	static Vector<Point> point = new Vector<Point>();
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
@@ -72,13 +92,19 @@ public class Icehocky implements IPlayersFinder {
 		}
 		sortPoint(line, point.size());
 		point.removeAllElements();
-		if (storeCounter >= 0) {
+		if (point.size() >= 0) {
 			return line;
 		} else {
 			return null;
 		}
 	}
 
+	/**
+	 * 
+	 * @param photo
+	 * @param photoArray
+	 * @param team
+	 */
 	private void storePhoteIn2DimintionArray(String[] photo, char[][] photoArray, int team) {
 		int i = 0, j = 0;
 		for (i = 0; i < (photo.length); i++) {
@@ -94,6 +120,14 @@ public class Icehocky implements IPlayersFinder {
 		bou_j = j;
 	}
 
+	/**
+	 * 
+	 * @param i
+	 * @param j
+	 * @param photoArray
+	 * @param team
+	 * @param threshold
+	 */
 	private void recursion(int i, int j, char[][] photoArray, int team, int threshold) {
 
 		if (photoArray[i][j] != (char) (team + 48) || i < 0 || j < 0 || i >= bou_i || j >= bou_j) {
@@ -131,6 +165,11 @@ public class Icehocky implements IPlayersFinder {
 		}
 	}
 
+	/**
+	 * 
+	 * @param line
+	 * @param storeCounter
+	 */
 	private void sortPoint(Point[] line, int storeCounter) {
 		// TODO Auto-generated method stub
 		Point temp;
