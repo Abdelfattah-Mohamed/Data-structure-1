@@ -1,5 +1,6 @@
 package eg.edu.alexu.csd.datastructure.iceHockey.cs26;
 
+import java.awt.Paint;
 import java.awt.Point;
 
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
@@ -28,7 +29,7 @@ public class Icehocky implements IPlayersFinder {
 	static int bou_i = 0;
 	static int bou_j = 0;
 	static int storeCounter = 0;
-	static Point[] line ;
+	static Point[] line = new Point [75];
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
