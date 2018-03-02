@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
-/** 
+/**
  * @author Abd El Fattah 
  */
 public class MyJUnitTest {
