@@ -65,10 +65,10 @@ public class Icehocky implements IPlayersFinder {
 		if ((photo.length) <= 0) {
 			throw new IllegalArgumentException("Empty");
 		}
-		final int x = 101 ;
-		char[][] photoArray = new char[x][x] ;
-		storePhoteIn2DimintionArray(photo, photoArray, team) ;
-		final int cell = 4 ;
+		final int x = 101;
+		char[][] photoArray = new char[x][x];
+		storePhoteIn2DimintionArray(photo, photoArray, team);
+		final int cell = 4;
 		for (int i = 0; i < (photo.length); i++) {
 			for (int j = 0; j < (photo[i].length()); j++) {
 				if (photoArray[i][j] == (char) (team + '0')) {
@@ -133,7 +133,7 @@ public class Icehocky implements IPlayersFinder {
 	private void recursion(final int i, final int j,
 			final char[][] photoArray, final int team,
 			final int threshold) {
-		final int cell = 4 ;
+		final int cell = 4;
 		if (photoArray[i][j] != (char) (team + '0') || i < 0 || j < 0 || i >= bouI || j >= bouJ) {
 			return;
 		}
