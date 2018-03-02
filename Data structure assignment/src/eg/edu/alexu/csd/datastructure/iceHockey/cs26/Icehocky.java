@@ -116,10 +116,13 @@ public class Icehocky implements IPlayersFinder {
 	}
 
 	/**
-	 * @param photo
-	 * @param photoArray
-	 * @param team
-	 */
+	  * @param photo
+	  				contain pixel of image.
+	  * @param photoArray
+	  				image in char array.
+	  * @param 	team
+	  				number of team.
+	  */
 	private void storePhoteIn2DimintionArray(final String[] photo,
 			final char[][] photoArray, final int team) {
 		int i = 0, j = 0;
