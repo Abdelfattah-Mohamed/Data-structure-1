@@ -3,6 +3,8 @@ package eg.edu.alexu.csd.datastructure.iceHockey.cs26;
 import java.awt.Point;
 
 import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
 /**
@@ -12,6 +14,7 @@ public class MyJUnitTest {
 /**
  * @Test
  */
+	@Test
 	public void iceHockeyTest() {
 		IPlayersFinder playersFinder = new Icehocky();
 		String[] image = {};
