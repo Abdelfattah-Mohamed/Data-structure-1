@@ -178,23 +178,23 @@ public class Icehocky implements IPlayersFinder {
 	 * @param line
 	 * @param storeCounter
 	 */
-	private void sortPoint(final Point[] line,
+	private void sortPoint(final Point[] text,
 			final int storeCounter) {
 		// TODO Auto-generated method stub
 		Point temp;
 		for (int i = 0; i < storeCounter - 1; i++) {
 			for (int j = i + 1; j < storeCounter; j++) {
-				if (line[i].x > line[j].x) {
+				if (text[i].x > text[j].x) {
 					// swap.
-					temp = line[i];
-					line[i] = line[j];
-					line[j] = temp;
-				} else if (line[i].x == line[j].x) {
-					if (line[i].y > line[j].y) {
+					temp = text[i];
+					text[i] = text[j];
+					text[j] = temp;
+				} else if (text[i].x == text[j].x) {
+					if (text[i].y > text[j].y) {
 						// swap
 						temp = line[i];
-						line[i] = line[j];
-						line[j] = temp;
+						text[i] = text[j];
+						text[j] = temp;
 					}
 				}
 			}
