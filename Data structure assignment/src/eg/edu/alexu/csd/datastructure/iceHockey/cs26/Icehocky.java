@@ -195,7 +195,9 @@ public class Icehocky implements IPlayersFinder {
 
 	/**
 	 * @param text
+	 			point array.
 	 * @param storeCounter
+	 			max no. of points in array.
 	 */
 	private void sortPoint(final Point[] text,
 			final int storeCounter) {
