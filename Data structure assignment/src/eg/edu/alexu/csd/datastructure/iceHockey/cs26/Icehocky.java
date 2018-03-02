@@ -82,8 +82,8 @@ public class Icehocky implements IPlayersFinder {
 					if (centerX >= 0 || centerY >= 0) {
 						if ((counter * cell)
 								>= threshold) {
-							point.add(new Point
-									(centerX, centerY));
+							point.add(new Point(
+									centerX, centerY));
 						}
 					}
 				}
@@ -137,7 +137,7 @@ public class Icehocky implements IPlayersFinder {
 			final int threshold) {
 		final int cell = 4;
 		if (photoArray[i][j] != (char) (team + '0')
-				|| i < 0 || j < 0 || i >= bouI 
+				|| i < 0 || j < 0 || i >= bouI
 				|| j >= bouJ) {
 			return;
 		}
