@@ -83,7 +83,7 @@ public class Icehocky implements IPlayersFinder {
 						if ((counter * cell)
 								>= threshold) {
 							point.add(new Point(
-									centerX, centerY));
+							centerX, centerY));
 						}
 					}
 				}
