@@ -55,7 +55,7 @@ public class Icehocky implements IPlayersFinder {
 	 */
 	static Vector<Point> point = new Vector<Point>();
 	/**
-	 * 
+	 * @exception
 	 */
 	public Point[] findPlayers(final String[] photo,
 			final int team, final int threshold) {
