@@ -133,7 +133,7 @@ public class Icehocky implements IPlayersFinder {
 	private void recursion(final int i, final int j,
 			final char[][] photoArray, final int team,
 			final int threshold) {
-
+		final int cell = 4 ;
 		if (photoArray[i][j] != (char) (team + '0') || i < 0 || j < 0 || i >= bouI || j >= bouJ) {
 			return;
 		}
@@ -163,8 +163,7 @@ public class Icehocky implements IPlayersFinder {
 		if (i > 0) {
 			recursion(i - 1, j, photoArray, team, threshold);
 		}
-		if ((counter + counter + counter + counter)
-				>= threshold) {
+		if ((counter * cell) >= threshold) {
 			centerX = (minJ + maxJ + 1);
 			centerY = (minI + maxI + 1);
 		}
