@@ -56,7 +56,8 @@ public class Icehocky implements IPlayersFinder {
 	static Vector<Point> point = new Vector<Point>();
 	/**
 	  * @return Returns array of points.
-	  * @param photo contain pixel of image.
+	  * @param photo 
+	  				contain pixel of image.
 	  * @param team.
 	  * @throws Exception.
 	  * @throws MyException.
