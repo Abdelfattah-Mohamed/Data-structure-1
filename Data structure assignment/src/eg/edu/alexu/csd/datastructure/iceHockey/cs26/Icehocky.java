@@ -76,9 +76,11 @@ public class Icehocky implements IPlayersFinder {
 					maxJ = j;
 					minI = i;
 					minJ = j;
-					recursion(i, j, photoArray, team, threshold);
+					recursion(i, j, photoArray,
+							team, threshold);
 					if (centerX >= 0 || centerY >= 0) {
-						if ((counter + counter + counter + counter) >= threshold) {
+						if ((counter + counter + counter + counter)
+								>= threshold) {
 							point.add(new Point(centerX, centerY));
 						}
 					}
@@ -105,7 +107,8 @@ public class Icehocky implements IPlayersFinder {
 	 * @param photoArray
 	 * @param team
 	 */
-	private void storePhoteIn2DimintionArray(final String[] photo, final char[][] photoArray, final int team) {
+	private void storePhoteIn2DimintionArray(final String[] photo,
+			final char[][] photoArray, final int team) {
 		int i = 0, j = 0;
 		for (i = 0; i < (photo.length); i++) {
 			for (j = 0; j < (photo[i].length()); j++) {
@@ -127,9 +130,12 @@ public class Icehocky implements IPlayersFinder {
 	 * @param team
 	 * @param threshold
 	 */
-	private void recursion(final int i, final int j, final char[][] photoArray, final int team, final int threshold) {
+	private void recursion(final int i, final int j,
+			final char[][] photoArray, final int team,
+			final int threshold) {
 
-		if (photoArray[i][j] != (char) (team + '0') || i < 0 || j < 0 || i >= bouI || j >= bouJ) {
+		if (photoArray[i][j] != (char) (team + '0') || i 
+				< 0 || j < 0 || i >= bouI || j >= bouJ) {
 			return;
 		}
 		if (i > maxI) {
@@ -158,7 +164,8 @@ public class Icehocky implements IPlayersFinder {
 		if (i > 0) {
 			recursion(i - 1, j, photoArray, team, threshold);
 		}
-		if ((counter + counter + counter + counter) >= threshold) {
+		if ((counter + counter + counter + counter)
+				>= threshold) {
 			centerX = (minJ + maxJ + 1);
 			centerY = (minI + maxI + 1);
 		}
@@ -168,7 +175,8 @@ public class Icehocky implements IPlayersFinder {
 	 * @param line
 	 * @param storeCounter
 	 */
-	private void sortPoint(final Point[] line , final int storeCounter) {
+	private void sortPoint(final Point[] line ,
+			final int storeCounter) {
 		// TODO Auto-generated method stub
 		Point temp;
 		for (int i = 0; i < storeCounter - 1; i++) {
