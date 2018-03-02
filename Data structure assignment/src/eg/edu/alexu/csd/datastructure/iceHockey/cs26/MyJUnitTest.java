@@ -3,7 +3,6 @@ package eg.edu.alexu.csd.datastructure.iceHockey.cs26;
 import java.awt.Point;
 
 import org.junit.Assert;
-import org.junit.Test;
 
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
