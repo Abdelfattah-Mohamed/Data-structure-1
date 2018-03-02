@@ -58,6 +58,7 @@ public class Icehocky implements IPlayersFinder {
 	 * @photo
 	 * @team
 	 * @threshold
+	 * @return
 	 */
 	public Point[] findPlayers(final String[] photo,
 			final int team, final int threshold) {
