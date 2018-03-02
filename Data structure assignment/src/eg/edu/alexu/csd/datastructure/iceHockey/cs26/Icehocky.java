@@ -60,6 +60,8 @@ public class Icehocky implements IPlayersFinder {
 	  				contain pixel of image.
 	  * @param team
 	  				number of team.
+	  * @param 	threshold
+	  				least pixel of one player.
 	  * @throws Exception
 	  				for empty image.
 	  * @throws MyException.
