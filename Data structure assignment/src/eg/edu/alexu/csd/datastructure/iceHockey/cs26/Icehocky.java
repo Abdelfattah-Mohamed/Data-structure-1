@@ -50,9 +50,6 @@ public class Icehocky implements IPlayersFinder {
 	 * to store points.
 	 */
 	static Point[] line;
-	/**
-	 * to know size no. of point.
-	 */
 	static Vector<Point> point = new Vector<Point>();
 
 	public Point[] findPlayers(final String[] photo,
