@@ -141,10 +141,15 @@ public class Icehocky implements IPlayersFinder {
 
 	/**
 	 * @param i
+	 			row.
 	 * @param j
+	 			column.
 	 * @param photoArray
+	 			image in char array.
 	 * @param team
+	  			number of team.
 	 * @param threshold
+	 			least pixel of one player.
 	 */
 	private void recursion(final int i, final int j,
 			final char[][] photoArray, final int team,
