@@ -55,7 +55,7 @@ public class Icehocky implements IPlayersFinder {
 	 */
 	static Vector<Point> point = new Vector<Point>();
 	/**
-	  * @return Returns if the first of two given numbers is smaller than the other one.
+	  * @return Returns array of points.
 	  * @param photo
 	  * @param team
 	  * @throws Exception
