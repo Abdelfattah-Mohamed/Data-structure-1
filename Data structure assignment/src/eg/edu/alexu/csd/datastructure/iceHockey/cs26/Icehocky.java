@@ -55,7 +55,8 @@ public class Icehocky implements IPlayersFinder {
 	 */
 	static Vector<Point> point = new Vector<Point>();
 
-	public Point[] findPlayers(final String[] photo, final int team, final int threshold) {
+	public Point[] findPlayers(final String[] photo,
+			final int team, final int threshold) {
 		// TODO Auto-generated method stub
 		if (photo == null) {
 			return null;
