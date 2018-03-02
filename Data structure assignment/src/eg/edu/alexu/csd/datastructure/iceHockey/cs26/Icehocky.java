@@ -80,9 +80,10 @@ public class Icehocky implements IPlayersFinder {
 					recursion(i, j, photoArray,
 							team, threshold);
 					if (centerX >= 0 || centerY >= 0) {
-						if ((counter * cell) 
+						if ((counter * cell)
 								>= threshold) {
-							point.add(new Point(centerX, centerY));
+							point.add(new Point
+									(centerX, centerY));
 						}
 					}
 				}
@@ -166,7 +167,7 @@ public class Icehocky implements IPlayersFinder {
 		if (i > 0) {
 			recursion(i - 1, j, photoArray, team, threshold);
 		}
-		if ((counter * cell) 
+		if ((counter * cell)
 				>= threshold) {
 			centerX = (minJ + maxJ + 1);
 			centerY = (minI + maxI + 1);
