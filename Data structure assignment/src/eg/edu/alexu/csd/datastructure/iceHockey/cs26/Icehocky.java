@@ -56,10 +56,12 @@ public class Icehocky implements IPlayersFinder {
 	static Vector<Point> point = new Vector<Point>();
 	/**
 	  * @return Returns array of points.
-	  * @param photo 
+	  * @param photo
 	  				contain pixel of image.
-	  * @param team.
-	  * @throws Exception.
+	  * @param team
+	  				number of team.
+	  * @throws Exception
+	  				for empty image.
 	  * @throws MyException.
 	  */
 	public Point[] findPlayers(final String[] photo,
