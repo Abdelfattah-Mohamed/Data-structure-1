@@ -12,6 +12,9 @@ import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
  */
 public class MyJUnitTest {
 
+	/**
+	 * test in JU test.
+	 */
 	@Test
 	public void iceHockeyTest() {
 		/**
