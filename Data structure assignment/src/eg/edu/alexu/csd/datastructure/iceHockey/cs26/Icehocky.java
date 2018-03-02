@@ -54,12 +54,7 @@ public class Icehocky implements IPlayersFinder {
 	 * to know size no. of point.
 	 */
 	static Vector<Point> point = new Vector<Point>();
-	/**
-	 * @photo
-	 * @team
-	 * @threshold
-	 * @return
-	 */
+	
 	public Point[] findPlayers(final String[] photo,
 			final int team, final int threshold) {
 		// TODO Auto-generated method stub
@@ -180,7 +175,7 @@ public class Icehocky implements IPlayersFinder {
 	}
 
 	/**
-	 * @param line
+	 * @param text
 	 * @param storeCounter
 	 */
 	private void sortPoint(final Point[] text,
