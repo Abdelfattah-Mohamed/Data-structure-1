@@ -28,8 +28,8 @@ public class MyJUnitTest {
 		Point[] answer =
 			new Point[] {
 				new Point('4' - '0', '5' - '0'),
-                new Point(13, '9' - '0'),
-                new Point(14, '2' - '0'),
+                new Point('n' - 'a', '9' - '0'),
+                new Point('o' - 'a', '2' - '0'),
 		};
 		final int team = 3;
 		final int threashold = 16;
