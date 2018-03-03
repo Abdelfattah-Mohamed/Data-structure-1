@@ -144,7 +144,7 @@ public class MyJUnitTest {
                 "33333333",
                 "33333333"
 		};
-		Point[] answer = 
+		Point[] answer =
 			new Point[] {
 				new Point(8, 8),
 		};
