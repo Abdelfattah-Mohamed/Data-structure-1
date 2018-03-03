@@ -43,7 +43,7 @@ public class MyJUnitTest {
 		String[] image = {
 				"33333333333333333333333333333333333333333333333333",
 		};
-		Point[] answer = 
+		Point[] answer =
 			new Point[] {
 				new Point(50, 1),
 		};
