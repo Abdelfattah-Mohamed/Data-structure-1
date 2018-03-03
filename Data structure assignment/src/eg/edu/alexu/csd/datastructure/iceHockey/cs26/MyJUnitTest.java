@@ -52,7 +52,7 @@ public class MyJUnitTest {
 		};
 		Point[] answer =
 			new Point[] {
-				new Point(50, '1' - '0'),
+				new Point('b' - '0', '1' - '0'),
 		};
 		final int team = 3;
 		final int threashold = 5;
@@ -120,7 +120,7 @@ public class MyJUnitTest {
 		};
 		Point[] answer =
 			new Point[] {
-				new Point('1' - '0', 50),
+				new Point('1' - '0', 'b' - '0'),
 		};
 		final int team = 3;
 		final int threashold = 3;
