@@ -37,6 +37,9 @@ public class MyJUnitTest {
 				playersFinder.findPlayers(image,
 						team, threashold));
 	}
+/**
+* @Test
+*/
 	@Test
 	public void iceHockeyTest1() {
 		IPlayersFinder playersFinder = new Icehocky();
@@ -53,6 +56,9 @@ public class MyJUnitTest {
 				playersFinder.findPlayers(image,
 						team, threashold));
 	}
+	/**
+	 * @Test
+	 */
 	@Test
 	public void iceHockeyTest2() {
 		IPlayersFinder playersFinder = new Icehocky();
@@ -118,6 +124,9 @@ public class MyJUnitTest {
 				playersFinder.findPlayers(image,
 						team, threashold));
 	}
+	/**
+	 * @Test
+	 */
 	@Test
 	public void iceHockeyTest3() {
 		IPlayersFinder playersFinder = new Icehocky();
@@ -141,6 +150,9 @@ public class MyJUnitTest {
 				playersFinder.findPlayers(image,
 						team, threashold));
 	}
+	/**
+	 * @Test
+	 */
 	@Test
 	public void iceHockeyTest4() {
 		IPlayersFinder playersFinder = new Icehocky();
@@ -160,6 +172,9 @@ public class MyJUnitTest {
 				playersFinder.findPlayers(image,
 						team, threashold));
 	}
+	/**
+	 * @Test
+	 */
 	@Test
 	public void iceHockeyTest5() {
 		IPlayersFinder playersFinder = new Icehocky();
@@ -171,6 +186,9 @@ public class MyJUnitTest {
 				playersFinder.findPlayers(image,
 						team, threashold));
 	}
+	/**
+	 * @Test
+	 */
 	@Test
 	public void iceHockeyTest6() {
 		IPlayersFinder playersFinder = new Icehocky();
