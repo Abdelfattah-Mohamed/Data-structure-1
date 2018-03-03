@@ -27,7 +27,7 @@ public class MyJUnitTest {
 		};
 		Point[] answer =
 			new Point[] {
-				new Point(4, 5),
+				new Point('4' - '0', 5),
                 new Point(13, 9),
                 new Point(14, 2),
 		};
