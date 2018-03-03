@@ -44,7 +44,11 @@ public class MyJUnitTest {
 	public void iceHockeyTest1() {
 		IPlayersFinder playersFinder = new Icehocky();
 		String[] image = {
-				"33333333333333333333333333333333333333333333333333",
+				"3333333333"
+				+ "333333333"
+				+ "3333333333"
+				+ "33333333333"
+				+ "3333333333",
 		};
 		Point[] answer =
 			new Point[] {
