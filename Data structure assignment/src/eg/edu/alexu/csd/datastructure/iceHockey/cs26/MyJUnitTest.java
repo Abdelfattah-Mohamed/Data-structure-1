@@ -18,14 +18,14 @@ public class MyJUnitTest {
 	public void iceHockeyTest() {
 		IPlayersFinder playersFinder = new Icehocky();
 		String[] image = {
-				"33JUBU33", 
-                "3U3O4433", 
-                "O33P44NB", 
-                "PO3NSDP3", 
-                "VNDSD333", 
+				"33JUBU33",
+                "3U3O4433",
+                "O33P44NB",
+                "PO3NSDP3",
+                "VNDSD333",
                 "OINFD33X"
 		};
-		Point[] answer = 
+		Point[] answer =
 			new Point[] {
 				new Point(4, 5),
                 new Point(13, 9),
@@ -41,7 +41,7 @@ public class MyJUnitTest {
 	public void iceHockeyTest1() {
 		IPlayersFinder playersFinder = new Icehocky();
 		String[] image = {
-				"33333333333333333333333333333333333333333333333333", 
+				"33333333333333333333333333333333333333333333333333",
 		};
 		Point[] answer = 
 			new Point[] {
@@ -57,17 +57,7 @@ public class MyJUnitTest {
 	public void iceHockeyTest2() {
 		IPlayersFinder playersFinder = new Icehocky();
 		String[] image = {
-				"3", 
 				"3",
-				"3",
-				"3",
-				"3",
-				"3",
-				"3",
-				"3",
-				"3",
-				"3",
-				"3", 
 				"3",
 				"3",
 				"3",
@@ -98,6 +88,16 @@ public class MyJUnitTest {
 				"3",
 				"3",
 				"3", 
+				"3",
+				"3",
+				"3",
+				"3",
+				"3",
+				"3",
+				"3",
+				"3",
+				"3",
+				"3",
 				"3",
 				"3",
 				"3",
@@ -122,10 +122,10 @@ public class MyJUnitTest {
 	public void iceHockeyTest3() {
 		IPlayersFinder playersFinder = new Icehocky();
 		String[] image = {
-				"33333333", 
-                "33333333", 
-                "33333333", 
-                "33333333", 
+				"33333333",
+                "33333333",
+                "33333333",
+                "33333333",
                 "33333333",
                 "33333333",
                 "33333333",
@@ -145,13 +145,13 @@ public class MyJUnitTest {
 	public void iceHockeyTest4() {
 		IPlayersFinder playersFinder = new Icehocky();
 		String[] image = {
-				"313r3d3c", 
-                "b3v3z3x3", 
-                "3v3d3t3y", 
-                "137343n3", 
+				"313r3d3c",
+                "b3v3z3x3",
+                "3v3d3t3y",
+                "137343n3",
                 "3z3c3v3b"
 		};
-		Point[] answer = 
+		Point[] answer =
 			new Point[] {
 		};
 		final int team = 3;
@@ -163,8 +163,8 @@ public class MyJUnitTest {
 	@Test
 	public void iceHockeyTest5() {
 		IPlayersFinder playersFinder = new Icehocky();
-		String[] image = null ;
-		Point[] answer = null ;
+		String[] image = null;
+		Point[] answer = null;
 		final int team = 3;
 		final int threashold = 12;
 		Assert.assertArrayEquals(answer,
@@ -177,7 +177,7 @@ public class MyJUnitTest {
 		String[] image = {
 				"1"
 		};
-		Point[] answer = 
+		Point[] answer =
 			new Point[] {
 				new Point(1, 1),
 		};
