@@ -27,9 +27,9 @@ public class MyJUnitTest {
 		};
 		Point[] answer =
 			new Point[] {
-				new Point('4' - '0', 5),
-                new Point(13, 9),
-                new Point(14, 2),
+				new Point('4' - '0', '5' - '0'),
+                new Point(13, '9' - '0'),
+                new Point(14, '2' - '0'),
 		};
 		final int team = 3;
 		final int threashold = 16;
@@ -52,7 +52,7 @@ public class MyJUnitTest {
 		};
 		Point[] answer =
 			new Point[] {
-				new Point(50, 1),
+				new Point(50, '1' - '0'),
 		};
 		final int team = 3;
 		final int threashold = 5;
@@ -120,7 +120,7 @@ public class MyJUnitTest {
 		};
 		Point[] answer =
 			new Point[] {
-				new Point(1, 50),
+				new Point('1' - '0', 50),
 		};
 		final int team = 3;
 		final int threashold = 3;
@@ -146,7 +146,7 @@ public class MyJUnitTest {
 		};
 		Point[] answer =
 			new Point[] {
-				new Point(8, 8),
+				new Point('8' - '0', '8' - '0'),
 		};
 		final int team = 3;
 		final int threashold = 12;
@@ -201,7 +201,7 @@ public class MyJUnitTest {
 		};
 		Point[] answer =
 			new Point[] {
-				new Point(1, 1),
+				new Point('1' - '0', '1' - '0'),
 		};
 		final int team = 1;
 		final int threashold = 3;
