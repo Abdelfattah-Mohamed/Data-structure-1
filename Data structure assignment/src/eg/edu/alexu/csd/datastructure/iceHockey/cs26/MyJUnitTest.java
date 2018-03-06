@@ -269,25 +269,25 @@ public class MyJUnitTest {
 		returnedPoints = playersFinder.findPlayers(photo, team,
 				threshold);
 		final Point[] ans = {
-				new Point (1, 17),
-				new Point (3, 3),
-				new Point (3, 10),
-				new Point (3, 25), 
-				new Point (5, 21), 
-				new Point (8, 17),
-				new Point (9, 2), 
-				new Point (10,9), 
-				new Point (12,23), 
-				new Point (17,16), 
-				new Point (18,3),
-				new Point (18,11),
-				new Point (18,28), 
-				new Point (22,20), 
-				new Point (23,26), 
-				new Point (24,15), 
-				new Point (27,2), 
-				new Point (28,26), 
-				new Point (29,16),
+				new Point(1, 17),
+				new Point(3, 3),
+				new Point(3, 10),
+				new Point(3, 25),
+				new Point(5, 21),
+				new Point(8, 17),
+				new Point(9, 2),
+				new Point(10,9),
+				new Point(12,23),
+				new Point(17,16),
+				new Point(18,3),
+				new Point(18,11),
+				new Point(18,28),
+				new Point(22,20),
+				new Point(23,26),
+				new Point(24,15),
+				new Point(27,2),
+				new Point(28,26),
+				new Point(29,16),
 				};
 		Assert.assertArrayEquals(ans, returnedPoints);
 	}
@@ -310,8 +310,8 @@ public class MyJUnitTest {
 		returnedPoints = playersFinder.findPlayers(photo, team,
 				threshold);
 		final Point[] ans = {
-				new Point (5, 5),
-				new Point (5, 5),
+				new Point(5, 5),
+				new Point(5, 5),
 				};
 		Assert.assertArrayEquals(ans, returnedPoints);
 	}
