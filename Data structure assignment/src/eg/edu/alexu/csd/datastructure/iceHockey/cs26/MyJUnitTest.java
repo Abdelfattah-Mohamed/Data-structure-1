@@ -213,7 +213,7 @@ public class MyJUnitTest {
 	 * @Test
 	 */
 	@Test
-	public void randomPhoto4() {
+	public void iceHockeyTest7() {
 		IPlayersFinder playersFinder = new Icehocky();
 		final String[] photo = {
 				"44444H44S4",
