@@ -4,7 +4,6 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.Test;
 
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
@@ -35,7 +34,7 @@ public class JUnitForLinkedList {
 
 		object.clear();
 
-		assertEquals(object.get(1), null);
+		assertEquals(object.get(0), null);
 
 	}
 

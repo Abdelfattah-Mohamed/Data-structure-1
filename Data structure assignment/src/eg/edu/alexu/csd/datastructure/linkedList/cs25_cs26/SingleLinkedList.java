@@ -5,12 +5,13 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 /**
  * 
  * @author Abd El Fattah
+ * @auther Abd El Rahman
  *
  */
 public class SingleLinkedList implements ILinkedList {
 
 	Snode<Object> head = null;
-	Snode<Object> tail = head;
+	Snode<Object> tail = null;
 	int size = 0;
 
 	public SingleLinkedList(Snode<Object> head) {
@@ -101,6 +102,7 @@ public class SingleLinkedList implements ILinkedList {
 		head.next = null;
 		head = null;
 		tail = head;
+		size = 0;
 	}
 
 	@Override
