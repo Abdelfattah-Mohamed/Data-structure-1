@@ -20,6 +20,7 @@ public class polynomial implements IPolynomialSolver {
 		// TODO Auto-generated constructor stub
 		this.head = head;
 	}
+	
 
 	@Override
 	public void setPolynomial(char poly, int[][] terms) {
