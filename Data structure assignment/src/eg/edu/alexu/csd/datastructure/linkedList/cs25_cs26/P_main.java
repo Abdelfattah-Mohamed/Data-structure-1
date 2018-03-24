@@ -26,6 +26,8 @@ public class P_main {
 		instance.add('B', 'A');
 		System.out.println();
 		instance.subtract('B', 'A');
+		System.out.println();
+		instance.multiply('A', 'B');
 	}
 
 }

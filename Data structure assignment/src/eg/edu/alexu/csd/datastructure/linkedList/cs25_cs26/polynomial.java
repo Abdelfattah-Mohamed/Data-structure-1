@@ -14,6 +14,7 @@ public class polynomial implements IPolynomialSolver {
 	ILinkedList c = (ILinkedList) new SingleLinkedList(null);
 	ILinkedList r = (ILinkedList) new SingleLinkedList(null);
 	int first_last[][] = new int[2][4];
+	char negative = '0';
 
 	public polynomial(Snode<Object> head) {
 		// TODO Auto-generated constructor stub
@@ -313,6 +314,9 @@ public class polynomial implements IPolynomialSolver {
 		int maxExp1 = 0;
 		int maxExp2 = 0;
 		int i = 0;
+		if (r.isEmpty() == false) {
+			r.clear();
+		}
 		int add[][] = new int[a.size() + b.size() + c.size()][2];
 		if (poly1 == 'A') {
 			maxExp1 = first_last[0][0];
@@ -421,26 +425,25 @@ public class polynomial implements IPolynomialSolver {
 	public int[][] subtract(char poly1, char poly2) {
 		// TODO Auto-generated method stub
 		int i = 0;
-		int x = 0;
+		if (r.isEmpty() == false) {
+			r.clear();
+		}
 		if (poly2 == 'A') {
+			negative = 'A';
 			while (a.get(i) != null) {
-				x = (int) a.get(i);
-				x = -1 * x;
-				a.set(i, x);
+				a.set(i, -1 * (int) a.get(i));
 				i++;
 			}
 		} else if (poly2 != 'B') {
+			negative = 'B';
 			while (b.get(i) == null) {
-				x = (int) b.get(i);
-				x = -1 * x;
-				b.set(i, x);
+				b.set(i, -1 * (int) b.get(i));
 				i++;
 			}
 		} else if (poly2 != 'C') {
+			negative = 'C';
 			while (c.get(i) == null) {
-				x = (int) c.get(i);
-				x = -1 * x;
-				c.set(i, x);
+				c.set(i, -1 * (int) c.get(i));
 				i++;
 			}
 		}
@@ -451,6 +454,51 @@ public class polynomial implements IPolynomialSolver {
 	@Override
 	public int[][] multiply(char poly1, char poly2) {
 		// TODO Auto-generated method stub
+		int counter = 0;
+		int muliExp = first_last[0][0] + first_last[0][1];
+		int multiMax = first_last[0][0] + first_last[0][1];
+		int multi[][] = new int[a.size() + b.size() + c.size()][2];
+		if (r.isEmpty() == false) {
+			r.clear();
+		}
+		// check if poly2 insert to subtraction.
+		if (negative != '0') {
+			int i = 0;
+			if (r.isEmpty() == false) {
+				r.clear();
+			}
+			if (negative == 'A') {
+				while (a.get(i) != null) {
+					a.set(i, -1 * (int) a.get(i));
+					i++;
+				}
+			} else if (negative != 'B') {
+				while (b.get(i) == null) {
+					b.set(i, -1 * (int) b.get(i));
+					i++;
+				}
+			} else if (negative != 'C') {
+				while (c.get(i) == null) {
+					c.set(i, -1 * (int) c.get(i));
+					i++;
+				}
+			}
+		}
+		negative = '0';
+		for (int i = 0; i < a.size(); i++) {
+			multiMax = muliExp;
+			for (int j = 0; j < b.size(); j++) {
+				System.out.println((int) a.get(i));
+				multi[counter][0] = (int) a.get(i) * (int) b.get(j);
+				multi[counter][1] = multiMax;
+				multiMax--;
+				counter++;
+			}
+			muliExp--;
+			// multiMax = multiMax + first_last[0][1] - 1;
+		}
+		setPolynomial('R', multi);
+		print('R');
 		return null;
 	}
 
