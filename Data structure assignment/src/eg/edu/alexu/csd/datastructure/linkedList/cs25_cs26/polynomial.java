@@ -20,7 +20,6 @@ public class polynomial implements IPolynomialSolver {
 		// TODO Auto-generated constructor stub
 		this.head = head;
 	}
-	
 
 	@Override
 	public void setPolynomial(char poly, int[][] terms) {
@@ -489,7 +488,6 @@ public class polynomial implements IPolynomialSolver {
 		for (int i = 0; i < a.size(); i++) {
 			multiMax = muliExp;
 			for (int j = 0; j < b.size(); j++) {
-				System.out.println((int) a.get(i));
 				multi[counter][0] = (int) a.get(i) * (int) b.get(j);
 				multi[counter][1] = multiMax;
 				multiMax--;
