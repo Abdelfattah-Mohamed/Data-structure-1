@@ -13,7 +13,7 @@ public class polynomial implements IPolynomialSolver {
 	ILinkedList b = (ILinkedList) new SingleLinkedList(null);
 	ILinkedList c = (ILinkedList) new SingleLinkedList(null);
 	ILinkedList r = (ILinkedList) new SingleLinkedList(null);
-	int first_last[][] = new int[2][3];
+	int first_last[][] = new int[2][4];
 
 	public polynomial(Snode<Object> head) {
 		// TODO Auto-generated constructor stub
@@ -23,7 +23,7 @@ public class polynomial implements IPolynomialSolver {
 	@Override
 	public void setPolynomial(char poly, int[][] terms) {
 		// TODO Auto-generated method stub
-		int counter = 0 ;
+		int counter = 0;
 		order(terms);
 		if (poly == 'A') {
 			if (a.isEmpty() == false) {
@@ -34,7 +34,7 @@ public class polynomial implements IPolynomialSolver {
 			a.add(terms[0][0]);
 			for (int i = 0; i < terms.length - 1; i++) {
 				if (terms[i][1] == terms[i + 1][1]) {
-					a.set(counter, terms[i][0] + terms[i + 1][0]);
+					a.set(counter, (int) a.get(counter) + terms[i + 1][0]);
 				} else if (terms[i][1] - terms[i + 1][1] == 1) {
 					a.add(terms[i + 1][0]);
 					counter++;
@@ -58,14 +58,16 @@ public class polynomial implements IPolynomialSolver {
 			b.add(terms[0][0]);
 			for (int i = 0; i < terms.length - 1; i++) {
 				if (terms[i][1] == terms[i + 1][1]) {
-					b.set(i + 1, terms[i][0] + terms[i + 1][0]);
+					b.set(counter, (int) b.get(counter) + terms[i + 1][0]);
 				} else if (terms[i][1] - terms[i + 1][1] == 1) {
 					b.add(terms[i + 1][0]);
 					// b.set(i + 1, terms[i + 1][0]);
+					counter++;
 				} else {
 					for (int j = terms[i][1] - 1; j > terms[i + 1][1]; j--) {
 						b.add(0);
 						// b.set(i + 1, 0);
+						counter++;
 					}
 					b.add(terms[i + 1][0]);
 				}
@@ -79,14 +81,16 @@ public class polynomial implements IPolynomialSolver {
 			c.add(terms[0][0]);
 			for (int i = 0; i < terms.length - 1; i++) {
 				if (terms[i][1] == terms[i + 1][1]) {
-					c.set(i + 1, terms[i][0] + terms[i + 1][0]);
+					c.set(counter, (int) c.get(counter) + terms[i + 1][0]);
 				} else if (terms[i][1] - terms[i + 1][1] == 1) {
 					c.add(terms[i + 1][0]);
 					// c.set(i + 1, terms[i + 1][0]);
+					counter++;
 				} else {
 					for (int j = terms[i][1] - 1; j > terms[i + 1][1]; j--) {
 						c.add(0);
 						// c.set(i + 1, 0);
+						counter++;
 					}
 					c.add(terms[i + 1][0]);
 				}
@@ -95,19 +99,21 @@ public class polynomial implements IPolynomialSolver {
 			if (r.isEmpty() == false) {
 				r.clear();
 			}
-			first_last[0][1] = terms[0][1];
-			first_last[1][1] = terms[terms.length - 1][1];
+			first_last[0][3] = terms[0][1];
+			first_last[1][3] = terms[terms.length - 1][1];
 			r.add(terms[0][0]);
 			for (int i = 0; i < terms.length - 1; i++) {
 				if (terms[i][1] == terms[i + 1][1]) {
-					r.set(i , terms[i][0] + terms[i + 1][0]);
+					r.set(counter, (int) r.get(counter) + terms[i + 1][0]);
 				} else if (terms[i][1] - terms[i + 1][1] == 1) {
 					r.add(terms[i + 1][0]);
-					// b.set(i + 1, terms[i + 1][0]);
+					// r.set(i + 1, terms[i + 1][0]);
+					counter++;
 				} else {
 					for (int j = terms[i][1] - 1; j > terms[i + 1][1]; j--) {
 						r.add(0);
-						// b.set(i + 1, 0);
+						// r.set(i + 1, 0);
+						counter++;
 					}
 					r.add(terms[i + 1][0]);
 				}
@@ -186,11 +192,11 @@ public class polynomial implements IPolynomialSolver {
 				maxExp--;
 			}
 		} else if (poly == 'R') {
-			if (c.size() == 0) {
+			if (r.size() == 0) {
 				return null;
 			}
-			maxExp = first_last[0][2];
-			leastExp = first_last[1][2];
+			maxExp = first_last[0][3];
+			leastExp = first_last[1][3];
 			int i = 0;
 			while (maxExp >= leastExp) {
 				if (r.get(i) != null && (int) r.get(i) != 0) {
@@ -305,14 +311,11 @@ public class polynomial implements IPolynomialSolver {
 	public int[][] add(char poly1, char poly2) {
 		// TODO Auto-generated method stub
 		int maxExp1 = 0;
-		int minExp1 = 0;
 		int maxExp2 = 0;
-		int minExp2 = 0;
 		int i = 0;
 		int add[][] = new int[a.size() + b.size() + c.size()][2];
 		if (poly1 == 'A') {
 			maxExp1 = first_last[0][0];
-			minExp1 = first_last[1][0];
 			for (i = 0; i < a.size(); i++) {
 				add[i][0] = (int) a.get(i);
 				add[i][1] = maxExp1;
@@ -320,16 +323,14 @@ public class polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'A') {
 				maxExp2 = first_last[0][0];
-				minExp2 = first_last[1][0];
 				for (; i < a.size() + a.size(); i++) {
-					add[i][0] = (int) a.get(i);
+					add[i][0] = (int) a.get(i - a.size());
 					add[i][1] = maxExp2;
 					maxExp2--;
 				}
 			}
 			if (poly2 == 'B') {
 				maxExp2 = first_last[0][1];
-				minExp2 = first_last[1][1];
 				for (; i < a.size() + b.size(); i++) {
 					add[i][0] = (int) b.get(i - a.size());
 					add[i][1] = maxExp2;
@@ -338,9 +339,74 @@ public class polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'C') {
 				maxExp2 = first_last[0][2];
-				minExp2 = first_last[1][2];
 				for (; i < a.size() + c.size(); i++) {
-					add[i][0] = (int) c.get(i);
+					add[i][0] = (int) c.get(i - a.size());
+					add[i][1] = maxExp2;
+					maxExp2--;
+				}
+			}
+			setPolynomial('R', add);
+			print('R');
+		} else if (poly1 == 'B') {
+			maxExp1 = first_last[0][1];
+			for (i = 0; i < b.size(); i++) {
+				add[i][0] = (int) b.get(i);
+				add[i][1] = maxExp1;
+				maxExp1--;
+			}
+			if (poly2 == 'A') {
+				maxExp2 = first_last[0][0];
+				for (; i < b.size() + a.size(); i++) {
+					add[i][0] = (int) a.get(i - b.size());
+					add[i][1] = maxExp2;
+					maxExp2--;
+				}
+			}
+			if (poly2 == 'B') {
+				maxExp2 = first_last[0][1];
+				for (; i < b.size() + b.size(); i++) {
+					add[i][0] = (int) b.get(i - b.size());
+					add[i][1] = maxExp2;
+					maxExp2--;
+				}
+			}
+			if (poly2 == 'C') {
+				maxExp2 = first_last[0][2];
+				for (; i < b.size() + c.size(); i++) {
+					add[i][0] = (int) c.get(i - b.size());
+					add[i][1] = maxExp2;
+					maxExp2--;
+				}
+			}
+			setPolynomial('R', add);
+			print('R');
+		} else if (poly1 == 'C') {
+			maxExp1 = first_last[0][2];
+			for (i = 0; i < c.size(); i++) {
+				add[i][0] = (int) c.get(i);
+				add[i][1] = maxExp1;
+				maxExp1--;
+			}
+			if (poly2 == 'A') {
+				maxExp2 = first_last[0][0];
+				for (; i < c.size() + a.size(); i++) {
+					add[i][0] = (int) a.get(i - c.size());
+					add[i][1] = maxExp2;
+					maxExp2--;
+				}
+			}
+			if (poly2 == 'B') {
+				maxExp2 = first_last[0][1];
+				for (; i < c.size() + b.size(); i++) {
+					add[i][0] = (int) b.get(i - c.size());
+					add[i][1] = maxExp2;
+					maxExp2--;
+				}
+			}
+			if (poly2 == 'C') {
+				maxExp2 = first_last[0][2];
+				for (; i < c.size() + c.size(); i++) {
+					add[i][0] = (int) c.get(i - c.size());
 					add[i][1] = maxExp2;
 					maxExp2--;
 				}
@@ -348,38 +414,37 @@ public class polynomial implements IPolynomialSolver {
 			setPolynomial('R', add);
 			print('R');
 		}
-		if (poly1 == 'B') {
-
-			if (poly2 == 'A') {
-
-			}
-			if (poly2 == 'B') {
-
-			}
-			if (poly2 == 'C') {
-
-			}
-
-		}
-		if (poly1 == 'C') {
-
-			if (poly2 == 'A') {
-
-			}
-			if (poly2 == 'B') {
-
-			}
-			if (poly2 == 'C') {
-
-			}
-
-		}
 		return null;
 	}
 
 	@Override
 	public int[][] subtract(char poly1, char poly2) {
 		// TODO Auto-generated method stub
+		int i = 0;
+		int x = 0;
+		if (poly2 == 'A') {
+			while (a.get(i) != null) {
+				x = (int) a.get(i);
+				x = -1 * x;
+				a.set(i, x);
+				i++;
+			}
+		} else if (poly2 != 'B') {
+			while (b.get(i) == null) {
+				x = (int) b.get(i);
+				x = -1 * x;
+				b.set(i, x);
+				i++;
+			}
+		} else if (poly2 != 'C') {
+			while (c.get(i) == null) {
+				x = (int) c.get(i);
+				x = -1 * x;
+				c.set(i, x);
+				i++;
+			}
+		}
+		add(poly1, poly2);
 		return null;
 	}
 

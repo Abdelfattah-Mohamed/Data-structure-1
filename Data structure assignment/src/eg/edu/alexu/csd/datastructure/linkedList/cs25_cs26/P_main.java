@@ -9,7 +9,7 @@ public class P_main {
 
 		IPolynomialSolver instance = (IPolynomialSolver) new polynomial(null);
 		instance.setPolynomial('A', new int[][] { { 3, 2 }, { 45, 3 }, { 176, 3 }, { 128, 2 } });
-		instance.setPolynomial('B', new int[][] { { -120, 5 }, { -1, 3 }, { 27, 2 }, { 1, 2 }, { -1, 0 } });
+		instance.setPolynomial('B', new int[][] { { 4, 2 }, { 45, 3 }, { 176, 3 }, { 128, 2 } });
 		instance.print('B');
 		System.out.println();
 		instance.print('A');
@@ -23,7 +23,9 @@ public class P_main {
 		eval = instance.evaluatePolynomial('B', 0);
 		System.out.print(eval);
 		*/
-		//instance.add('A', 'B');
+		instance.add('B', 'A');
+		System.out.println();
+		instance.subtract('B', 'A');
 	}
 
 }
