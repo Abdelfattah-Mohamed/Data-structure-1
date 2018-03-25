@@ -245,10 +245,10 @@ public class polynomial implements IPolynomialSolver {
 			int i = 0;
 			int get = 0;
 			float get1 = 0;
+			if (leastExp < 0 && value == 0) {
+				throw new IllegalArgumentException();
+			}
 			while (maxExp >= leastExp) {
-				if (maxExp < 0 && value == 0) {
-					throw new IllegalArgumentException();
-				}
 				if (a.get(i) != null || (int) b.get(i) != 0) {
 					get = (int) a.get(i);
 					get1 = (float) get;
