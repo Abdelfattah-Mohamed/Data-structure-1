@@ -96,7 +96,7 @@ public class polynomial implements IPolynomialSolver {
 					c.add(terms[i + 1][0]);
 				}
 			}
-		} else if (poly == 'R') {
+		} else if (poly == 220) {
 			if (r.isEmpty() == false) {
 				r.clear();
 			}
@@ -349,7 +349,7 @@ public class polynomial implements IPolynomialSolver {
 					maxExp2--;
 				}
 			}
-			setPolynomial('R', add);
+			setPolynomial((char) 220, add);
 			print('R');
 		} else if (poly1 == 'B') {
 			maxExp1 = first_last[0][1];
@@ -382,7 +382,7 @@ public class polynomial implements IPolynomialSolver {
 					maxExp2--;
 				}
 			}
-			setPolynomial('R', add);
+			setPolynomial((char) 220, add);
 			print('R');
 		} else if (poly1 == 'C') {
 			maxExp1 = first_last[0][2];
@@ -415,7 +415,7 @@ public class polynomial implements IPolynomialSolver {
 					maxExp2--;
 				}
 			}
-			setPolynomial('R', add);
+			setPolynomial((char) 220, add);
 			print('R');
 		}
 		return null;
