@@ -20,7 +20,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void add(int index, Object element) {
+	public void add(int index, final Object element) {
 		// TODO Auto-generated method stub
 		if (index > size) {
 			throw new IndexOutOfBoundsException();
@@ -45,7 +45,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void add(Object element) {
+	public void add(final Object element) {
 		// TODO Auto-generated method stub
 		Snode<Object> nptr = new Snode<Object>(element, null);
 
@@ -80,7 +80,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void set(int index, Object element) {
+	public void set(int index, final Object element) {
 		// TODO Auto-generated method stub
 		if (index > size) {
 			throw new IndexOutOfBoundsException();
@@ -147,7 +147,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public ILinkedList sublist(int fromIndex, int toIndex) {
+	public ILinkedList sublist(final int fromIndex, final int toIndex) {
 		// TODO Auto-generated method stub
 		int counter = toIndex;
 		Snode<Object> head1 = head;
@@ -168,7 +168,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public boolean contains(Object o) {
+	public boolean contains(final Object o) {
 		// TODO Auto-generated method stub
 		Snode<Object> q = head;
 		for (; q != null;) {
