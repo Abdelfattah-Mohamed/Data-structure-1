@@ -22,7 +22,7 @@ public class polynomial implements IPolynomialSolver {
 	}
 
 	@Override
-	public void setPolynomial(char poly, int[][] terms) {
+	public void setPolynomial(final char poly, final int[][] terms) {
 		// TODO Auto-generated method stub
 		int counter = 0;
 		order(terms);
@@ -123,7 +123,7 @@ public class polynomial implements IPolynomialSolver {
 	}
 
 	@Override
-	public String print(char poly) {
+	public String print(final char poly) {
 		// TODO Auto-generated method stub
 		int maxExp = 0;
 		int leastExp = 0;
@@ -219,7 +219,7 @@ public class polynomial implements IPolynomialSolver {
 	}
 
 	@Override
-	public void clearPolynomial(char poly) {
+	public void clearPolynomial(final char poly) {
 		// TODO Auto-generated method stub
 		if (poly == 'A') {
 			a.clear();
@@ -231,7 +231,7 @@ public class polynomial implements IPolynomialSolver {
 	}
 
 	@Override
-	public float evaluatePolynomial(char poly, float value) {
+	public float evaluatePolynomial(final char poly, final float value) {
 		// TODO Auto-generated method stub
 		int maxExp = 0;
 		int leastExp = 0;
@@ -309,7 +309,7 @@ public class polynomial implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] add(char poly1, char poly2) {
+	public int[][] add(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
 		int maxExp1 = 0;
 		int maxExp2 = 0;
@@ -455,7 +455,7 @@ public class polynomial implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] subtract(char poly1, char poly2) {
+	public int[][] subtract(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
 		int i = 0;
 		if (r.isEmpty() == false) {
@@ -497,7 +497,7 @@ public class polynomial implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] multiply(char poly1, char poly2) {
+	public int[][] multiply(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
 		int counter = 0;
 		int muliExp = 0; // first_last[0][0] + first_last[0][1];
@@ -661,7 +661,7 @@ public class polynomial implements IPolynomialSolver {
 		return multi;
 	}
 
-	private void order(int[][] terms) {
+	private void order(final int[][] terms) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < terms.length - 1; i++) {
 			for (int j = i + 1; j < terms.length; j++) {
