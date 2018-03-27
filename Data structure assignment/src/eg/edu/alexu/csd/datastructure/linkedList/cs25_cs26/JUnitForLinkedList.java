@@ -4,8 +4,11 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
-import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Test;
 
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
@@ -120,7 +123,7 @@ public class JUnitForLinkedList {
 		assertTrue(c.contains(2));
 		assertTrue(c.contains(3));
 		assertFalse(c.contains(9));
-		//assertFalse(c.contains(7));
+		assertFalse(c.contains(7));
 	}
 
 	@Test
