@@ -7,7 +7,7 @@ public class Postfix_Vs_Infix implements IExpressionEvaluator {
 	SNodes<Object> head = null;
 	SNodes<Object> tail = null;
 	int size = 0;
-	public IExpressionEvaluator operand = 
+	public IExpressionEvaluator operand =
 			(IExpressionEvaluator) new Stack(null, null);
 
 	public Postfix_Vs_Infix() {
