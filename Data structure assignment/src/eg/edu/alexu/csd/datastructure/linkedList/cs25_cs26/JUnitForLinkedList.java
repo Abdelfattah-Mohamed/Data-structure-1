@@ -8,7 +8,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-//import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Test;
 
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
@@ -33,13 +32,13 @@ public class JUnitForLinkedList {
 		object.set(4, 40);
 		object.remove(1);
 
-		//assertEquals(object.get(1), 2);
+		assertEquals(object.get(1), 2);
 
 		object.sublist(1, 3);
 
 		object.clear();
 
-		//assertEquals(object.get(0), null);
+		assertEquals(object.get(0), null);
 
 	}
 
