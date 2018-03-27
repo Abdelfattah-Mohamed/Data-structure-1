@@ -500,8 +500,8 @@ public class polynomial implements IPolynomialSolver {
 	public int[][] multiply(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
 		int counter = 0;
-		int muliExp = 0; // first_last[0][0] + first_last[0][1];
-		int multiMax = 0;// first_last[0][0] + first_last[0][1];
+		int muliExp = 0;
+		int multiMax = 0;
 		int multi[][] = new int[(a.size() + 1) * (b.size() + 1) * (c.size() + 1) * (a.size() + 1) * (b.size() + 1)
 				* (c.size() + 1)][2];
 		if (r.isEmpty() == false) {
