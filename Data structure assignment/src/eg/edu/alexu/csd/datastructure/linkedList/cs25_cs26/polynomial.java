@@ -545,9 +545,7 @@ public class polynomial implements IPolynomialSolver {
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
 			setPolynomial((char) 220, multi);
-		}
-
-		else if (poly1 == 'A' && poly2 == 'C') {
+		} else if (poly1 == 'A' && poly2 == 'C') {
 			muliExp = firstLast[0][0] + firstLast[0][2];
 			for (int i = 0; i < a.size(); i++) {
 				multiMax = muliExp;
@@ -561,9 +559,7 @@ public class polynomial implements IPolynomialSolver {
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
 			setPolynomial((char) 220, multi);
-		}
-
-		else if (poly1 == 'A' && poly2 == 'A') {
+		} else if (poly1 == 'A' && poly2 == 'A') {
 			muliExp = firstLast[0][0] + firstLast[0][0];
 			for (int i = 0; i < a.size(); i++) {
 				multiMax = muliExp;
@@ -577,9 +573,7 @@ public class polynomial implements IPolynomialSolver {
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
 			setPolynomial((char) 220, multi);
-		}
-
-		else if (poly1 == 'B' && poly2 == 'A') {
+		} else if (poly1 == 'B' && poly2 == 'A') {
 			muliExp = firstLast[0][1] + firstLast[0][0];
 			for (int i = 0; i < b.size(); i++) {
 				multiMax = muliExp;
@@ -593,9 +587,7 @@ public class polynomial implements IPolynomialSolver {
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
 			setPolynomial((char) 220, multi);
-		}
-
-		else if (poly1 == 'B' && poly2 == 'B') {
+		} else if (poly1 == 'B' && poly2 == 'B') {
 			muliExp = firstLast[0][1] + firstLast[0][1];
 			for (int i = 0; i < b.size(); i++) {
 				multiMax = muliExp;
@@ -609,9 +601,7 @@ public class polynomial implements IPolynomialSolver {
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
 			setPolynomial((char) 220, multi);
-		}
-
-		else if (poly1 == 'B' && poly2 == 'C') {
+		} else if (poly1 == 'B' && poly2 == 'C') {
 			muliExp = firstLast[0][1] + firstLast[0][2];
 			for (int i = 0; i < b.size(); i++) {
 				multiMax = muliExp;
@@ -625,9 +615,7 @@ public class polynomial implements IPolynomialSolver {
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
 			setPolynomial((char) 220, multi);
-		}
-
-		else if (poly1 == 'C' && poly2 == 'A') {
+		} else if (poly1 == 'C' && poly2 == 'A') {
 			muliExp = firstLast[0][2] + firstLast[0][0];
 			for (int i = 0; i < c.size(); i++) {
 				multiMax = muliExp;
@@ -641,9 +629,7 @@ public class polynomial implements IPolynomialSolver {
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
 			setPolynomial((char) 220, multi);
-		}
-
-		else if (poly1 == 'C' && poly2 == 'B') {
+		} else if (poly1 == 'C' && poly2 == 'B') {
 			muliExp = firstLast[0][2] + firstLast[0][1];
 			for (int i = 0; i < c.size(); i++) {
 				multiMax = muliExp;
@@ -657,9 +643,7 @@ public class polynomial implements IPolynomialSolver {
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
 			setPolynomial((char) 220, multi);
-		}
-
-		else if (poly1 == 'C' && poly2 == 'C') {
+		} else if (poly1 == 'C' && poly2 == 'C') {
 			muliExp = firstLast[0][2] + firstLast[0][2];
 			for (int i = 0; i < c.size(); i++) {
 				multiMax = muliExp;
@@ -674,7 +658,6 @@ public class polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, multi);
 		}
-
 		return multi;
 	}
 
