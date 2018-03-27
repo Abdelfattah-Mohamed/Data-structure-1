@@ -20,26 +20,27 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void add(int index, final Object element) {
+	public void add(final int index, final Object element) {
 		// TODO Auto-generated method stub
-		if (index > size) {
+		int x = index;
+		if (x > size) {
 			throw new IndexOutOfBoundsException();
 		}
 		Snode<Object> nptr = new Snode<Object>(element, null);
 		Snode<Object> q = head;
-		if (q == null || index == 0) {
+		if (q == null || x == 0) {
 			nptr.next = head;
 			head = nptr;
 		}
 		for (; q != null;) {
-			if (index == 1) {
+			if (x == 1) {
 				Snode<Object> temp = q.next;
 				q.next = nptr;
 				nptr.next = temp;
 				break;
 			}
 			q = q.next;
-			index--;
+			x--;
 		}
 		size++;
 	}
@@ -60,9 +61,10 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public Object get(int index) {
+	public Object get(final int index) {
 		// TODO Auto-generated method stub
-		if (index > size) {
+		int x = index;
+		if (x > size) {
 			throw new IndexOutOfBoundsException();
 		}
 		if (head == null) {
@@ -70,30 +72,31 @@ public class SingleLinkedList implements ILinkedList {
 		}
 		Snode<Object> q = head;
 		for (; q != null;) {
-			if (index == 0) {
+			if (x == 0) {
 				return q.value;
 			}
 			q = q.next;
-			index--;
+			x--;
 		}
 		return null;
 	}
 
 	@Override
-	public void set(int index, final Object element) {
+	public void set(final int index, final Object element) {
 		// TODO Auto-generated method stub
-		if (index > size) {
+		int x = index;
+		if (x > size) {
 			throw new IndexOutOfBoundsException();
 		}
 		new Snode<Object>(element, null);
 		Snode<Object> q = head;
 		for (; q != null;) {
-			if (index == 0) {
+			if (x == 0) {
 				q.value = element;
 				break;
 			}
 			q = q.next;
-			index--;
+			x--;
 		}
 	}
 
@@ -117,17 +120,18 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void remove(int index) {
+	public void remove(final int index) {
 		// TODO Auto-generated method stub
-		if (index > size) {
+		int x = index;
+		if (x > size) {
 			throw new IndexOutOfBoundsException();
 		}
-		if (index == 0) {
+		if (x == 0) {
 			head = head.next;
 		}
 		Snode<Object> q = head;
 		for (; q != null;) {
-			if (index == 1) {
+			if (x == 1) {
 				Snode<Object> temp = q.next;
 				Snode<Object> temp1 = temp.next;
 				q.next = temp1;
@@ -135,7 +139,7 @@ public class SingleLinkedList implements ILinkedList {
 				break;
 			}
 			q = q.next;
-			index--;
+			x--;
 		}
 		size--;
 	}
