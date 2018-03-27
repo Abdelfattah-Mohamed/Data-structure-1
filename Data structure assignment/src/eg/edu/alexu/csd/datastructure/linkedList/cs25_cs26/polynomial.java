@@ -16,7 +16,7 @@ public class polynomial implements IPolynomialSolver {
 	int firstLast[][] = new int[2][4];
 	char negative = '0';
 
-	public polynomial(Snode<Object> head) {
+	public polynomial(final Snode<Object> head) {
 		// TODO Auto-generated constructor stub
 		this.head = head;
 	}
