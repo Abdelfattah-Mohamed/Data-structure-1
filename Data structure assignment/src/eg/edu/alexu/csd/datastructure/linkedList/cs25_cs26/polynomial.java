@@ -9,10 +9,10 @@ public class polynomial implements IPolynomialSolver {
 	Snode<Object> head = null;
 	Snode<Object> tail = head;
 	int size = 0;
-	public ILinkedList a = (ILinkedList) new SingleLinkedList(null);
-	public ILinkedList b = (ILinkedList) new SingleLinkedList(null);
-	public ILinkedList c = (ILinkedList) new SingleLinkedList(null);
-	public ILinkedList r = (ILinkedList) new SingleLinkedList(null);
+	public ILinkedList a = (ILinkedList) new SingleLinkedList(null, null);
+	public ILinkedList b = (ILinkedList) new SingleLinkedList(null, null);
+	public ILinkedList c = (ILinkedList) new SingleLinkedList(null, null);
+	public ILinkedList r = (ILinkedList) new SingleLinkedList(null, null);
 	int first_last[][] = new int[2][4];
 	char negative = '0';
 

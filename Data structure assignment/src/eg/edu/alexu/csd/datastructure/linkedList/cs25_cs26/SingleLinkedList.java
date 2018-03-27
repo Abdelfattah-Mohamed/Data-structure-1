@@ -14,8 +14,9 @@ public class SingleLinkedList implements ILinkedList {
 	Snode<Object> tail = null;
 	int size = 0;
 
-	public SingleLinkedList(Snode<Object> head) {
+	public SingleLinkedList(Snode<Object> head, Snode<Object> tail) {
 		this.head = head;
+		this.tail = tail;
 	}
 
 	@Override
@@ -150,7 +151,7 @@ public class SingleLinkedList implements ILinkedList {
 		// TODO Auto-generated method stub
 		int counter = toIndex;
 		Snode<Object> head1 = head;
-		ILinkedList sub = (ILinkedList) new SingleLinkedList(null);
+		ILinkedList sub = (ILinkedList) new SingleLinkedList(null, null);
 		if (fromIndex > toIndex || fromIndex > size || toIndex > size) {
 			throw new IndexOutOfBoundsException();
 		}

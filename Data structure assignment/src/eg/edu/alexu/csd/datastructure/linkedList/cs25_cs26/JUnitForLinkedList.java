@@ -17,7 +17,7 @@ public class JUnitForLinkedList {
 
 	@Test
 	public void cs55TestSizeContains() {
-		ILinkedList object = (ILinkedList) new SingleLinkedList(null);
+		ILinkedList object = (ILinkedList) new SingleLinkedList(null, null);
 		object.add(0, 0);
 		object.add(1, 1); // line 365
 		object.add(2, 2);
@@ -40,7 +40,7 @@ public class JUnitForLinkedList {
 
 	@Test
 	public void cs58TestContains() {
-		ILinkedList c = (ILinkedList) new SingleLinkedList(null);
+		ILinkedList c = (ILinkedList) new SingleLinkedList(null, null);
 		for (int i = 0; i < 3; i++) {
 			c.add(i);
 		}
@@ -58,7 +58,7 @@ public class JUnitForLinkedList {
 
 	@Test
 	public void cs56TestSizeContains1() {
-		ILinkedList test = (ILinkedList) new SingleLinkedList(null);
+		ILinkedList test = (ILinkedList) new SingleLinkedList(null, null);
 		for (int i = 5; i < 15; ++i) {
 			test.add(Integer.valueOf(i));
 		}
@@ -70,7 +70,7 @@ public class JUnitForLinkedList {
 
 	@Test
 	public void cs65TestSet() {
-		ILinkedList instance = (ILinkedList) new SingleLinkedList(null);
+		ILinkedList instance = (ILinkedList) new SingleLinkedList(null, null);
 		instance.add(1);
 		instance.add(3);
 		instance.add(5);
@@ -80,7 +80,7 @@ public class JUnitForLinkedList {
 
 	@Test
 	public void cs65TestSetError() {
-		ILinkedList instance = (ILinkedList) new SingleLinkedList(null);
+		ILinkedList instance = (ILinkedList) new SingleLinkedList(null, null);
 		try {
 			instance.add(1);
 			instance.add(2);
@@ -92,7 +92,7 @@ public class JUnitForLinkedList {
 
 	@Test
 	public void cs65TestSubList() {
-		ILinkedList instance = (ILinkedList) new SingleLinkedList(null);
+		ILinkedList instance = (ILinkedList) new SingleLinkedList(null, null);
 		instance.add('a');
 		instance.add('b');
 		instance.add('c');
@@ -105,7 +105,7 @@ public class JUnitForLinkedList {
 
 	@Test
 	public void cs56TestContains() {
-		ILinkedList c = (ILinkedList) new SingleLinkedList(null);
+		ILinkedList c = (ILinkedList) new SingleLinkedList(null, null);
 		for (int i = 0; i < 3; i++) {
 			c.add(i);
 		}
@@ -123,7 +123,7 @@ public class JUnitForLinkedList {
 
 	@Test
 	public void cs56TestAddRemoveTwoLists5() {
-		ILinkedList c = (ILinkedList) new SingleLinkedList(null);
+		ILinkedList c = (ILinkedList) new SingleLinkedList(null, null);
 		for (int i = 0; i < 3; i++) {
 			c.add(i);
 		}
@@ -131,7 +131,7 @@ public class JUnitForLinkedList {
 		c.add(4, 4);
 		c.set(1, 7);
 		c.set(4, 9);
-		ILinkedList d = (ILinkedList) new SingleLinkedList(null);
+		ILinkedList d = (ILinkedList) new SingleLinkedList(null, null);
 		d.add(3);
 		d.add(7);
 		d.add(1);
