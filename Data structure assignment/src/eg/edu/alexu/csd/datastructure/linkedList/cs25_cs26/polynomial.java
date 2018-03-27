@@ -495,7 +495,6 @@ public class polynomial implements IPolynomialSolver {
 		add(poly1, poly2);
 		return null;
 	}
-
 	@Override
 	public int[][] multiply(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
