@@ -3,6 +3,8 @@
  */
 package eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26;
 
+import static org.junit.Assert.assertEquals;
+
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Test;
 
