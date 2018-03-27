@@ -14,7 +14,7 @@ public class SingleLinkedList implements ILinkedList {
 	Snode<Object> tail = null;
 	int size = 0;
 
-	public SingleLinkedList(Snode<Object> head, Snode<Object> tail) {
+	public SingleLinkedList(final Snode<Object> head, final Snode<Object> tail) {
 		this.head = head;
 		this.tail = tail;
 	}
