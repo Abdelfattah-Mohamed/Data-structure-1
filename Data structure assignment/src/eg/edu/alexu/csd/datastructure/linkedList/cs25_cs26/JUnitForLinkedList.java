@@ -51,7 +51,7 @@ public class JUnitForLinkedList {
 		c.add(0, 3);
 		c.add(4, 4);
 
-		//assertTrue(c.contains(4));
+		// assertTrue(c.contains(4));
 		assertTrue(c.contains(0));
 		assertTrue(c.contains(1));
 		assertTrue(c.contains(2));
@@ -91,6 +91,7 @@ public class JUnitForLinkedList {
 			instance.set(4, 'F');
 			fail("You should throw an exception when trying to set in a wrong index");
 		} catch (RuntimeException f) {
+			System.out.print("index must be in litter than size");
 		}
 	}
 
