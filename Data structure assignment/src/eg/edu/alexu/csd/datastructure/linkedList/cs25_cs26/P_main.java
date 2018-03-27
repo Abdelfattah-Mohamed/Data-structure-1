@@ -8,9 +8,28 @@ import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
 
 public class P_main {
 
+	static IPolynomialSolver instance = (IPolynomialSolver) new polynomial(null);
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		IPolynomialSolver instance = (IPolynomialSolver) new polynomial(null);
+		operation();
+		while (true) {
+			System.out.println();
+			System.out.println("Press Y to Exist OR N to cntinous");
+			Scanner scan = new Scanner(System.in);
+			char x = scan.next().charAt(0);
+			if (x == 'Y' || x == 'y') {
+				break;
+			} else if (x == 'N' || x == 'n') {
+				operation();
+			} else {
+				System.out.println();
+				System.out.println("please enter valid choise");
+			}
+		}
+	}
+
+	private static void operation() {
 
 		System.out.println("Please choose an action");
 		System.out.println("-----------------------");
@@ -29,26 +48,23 @@ public class P_main {
 			char poly;
 			poly = scan.next().charAt(0);
 			Vector<Point> arrayOfSet = new Vector<Point>();
-			int[][] terms = null;
 			int i = 0;
+			int noOfTerms = 0;
+			System.out.println("Insert the number of terms:");
+			noOfTerms = scan.nextInt();
+			int[][] terms = new int[noOfTerms][2];
 			System.out.println("Insert the polynomial terms in the form:");
 			System.out.println("(coeff1, exponent1), (coeff2, exponent2), ..");
 			scan.useDelimiter("[\\s\\(\\),]+");
-			while (scan.hasNext() == true) {
-				int coff = scan.nextInt();
-				int exp = scan.nextInt();
-				arrayOfSet.add(new Point(coff, exp));
-			}
-			terms = new int[arrayOfSet.size()][2];
-			while (i < arrayOfSet.size()) {
-				terms[i][0] = arrayOfSet.elementAt(i).x;
-				terms[i][1] = arrayOfSet.elementAt(i).y;
+			while (noOfTerms > 0) {
+				terms[i][0] = scan.nextInt();
+				terms[i][1] = scan.nextInt();
+				noOfTerms--;
 				i++;
-			}
 
+			}
 			instance.setPolynomial(poly, terms);
 			System.out.println("Polynomial " + poly + " is set");
-			return;
 
 		} else if (Choice == 2) {
 			System.out.println("Insert the variable name: A, B, C, R");
@@ -68,7 +84,7 @@ public class P_main {
 			System.out.println("Insert the second variable name: A, B or C");
 			char poly2 = scan.next().charAt(0);
 			instance.subtract(poly1, poly2);
-			
+
 		} else if (Choice == 5) {
 			System.out.println("Insert the first variable name: A, B or C");
 			char poly1 = scan.next().charAt(0);
@@ -79,7 +95,7 @@ public class P_main {
 		} else if (Choice == 6) {
 			System.out.println("Insert the first variable name: A, B or C");
 			char poly = scan.next().charAt(0);
-			float x = 0 ;
+			float x = 0;
 			System.out.println("Insert the point");
 			x = scan.nextFloat();
 			instance.evaluatePolynomial(poly, x);
@@ -88,19 +104,5 @@ public class P_main {
 			char poly = scan.next().charAt(0);
 			instance.clearPolynomial(poly);
 		}
-
-		/*
-		 * instance.setPolynomial('A', new int[][] { { 3, 2 }, { 45, 3 }, { 176, 3 }, {
-		 * 128, 2 } }); instance.setPolynomial('B', new int[][] { { 4, 2 }, { 45, 3 }, {
-		 * 176, 3 }, { 128, 2 } }); instance.print('B'); System.out.println();
-		 * instance.print('A'); //instance.setPolynomial('A', new int[][] { { 4, 1 }, {
-		 * 3, 2 }, { 2, 3 }, { 1, 0 } }); System.out.println(); //instance.print('A');
-		 * System.out.println(); /* float eval = instance.evaluatePolynomial('A', 0);
-		 * System.out.println(eval); eval = instance.evaluatePolynomial('B', 0);
-		 * System.out.print(eval);
-		 * 
-		 * instance.add('B', 'A'); System.out.println(); instance.subtract('B', 'A');
-		 * System.out.println(); instance.multiply('A', 'B');
-		 */}
-
+	}
 }
