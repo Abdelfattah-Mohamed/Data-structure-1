@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26;
 
