@@ -6,7 +6,6 @@ public class Snode<T> {
 	Snode<T> next;
 
 	public Snode(final T value, final Snode<T> next) {
-		// TODO Auto-generated constructor stub
 		this.value = value;
 		this.next = next;
 	}
