@@ -6,7 +6,8 @@ public class SNodes<T> {
 	SNodes<T> next;
 	SNodes<T> prev;
 
-	public SNodes(final T value, final SNodes<T> next, final SNodes<T> prev) {
+	public SNodes(final T value,
+			final SNodes<T> next, final SNodes<T> prev) {
 		// TODO Auto-generated constructor stub
 		this.value = value;
 		this.next = next;
