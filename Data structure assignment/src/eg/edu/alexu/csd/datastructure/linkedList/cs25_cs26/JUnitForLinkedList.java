@@ -28,16 +28,17 @@ public class JUnitForLinkedList {
 		object.add(3, 3);
 		object.add(4, 4);
 		object.add(5, 5);
+		object.add(6, 'B');
+		object.add(7, 'A');
 		object.set(1, 10);
 		object.set(4, 40);
 		object.remove(1);
 
 		assertEquals(object.get(1), 2);
-
+		assertEquals(object.get(5), 'B');
+		assertEquals(object.get(6), 'A');
 		object.sublist(1, 3);
-
 		object.clear();
-
 		assertEquals(object.get(0), null);
 
 	}
@@ -51,7 +52,7 @@ public class JUnitForLinkedList {
 		c.add(0, 3);
 		c.add(4, 4);
 
-		// assertTrue(c.contains(4));
+		assertTrue(c.contains(4));
 		assertTrue(c.contains(0));
 		assertTrue(c.contains(1));
 		assertTrue(c.contains(2));

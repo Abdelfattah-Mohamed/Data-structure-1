@@ -13,7 +13,7 @@ public class polynomial implements IPolynomialSolver {
 	public ILinkedList b = (ILinkedList) new SingleLinkedList(null, null);
 	public ILinkedList c = (ILinkedList) new SingleLinkedList(null, null);
 	public ILinkedList r = (ILinkedList) new SingleLinkedList(null, null);
-	int firstLast[][] = new int[2][4];
+	int[][] firstLast = new int[2][4];
 	char negative = '0';
 
 	public polynomial(final Snode<Object> head) {
@@ -495,6 +495,7 @@ public class polynomial implements IPolynomialSolver {
 		add(poly1, poly2);
 		return null;
 	}
+
 	@Override
 	public int[][] multiply(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
