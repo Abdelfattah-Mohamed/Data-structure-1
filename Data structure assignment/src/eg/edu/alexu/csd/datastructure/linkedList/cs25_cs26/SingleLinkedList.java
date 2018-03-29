@@ -4,56 +4,30 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
 public class SingleLinkedList implements ILinkedList {
 
-	Snode<Object> head = null;
-	Snode<Object> tail = null;
-	int size = 0;
-
-	public SingleLinkedList(final Snode<Object> head, final Snode<Object> tail) {
-		this.head = head;
-		this.tail = tail;
+	public SingleLinkedList() {
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void add(final int index, final Object element) {
-		// TODO Auto-generated method stub
-		int x = index;
-		if (x > size) {
-			throw new IndexOutOfBoundsException();
-		}
-		Snode<Object> nptr = new Snode<Object>(element, null);
-		Snode<Object> q = head;
-		if (q == null || x == 0) {
-			nptr.next = head;
-			head = nptr;
-		}
-		for (; q != null;) {
-			if (x == 1) {
-				Snode<Object> temp = q.next;
-				q.next = nptr;
-				nptr.next = temp;
-				break;
-			}
-			q = q.next;
-			x--;
-		}
-		size++;
-
-	}
-
-	@Override
-	public void add(final Object element) {
+	public void add(int index, Object element) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public Object get(final int index) {
+	public void add(Object element) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Object get(int index) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void set(final int index, final Object element) {
+	public void set(int index, Object element) {
 		// TODO Auto-generated method stub
 
 	}
@@ -71,7 +45,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void remove(final int index) {
+	public void remove(int index) {
 		// TODO Auto-generated method stub
 
 	}
@@ -83,13 +57,13 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public ILinkedList sublist(final int fromIndex, final int toIndex) {
+	public ILinkedList sublist(int fromIndex, int toIndex) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean contains(final Object o) {
+	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
 		return false;
 	}
