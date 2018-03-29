@@ -4,8 +4,14 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
 public class SingleLinkedList implements ILinkedList {
 
-	public SingleLinkedList() {
+	Snode<Object> head = null;
+	Snode<Object> tail = null;
+	int size = 0;
+
+	public SingleLinkedList(final Snode<Object> head, final Snode<Object> tail) {
 		// TODO Auto-generated constructor stub
+		this.head = head;
+		this.tail = tail;
 	}
 
 	@Override
