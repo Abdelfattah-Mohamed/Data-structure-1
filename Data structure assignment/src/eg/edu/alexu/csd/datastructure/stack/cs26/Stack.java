@@ -32,10 +32,15 @@ public class Stack implements IStack {
 	@Override
 	public Object pop() {
 		// TODO Auto-generated method stub
+		if (head == null) {
+			return null;
+		}
 		SNodes<Object> q = head;
 		head = q.next;
 		q.next = null;
-		return null;
+		head.prev = null;
+		return q.value;
+
 	}
 
 	@Override
