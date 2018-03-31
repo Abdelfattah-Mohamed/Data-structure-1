@@ -43,7 +43,7 @@ public class Stack implements IStack {
 	@Override
 	public Object peek() {
 		// TODO Auto-generated method stub
-		return head.value;
+		return head.next.value;
 	}
 
 	@Override
