@@ -2,15 +2,13 @@ package eg.edu.alexu.csd.datastructure.stack.cs26;
 
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 
-
 class SNodes<T> {
 
 	T value;
 	SNodes<T> next;
 	SNodes<T> prev;
 
-	public SNodes(final T value,
-			final SNodes<T> next, final SNodes<T> prev) {
+	public SNodes(final T value, final SNodes<T> next, final SNodes<T> prev) {
 		// TODO Auto-generated constructor stub
 		this.value = value;
 		this.next = next;
@@ -43,15 +41,24 @@ public class Stack implements IStack {
 	@Override
 	public Object peek() {
 		// TODO Auto-generated method stub
-		return head.next.value;
+		return head.value;
 	}
 
 	@Override
 	public void push(final Object element) {
 		// TODO Auto-generated method stub
 		SNodes<Object> nptr = new SNodes<Object>(element, null, null);
-		nptr.next = head;
-		head = nptr;
+
+		if (head == null) {
+			head = nptr;
+			tail = head;
+		} else {
+			nptr.next = head;
+			head.prev = nptr;
+			head = nptr;
+		}
+		size++;
+
 	}
 
 	@Override
