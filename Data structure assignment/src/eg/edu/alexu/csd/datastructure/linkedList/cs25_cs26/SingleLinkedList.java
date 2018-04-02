@@ -10,16 +10,45 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
  */
 public class SingleLinkedList implements ILinkedList {
 
+	Snode head = null;
+	Snode tail = null;
+	int size = 0;
+
+	public SingleLinkedList(final Snode head, final Snode tail) {
+		this.head = head;
+		this.tail = tail;
+	}
+
 	@Override
 	public void add(int index, Object element) {
 		// TODO Auto-generated method stub
-		
+		int x = index;
+		if (x > size) {
+			throw new IndexOutOfBoundsException();
+		}
+		Snode nptr = new Snode(element, null);
+		Snode q = head;
+		if (q == null || x == 0) {
+			nptr.next = head;
+			head = nptr;
+		}
+		for (; q != null;) {
+			if (x == 1) {
+				Snode temp = q.next;
+				q.next = nptr;
+				nptr.next = temp;
+				break;
+			}
+			q = q.next;
+			x--;
+		}
+		size++;
 	}
 
 	@Override
 	public void add(Object element) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -31,13 +60,13 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public void set(int index, Object element) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -49,7 +78,7 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public void remove(int index) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
