@@ -155,7 +155,7 @@ public class SingleLinkedList implements ILinkedList {
 		int counter = toIndex;
 		Snode head1 = head;
 		ILinkedList sub = (ILinkedList) new SingleLinkedList();
-		if (fromIndex > toIndex || fromIndex > size || toIndex > size) {
+		if (fromIndex > toIndex || fromIndex > size || toIndex > size || fromIndex < 0) {
 			throw new IndexOutOfBoundsException();
 		}
 		while (counter >= 0) {
