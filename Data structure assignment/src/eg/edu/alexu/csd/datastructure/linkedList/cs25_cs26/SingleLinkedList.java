@@ -122,7 +122,7 @@ public class SingleLinkedList implements ILinkedList {
 	public void remove(int index) {
 		// TODO Auto-generated method stub
 		int x = index;
-		if (x > size) {
+		if (x > size - 1 || x < 0) {
 			throw new IllegalArgumentException("Remove from invalid index passed!");
 		}
 		if (x == 0) {
