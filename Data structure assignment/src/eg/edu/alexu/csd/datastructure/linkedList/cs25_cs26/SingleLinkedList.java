@@ -112,6 +112,9 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
+		if (head == null) {
+			return true;
+		}
 		return false;
 	}
 
