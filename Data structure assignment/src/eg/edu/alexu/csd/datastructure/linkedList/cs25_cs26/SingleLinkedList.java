@@ -13,7 +13,8 @@ public class SingleLinkedList implements ILinkedList {
 	Snode head = null;
 	Snode tail = null;
 	int size = 0;
-
+	
+	
 	public SingleLinkedList(Snode head, Snode tail) {
 		this.head = head;
 		this.tail = tail;

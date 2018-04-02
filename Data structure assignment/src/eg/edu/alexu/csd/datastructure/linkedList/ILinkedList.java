@@ -22,7 +22,7 @@ public interface ILinkedList {
 	 */
 	public Object get(int index);
 
-	/*
+	/**
 	 * Replaces the element at the specified position in this list with the
 	 * specified element.
 	 * 
