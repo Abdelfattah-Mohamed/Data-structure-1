@@ -123,7 +123,7 @@ public class SingleLinkedList implements ILinkedList {
 		// TODO Auto-generated method stub
 		int x = index;
 		if (x > size) {
-			throw new RuntimeException("Remove from invalid index passed!");
+			throw new IllegalArgumentException("Remove from invalid index passed!");
 		}
 		if (x == 0) {
 			head = head.next;
