@@ -1,13 +1,12 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26;
 
-public class Snode<T> {
+public class Snode {
 
-	T value;
-	Snode<T> next;
+	Object value;
+	Snode next;
 
-	public Snode(final T value, final Snode<T> next) {
+	public Snode(final Object value, final Snode next) {
 		this.value = value;
 		this.next = next;
 	}
-
 }
