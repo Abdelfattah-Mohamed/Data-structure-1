@@ -14,7 +14,7 @@ public class SingleLinkedList implements ILinkedList {
 	Snode tail = null;
 	int size = 0;
 
-	public SingleLinkedList(final Snode head, final Snode tail) {
+	public SingleLinkedList(Snode head, Snode tail) {
 		this.head = head;
 		this.tail = tail;
 	}
@@ -22,7 +22,7 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public void add(int index, Object element) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
