@@ -152,22 +152,20 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public ILinkedList sublist(int fromIndex, int toIndex) {
 		// TODO Auto-generated method stub
-		int counter = toIndex;
+		int counter = 0;
 		Snode head1 = head;
 		ILinkedList sub = (ILinkedList) new SingleLinkedList();
 		if (fromIndex > toIndex || fromIndex > size || toIndex > size || fromIndex < 0) {
 			throw new IndexOutOfBoundsException();
 		}
-		while (counter >= 0) {
-			if (counter <= fromIndex) {
+		while (counter <= toIndex) {
+			if (counter >= fromIndex) {
 				sub.add(head1.value);
 			}
 			head1 = head1.next;
-			counter--;
+			counter++;
 		}
-
 		return (ILinkedList) sub;
-
 	}
 
 	@Override
