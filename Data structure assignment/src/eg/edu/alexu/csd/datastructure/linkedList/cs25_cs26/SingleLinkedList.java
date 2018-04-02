@@ -23,7 +23,7 @@ public class SingleLinkedList implements ILinkedList {
 		// TODO Auto-generated method stub
 		int x = index;
 		if (x > size) {
-			throw new IndexOutOfBoundsException();
+			throw new IndexOutOfBoundsException("Add with wrong index passed!");
 		}
 		Snode nptr = new Snode(element, null);
 		Snode q = head;
