@@ -121,7 +121,26 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public void remove(int index) {
 		// TODO Auto-generated method stub
-
+		int x = index;
+		if (x > size) {
+			throw new IndexOutOfBoundsException();
+		}
+		if (x == 0) {
+			head = head.next;
+		}
+		Snode q = head;
+		for (; q != null;) {
+			if (x == 1) {
+				Snode temp = q.next;
+				Snode temp1 = temp.next;
+				q.next = temp1;
+				temp.next = null;
+				break;
+			}
+			q = q.next;
+			x--;
+		}
+		size--;
 	}
 
 	@Override
