@@ -48,7 +48,6 @@ public class SingleLinkedList implements ILinkedList {
 	public void add(Object element) {
 		// TODO Auto-generated method stub
 		Snode nptr = new Snode(element, null);
-
 		if (head == null) {
 			head = nptr;
 			tail = head;
@@ -57,6 +56,7 @@ public class SingleLinkedList implements ILinkedList {
 			tail = nptr;
 		}
 		size++;
+		return;
 	}
 
 	@Override
