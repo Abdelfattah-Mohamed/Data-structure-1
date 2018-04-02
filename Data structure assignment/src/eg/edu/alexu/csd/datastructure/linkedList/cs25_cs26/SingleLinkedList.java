@@ -13,12 +13,12 @@ public class SingleLinkedList implements ILinkedList {
 	Snode head = null;
 	Snode tail = null;
 	int size = 0;
-/*
+
 	public SingleLinkedList(final Snode head, final Snode tail) {
 		this.head = head;
 		this.tail = tail;
 	}
-*/
+
 	@Override
 	public void add(int index, Object element) {
 		// TODO Auto-generated method stub
