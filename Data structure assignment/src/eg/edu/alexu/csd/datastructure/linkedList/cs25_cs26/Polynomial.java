@@ -418,13 +418,13 @@ public class Polynomial implements IPolynomialSolver {
 				maxExp1--;
 			}
 			if (poly2 == 'A') {
-				if (a.isEmpty() == true) {
+				if (A.isEmpty() == true) {
 					System.out.println("Variable not set");
 					throw new IllegalArgumentException();
 				}
 				maxExp2 = firstLast[0][0];
-				for (; i < C.size() + a.size(); i++) {
-					add[i][0] = (int) a.get(i - C.size());
+				for (; i < C.size() + A.size(); i++) {
+					add[i][0] = (int) A.get(i - C.size());
 					add[i][1] = maxExp2;
 					maxExp2--;
 				}
@@ -462,13 +462,13 @@ public class Polynomial implements IPolynomialSolver {
 			R.clear();
 		}
 		if (poly2 == 'A') {
-			if (a.isEmpty() == true) {
+			if (A.isEmpty() == true) {
 				System.out.println("Variable not set");
 				throw new IllegalArgumentException();
 			}
 			negative = 'A';
-			while (a.get(i) != null) {
-				a.set(i, -1 * (int) a.get(i));
+			while (A.get(i) != null) {
+				A.set(i, -1 * (int) A.get(i));
 				i++;
 			}
 		} else if (poly2 != 'B') {
@@ -478,7 +478,7 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			negative = 'B';
 			while (B.get(i) == null) {
-				b.set(i, -1 * (int) b.get(i));
+				B.set(i, -1 * (int) B.get(i));
 				i++;
 			}
 		} else if (poly2 != 'C') {
@@ -502,7 +502,7 @@ public class Polynomial implements IPolynomialSolver {
 		int counter = 0;
 		int muliExp = 0;
 		int multiMax = 0;
-		int multi[][] = new int[(A.size() + 1) * (B.size() + 1) * (C.size() + 1) * (a.size() + 1) * (b.size() + 1)
+		int multi[][] = new int[(A.size() + 1) * (B.size() + 1) * (C.size() + 1) * (A.size() + 1) * (B.size() + 1)
 				* (C.size() + 1)][2];
 		if (R.isEmpty() == false) {
 			R.clear();
@@ -514,13 +514,13 @@ public class Polynomial implements IPolynomialSolver {
 				R.clear();
 			}
 			if (negative == 'A') {
-				while (a.get(i) != null) {
-					a.set(i, -1 * (int) a.get(i));
+				while (A.get(i) != null) {
+					A.set(i, -1 * (int) A.get(i));
 					i++;
 				}
 			} else if (negative == 'B') {
-				while (b.get(i) == null) {
-					b.set(i, -1 * (int) b.get(i));
+				while (B.get(i) == null) {
+					B.set(i, -1 * (int) B.get(i));
 					i++;
 				}
 			} else if (negative == 'C') {
@@ -533,10 +533,10 @@ public class Polynomial implements IPolynomialSolver {
 		negative = '0';
 		if (poly1 == 'A' && poly2 == 'B') {
 			muliExp = firstLast[0][0] + firstLast[0][1];
-			for (int i = 0; i < a.size(); i++) {
+			for (int i = 0; i < A.size(); i++) {
 				multiMax = muliExp;
-				for (int j = 0; j < b.size(); j++) {
-					multi[counter][0] = (int) a.get(i) * (int) b.get(j);
+				for (int j = 0; j < B.size(); j++) {
+					multi[counter][0] = (int) A.get(i) * (int) B.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -547,10 +547,10 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'A' && poly2 == 'C') {
 			muliExp = firstLast[0][0] + firstLast[0][2];
-			for (int i = 0; i < a.size(); i++) {
+			for (int i = 0; i < A.size(); i++) {
 				multiMax = muliExp;
 				for (int j = 0; j < C.size(); j++) {
-					multi[counter][0] = (int) a.get(i) * (int) C.get(j);
+					multi[counter][0] = (int) A.get(i) * (int) C.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -561,10 +561,10 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'A' && poly2 == 'A') {
 			muliExp = firstLast[0][0] + firstLast[0][0];
-			for (int i = 0; i < a.size(); i++) {
+			for (int i = 0; i < A.size(); i++) {
 				multiMax = muliExp;
-				for (int j = 0; j < a.size(); j++) {
-					multi[counter][0] = (int) a.get(i) * (int) a.get(j);
+				for (int j = 0; j < A.size(); j++) {
+					multi[counter][0] = (int) A.get(i) * (int) A.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -575,10 +575,10 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'B' && poly2 == 'A') {
 			muliExp = firstLast[0][1] + firstLast[0][0];
-			for (int i = 0; i < b.size(); i++) {
+			for (int i = 0; i < B.size(); i++) {
 				multiMax = muliExp;
-				for (int j = 0; j < a.size(); j++) {
-					multi[counter][0] = (int) b.get(i) * (int) a.get(j);
+				for (int j = 0; j < A.size(); j++) {
+					multi[counter][0] = (int) B.get(i) * (int) A.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -589,10 +589,10 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'B' && poly2 == 'B') {
 			muliExp = firstLast[0][1] + firstLast[0][1];
-			for (int i = 0; i < b.size(); i++) {
+			for (int i = 0; i < B.size(); i++) {
 				multiMax = muliExp;
-				for (int j = 0; j < b.size(); j++) {
-					multi[counter][0] = (int) b.get(i) * (int) b.get(j);
+				for (int j = 0; j < B.size(); j++) {
+					multi[counter][0] = (int) B.get(i) * (int) B.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -603,10 +603,10 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'B' && poly2 == 'C') {
 			muliExp = firstLast[0][1] + firstLast[0][2];
-			for (int i = 0; i < b.size(); i++) {
+			for (int i = 0; i < B.size(); i++) {
 				multiMax = muliExp;
-				for (int j = 0; j < c.size(); j++) {
-					multi[counter][0] = (int) b.get(i) * (int) c.get(j);
+				for (int j = 0; j < C.size(); j++) {
+					multi[counter][0] = (int) B.get(i) * (int) C.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -617,10 +617,10 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'C' && poly2 == 'A') {
 			muliExp = firstLast[0][2] + firstLast[0][0];
-			for (int i = 0; i < c.size(); i++) {
+			for (int i = 0; i < C.size(); i++) {
 				multiMax = muliExp;
-				for (int j = 0; j < a.size(); j++) {
-					multi[counter][0] = (int) c.get(i) * (int) a.get(j);
+				for (int j = 0; j < A.size(); j++) {
+					multi[counter][0] = (int) C.get(i) * (int) A.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -631,10 +631,10 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'C' && poly2 == 'B') {
 			muliExp = firstLast[0][2] + firstLast[0][1];
-			for (int i = 0; i < c.size(); i++) {
+			for (int i = 0; i < C.size(); i++) {
 				multiMax = muliExp;
-				for (int j = 0; j < b.size(); j++) {
-					multi[counter][0] = (int) c.get(i) * (int) b.get(j);
+				for (int j = 0; j < B.size(); j++) {
+					multi[counter][0] = (int) C.get(i) * (int) B.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -645,10 +645,10 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'C' && poly2 == 'C') {
 			muliExp = firstLast[0][2] + firstLast[0][2];
-			for (int i = 0; i < c.size(); i++) {
+			for (int i = 0; i < C.size(); i++) {
 				multiMax = muliExp;
-				for (int j = 0; j < c.size(); j++) {
-					multi[counter][0] = (int) c.get(i) * (int) c.get(j);
+				for (int j = 0; j < C.size(); j++) {
+					multi[counter][0] = (int) C.get(i) * (int) C.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
