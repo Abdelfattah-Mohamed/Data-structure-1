@@ -21,9 +21,11 @@ public class Polynomial implements IPolynomialSolver {
 		// TODO Auto-generated method stub
 		int counter = 0;
 		order(terms);
+		/*
 		if (poly != 'A' || poly != 'B' || poly != 'C' || poly != 220) {
 			throw new IllegalArgumentException();
 		}
+		*/
 		if (poly == 'A') {
 			if (A.isEmpty() == false) {
 				A.clear();
