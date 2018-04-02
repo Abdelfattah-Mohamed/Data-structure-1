@@ -62,6 +62,21 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public Object get(int index) {
 		// TODO Auto-generated method stub
+		int x = index;
+		if (x > size) {
+			throw new IndexOutOfBoundsException();
+		}
+		if (head == null) {
+			return null;
+		}
+		Snode q = head;
+		for (; q != null;) {
+			if (x == 0) {
+				return q.value;
+			}
+			q = q.next;
+			x--;
+		}
 		return null;
 	}
 
