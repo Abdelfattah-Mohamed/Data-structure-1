@@ -103,7 +103,10 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-
+		head.next = null;
+		head = null;
+		tail = head;
+		size = 0;
 	}
 
 	@Override
