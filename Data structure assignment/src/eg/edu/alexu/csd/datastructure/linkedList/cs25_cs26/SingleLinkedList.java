@@ -22,7 +22,7 @@ public class SingleLinkedList implements ILinkedList {
 	public void add(int index, Object element) {
 		// TODO Auto-generated method stub
 		int x = index;
-		if (x > size) {
+		if (x > size || x < 0) {
 			throw new IndexOutOfBoundsException("Add with wrong index passed!");
 		}
 		Snode nptr = new Snode(element, null);
@@ -63,7 +63,7 @@ public class SingleLinkedList implements ILinkedList {
 	public Object get(int index) {
 		// TODO Auto-generated method stub
 		int x = index;
-		if (x > size) {
+		if (x > size || x < 0) {
 			throw new IndexOutOfBoundsException();
 		}
 		if (head == null) {
@@ -84,7 +84,7 @@ public class SingleLinkedList implements ILinkedList {
 	public void set(int index, Object element) {
 		// TODO Auto-generated method stub
 		int x = index;
-		if (x > size) {
+		if (x > size || x < 0) {
 			throw new IndexOutOfBoundsException();
 		}
 		new Snode(element, null);
