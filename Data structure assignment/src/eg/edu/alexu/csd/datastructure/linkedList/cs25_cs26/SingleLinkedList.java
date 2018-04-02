@@ -173,6 +173,13 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
+		Snode q = head;
+		for (; q != null;) {
+			if (q.value.equals(o)) {
+				return true;
+			}
+			q = q.next;
+		}
 		return false;
 	}
 
