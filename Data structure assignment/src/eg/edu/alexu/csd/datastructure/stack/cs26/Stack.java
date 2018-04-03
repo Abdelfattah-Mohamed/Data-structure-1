@@ -3,7 +3,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs26;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 
 /**
- * 
+ *
  * @author Abd El Fattah
  *
  */

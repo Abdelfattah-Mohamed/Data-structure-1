@@ -1,7 +1,7 @@
 package eg.edu.alexu.csd.datastructure.stack.cs26;
 
 /**
- * 
+ *
  * @author Abd El Fattah
  *
  */
