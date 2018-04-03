@@ -335,8 +335,8 @@ public class Polynomial implements IPolynomialSolver {
 				if (B.get(i) != null || (int) B.get(i) != 0) {
 					get = (int) B.get(i);
 					get1 = (float) get;
-					evaluate = (float) (evaluate +
-							(get1 * (pow(value, maxExp))));
+					evaluate = (float) (evaluate
+							+ (get1 * (pow(value, maxExp))));
 				}
 				i++;
 				maxExp--;
@@ -358,8 +358,8 @@ public class Polynomial implements IPolynomialSolver {
 				if (C.get(i) != null || (int) C.get(i) != 0) {
 					get = (int) C.get(i);
 					get1 = (float) get;
-					evaluate = (float) (evaluate +
-							(get1 * (pow(value, maxExp))));
+					evaluate = (float) (evaluate
+							+ (get1 * (pow(value, maxExp))));
 				}
 				i++;
 				maxExp--;
