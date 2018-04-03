@@ -2,6 +2,11 @@ package eg.edu.alexu.csd.datastructure.stack.cs26;
 
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 
+/**
+ * 
+ * @author Abd El Fattah
+ *
+ */
 public class Stack implements IStack {
 
 	Dnode head = null;
@@ -17,7 +22,6 @@ public class Stack implements IStack {
 		Dnode q = head;
 		head = head.next;
 		q.next = null;
-		//head.prev = null;
 		size--;
 		return q.value;
 	}
