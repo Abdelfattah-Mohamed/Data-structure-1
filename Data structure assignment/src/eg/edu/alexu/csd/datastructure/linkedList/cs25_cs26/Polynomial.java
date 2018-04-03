@@ -722,8 +722,10 @@ public class Polynomial implements IPolynomialSolver {
 		return multi;
 	}
 
-	/*
-	 * @param terms array of [coefficients][exponents]
+	/**
+	 *
+	 * @param terms
+	 *            array of [coefficients][exponents]
 	 */
 	private void order(final int[][] terms) {
 		// TODO Auto-generated method stub
