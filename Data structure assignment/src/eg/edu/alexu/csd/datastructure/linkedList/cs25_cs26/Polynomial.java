@@ -577,8 +577,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, add);
 		} else if (poly1 == 'C') {
-			if (c.isEmpty()) {
-				/*System.out.println("Solver"
+			/*if (c.isEmpty()) {
+				System.out.println("Solver"
 						+ " evaluated unseted"
 						+ " polynomial");
 				throw new IllegalArgumentException(
