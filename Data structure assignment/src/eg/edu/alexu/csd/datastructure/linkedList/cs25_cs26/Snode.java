@@ -12,8 +12,8 @@ public class Snode {
 	 * @param next
 	 *            point to the next node.
 	 */
-	public Snode(Object value, final Snode next) {
-		this.value = value;
+	public Snode(/*final Object value,*/ final Snode next) {
+		//this.value = value;
 		this.next = next;
 	}
 }
