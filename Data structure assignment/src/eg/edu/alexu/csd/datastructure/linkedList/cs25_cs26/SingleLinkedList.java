@@ -8,15 +8,19 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
  *
  */
 public class SingleLinkedList implements ILinkedList {
-
+	/**
+	 * to implement liked list with head node.
+	 */
 	Snode head = null;
+	/**
+	 * to point last node.
+	 */
 	Snode tail = null;
+	/**
+	 * size of linked list.
+	 */
 	int size = 0;
 
-	/*
-	 * public SingleLinkedList(Snode head, Snode tail) { this.head = head; this.tail
-	 * = tail; }
-	 */
 	@Override
 	public void add(final int index, final Object element) {
 		// TODO Auto-generated method stub

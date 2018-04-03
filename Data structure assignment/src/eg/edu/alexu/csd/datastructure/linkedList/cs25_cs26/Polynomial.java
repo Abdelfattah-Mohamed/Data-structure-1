@@ -40,7 +40,7 @@ public class Polynomial implements IPolynomialSolver {
 	 */
 	public ILinkedList r = (ILinkedList) new SingleLinkedList();
 	/**
-	 * to store max & minimum exponent.  
+	 * to store max & minimum exponent.
 	 */
 	int[][] firstLast = new int[2][4];
 	/**
