@@ -18,13 +18,13 @@ public class Snode {
 
 	/**
 	 *
-	 * @param value
+	 * @param element
 	 *            element of the node.
-	 * @param next
+	 * @param after
 	 *            point to the next node.
 	 */
-	public Snode(Object element, Snode after) {
-		element = value;
-		after = next;
+	public Snode(final Object element,final Snode after) {
+		value = element;
+		next = after;
 	}
 }
