@@ -6,7 +6,7 @@ public class Snode {
 	Snode next;
 
 	/**
-	 * 
+	 *
 	 * @param value
 	 *            element of the node.
 	 * @param next
