@@ -23,8 +23,8 @@ public class Snode {
 	 * @param next
 	 *            point to the next node.
 	 */
-	public Snode(final Object value, final Snode next) {
-		this.value = value;
-		this.next = next;
+	public Snode(Object element, Snode after) {
+		element = value;
+		after = next;
 	}
 }
