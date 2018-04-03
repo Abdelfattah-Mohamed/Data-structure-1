@@ -288,7 +288,7 @@ public class Polynomial implements IPolynomialSolver {
 		// TODO Auto-generated method stub
 		if (poly != 'A' && poly != 'B' && poly != 'C') {
 			throw new IllegalArgumentException("Operation"
-					+ " on polynomial " 
+					+ " on polynomial "
 		+ poly + " is not permitted");
 		}
 		int maxExp = 0;
