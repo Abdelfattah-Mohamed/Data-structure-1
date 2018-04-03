@@ -2,7 +2,13 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26;
 
 public class Snode {
 
+	/**
+	 * to obtain value of node.
+	 */
 	Object value;
+	/**
+	 * to point next node.
+	 */
 	Snode next;
 
 	/**
