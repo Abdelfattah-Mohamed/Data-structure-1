@@ -21,7 +21,7 @@ public class Dnode {
 	Dnode prev;
 
 	/**
-	 * 
+	 *
 	 * @param element
 	 *            value of node.
 	 * @param after
