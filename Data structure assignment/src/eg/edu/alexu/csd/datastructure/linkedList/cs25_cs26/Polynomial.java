@@ -355,7 +355,7 @@ public class Polynomial implements IPolynomialSolver {
 		int add[][] = new int[A.size() + B.size() + C.size()][2];
 		if (poly1 == 'A') {
 			if (A.isEmpty() == true) {
-				System.out.println("Variable not set");
+				System.out.println("Solver evaluated unseted polynomial");
 				throw new IllegalArgumentException();
 			}
 			maxExp1 = firstLast[0][0];

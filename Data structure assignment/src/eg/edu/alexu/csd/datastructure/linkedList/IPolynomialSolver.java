@@ -34,7 +34,9 @@ public interface IPolynomialSolver {
 	 * @param poly
 	 *            name of the polynomial
 	 * @param the
-	 *            polynomial constant value* @return the value of the polynomial
+	 *            polynomial constant value
+	 *
+	 * @return the value of the polynomial
 	 */
 	float evaluatePolynomial(char poly, float value);
 
