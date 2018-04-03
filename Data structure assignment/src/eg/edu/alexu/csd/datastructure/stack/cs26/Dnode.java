@@ -20,6 +20,15 @@ public class Dnode {
 	 */
 	Dnode prev;
 
+	/**
+	 * 
+	 * @param element
+	 *            value of node.
+	 * @param after
+	 *            point to next node.
+	 * @param before
+	 *            point to previous node.
+	 */
 	public Dnode(final Object element,
 			final Dnode after,
 			final Dnode before) {
