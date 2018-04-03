@@ -382,7 +382,7 @@ public class Polynomial implements IPolynomialSolver {
 		if (R.isEmpty() == false) {
 			R.clear();
 		}
-		int add[][] = new int[A.size() + B.size() + C.size()][2];
+		int[][] add = new int[A.size() + B.size() + C.size()][2];
 		if (poly1 == 'A') {
 			if (A.isEmpty() == true) {
 				System.out.println("Solver evaluated unseted polynomial");
