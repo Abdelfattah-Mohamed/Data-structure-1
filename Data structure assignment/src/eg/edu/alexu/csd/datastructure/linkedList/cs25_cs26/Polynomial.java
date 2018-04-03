@@ -490,6 +490,7 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, add);
 		}
+
 		int[][] re_arr = new int[R.size()][2];
 		int l = 0;
 		for (int j = 0; j < R.size(); j++) {
@@ -499,7 +500,6 @@ public class Polynomial implements IPolynomialSolver {
 				l++;
 			}
 		}
-
 		return re_arr;
 	}
 
@@ -722,6 +722,9 @@ public class Polynomial implements IPolynomialSolver {
 		return multi;
 	}
 
+	/*
+	 * @param terms array of [coefficients][exponents]
+	 */
 	private void order(final int[][] terms) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < terms.length - 1; i++) {
