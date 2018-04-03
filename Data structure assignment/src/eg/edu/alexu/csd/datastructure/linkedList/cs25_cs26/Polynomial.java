@@ -310,8 +310,8 @@ public class Polynomial implements IPolynomialSolver {
 				if (A.get(i) != null || (int) B.get(i) != 0) {
 					get = (int) A.get(i);
 					get1 = (float) get;
-					evaluate = (float) (evaluate +
-							(get1 * (pow(value, maxExp))));
+					evaluate = (float) (evaluate
+							+ (get1 * (pow(value, maxExp))));
 				}
 				i++;
 				maxExp--;
