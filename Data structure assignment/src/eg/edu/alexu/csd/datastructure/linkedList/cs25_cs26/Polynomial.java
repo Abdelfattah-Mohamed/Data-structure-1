@@ -715,8 +715,8 @@ public class Polynomial implements IPolynomialSolver {
 				i++;
 			}
 		}
-		add(poly1, poly2);
-		return null;
+		int[][] x = add(poly1, poly2);
+		return x;
 	}
 
 	@Override
