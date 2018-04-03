@@ -152,7 +152,7 @@ public class Polynomial implements IPolynomialSolver {
 			leastExp = firstLast[1][0];
 			int i = 0;
 			while (maxExp >= leastExp) {
-				if (A.get(i) != null 
+				if (A.get(i) != null
 						&& (int) A.get(i) != 0) {
 					if (maxExp == 0) {
 						print = print + "A.get(i)";
