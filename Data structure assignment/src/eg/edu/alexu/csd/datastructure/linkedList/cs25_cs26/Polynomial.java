@@ -11,14 +11,41 @@ import static java.lang.Math.pow;
  */
 public class Polynomial implements IPolynomialSolver {
 
+	/**
+	 * to implement linked list with first node.
+	 */
 	Snode head = null;
+	/**
+	 * to point last node.
+	 */
 	Snode tail = head;
+	/**
+	 * size of linked list.
+	 */
 	int size = 0;
+	/**
+	 * A_linked list.
+	 */
 	public ILinkedList a = (ILinkedList) new SingleLinkedList();
+	/**
+	 * B_linked list.
+	 */
 	public ILinkedList b = (ILinkedList) new SingleLinkedList();
+	/**
+	 * C_linked list.
+	 */
 	public ILinkedList c = (ILinkedList) new SingleLinkedList();
+	/**
+	 * D_linked list.
+	 */
 	public ILinkedList r = (ILinkedList) new SingleLinkedList();
+	/**
+	 * to store max & minimum exponent.  
+	 */
 	int[][] firstLast = new int[2][4];
+	/**
+	 * to know if polynomial multiply with -1.
+	 */
 	char negative = '0';
 
 	@Override
