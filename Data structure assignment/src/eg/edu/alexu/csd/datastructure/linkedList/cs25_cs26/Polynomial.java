@@ -367,7 +367,9 @@ public class Polynomial implements IPolynomialSolver {
 					get = (int) a.get(i);
 					get1 = (float) get;
 					evaluate = (float) (evaluate
-							+ (get1 * (pow(value, maxExp))));
+							+ (get1
+									* (pow(value,
+											maxExp))));
 				}
 				i++;
 				maxExp--;
@@ -392,7 +394,9 @@ public class Polynomial implements IPolynomialSolver {
 					get = (int) b.get(i);
 					get1 = (float) get;
 					evaluate = (float) (evaluate
-							+ (get1 * (pow(value, maxExp))));
+							+ (get1
+									* (pow(value,
+											maxExp))));
 				}
 				i++;
 				maxExp--;
@@ -415,7 +419,9 @@ public class Polynomial implements IPolynomialSolver {
 					get = (int) c.get(i);
 					get1 = (float) get;
 					evaluate = (float) (evaluate
-							+ (get1 * (pow(value, maxExp))));
+							+ (get1
+									* (pow(value,
+											maxExp))));
 				}
 				i++;
 				maxExp--;
@@ -431,12 +437,14 @@ public class Polynomial implements IPolynomialSolver {
 		if (poly1 != 'A' && poly1 != 'B' && poly1 != 'C') {
 			throw new IllegalArgumentException("Operation"
 					+ " on polynomial "
-					+ poly1 + " is not permitted");
+					+ poly1 + " is not "
+							+ "permitted");
 		}
 		if (poly2 != 'A' && poly2 != 'B' && poly2 != 'C') {
 			throw new IllegalArgumentException("Operation"
 					+ " on polynomial "
-					+ poly2 + " is not permitted");
+					+ poly2 + " is not"
+							+ " permitted");
 		}
 		int maxExp1 = 0;
 		int maxExp2 = 0;
@@ -449,9 +457,11 @@ public class Polynomial implements IPolynomialSolver {
 		if (poly1 == 'A') {
 			if (a.isEmpty()) {
 				System.out.println("Solver"
-						+ " evaluated unseted polynomial");
+						+ " evaluated unseted"
+						+ " polynomial");
 				throw new IllegalArgumentException("Solver "
-						+ "evaluated unseted polynomial");
+						+ "evaluated unseted"
+						+ " polynomial");
 			}
 			maxExp1 = firstLast[0][0];
 			for (i = 0; i < a.size(); i++) {
@@ -462,7 +472,8 @@ public class Polynomial implements IPolynomialSolver {
 			if (poly2 == 'A') {
 				maxExp2 = firstLast[0][0];
 				for (; i < a.size() + a.size(); i++) {
-					add[i][0] = (int) a.get(i - a.size());
+					add[i][0] = (int) a.get(i
+							- a.size());
 					add[i][1] = maxExp2;
 					maxExp2--;
 				}
@@ -472,11 +483,13 @@ public class Polynomial implements IPolynomialSolver {
 					System.out.println("Solver"
 							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
-							+ "evaluated unseted polynomial");
+							+ "evaluated unseted"
+							+ " polynomial");
 				}
 				maxExp2 = firstLast[0][1];
 				for (; i < a.size() + b.size(); i++) {
-					add[i][0] = (int) b.get(i - a.size());
+					add[i][0] = (int) b.get(i
+							- a.size());
 					add[i][1] = maxExp2;
 					maxExp2--;
 				}
@@ -484,9 +497,11 @@ public class Polynomial implements IPolynomialSolver {
 			if (poly2 == 'C') {
 				if (c.isEmpty()) {
 					System.out.println("Solver"
-							+ " evaluated unseted polynomial");
+							+ " evaluated unseted"
+							+ " polynomial");
 					throw new IllegalArgumentException("Solver "
-							+ "evaluated unseted polynomial");
+							+ "evaluated unseted"
+							+ " polynomial");
 				}
 				maxExp2 = firstLast[0][2];
 				for (; i < a.size() + c.size(); i++) {
@@ -499,9 +514,11 @@ public class Polynomial implements IPolynomialSolver {
 		} else if (poly1 == 'B') {
 			if (b.isEmpty()) {
 				System.out.println("Solver"
-						+ " evaluated unseted polynomial");
+						+ " evaluated unseted"
+						+ " polynomial");
 				throw new IllegalArgumentException("Solver "
-						+ "evaluated unseted polynomial");
+						+ "evaluated unseted"
+						+ " polynomial");
 			}
 			maxExp1 = firstLast[0][1];
 			for (i = 0; i < b.size(); i++) {
@@ -512,13 +529,16 @@ public class Polynomial implements IPolynomialSolver {
 			if (poly2 == 'A') {
 				if (a.isEmpty()) {
 					System.out.println("Solver"
-							+ " evaluated unseted polynomial");
+							+ " evaluated unseted"
+							+ " polynomial");
 					throw new IllegalArgumentException("Solver "
-							+ "evaluated unseted polynomial");
+							+ "evaluated unseted"
+							+ " polynomial");
 				}
 				maxExp2 = firstLast[0][0];
 				for (; i < b.size() + a.size(); i++) {
-					add[i][0] = (int) a.get(i - b.size());
+					add[i][0] = (int) a.get(i
+							- b.size());
 					add[i][1] = maxExp2;
 					maxExp2--;
 				}
@@ -526,7 +546,8 @@ public class Polynomial implements IPolynomialSolver {
 			if (poly2 == 'B') {
 				maxExp2 = firstLast[0][1];
 				for (; i < b.size() + b.size(); i++) {
-					add[i][0] = (int) b.get(i - b.size());
+					add[i][0] = (int) b.get(i
+							- b.size());
 					add[i][1] = maxExp2;
 					maxExp2--;
 				}
