@@ -217,12 +217,12 @@ public class Polynomial implements IPolynomialSolver {
 			while (maxExp >= leastExp) {
 				if (R.get(i) != null && (int) R.get(i) != 0) {
 					if (maxExp == 0) {
-						print = print + "R.get(i)";
+						print = print + R.get(i);
 						System.out.print(R.get(i) + " ");
 					} else if (maxExp == 1) {
-						print = print + "R.get(i)" + "X";
+						print = print + R.get(i) + "X";
 					} else {
-						print = print + "R.get(i)" + "X^" + "maxExp";
+						print = print + R.get(i) + "X^" + maxExp;
 						System.out.print(R.get(i) + "X^" + maxExp + " ");
 					}
 					if (maxExp != leastExp) {
