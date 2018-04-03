@@ -141,7 +141,7 @@ public class Polynomial implements IPolynomialSolver {
 		if (poly != 'A' && poly != 'B'
 				&& poly != 'C' && poly != 'R') {
 			throw new IllegalArgumentException("Operation"
-					+ " on polynomial " 
+					+ " on polynomial "
 		+ poly + " is not permitted");
 		}
 		if (poly == 'A') {
