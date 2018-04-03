@@ -20,7 +20,9 @@ public class Dnode {
 	 */
 	Dnode prev;
 
-	public Dnode(final Object element, final Dnode after, final Dnode before) {
+	public Dnode(final Object element,
+			final Dnode after,
+			final Dnode before) {
 		// TODO Auto-generated constructor stub
 		value = element;
 		next = after;
