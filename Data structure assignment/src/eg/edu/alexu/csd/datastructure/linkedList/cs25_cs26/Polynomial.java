@@ -688,7 +688,7 @@ public class Polynomial implements IPolynomialSolver {
 				a.set(i, -1 * (int) a.get(i));
 				i++;
 			}
-		} else if (poly2 != 'B') {
+		} else if (poly2 == 'B') {
 			if (b.isEmpty()) {
 				System.out.println("Variable not set");
 				throw new IllegalArgumentException(
@@ -701,7 +701,7 @@ public class Polynomial implements IPolynomialSolver {
 				b.set(i, -1 * (int) b.get(i));
 				i++;
 			}
-		} else if (poly2 != 'C') {
+		} else if (poly2 == 'C') {
 			if (c.isEmpty()) {
 				System.out.println("Variable not set");
 				throw new IllegalArgumentException(
