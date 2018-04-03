@@ -648,7 +648,7 @@ public class Polynomial implements IPolynomialSolver {
 
 		int[][] reArr = new int[r.size()][2];
 		int l = 0;
-		for (int j = 0; j < r.size() - 1; j++) {
+		for (int j = 0; j < r.size(); j++) {
 			if (r.get(j) != (Object) 0) {
 				reArr[l][0] = (int) r.get(j);
 				reArr[l][1] = firstLast[0][3] - j;
