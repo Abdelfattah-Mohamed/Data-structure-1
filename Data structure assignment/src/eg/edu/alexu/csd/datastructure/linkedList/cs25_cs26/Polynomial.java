@@ -104,7 +104,8 @@ public class Polynomial implements IPolynomialSolver {
 					counter++;
 				} else {
 					for (int j = terms[i][1] - 1;
-							j > terms[i + 1][1]; j--) {
+							j > terms[i + 1][1];
+							j--) {
 						b.add(0);
 						// b.set(i + 1, 0);
 						counter++;
@@ -119,7 +120,9 @@ public class Polynomial implements IPolynomialSolver {
 			firstLast[0][2] = terms[0][1];
 			firstLast[1][2] = terms[terms.length - 1][1];
 			c.add(terms[0][0]);
-			for (int i = 0; i < terms.length - 1; i++) {
+			for (int i = 0;
+					i < terms.length - 1;
+					i++) {
 				if (terms[i][1] == terms[i + 1][1]) {
 					c.set(counter, (int) c.get(counter)
 							+ terms[i + 1][0]);
@@ -144,7 +147,9 @@ public class Polynomial implements IPolynomialSolver {
 			firstLast[0][3] = terms[0][1];
 			firstLast[1][3] = terms[terms.length - 1][1];
 			r.add(terms[0][0]);
-			for (int i = 0; i < terms.length - 1; i++) {
+			for (int i = 0;
+					i < terms.length - 1;
+					i++) {
 				if (terms[i][1] == terms[i + 1][1]) {
 					r.set(counter, (int) r.get(counter)
 							+ terms[i + 1][0]);
@@ -154,7 +159,8 @@ public class Polynomial implements IPolynomialSolver {
 					counter++;
 				} else {
 					for (int j = terms[i][1] - 1;
-							j > terms[i + 1][1]; j--) {
+							j > terms[i + 1][1];
+							j--) {
 						r.add(0);
 						// r.set(i + 1, 0);
 						counter++;
