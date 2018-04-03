@@ -4,6 +4,12 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
 import static java.lang.Math.pow;
 
+/**
+ * 
+ * @author Abd El Fattah
+ * @author Abd El Rahman
+ *
+ */
 public class Polynomial implements IPolynomialSolver {
 
 	Snode head = null;
