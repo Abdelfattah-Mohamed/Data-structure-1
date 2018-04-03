@@ -22,8 +22,8 @@ public class Polynomial implements IPolynomialSolver {
 		int counter = 0;
 		order(terms);
 
-		if (poly != 'A' || poly != 'B' || poly != 'C' || poly != 220) {
-			throw new IllegalArgumentException("Operation on polynomial " + poly + "is not permitted");
+		if (poly != 'A' && poly != 'B' && poly != 'C' && poly != 220) {
+			throw new IllegalArgumentException("Operation on polynomial " + poly + " is not permitted");
 		}
 
 		if (poly == 'A') {
@@ -128,8 +128,8 @@ public class Polynomial implements IPolynomialSolver {
 		String print = "";
 		int maxExp = 0;
 		int leastExp = 0;
-		if (poly != 'A' || poly != 'B' || poly != 'C' || poly != 'R') {
-			throw new IllegalArgumentException("Operation on polynomial " + poly + "is not permitted");
+		if (poly != 'A' && poly != 'B' && poly != 'C' && poly != 'R') {
+			throw new IllegalArgumentException("Operation on polynomial " + poly + " is not permitted");
 		}
 		if (poly == 'A') {
 			if (A.size() == 0) {
@@ -244,8 +244,8 @@ public class Polynomial implements IPolynomialSolver {
 	@Override
 	public void clearPolynomial(final char poly) {
 		// TODO Auto-generated method stub
-		if (poly != 'A' || poly != 'B' || poly != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial " + poly + "is not permitted");
+		if (poly != 'A' && poly != 'B' && poly != 'C') {
+			throw new IllegalArgumentException("Operation on polynomial " + poly + " is not permitted");
 		}
 		if (poly == 'A') {
 			A.clear();
@@ -259,8 +259,8 @@ public class Polynomial implements IPolynomialSolver {
 	@Override
 	public float evaluatePolynomial(final char poly, final float value) {
 		// TODO Auto-generated method stub
-		if (poly != 'A' || poly != 'B' || poly != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial " + poly + "is not permitted");
+		if (poly != 'A' && poly != 'B' && poly != 'C') {
+			throw new IllegalArgumentException("Operation on polynomial " + poly + " is not permitted");
 		}
 		int maxExp = 0;
 		int leastExp = 0;
@@ -340,11 +340,11 @@ public class Polynomial implements IPolynomialSolver {
 	@Override
 	public int[][] add(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
-		if (poly1 != 'A' || poly1 != 'B' || poly1 != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial " + poly1 + "is not permitted");
+		if (poly1 != 'A' && poly1 != 'B' && poly1 != 'C') {
+			throw new IllegalArgumentException("Operation on polynomial " + poly1 + " is not permitted");
 		}
-		if (poly2 != 'A' || poly2 != 'B' || poly2 != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial " + poly2 + "is not permitted");
+		if (poly2 != 'A' && poly2 != 'B' && poly2 != 'C') {
+			throw new IllegalArgumentException("Operation on polynomial " + poly2 + " is not permitted");
 		}
 		int maxExp1 = 0;
 		int maxExp2 = 0;
@@ -492,11 +492,11 @@ public class Polynomial implements IPolynomialSolver {
 	@Override
 	public int[][] subtract(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
-		if (poly1 != 'A' || poly1 != 'B' || poly1 != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial " + poly1 + "is not permitted");
+		if (poly1 != 'A' && poly1 != 'B' && poly1 != 'C') {
+			throw new IllegalArgumentException("Operation on polynomial " + poly1 + " is not permitted");
 		}
-		if (poly2 != 'A' || poly2 != 'B' || poly2 != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial " + poly2 + "is not permitted");
+		if (poly2 != 'A' && poly2 != 'B' && poly2 != 'C') {
+			throw new IllegalArgumentException("Operation on polynomial " + poly2 + " is not permitted");
 		}
 		int i = 0;
 		if (R.isEmpty() == false) {
@@ -540,11 +540,11 @@ public class Polynomial implements IPolynomialSolver {
 	@Override
 	public int[][] multiply(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
-		if (poly1 != 'A' || poly1 != 'B' || poly1 != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial " + poly1 + "is not permitted");
+		if (poly1 != 'A' && poly1 != 'B' && poly1 != 'C') {
+			throw new IllegalArgumentException("Operation on polynomial " + poly1 + " is not permitted");
 		}
-		if (poly2 != 'A' || poly2 != 'B' || poly2 != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial " + poly2 + "is not permitted");
+		if (poly2 != 'A' && poly2 != 'B' && poly2 != 'C') {
+			throw new IllegalArgumentException("Operation on polynomial " + poly2 + " is not permitted");
 		}
 		int counter = 0;
 		int muliExp = 0;
