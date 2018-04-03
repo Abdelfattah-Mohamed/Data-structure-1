@@ -9,8 +9,17 @@ import eg.edu.alexu.csd.datastructure.stack.IStack;
  */
 public class Stack implements IStack {
 
+	/**
+	 * point to first node in linked list.
+	 */
 	Dnode head = null;
+	/**
+	 * point to last node in linked list.
+	 */
 	Dnode tail = head;
+	/**
+	 * size of linked list.
+	 */
 	int size = 0;
 
 	@Override

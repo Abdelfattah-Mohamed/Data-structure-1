@@ -7,8 +7,17 @@ package eg.edu.alexu.csd.datastructure.stack.cs26;
  */
 public class Dnode {
 
+	/**
+	 * value of node.
+	 */
 	Object value;
+	/**
+	 * point to next.
+	 */
 	Dnode next;
+	/**
+	 * point to previous.
+	 */
 	Dnode prev;
 
 	public Dnode(Object element, Dnode after, Dnode before) {
