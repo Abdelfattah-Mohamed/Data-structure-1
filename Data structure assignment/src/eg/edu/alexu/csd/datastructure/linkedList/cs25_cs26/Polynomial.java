@@ -356,7 +356,7 @@ public class Polynomial implements IPolynomialSolver {
 		if (poly1 == 'A') {
 			if (A.isEmpty() == true) {
 				System.out.println("Solver evaluated unseted polynomial");
-				throw new IllegalArgumentException();
+				throw new IllegalArgumentException("Solver evaluated unseted polynomial");
 			}
 			maxExp1 = firstLast[0][0];
 			for (i = 0; i < A.size(); i++) {
@@ -374,8 +374,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'B') {
 				if (B.isEmpty() == true) {
-					System.out.println("Variable not set");
-					throw new IllegalArgumentException();
+					System.out.println("Solver evaluated unseted polynomial");
+					throw new IllegalArgumentException("Solver evaluated unseted polynomial");
 				}
 				maxExp2 = firstLast[0][1];
 				for (; i < A.size() + B.size(); i++) {
@@ -386,8 +386,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'C') {
 				if (C.isEmpty() == true) {
-					System.out.println("Variable not set");
-					throw new IllegalArgumentException();
+					System.out.println("Solver evaluated unseted polynomial");
+					throw new IllegalArgumentException("Solver evaluated unseted polynomial");
 				}
 				maxExp2 = firstLast[0][2];
 				for (; i < A.size() + C.size(); i++) {
@@ -399,8 +399,8 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, add);
 		} else if (poly1 == 'B') {
 			if (B.isEmpty() == true) {
-				System.out.println("Variable not set");
-				throw new IllegalArgumentException();
+				System.out.println("Solver evaluated unseted polynomial");
+				throw new IllegalArgumentException("Solver evaluated unseted polynomial");
 			}
 			maxExp1 = firstLast[0][1];
 			for (i = 0; i < B.size(); i++) {
@@ -410,7 +410,7 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'A') {
 				if (A.isEmpty() == true) {
-					System.out.println("Variable not set");
+					System.out.println("Solver evaluated unseted polynomial");
 					throw new IllegalArgumentException();
 				}
 				maxExp2 = firstLast[0][0];
@@ -430,8 +430,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'C') {
 				if (C.isEmpty() == true) {
-					System.out.println("Variable not set");
-					throw new IllegalArgumentException();
+					System.out.println("Solver evaluated unseted polynomial");
+					throw new IllegalArgumentException("Solver evaluated unseted polynomial");
 				}
 				maxExp2 = firstLast[0][2];
 				for (; i < B.size() + C.size(); i++) {
@@ -443,8 +443,8 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, add);
 		} else if (poly1 == 'C') {
 			if (C.isEmpty() == true) {
-				System.out.println("Variable not set");
-				throw new IllegalArgumentException();
+				System.out.println("Solver evaluated unseted polynomial");
+				throw new IllegalArgumentException("Solver evaluated unseted polynomial");
 			}
 			maxExp1 = firstLast[0][2];
 			for (i = 0; i < C.size(); i++) {
@@ -454,8 +454,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'A') {
 				if (A.isEmpty() == true) {
-					System.out.println("Variable not set");
-					throw new IllegalArgumentException();
+					System.out.println("Solver evaluated unseted polynomial");
+					throw new IllegalArgumentException("Solver evaluated unseted polynomial");
 				}
 				maxExp2 = firstLast[0][0];
 				for (; i < C.size() + A.size(); i++) {
@@ -466,8 +466,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'B') {
 				if (B.isEmpty() == true) {
-					System.out.println("Variable not set");
-					throw new IllegalArgumentException();
+					System.out.println("Solver evaluated unseted polynomial");
+					throw new IllegalArgumentException("Solver evaluated unseted polynomial");
 				}
 				maxExp2 = firstLast[0][1];
 				for (; i < C.size() + B.size(); i++) {
@@ -477,6 +477,10 @@ public class Polynomial implements IPolynomialSolver {
 				}
 			}
 			if (poly2 == 'C') {
+				if (C.isEmpty() == true) {
+					System.out.println("Solver evaluated unseted polynomial");
+					throw new IllegalArgumentException("Solver evaluated unseted polynomial");
+				}
 				maxExp2 = firstLast[0][2];
 				for (; i < C.size() + C.size(); i++) {
 					add[i][0] = (int) C.get(i - C.size());
@@ -486,7 +490,7 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, add);
 		}
-		return null;
+		return add;
 	}
 
 	@Override
