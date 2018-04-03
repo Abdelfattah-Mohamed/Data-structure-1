@@ -34,6 +34,17 @@ public class Stack implements IStack {
 	@Override
 	public void push(Object element) {
 		// TODO Auto-generated method stub
+		Dnode q = new Dnode(element, null, null);
+		if (size == 0) {
+			head = q;
+			tail = head;
+			size++;
+		} else {
+			q.next = head;
+			head.prev = q;
+			head = q;
+			size++;
+		}
 
 	}
 
