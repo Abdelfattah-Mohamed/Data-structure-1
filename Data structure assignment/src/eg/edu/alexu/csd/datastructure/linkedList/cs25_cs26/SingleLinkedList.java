@@ -19,7 +19,7 @@ public class SingleLinkedList implements ILinkedList {
 	 * = tail; }
 	 */
 	@Override
-	public void add(int index, Object element) {
+	public void add(final int index, final Object element) {
 		// TODO Auto-generated method stub
 		int x = index;
 		if (x > size || x < 0) {
@@ -45,7 +45,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void add(Object element) {
+	public void add(final Object element) {
 		// TODO Auto-generated method stub
 		Snode nptr = new Snode(element, null);
 		if (head == null) {
@@ -60,7 +60,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public Object get(int index) {
+	public Object get(final int index) {
 		// TODO Auto-generated method stub
 		int x = index;
 		if (x > size || x < 0) {
@@ -81,7 +81,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void set(int index, Object element) {
+	public void set(final int index, final Object element) {
 		// TODO Auto-generated method stub
 		int x = index;
 		if (x > size || x < 0) {
@@ -119,7 +119,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void remove(int index) {
+	public void remove(final int index) {
 		// TODO Auto-generated method stub
 		int x = index;
 		if (x > size || x < 0) {
@@ -150,7 +150,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public ILinkedList sublist(int fromIndex, int toIndex) {
+	public ILinkedList sublist(final int fromIndex, final int toIndex) {
 		// TODO Auto-generated method stub
 		int counter = 0;
 		Snode head1 = head;
@@ -169,7 +169,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public boolean contains(Object o) {
+	public boolean contains(final Object o) {
 		// TODO Auto-generated method stub
 		Snode q = head;
 		for (; q != null;) {
