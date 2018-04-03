@@ -17,7 +17,7 @@ public class Stack implements IStack {
 		Dnode q = head;
 		head = head.next;
 		q.next = null;
-		head.prev = null;
+		//head.prev = null;
 		size--;
 		return q.value;
 	}
