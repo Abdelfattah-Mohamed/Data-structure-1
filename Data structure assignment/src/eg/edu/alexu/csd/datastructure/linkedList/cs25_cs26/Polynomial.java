@@ -374,13 +374,13 @@ public class Polynomial implements IPolynomialSolver {
 		// TODO Auto-generated method stub
 		if (poly1 != 'A' && poly1 != 'B' && poly1 != 'C') {
 			throw new IllegalArgumentException("Operation"
-					+ " on polynomial " +
-		poly1 + " is not permitted");
+					+ " on polynomial "
+					+ poly1 + " is not permitted");
 		}
 		if (poly2 != 'A' && poly2 != 'B' && poly2 != 'C') {
 			throw new IllegalArgumentException("Operation"
-					+ " on polynomial " +
-		poly2 + " is not permitted");
+					+ " on polynomial "
+					+ poly2 + " is not permitted");
 		}
 		int maxExp1 = 0;
 		int maxExp2 = 0;
