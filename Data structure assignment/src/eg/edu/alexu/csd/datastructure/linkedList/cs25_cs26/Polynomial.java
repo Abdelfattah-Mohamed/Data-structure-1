@@ -22,10 +22,9 @@ public class Polynomial implements IPolynomialSolver {
 		int counter = 0;
 		order(terms);
 		/*
-		if (poly != 'A' || poly != 'B' || poly != 'C' || poly != 220) {
-			throw new IllegalArgumentException();
-		}
-		*/
+		 * if (poly != 'A' || poly != 'B' || poly != 'C' || poly != 220) { throw new
+		 * IllegalArgumentException(); }
+		 */
 		if (poly == 'A') {
 			if (A.isEmpty() == false) {
 				A.clear();
@@ -125,6 +124,7 @@ public class Polynomial implements IPolynomialSolver {
 	@Override
 	public String print(final char poly) {
 		// TODO Auto-generated method stub
+		String print = "";
 		int maxExp = 0;
 		int leastExp = 0;
 		if (poly == 'A') {
@@ -137,8 +137,10 @@ public class Polynomial implements IPolynomialSolver {
 			while (maxExp >= leastExp) {
 				if (A.get(i) != null && (int) A.get(i) != 0) {
 					if (maxExp == 0) {
+						print = print + "A.get(i)";
 						System.out.print(A.get(i) + " ");
 					} else {
+						print = print + "A.get(i)" + "X^" + "maxExp";
 						System.out.print(A.get(i) + "X^" + maxExp + " ");
 					}
 					if (maxExp != leastExp) {
@@ -157,11 +159,14 @@ public class Polynomial implements IPolynomialSolver {
 			maxExp = firstLast[0][1];
 			leastExp = firstLast[1][1];
 			int i = 0;
+			print = "";
 			while (maxExp >= leastExp) {
 				if (B.get(i) != null && (int) B.get(i) != 0) {
 					if (maxExp == 0) {
+						print = print + "B.get(i)";
 						System.out.print(B.get(i) + " ");
 					} else {
+						print = print + "B.get(i)" + "X^" + "maxExp";
 						System.out.print(B.get(i) + "X^" + maxExp + " ");
 					}
 					if (maxExp != leastExp) {
@@ -178,11 +183,14 @@ public class Polynomial implements IPolynomialSolver {
 			maxExp = firstLast[0][2];
 			leastExp = firstLast[1][2];
 			int i = 0;
+			print = "";
 			while (maxExp >= leastExp) {
 				if (C.get(i) != null && (int) C.get(i) != 0) {
 					if (maxExp == 0) {
+						print = print + "C.get(i)";
 						System.out.print(C.get(i) + " ");
 					} else {
+						print = print + "C.get(i)" + "X^" + "maxExp";
 						System.out.print(C.get(i) + "X^" + maxExp + " ");
 					}
 					if (maxExp != leastExp) {
@@ -199,11 +207,14 @@ public class Polynomial implements IPolynomialSolver {
 			maxExp = firstLast[0][3];
 			leastExp = firstLast[1][3];
 			int i = 0;
+			print = "";
 			while (maxExp >= leastExp) {
 				if (R.get(i) != null && (int) R.get(i) != 0) {
 					if (maxExp == 0) {
+						print = print + "R.get(i)";
 						System.out.print(R.get(i) + " ");
 					} else {
+						print = print + "R.get(i)";
 						System.out.print(R.get(i) + "X^" + maxExp + " ");
 					}
 					if (maxExp != leastExp) {
@@ -215,7 +226,7 @@ public class Polynomial implements IPolynomialSolver {
 			}
 		}
 
-		return null;
+		return print;
 	}
 
 	@Override
