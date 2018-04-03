@@ -196,7 +196,8 @@ public class Polynomial implements IPolynomialSolver {
 						&& (int) a.get(i) != 0) {
 					if (maxExp == 0) {
 						print = print + "A.get(i)";
-						System.out.print(a.get(i) + " ");
+						System.out.print(a.get(i)
+								+ " ");
 					} else if (maxExp == 1) {
 						print = print + "A.get(i)" + "X";
 					} else {
