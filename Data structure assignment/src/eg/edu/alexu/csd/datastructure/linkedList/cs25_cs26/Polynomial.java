@@ -548,16 +548,16 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, add);
 		}
 
-		int[][] re_arr = new int[R.size()][2];
+		int[][] reArr = new int[R.size()][2];
 		int l = 0;
 		for (int j = 0; j < R.size(); j++) {
 			if (R.get(j) != (Object) 0) {
-				re_arr[l][0] = (int) R.get(j);
-				re_arr[l][1] = firstLast[0][3] - j;
+				reArr[l][0] = (int) R.get(j);
+				reArr[l][1] = firstLast[0][3] - j;
 				l++;
 			}
 		}
-		return re_arr;
+		return reArr;
 	}
 
 	@Override
