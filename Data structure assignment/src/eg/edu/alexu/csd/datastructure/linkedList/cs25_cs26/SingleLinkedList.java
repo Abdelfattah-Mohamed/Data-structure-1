@@ -5,7 +5,6 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 /**
  *
  * @author Abd El Fattah
- * @auther Abd El Rahman
  *
  */
 public class SingleLinkedList implements ILinkedList {
