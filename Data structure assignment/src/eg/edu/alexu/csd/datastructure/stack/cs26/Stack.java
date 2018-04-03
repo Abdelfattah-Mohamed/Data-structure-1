@@ -25,7 +25,10 @@ public class Stack implements IStack {
 	@Override
 	public Object peek() {
 		// TODO Auto-generated method stub
-		return null;
+		if (size == 0) {
+			throw new RuntimeException();
+		}
+		return head.value;
 	}
 
 	@Override
