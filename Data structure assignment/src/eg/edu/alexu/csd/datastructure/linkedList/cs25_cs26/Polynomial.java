@@ -23,7 +23,8 @@ public class Polynomial implements IPolynomialSolver {
 		order(terms);
 
 		if (poly != 'A' && poly != 'B' && poly != 'C' && poly != 220) {
-			throw new IllegalArgumentException("Operation on polynomial " 
+			throw new IllegalArgumentException("Operation "
+					+ "on polynomial "
 		+ poly + " is not permitted");
 		}
 
@@ -36,13 +37,15 @@ public class Polynomial implements IPolynomialSolver {
 			A.add(terms[0][0]);
 			for (int i = 0; i < terms.length - 1; i++) {
 				if (terms[i][1] == terms[i + 1][1]) {
-					A.set(counter, (int) A.get(counter) + terms[i + 1][0]);
+					A.set(counter, (int) A.get(counter)
+							+ terms[i + 1][0]);
 				} else if (terms[i][1] - terms[i + 1][1] == 1) {
 					A.add(terms[i + 1][0]);
 					counter++;
 					// a.set(i + 1, terms[i + 1][0]);
 				} else {
-					for (int j = terms[i][1] - 1; j > terms[i + 1][1]; j--) {
+					for (int j = terms[i][1] - 1; j
+							> terms[i + 1][1]; j--) {
 						A.add(0);
 						counter++;
 						// a.set(i + 1, 0);
@@ -60,13 +63,15 @@ public class Polynomial implements IPolynomialSolver {
 			B.add(terms[0][0]);
 			for (int i = 0; i < terms.length - 1; i++) {
 				if (terms[i][1] == terms[i + 1][1]) {
-					B.set(counter, (int) B.get(counter) + terms[i + 1][0]);
+					B.set(counter, (int) B.get(counter)
+							+ terms[i + 1][0]);
 				} else if (terms[i][1] - terms[i + 1][1] == 1) {
 					B.add(terms[i + 1][0]);
 					// b.set(i + 1, terms[i + 1][0]);
 					counter++;
 				} else {
-					for (int j = terms[i][1] - 1; j > terms[i + 1][1]; j--) {
+					for (int j = terms[i][1] - 1;
+							j > terms[i + 1][1]; j--) {
 						B.add(0);
 						// b.set(i + 1, 0);
 						counter++;
@@ -83,13 +88,15 @@ public class Polynomial implements IPolynomialSolver {
 			C.add(terms[0][0]);
 			for (int i = 0; i < terms.length - 1; i++) {
 				if (terms[i][1] == terms[i + 1][1]) {
-					C.set(counter, (int) C.get(counter) + terms[i + 1][0]);
+					C.set(counter, (int) C.get(counter)
+							+ terms[i + 1][0]);
 				} else if (terms[i][1] - terms[i + 1][1] == 1) {
 					C.add(terms[i + 1][0]);
 					// c.set(i + 1, terms[i + 1][0]);
 					counter++;
 				} else {
-					for (int j = terms[i][1] - 1; j > terms[i + 1][1]; j--) {
+					for (int j = terms[i][1] - 1;
+							j > terms[i + 1][1]; j--) {
 						C.add(0);
 						// c.set(i + 1, 0);
 						counter++;
@@ -106,13 +113,15 @@ public class Polynomial implements IPolynomialSolver {
 			R.add(terms[0][0]);
 			for (int i = 0; i < terms.length - 1; i++) {
 				if (terms[i][1] == terms[i + 1][1]) {
-					R.set(counter, (int) R.get(counter) + terms[i + 1][0]);
+					R.set(counter, (int) R.get(counter)
+							+ terms[i + 1][0]);
 				} else if (terms[i][1] - terms[i + 1][1] == 1) {
 					R.add(terms[i + 1][0]);
 					// r.set(i + 1, terms[i + 1][0]);
 					counter++;
 				} else {
-					for (int j = terms[i][1] - 1; j > terms[i + 1][1]; j--) {
+					for (int j = terms[i][1] - 1;
+							j > terms[i + 1][1]; j--) {
 						R.add(0);
 						// r.set(i + 1, 0);
 						counter++;
@@ -129,8 +138,10 @@ public class Polynomial implements IPolynomialSolver {
 		String print = "";
 		int maxExp = 0;
 		int leastExp = 0;
-		if (poly != 'A' && poly != 'B' && poly != 'C' && poly != 'R') {
-			throw new IllegalArgumentException("Operation on polynomial " 
+		if (poly != 'A' && poly != 'B'
+				&& poly != 'C' && poly != 'R') {
+			throw new IllegalArgumentException("Operation"
+					+ " on polynomial " 
 		+ poly + " is not permitted");
 		}
 		if (poly == 'A') {
@@ -141,15 +152,18 @@ public class Polynomial implements IPolynomialSolver {
 			leastExp = firstLast[1][0];
 			int i = 0;
 			while (maxExp >= leastExp) {
-				if (A.get(i) != null && (int) A.get(i) != 0) {
+				if (A.get(i) != null &&
+						(int) A.get(i) != 0) {
 					if (maxExp == 0) {
 						print = print + "A.get(i)";
 						System.out.print(A.get(i) + " ");
 					} else if (maxExp == 1) {
 						print = print + "A.get(i)" + "X";
 					} else {
-						print = print + "A.get(i)" + "X^" + "maxExp";
-						System.out.print(A.get(i) + "X^" + maxExp + " ");
+						print = print + "A.get(i)"
+					+ "X^" + "maxExp";
+						System.out.print(A.get(i)
+								+ "X^" + maxExp + " ");
 					}
 					if (maxExp != leastExp) {
 						System.out.print("+" + " ");
@@ -176,8 +190,10 @@ public class Polynomial implements IPolynomialSolver {
 					} else if (maxExp == 1) {
 						print = print + "B.get(i)" + "X";
 					} else {
-						print = print + "B.get(i)" + "X^" + "maxExp";
-						System.out.print(B.get(i) + "X^" + maxExp + " ");
+						print = print + "B.get(i)"
+					+ "X^" + "maxExp";
+						System.out.print(B.get(i)
+								+ "X^" + maxExp + " ");
 					}
 					if (maxExp != leastExp) {
 						System.out.print("+" + " ");
@@ -198,12 +214,16 @@ public class Polynomial implements IPolynomialSolver {
 				if (C.get(i) != null && (int) C.get(i) != 0) {
 					if (maxExp == 0) {
 						print = print + "C.get(i)";
-						System.out.print(C.get(i) + " ");
+						System.out.print(C.get(i)
+								+ " ");
 					} else if (maxExp == 1) {
-						print = print + "C.get(i)" + "X";
+						print = print + "C.get(i)"
+					+ "X";
 					} else {
-						print = print + "C.get(i)" + "X^" + "maxExp";
-						System.out.print(C.get(i) + "X^" + maxExp + " ");
+						print = print + "C.get(i)"
+					+ "X^" + "maxExp";
+						System.out.print(C.get(i)
+								+ "X^" + maxExp + " ");
 					}
 					if (maxExp != leastExp) {
 						System.out.print("+" + " ");
@@ -221,7 +241,8 @@ public class Polynomial implements IPolynomialSolver {
 			int i = 0;
 			print = "";
 			while (maxExp >= leastExp) {
-				if (R.get(i) != null && (int) R.get(i) != 0) {
+				if (R.get(i) != null
+						&& (int) R.get(i) != 0) {
 					if (maxExp == 0) {
 						print = print + R.get(i);
 						System.out.print(R.get(i) + " ");
