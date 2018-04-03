@@ -55,7 +55,7 @@ public class Polynomial implements IPolynomialSolver {
 			}
 
 		} else if (poly == 'B') {
-			if (B.isEmpty() == false) {
+			if (!B.isEmpty()) {
 				B.clear();
 			}
 			firstLast[0][1] = terms[0][1];
@@ -80,7 +80,7 @@ public class Polynomial implements IPolynomialSolver {
 				}
 			}
 		} else if (poly == 'C') {
-			if (B.isEmpty() == false) {
+			if (!B.isEmpty()) {
 				B.clear();
 			}
 			firstLast[0][2] = terms[0][1];
@@ -105,7 +105,7 @@ public class Polynomial implements IPolynomialSolver {
 				}
 			}
 		} else if (poly == 220) {
-			if (R.isEmpty() == false) {
+			if (!R.isEmpty()) {
 				R.clear();
 			}
 			firstLast[0][3] = terms[0][1];
