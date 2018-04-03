@@ -771,6 +771,23 @@ public class Polynomial implements IPolynomialSolver {
 		}
 		negative = '0';
 		if (poly1 == 'A' && poly2 == 'B') {
+			if (a.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}else if(b.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}
 			muliExp = firstLast[0][0] + firstLast[0][1];
 			for (int i = 0; i < a.size(); i++) {
 				multiMax = muliExp;
@@ -786,6 +803,23 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'A' && poly2 == 'C') {
+			if (a.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}else if(c.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}
 			muliExp = firstLast[0][0] + firstLast[0][2];
 			for (int i = 0; i < a.size(); i++) {
 				multiMax = muliExp;
@@ -801,6 +835,15 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'A' && poly2 == 'A') {
+			if (a.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}
 			muliExp = firstLast[0][0] + firstLast[0][0];
 			for (int i = 0; i < a.size(); i++) {
 				multiMax = muliExp;
@@ -816,6 +859,23 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'B' && poly2 == 'A') {
+			if (b.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}else if(a.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}
 			muliExp = firstLast[0][1] + firstLast[0][0];
 			for (int i = 0; i < b.size(); i++) {
 				multiMax = muliExp;
@@ -831,6 +891,15 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'B' && poly2 == 'B') {
+			if (b.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}
 			muliExp = firstLast[0][1] + firstLast[0][1];
 			for (int i = 0; i < b.size(); i++) {
 				multiMax = muliExp;
@@ -846,6 +915,23 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'B' && poly2 == 'C') {
+			if (b.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}else if(c.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}
 			muliExp = firstLast[0][1] + firstLast[0][2];
 			for (int i = 0; i < b.size(); i++) {
 				multiMax = muliExp;
@@ -861,6 +947,23 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'C' && poly2 == 'A') {
+			if (c.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}else if(a.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}
 			muliExp = firstLast[0][2] + firstLast[0][0];
 			for (int i = 0; i < c.size(); i++) {
 				multiMax = muliExp;
@@ -876,6 +979,23 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'C' && poly2 == 'B') {
+			if (c.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}else if(b.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}
 			muliExp = firstLast[0][2] + firstLast[0][1];
 			for (int i = 0; i < c.size(); i++) {
 				multiMax = muliExp;
@@ -891,6 +1011,15 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'C' && poly2 == 'C') {
+			if (c.isEmpty()) {
+				System.out.println("Solver"
+						+ " evaluated unseted"
+						+ " polynomial");
+				throw new IllegalArgumentException(
+						"Solver "
+						+ "evaluated unseted"
+						+ " polynomial");
+			}
 			muliExp = firstLast[0][2] + firstLast[0][2];
 			for (int i = 0; i < c.size(); i++) {
 				multiMax = muliExp;
