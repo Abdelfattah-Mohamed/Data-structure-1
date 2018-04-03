@@ -29,7 +29,7 @@ public class Polynomial implements IPolynomialSolver {
 		}
 
 		if (poly == 'A') {
-			if (A.isEmpty() == false) {
+			if (!A.isEmpty()) {
 				A.clear();
 			}
 			firstLast[0][0] = terms[0][1];
