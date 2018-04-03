@@ -45,13 +45,15 @@ public class Stack implements IStack {
 			head = q;
 			size++;
 		}
-
 	}
 
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		return false;
+		if (size > 0) {
+			return false;
+		}
+		return true;
 	}
 
 	@Override
