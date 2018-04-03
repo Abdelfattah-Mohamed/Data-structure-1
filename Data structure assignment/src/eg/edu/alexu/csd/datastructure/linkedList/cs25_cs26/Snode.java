@@ -12,7 +12,7 @@ public class Snode {
 	 * @param next
 	 *            point to the next node.
 	 */
-	public Snode(final Object value, final Snode next) {
+	public Snode(Object value, final Snode next) {
 		this.value = value;
 		this.next = next;
 	}
