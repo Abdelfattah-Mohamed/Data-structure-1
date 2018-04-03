@@ -490,7 +490,17 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, add);
 		}
-		return add;
+		int[][] re_arr = new int[R.size()][2];
+		int l = 0;
+		for (int j = 0; j < R.size(); j++) {
+			if (R.get(j) != (Object) 0) {
+				re_arr[l][0] = (int) R.get(j);
+				re_arr[l][1] = firstLast[0][3] - j;
+				l++;
+			}
+		}
+
+		return re_arr;
 	}
 
 	@Override
