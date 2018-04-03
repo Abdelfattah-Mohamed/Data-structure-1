@@ -368,8 +368,8 @@ public class Polynomial implements IPolynomialSolver {
 					get1 = (float) get;
 					evaluate = (float) (evaluate
 							+ (get1
-									* (pow(value,
-											maxExp))));
+							* (pow(value,
+							maxExp))));
 				}
 				i++;
 				maxExp--;
