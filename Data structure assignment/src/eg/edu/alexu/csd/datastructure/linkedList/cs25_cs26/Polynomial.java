@@ -779,13 +779,13 @@ public class Polynomial implements IPolynomialSolver {
 						"Solver "
 						+ "evaluated unseted"
 						+ " polynomial");
-			}else if(b.isEmpty()) {
-				System.out.println("Solver" 
-						+ " evaluated unseted" 
+			}else if(b.isEmpty()){
+				System.out.println("Solver"
+						+ " evaluated unseted"
 						+ " polynomial");
 				throw new IllegalArgumentException(
-						"Solver " 
-						+ "evaluated unseted" 
+						"Solver "
+						+ "evaluated unseted"
 						+ " polynomial");
 			}
 			muliExp = firstLast[0][0] + firstLast[0][1];
@@ -804,12 +804,12 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, multi);
 		} else if (poly1 == 'A' && poly2 == 'C') {
 			if (a.isEmpty()) {
-				System.out.println("Solver" 
-						+ " evaluated unseted" 
+				System.out.println("Solver"
+						+ " evaluated unseted"
 						+ " polynomial");
 				throw new IllegalArgumentException(
-						"Solver " 
-						+ "evaluated unseted" 
+						"Solver "
+						+ "evaluated unseted"
 						+ " polynomial");
 			}else if(c.isEmpty()) {
 				System.out.println("Solver"
