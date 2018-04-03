@@ -607,7 +607,7 @@ public class Polynomial implements IPolynomialSolver {
 		int counter = 0;
 		int muliExp = 0;
 		int multiMax = 0;
-		int multi[][] = new int[(A.size() + 1) * (B.size() + 1)
+		int[][] multi = new int[(A.size() + 1) * (B.size() + 1)
 		                        * (C.size() + 1) * (A.size() + 1)
 		                        * (B.size() + 1)
 				* (C.size() + 1)][2];
