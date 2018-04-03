@@ -132,7 +132,8 @@ public class Polynomial implements IPolynomialSolver {
 					counter++;
 				} else {
 					for (int j = terms[i][1] - 1;
-							j > terms[i + 1][1]; j--) {
+							j > terms[i + 1][1];
+							j--) {
 						c.add(0);
 						// c.set(i + 1, 0);
 						counter++;
