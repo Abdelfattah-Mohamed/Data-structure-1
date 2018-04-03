@@ -385,13 +385,13 @@ public class Polynomial implements IPolynomialSolver {
 		int maxExp1 = 0;
 		int maxExp2 = 0;
 		int i = 0;
-		if (R.isEmpty() == false) {
+		if (!R.isEmpty()) {
 			R.clear();
 		}
 		int[][] add = new int[A.size()
 		                      + B.size() + C.size()][2];
 		if (poly1 == 'A') {
-			if (A.isEmpty() == true) {
+			if (A.isEmpty()) {
 				System.out.println("Solver"
 						+ " evaluated unseted polynomial");
 				throw new IllegalArgumentException("Solver "
@@ -412,7 +412,7 @@ public class Polynomial implements IPolynomialSolver {
 				}
 			}
 			if (poly2 == 'B') {
-				if (B.isEmpty() == true) {
+				if (B.isEmpty()) {
 					System.out.println("Solver"
 							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
@@ -426,7 +426,7 @@ public class Polynomial implements IPolynomialSolver {
 				}
 			}
 			if (poly2 == 'C') {
-				if (C.isEmpty() == true) {
+				if (C.isEmpty()) {
 					System.out.println("Solver"
 							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
@@ -441,7 +441,7 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, add);
 		} else if (poly1 == 'B') {
-			if (B.isEmpty() == true) {
+			if (B.isEmpty()) {
 				System.out.println("Solver"
 						+ " evaluated unseted polynomial");
 				throw new IllegalArgumentException("Solver "
@@ -454,7 +454,7 @@ public class Polynomial implements IPolynomialSolver {
 				maxExp1--;
 			}
 			if (poly2 == 'A') {
-				if (A.isEmpty() == true) {
+				if (A.isEmpty()) {
 					System.out.println("Solver"
 							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
@@ -476,7 +476,7 @@ public class Polynomial implements IPolynomialSolver {
 				}
 			}
 			if (poly2 == 'C') {
-				if (C.isEmpty() == true) {
+				if (C.isEmpty()) {
 					System.out.println("Solver"
 							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
@@ -491,7 +491,7 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, add);
 		} else if (poly1 == 'C') {
-			if (C.isEmpty() == true) {
+			if (C.isEmpty()) {
 				System.out.println("Solver"
 						+ " evaluated unseted polynomial");
 				throw new IllegalArgumentException("Solver "
@@ -504,7 +504,7 @@ public class Polynomial implements IPolynomialSolver {
 				maxExp1--;
 			}
 			if (poly2 == 'A') {
-				if (A.isEmpty() == true) {
+				if (A.isEmpty()) {
 					System.out.println("Solver"
 							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
@@ -518,7 +518,7 @@ public class Polynomial implements IPolynomialSolver {
 				}
 			}
 			if (poly2 == 'B') {
-				if (B.isEmpty() == true) {
+				if (B.isEmpty()) {
 					System.out.println("Solver"
 							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
@@ -532,7 +532,7 @@ public class Polynomial implements IPolynomialSolver {
 				}
 			}
 			if (poly2 == 'C') {
-				if (C.isEmpty() == true) {
+				if (C.isEmpty()) {
 					System.out.println("Solver"
 							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
@@ -574,11 +574,11 @@ public class Polynomial implements IPolynomialSolver {
 		+ poly2 + " is not permitted");
 		}
 		int i = 0;
-		if (R.isEmpty() == false) {
+		if (!R.isEmpty()) {
 			R.clear();
 		}
 		if (poly2 == 'A') {
-			if (A.isEmpty() == true) {
+			if (A.isEmpty()) {
 				System.out.println("Variable not set");
 				throw new IllegalArgumentException("Operation"
 						+ " on polynomial "
@@ -590,7 +590,7 @@ public class Polynomial implements IPolynomialSolver {
 				i++;
 			}
 		} else if (poly2 != 'B') {
-			if (B.isEmpty() == true) {
+			if (B.isEmpty()) {
 				System.out.println("Variable not set");
 				throw new IllegalArgumentException("Operation"
 						+ " on polynomial "
@@ -602,7 +602,7 @@ public class Polynomial implements IPolynomialSolver {
 				i++;
 			}
 		} else if (poly2 != 'C') {
-			if (C.isEmpty() == true) {
+			if (C.isEmpty()) {
 				System.out.println("Variable not set");
 				throw new IllegalArgumentException("Operation"
 						+ " on polynomial "
@@ -640,13 +640,13 @@ public class Polynomial implements IPolynomialSolver {
 		                        * (A.size() + 1)
 		                        * (B.size() + 1)
 				* (C.size() + 1)][2];
-		if (R.isEmpty() == false) {
+		if (!R.isEmpty()) {
 			R.clear();
 		}
 		// check if poly2 insert to subtraction.
 		if (negative != '0') {
 			int i = 0;
-			if (R.isEmpty() == false) {
+			if (!R.isEmpty()) {
 				R.clear();
 			}
 			if (negative == 'A') {
