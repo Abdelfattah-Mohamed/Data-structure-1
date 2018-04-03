@@ -152,8 +152,8 @@ public class Polynomial implements IPolynomialSolver {
 			leastExp = firstLast[1][0];
 			int i = 0;
 			while (maxExp >= leastExp) {
-				if (A.get(i) != null &&
-						(int) A.get(i) != 0) {
+				if (A.get(i) != null 
+						&& (int) A.get(i) != 0) {
 					if (maxExp == 0) {
 						print = print + "A.get(i)";
 						System.out.print(A.get(i) + " ");
@@ -183,7 +183,8 @@ public class Polynomial implements IPolynomialSolver {
 			int i = 0;
 			print = "";
 			while (maxExp >= leastExp) {
-				if (B.get(i) != null && (int) B.get(i) != 0) {
+				if (B.get(i) != null
+						&& (int) B.get(i) != 0) {
 					if (maxExp == 0) {
 						print = print + "B.get(i)";
 						System.out.print(B.get(i) + " ");
@@ -211,7 +212,8 @@ public class Polynomial implements IPolynomialSolver {
 			int i = 0;
 			print = "";
 			while (maxExp >= leastExp) {
-				if (C.get(i) != null && (int) C.get(i) != 0) {
+				if (C.get(i) != null
+						&& (int) C.get(i) != 0) {
 					if (maxExp == 0) {
 						print = print + "C.get(i)";
 						System.out.print(C.get(i)
@@ -268,7 +270,8 @@ public class Polynomial implements IPolynomialSolver {
 	public void clearPolynomial(final char poly) {
 		// TODO Auto-generated method stub
 		if (poly != 'A' && poly != 'B' && poly != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial "
+			throw new IllegalArgumentException("Operation"
+					+ " on polynomial "
 		+ poly + " is not permitted");
 		}
 		if (poly == 'A') {
@@ -284,7 +287,8 @@ public class Polynomial implements IPolynomialSolver {
 	public float evaluatePolynomial(final char poly, final float value) {
 		// TODO Auto-generated method stub
 		if (poly != 'A' && poly != 'B' && poly != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial " 
+			throw new IllegalArgumentException("Operation"
+					+ " on polynomial " 
 		+ poly + " is not permitted");
 		}
 		int maxExp = 0;
@@ -369,11 +373,13 @@ public class Polynomial implements IPolynomialSolver {
 	public int[][] add(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
 		if (poly1 != 'A' && poly1 != 'B' && poly1 != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial " +
+			throw new IllegalArgumentException("Operation"
+					+ " on polynomial " +
 		poly1 + " is not permitted");
 		}
 		if (poly2 != 'A' && poly2 != 'B' && poly2 != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial " +
+			throw new IllegalArgumentException("Operation"
+					+ " on polynomial " +
 		poly2 + " is not permitted");
 		}
 		int maxExp1 = 0;
@@ -382,10 +388,12 @@ public class Polynomial implements IPolynomialSolver {
 		if (R.isEmpty() == false) {
 			R.clear();
 		}
-		int[][] add = new int[A.size() + B.size() + C.size()][2];
+		int[][] add = new int[A.size()
+		                      + B.size() + C.size()][2];
 		if (poly1 == 'A') {
 			if (A.isEmpty() == true) {
-				System.out.println("Solver evaluated unseted polynomial");
+				System.out.println("Solver"
+						+ " evaluated unseted polynomial");
 				throw new IllegalArgumentException("Solver "
 						+ "evaluated unseted polynomial");
 			}
@@ -405,7 +413,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'B') {
 				if (B.isEmpty() == true) {
-					System.out.println("Solver evaluated unseted polynomial");
+					System.out.println("Solver"
+							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
 							+ "evaluated unseted polynomial");
 				}
@@ -418,7 +427,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'C') {
 				if (C.isEmpty() == true) {
-					System.out.println("Solver evaluated unseted polynomial");
+					System.out.println("Solver"
+							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
 							+ "evaluated unseted polynomial");
 				}
@@ -432,7 +442,8 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, add);
 		} else if (poly1 == 'B') {
 			if (B.isEmpty() == true) {
-				System.out.println("Solver evaluated unseted polynomial");
+				System.out.println("Solver"
+						+ " evaluated unseted polynomial");
 				throw new IllegalArgumentException("Solver "
 						+ "evaluated unseted polynomial");
 			}
@@ -444,7 +455,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'A') {
 				if (A.isEmpty() == true) {
-					System.out.println("Solver evaluated unseted polynomial");
+					System.out.println("Solver"
+							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
 							+ "evaluated unseted polynomial");
 				}
@@ -465,7 +477,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'C') {
 				if (C.isEmpty() == true) {
-					System.out.println("Solver evaluated unseted polynomial");
+					System.out.println("Solver"
+							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
 							+ "evaluated unseted polynomial");
 				}
@@ -479,7 +492,8 @@ public class Polynomial implements IPolynomialSolver {
 			setPolynomial((char) 220, add);
 		} else if (poly1 == 'C') {
 			if (C.isEmpty() == true) {
-				System.out.println("Solver evaluated unseted polynomial");
+				System.out.println("Solver"
+						+ " evaluated unseted polynomial");
 				throw new IllegalArgumentException("Solver "
 						+ "evaluated unseted polynomial");
 			}
@@ -491,7 +505,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'A') {
 				if (A.isEmpty() == true) {
-					System.out.println("Solver evaluated unseted polynomial");
+					System.out.println("Solver"
+							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
 							+ "evaluated unseted polynomial");
 				}
@@ -504,7 +519,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'B') {
 				if (B.isEmpty() == true) {
-					System.out.println("Solver evaluated unseted polynomial");
+					System.out.println("Solver"
+							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
 							+ "evaluated unseted polynomial");
 				}
@@ -517,7 +533,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'C') {
 				if (C.isEmpty() == true) {
-					System.out.println("Solver evaluated unseted polynomial");
+					System.out.println("Solver"
+							+ " evaluated unseted polynomial");
 					throw new IllegalArgumentException("Solver "
 							+ "evaluated unseted polynomial");
 				}
@@ -547,11 +564,13 @@ public class Polynomial implements IPolynomialSolver {
 	public int[][] subtract(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
 		if (poly1 != 'A' && poly1 != 'B' && poly1 != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial "
+			throw new IllegalArgumentException("Operation"
+					+ " on polynomial "
 		+ poly1 + " is not permitted");
 		}
 		if (poly2 != 'A' && poly2 != 'B' && poly2 != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial "
+			throw new IllegalArgumentException("Operation"
+					+ " on polynomial "
 		+ poly2 + " is not permitted");
 		}
 		int i = 0;
@@ -561,7 +580,9 @@ public class Polynomial implements IPolynomialSolver {
 		if (poly2 == 'A') {
 			if (A.isEmpty() == true) {
 				System.out.println("Variable not set");
-				throw new IllegalArgumentException();
+				throw new IllegalArgumentException("Operation"
+						+ " on polynomial "
+			+ poly2 + " is not permitted");
 			}
 			negative = 'A';
 			while (A.get(i) != null) {
@@ -571,7 +592,9 @@ public class Polynomial implements IPolynomialSolver {
 		} else if (poly2 != 'B') {
 			if (B.isEmpty() == true) {
 				System.out.println("Variable not set");
-				throw new IllegalArgumentException();
+				throw new IllegalArgumentException("Operation"
+						+ " on polynomial "
+			+ poly2 + " is not permitted");
 			}
 			negative = 'B';
 			while (B.get(i) == null) {
@@ -581,7 +604,9 @@ public class Polynomial implements IPolynomialSolver {
 		} else if (poly2 != 'C') {
 			if (C.isEmpty() == true) {
 				System.out.println("Variable not set");
-				throw new IllegalArgumentException();
+				throw new IllegalArgumentException("Operation"
+						+ " on polynomial "
+			+ poly2 + " is not permitted");
 			}
 			negative = 'C';
 			while (C.get(i) == null) {
@@ -597,18 +622,22 @@ public class Polynomial implements IPolynomialSolver {
 	public int[][] multiply(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
 		if (poly1 != 'A' && poly1 != 'B' && poly1 != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial "
+			throw new IllegalArgumentException("Operation"
+					+ " on polynomial "
 		+ poly1 + " is not permitted");
 		}
 		if (poly2 != 'A' && poly2 != 'B' && poly2 != 'C') {
-			throw new IllegalArgumentException("Operation on polynomial "
+			throw new IllegalArgumentException("Operation"
+					+ " on polynomial "
 		+ poly2 + " is not permitted");
 		}
 		int counter = 0;
 		int muliExp = 0;
 		int multiMax = 0;
-		int[][] multi = new int[(A.size() + 1) * (B.size() + 1)
-		                        * (C.size() + 1) * (A.size() + 1)
+		int[][] multi = new int[(A.size() + 1)
+		                        * (B.size() + 1)
+		                        * (C.size() + 1)
+		                        * (A.size() + 1)
 		                        * (B.size() + 1)
 				* (C.size() + 1)][2];
 		if (R.isEmpty() == false) {
@@ -643,7 +672,8 @@ public class Polynomial implements IPolynomialSolver {
 			for (int i = 0; i < A.size(); i++) {
 				multiMax = muliExp;
 				for (int j = 0; j < B.size(); j++) {
-					multi[counter][0] = (int) A.get(i) * (int) B.get(j);
+					multi[counter][0] = (int) A.get(i)
+							* (int) B.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -657,7 +687,8 @@ public class Polynomial implements IPolynomialSolver {
 			for (int i = 0; i < A.size(); i++) {
 				multiMax = muliExp;
 				for (int j = 0; j < C.size(); j++) {
-					multi[counter][0] = (int) A.get(i) * (int) C.get(j);
+					multi[counter][0] = (int) A.get(i)
+							* (int) C.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -671,7 +702,8 @@ public class Polynomial implements IPolynomialSolver {
 			for (int i = 0; i < A.size(); i++) {
 				multiMax = muliExp;
 				for (int j = 0; j < A.size(); j++) {
-					multi[counter][0] = (int) A.get(i) * (int) A.get(j);
+					multi[counter][0] = (int) A.get(i)
+							* (int) A.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -685,7 +717,8 @@ public class Polynomial implements IPolynomialSolver {
 			for (int i = 0; i < B.size(); i++) {
 				multiMax = muliExp;
 				for (int j = 0; j < A.size(); j++) {
-					multi[counter][0] = (int) B.get(i) * (int) A.get(j);
+					multi[counter][0] = (int) B.get(i)
+							* (int) A.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -699,7 +732,8 @@ public class Polynomial implements IPolynomialSolver {
 			for (int i = 0; i < B.size(); i++) {
 				multiMax = muliExp;
 				for (int j = 0; j < B.size(); j++) {
-					multi[counter][0] = (int) B.get(i) * (int) B.get(j);
+					multi[counter][0] = (int) B.get(i)
+							* (int) B.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -713,7 +747,8 @@ public class Polynomial implements IPolynomialSolver {
 			for (int i = 0; i < B.size(); i++) {
 				multiMax = muliExp;
 				for (int j = 0; j < C.size(); j++) {
-					multi[counter][0] = (int) B.get(i) * (int) C.get(j);
+					multi[counter][0] = (int) B.get(i)
+							* (int) C.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -727,7 +762,8 @@ public class Polynomial implements IPolynomialSolver {
 			for (int i = 0; i < C.size(); i++) {
 				multiMax = muliExp;
 				for (int j = 0; j < A.size(); j++) {
-					multi[counter][0] = (int) C.get(i) * (int) A.get(j);
+					multi[counter][0] = (int) C.get(i)
+							* (int) A.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -741,7 +777,8 @@ public class Polynomial implements IPolynomialSolver {
 			for (int i = 0; i < C.size(); i++) {
 				multiMax = muliExp;
 				for (int j = 0; j < B.size(); j++) {
-					multi[counter][0] = (int) C.get(i) * (int) B.get(j);
+					multi[counter][0] = (int) C.get(i)
+							* (int) B.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
@@ -755,7 +792,8 @@ public class Polynomial implements IPolynomialSolver {
 			for (int i = 0; i < C.size(); i++) {
 				multiMax = muliExp;
 				for (int j = 0; j < C.size(); j++) {
-					multi[counter][0] = (int) C.get(i) * (int) C.get(j);
+					multi[counter][0] = (int) C.get(i)
+							* (int) C.get(j);
 					multi[counter][1] = multiMax;
 					multiMax--;
 					counter++;
