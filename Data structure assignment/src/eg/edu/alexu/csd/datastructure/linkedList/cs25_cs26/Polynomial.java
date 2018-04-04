@@ -666,7 +666,7 @@ public class Polynomial implements IPolynomialSolver {
 		}
 		int[][] multi1 = new int[c + 1][2];
 		for(int j = 0 ;j < r.size() ;j++) {
-			if((int) r.get(i) != 0) {
+			if((int) r.get(j) != 0) {
 				multi1[count][0] = (int) r.get(i);
 				multi1[count][1] = maxExp;
 				count++;
