@@ -22,14 +22,14 @@ public class InfixPosfix implements IExpressionEvaluator {
 	int size = 0;
 
 	@Override
-	public String infixToPostfix(String expression) {
+	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
 
 		return null;
 	}
 
 	@Override
-	public int evaluate(String expression) {
+	public int evaluate(final String expression) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
