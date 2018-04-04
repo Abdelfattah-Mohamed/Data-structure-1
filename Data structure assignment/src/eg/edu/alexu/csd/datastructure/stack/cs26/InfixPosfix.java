@@ -28,16 +28,11 @@ public class InfixPosfix implements IExpressionEvaluator {
 		Stack a = (Stack) new Stack();
 		int i = 0;
 		int l = 0;
-		if (expression.charAt(0) == '-') {
-			store[0] = expression.charAt(0);
-			i++;
-		}
 		for (; i < expression.length(); i++) {
 			if (expression.charAt(i) != '+' && expression.charAt(i) != '-' && expression.charAt(i) != '/'
 					&& expression.charAt(i) != '*') {
 				store[l] = expression.charAt(i);
 				l++;
-				if(l != 1) {
 				store[l] = ' ';
 				l++;
 			} else {
@@ -65,10 +60,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 		while (a.head != null) {
 			store[l] = (char) a.pop();
 			l++;
-			if(a.head.next != null) {
-				store[l] = ' ';
-				l++;
-			}
+			store[l] = ' ';
+			l++;
 		}
 		/*
 		 * i = 0; String str = ""; while (i < expression.length()) { str = str +
@@ -85,6 +78,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public int evaluate(final String expression) {
 		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
