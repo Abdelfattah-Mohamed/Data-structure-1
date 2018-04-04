@@ -29,6 +29,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 		char[] store = new char[expression.length()];
 		Stack a = (Stack) new Stack();
 		int i = 0;
+		int l = 0;
 		if (expression.charAt(0) == '-') {
 			store[0] = expression.charAt(0);
 			i++;
@@ -36,11 +37,13 @@ public class InfixPosfix implements IExpressionEvaluator {
 		for (; i < expression.length(); i++) {
 			if (expression.charAt(i) != '+' || expression.charAt(i) != '-' || expression.charAt(i) != '/'
 					|| expression.charAt(i) != '*') {
-				store[i] = expression.charAt(i);
+				store[l] = expression.charAt(i);
+				l++;
 			} else {
 				if (a.size > 0) {
 					if (expression.charAt(i) == '+' || expression.charAt(i) == '-') {
-						store[i] = (char) a.pop();
+						store[l] = (char) a.pop();
+						l++;
 						a.push(expression.charAt(i));
 					} else {
 						a.push(expression.charAt(i));
@@ -51,12 +54,10 @@ public class InfixPosfix implements IExpressionEvaluator {
 			}
 		}
 		/*
-		String str = "";
-		for (int j = 0; i < store.length; i++) {
-			str = str + store[j] + " ";
-		}
-		*/
-		String str = String.valueOf(store[2]);
+		 * String str = ""; for (int j = 0; i < store.length; i++) { str = str +
+		 * store[j] + " "; }
+		 */
+		String str = String.valueOf(store);
 		return str;
 	}
 
