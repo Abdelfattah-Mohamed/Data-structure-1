@@ -903,7 +903,7 @@ public class Polynomial implements IPolynomialSolver {
 			muliExp = firstLast[0][1] + firstLast[0][1];
 			for (int i = 0; i < b.size(); i++) {
 				multiMax = muliExp;
-				for (int j = 0; j < b.size(); j++) {
+ 				for (int j = 0; j < b.size(); j++) {
 					multi[counter][0] = (int) b.get(i)
 							* (int) b.get(j);
 					multi[counter][1] = multiMax;
@@ -1035,7 +1035,18 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) 220, multi);
 		}
-		return multi;
+		int count = 0;
+		int maxExp = multi[0][1] ;
+		int[][] multi1 = new int[r.size()][2];
+		for(int i = 0 ;i < r.size() ;i++) {
+			if((int) r.get(i) != 0) {
+				multi1[count][0] = (int) r.get(i);
+				multi1[count][1] = maxExp;
+				count++;
+			}
+			maxExp--;
+		}
+		return multi1;
 	}
 
 	/**
