@@ -45,6 +45,11 @@ public class InfixPosfix implements IExpressionEvaluator {
 						store[l] = (char) a.pop();
 						l++;
 						a.push(expression.charAt(i));
+					} else if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
+						if ((Character) a.peek() == '*' || (Character) a.peek() == '*') {
+							store[l] = (char) a.pop();
+							l++;
+						}
 					} else {
 						a.push(expression.charAt(i));
 					}
