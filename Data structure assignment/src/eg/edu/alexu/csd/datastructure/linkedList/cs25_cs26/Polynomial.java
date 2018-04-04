@@ -465,10 +465,18 @@ public class Polynomial implements IPolynomialSolver {
 						+ " polynomial");
 			}
 			maxExp1 = firstLast[0][0];
-			for (i = 0; i < a.size(); i++) {
-				add[i][0] = (int) a.get(i);
-				add[i][1] = maxExp1;
-				maxExp1--;
+			if (negative == 'A') {
+				for (i = 0; i < a.size(); i++) {
+					add[i][0] = (int) -1 * (int) a.get(i);
+					add[i][1] = maxExp1;
+					maxExp1--;
+				}
+			}else {
+				for (i = 0; i < a.size(); i++) {
+					add[i][0] = (int) a.get(i);
+					add[i][1] = maxExp1;
+					maxExp1--;
+				}
 			}
 			if (poly2 == 'A') {
 				maxExp2 = firstLast[0][0];
@@ -526,10 +534,18 @@ public class Polynomial implements IPolynomialSolver {
 						+ " polynomial");
 			}
 			maxExp1 = firstLast[0][1];
-			for (i = 0; i < b.size(); i++) {
-				add[i][0] = (int) b.get(i);
-				add[i][1] = maxExp1;
-				maxExp1--;
+			if (negative == 'B') {
+				for (i = 0; i < b.size(); i++) {
+					add[i][0] = (int) -1 * (int) b.get(i);
+					add[i][1] = maxExp1;
+					maxExp1--;
+				}
+			}else {
+				for (i = 0; i < b.size(); i++) {
+					add[i][0] = (int) b.get(i);
+					add[i][1] = maxExp1;
+					maxExp1--;
+				}
 			}
 			if (poly2 == 'A') {
 				if (a.isEmpty()) {
@@ -587,10 +603,18 @@ public class Polynomial implements IPolynomialSolver {
 						+ " polynomial");
 			}
 			maxExp1 = firstLast[0][2];
-			for (i = 0; i < c.size(); i++) {
-				add[i][0] = (int) c.get(i);
-				add[i][1] = maxExp1;
-				maxExp1--;
+			if (negative == 'C') {
+				for (i = 0; i < c.size(); i++) {
+					add[i][0] = (int) -1 * (int) c.get(i);
+					add[i][1] = maxExp1;
+					maxExp1--;
+				}
+			}else {
+				for (i = 0; i < c.size(); i++) {
+					add[i][0] = (int) c.get(i);
+					add[i][1] = maxExp1;
+					maxExp1--;
+				}
 			}
 			if (poly2 == 'A') {
 				if (a.isEmpty()) {
@@ -664,10 +688,10 @@ public class Polynomial implements IPolynomialSolver {
 				c++;
 			}
 		}
-		int[][] multi1 = new int[c + 1][2];
+		int[][] multi1 = new int[c][2];
 		for(int j = 0 ;j < r.size() ;j++) {
 			if((int) r.get(j) != 0) {
-				multi1[count][0] = (int) r.get(i);
+				multi1[count][0] = (int) r.get(j);
 				multi1[count][1] = maxExp;
 				count++;
 			}
