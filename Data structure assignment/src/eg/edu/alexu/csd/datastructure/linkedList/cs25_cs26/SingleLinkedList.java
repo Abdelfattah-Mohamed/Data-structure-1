@@ -50,7 +50,7 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public void add(final Object element) {
 		// TODO Auto-generated method stub
-		/*
+
 		Snode nptr = new Snode(element, null);
 		if (head == null) {
 			head = nptr;
@@ -61,14 +61,14 @@ public class SingleLinkedList implements ILinkedList {
 		}
 		size++;
 		return;
-		*/
+		
 	}
 
 	@Override
 	public Object get(final int index) {
 		// TODO Auto-generated method stub
 		int x = index;
-		if (x > size || x < 0) {
+		if (x >= size || x < 0) {
 			throw new IndexOutOfBoundsException();
 		}
 		if (head == null) {
