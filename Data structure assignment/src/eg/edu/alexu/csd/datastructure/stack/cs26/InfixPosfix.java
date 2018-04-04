@@ -49,9 +49,11 @@ public class InfixPosfix implements IExpressionEvaluator {
 					a.push(expression.charAt(i));
 				}
 			}
-			store[i + 1] = ' ';
 		}
-		String str = String.valueOf(store);
+		String str = "";
+		for (int j = 0; i < store.length; i++) {
+			str = str + store[j] + " ";
+		}
 		return str;
 	}
 
