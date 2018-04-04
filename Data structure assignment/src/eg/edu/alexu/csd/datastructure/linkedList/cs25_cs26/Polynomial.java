@@ -717,7 +717,7 @@ public class Polynomial implements IPolynomialSolver {
 			+ poly2 + " is not permitted");
 			}
 			negative = 'B';
-			while (b.get(i) == null) {
+			while (b.get(i) != null) {
 				b.set(i, -1 * (int) b.get(i));
 				i++;
 			}
@@ -730,7 +730,7 @@ public class Polynomial implements IPolynomialSolver {
 			+ poly2 + " is not permitted");
 			}
 			negative = 'C';
-			while (c.get(i) == null) {
+			while (c.get(i) != null) {
 				c.set(i, -1 * (int) c.get(i));
 				i++;
 			}
