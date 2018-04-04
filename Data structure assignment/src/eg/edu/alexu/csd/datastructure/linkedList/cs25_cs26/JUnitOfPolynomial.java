@@ -26,7 +26,7 @@ public class JUnitOfPolynomial {
 		instance.setPolynomial('C', new int[][] { { 3, 7 }, { 45, 5 }, { 176, 3 }, { 128, 1 } });
 		instance.setPolynomial('B', new int[][] { { -120, 5 }, { -1, 3 }, { 27, 2 }, { 1, 1 }, { -1, 0 } });
 		assertNull("Polynomial R is not set yet", instance.print('R'));
-		int[][] result1 = instance.multiply('B', 'B');
+		int[][] result1 = instance.subtract('B', 'B');
 		assertNotNull("Polynomial R must be set after evaluation", instance.print('R'));
 		int[][] expected = new int[][] { { 3, 7 }, { -75, 5 }, { 175, 3 }, { 27, 2 }, { 129, 1 }, { -1, 0 } };
 		System.out.println();

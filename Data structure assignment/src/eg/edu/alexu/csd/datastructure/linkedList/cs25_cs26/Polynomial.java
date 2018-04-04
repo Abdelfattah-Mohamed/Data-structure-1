@@ -715,6 +715,7 @@ public class Polynomial implements IPolynomialSolver {
 				i++;
 			}
 		}
+		
 		int[][] x = add(poly1, poly2);
 		int count = 0;
 		int maxExp = x[0][1] ;
@@ -724,7 +725,7 @@ public class Polynomial implements IPolynomialSolver {
 				c++;
 			}
 		}
-		int[][] multi1 = new int[c][2];
+		int[][] multi1 = new int[c + 1][2];
 		for(int j = 0 ;j < r.size() ;j++) {
 			if((int) r.get(i) != 0) {
 				multi1[count][0] = (int) r.get(i);
@@ -734,6 +735,8 @@ public class Polynomial implements IPolynomialSolver {
 			maxExp--;
 		}
 		return multi1;
+	
+	//	return x;
 	}
 
 	@Override
