@@ -60,7 +60,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 			}
 		}
 		while (a.size > 0) {
-			store[l] = (char) a.pop();
+			store[l+1] = (char) a.pop();
 			l++;
 		}
 		/*
