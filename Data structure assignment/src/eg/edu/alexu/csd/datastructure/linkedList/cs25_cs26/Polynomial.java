@@ -199,6 +199,8 @@ public class Polynomial implements IPolynomialSolver {
 						System.out.print(a.get(i)
 								+ " ");
 					} else if (maxExp == 1) {
+						System.out.print(a.get(i)
+								+ "X" + " ");
 						print = print + "A.get(i)"
 					+ "X";
 					} else {
@@ -234,6 +236,8 @@ public class Polynomial implements IPolynomialSolver {
 						System.out.print(b.get(i)
 								+ " ");
 					} else if (maxExp == 1) {
+						System.out.print(b.get(i)
+								+ "X" + " ");
 						print = print + "B.get(i)"
 					+ "X";
 					} else {
@@ -267,6 +271,8 @@ public class Polynomial implements IPolynomialSolver {
 						System.out.print(c.get(i)
 								+ " ");
 					} else if (maxExp == 1) {
+						System.out.print(c.get(i)
+								+ "X" + " ");
 						print = print + "C.get(i)"
 					+ "X";
 					} else {
@@ -300,6 +306,8 @@ public class Polynomial implements IPolynomialSolver {
 						System.out.print(r.get(i)
 								+ " ");
 					} else if (maxExp == 1) {
+						System.out.print(r.get(i)
+								+ "X" + " ");
 						print = print + r.get(i)
 						+ "X";
 					} else {
