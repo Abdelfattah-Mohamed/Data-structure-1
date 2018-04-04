@@ -66,7 +66,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 		while (a.head != null) {
 			store[l] = (char) a.pop();
 			l++;
-			if(a.head.next != null) {
+			if(a.tail != null) {
 				store[l] = ' ';
 				l++;
 			}
