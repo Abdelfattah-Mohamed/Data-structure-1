@@ -1,7 +1,5 @@
 package eg.edu.alexu.csd.datastructure.stack.cs26;
 
-import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
-import eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26.SingleLinkedList;
 import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 
 /**
@@ -50,26 +48,22 @@ public class InfixPosfix implements IExpressionEvaluator {
 							store[l] = (char) a.pop();
 							l++;
 							a.push(expression.charAt(i));
+						} else {
+							a.push(expression.charAt(i));
 						}
-					} else {
-						a.push(expression.charAt(i));
 					}
 				} else {
 					a.push(expression.charAt(i));
 				}
 			}
 		}
-		while (a.size > 0) {
+		while (a.head != null) {
 			store[l] = (char) a.pop();
 			l++;
 		}
 		/*
-		String str = " ";
-		while (i < store.length) {
-			str = str + store[i];
-			i++;
-		}
-		*/
+		 * String str = ""; while (i < store.length) { str = str + store[i]; i++; }
+		 */
 		/*
 		 * String str = ""; for (int j = 0; i < store.length; i++) { str = str +
 		 * store[j] + " "; }
