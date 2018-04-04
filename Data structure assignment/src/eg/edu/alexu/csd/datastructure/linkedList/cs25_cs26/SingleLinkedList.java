@@ -68,7 +68,7 @@ public class SingleLinkedList implements ILinkedList {
 	public Object get(final int index) {
 		// TODO Auto-generated method stub
 		int x = index;
-		if (x >= size || x < 0) {
+		if (x > size || x < 0) {
 			throw new IndexOutOfBoundsException();
 		}
 		if (head == null) {
