@@ -779,7 +779,7 @@ public class Polynomial implements IPolynomialSolver {
 						"Solver "
 						+ "evaluated unseted"
 						+ " polynomial");
-			}else if(b.isEmpty()){
+			} else if(b.isEmpty()) {
 				System.out.println("Solver"
 						+ " evaluated unseted"
 						+ " polynomial");
