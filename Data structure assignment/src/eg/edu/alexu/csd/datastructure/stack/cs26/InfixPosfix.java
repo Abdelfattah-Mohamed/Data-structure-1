@@ -67,7 +67,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 		 * store[j] + " "; }
 		 */
 		String str = String.valueOf(store);
-		return str;
+		return str.valueOf(store[4]);
 	}
 
 	@Override
