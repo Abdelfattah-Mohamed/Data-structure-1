@@ -50,10 +50,13 @@ public class InfixPosfix implements IExpressionEvaluator {
 				}
 			}
 		}
+		/*
 		String str = "";
 		for (int j = 0; i < store.length; i++) {
 			str = str + store[j] + " ";
 		}
+		*/
+		String str = store.toString();
 		return str;
 	}
 
