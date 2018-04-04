@@ -779,7 +779,7 @@ public class Polynomial implements IPolynomialSolver {
 						"Solver "
 						+ "evaluated unseted"
 						+ " polynomial");
-			} else if(b.isEmpty()) {
+			} else if (b.isEmpty()) {
 				System.out.println("Solver"
 						+ " evaluated unseted"
 						+ " polynomial");
@@ -811,7 +811,7 @@ public class Polynomial implements IPolynomialSolver {
 						"Solver "
 						+ "evaluated unseted"
 						+ " polynomial");
-			}else if(c.isEmpty()) {
+			} else if(c.isEmpty()) {
 				System.out.println("Solver"
 						+ " evaluated unseted"
 						+ " polynomial");
@@ -867,7 +867,7 @@ public class Polynomial implements IPolynomialSolver {
 						"Solver "
 						+ "evaluated unseted"
 						+ " polynomial");
-			}else if(a.isEmpty()) {
+			} else if(a.isEmpty()) {
 				System.out.println("Solver"
 						+ " evaluated unseted"
 						+ " polynomial");
@@ -923,7 +923,7 @@ public class Polynomial implements IPolynomialSolver {
 						"Solver "
 						+ "evaluated unseted"
 						+ " polynomial");
-			}else if(c.isEmpty()) {
+			} else if (c.isEmpty()) {
 				System.out.println("Solver"
 						+ " evaluated unseted"
 						+ " polynomial");
@@ -955,7 +955,7 @@ public class Polynomial implements IPolynomialSolver {
 						"Solver "
 						+ "evaluated unseted"
 						+ " polynomial");
-			}else if(a.isEmpty()) {
+			} else if (a.isEmpty()) {
 				System.out.println("Solver"
 						+ " evaluated unseted"
 						+ " polynomial");
@@ -987,7 +987,7 @@ public class Polynomial implements IPolynomialSolver {
 						"Solver "
 						+ "evaluated unseted"
 						+ " polynomial");
-			}else if(b.isEmpty()) {
+			} else if(b.isEmpty()) {
 				System.out.println("Solver"
 						+ " evaluated unseted"
 						+ " polynomial");
