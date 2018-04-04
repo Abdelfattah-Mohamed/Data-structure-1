@@ -26,7 +26,7 @@ public class SingleLinkedList implements ILinkedList {
 		// TODO Auto-generated method stub
 		int x = index;
 		if (x > size || x < 0) {
-			throw new RuntimeException("null");
+			throw new RuntimeException("100");
 		}
 		Snode nptr = new Snode(element, null);
 		Snode q = head;
