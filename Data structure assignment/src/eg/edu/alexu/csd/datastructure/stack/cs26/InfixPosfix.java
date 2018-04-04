@@ -58,8 +58,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 				}
 			}
 		}
-		for (; a.size >= 0; l++) {
+		while (a.size > 0) {
 			store[l] = (char) a.pop();
+			l++;
 		}
 		/*
 		 * String str = ""; for (int j = 0; i < store.length; i++) { str = str +
