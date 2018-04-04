@@ -781,6 +781,9 @@ public class Polynomial implements IPolynomialSolver {
 		}
 		return multi1;
 	*/
+		System.out.println();
+		System.out.println();
+		System.out.println(x.length);
 		return x;
 	}
 
