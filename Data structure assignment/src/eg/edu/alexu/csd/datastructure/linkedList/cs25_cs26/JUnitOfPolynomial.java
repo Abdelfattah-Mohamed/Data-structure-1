@@ -41,7 +41,7 @@ public class JUnitOfPolynomial {
 	@Test
 	public void cs56TestAddRemoveTwoLists2() {
 		ILinkedList c = (ILinkedList) new SingleLinkedList();
-		for(int i=0;i<3;i++){
+		for(int i=0; i<3; i++) {
             c.add(i);
         }
         c.add(0,3);
