@@ -806,6 +806,8 @@ public class Polynomial implements IPolynomialSolver {
 				i++;
 			}
 		}
+		
+		int[][] x = add(poly1, poly2);
 		i = 0 ;
 		if(negative == 'A') {
 			while (a.get(i) != null) {
@@ -825,29 +827,6 @@ public class Polynomial implements IPolynomialSolver {
 				i++;
 			}
 		}
-		
-		
-		int[][] x = add(poly1, poly2);
-		/*
-		int count = 0;
-		int maxExp = x[0][1] ;
-		int c = 0 ;
-		for(int ii = 0 ;ii < r.size() ;ii++) {
-			if((int) r.get(ii) != 0) {
-				c++;
-			}
-		}
-		int[][] multi1 = new int[c + 1][2];
-		for(int j = 0 ;j < r.size() ;j++) {
-			if((int) r.get(i) != 0) {
-				multi1[count][0] = (int) r.get(i);
-				multi1[count][1] = maxExp;
-				count++;
-			}
-			maxExp--;
-		}
-		return multi1;
-	*/
 		int[][] y = new int[1][2];
 		if(x.length == 0) {
 			y[0][0] = 0;
