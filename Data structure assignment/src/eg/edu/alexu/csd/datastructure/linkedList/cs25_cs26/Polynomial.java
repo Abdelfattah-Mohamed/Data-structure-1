@@ -211,6 +211,7 @@ public class Polynomial implements IPolynomialSolver {
 								+ " ");
 					}
 					if (maxExp != leastExp) {
+						print = print + "+";
 						System.out.print("+"
 					+ " ");
 					}
@@ -248,6 +249,7 @@ public class Polynomial implements IPolynomialSolver {
 								+ " ");
 					}
 					if (maxExp != leastExp) {
+						print = print + "+";
 						System.out.print("+"
 					+ " ");
 					}
@@ -283,6 +285,7 @@ public class Polynomial implements IPolynomialSolver {
 								+ " ");
 					}
 					if (maxExp != leastExp) {
+						print = print + "+";
 						System.out.print("+"
 					+ " ");
 					}
@@ -318,6 +321,7 @@ public class Polynomial implements IPolynomialSolver {
 								+ " ");
 					}
 					if (maxExp != leastExp) {
+						print = print + "+";
 						System.out.print("+"
 					+ " ");
 					}
