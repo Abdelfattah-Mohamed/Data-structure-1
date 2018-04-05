@@ -809,7 +809,7 @@ public class Polynomial implements IPolynomialSolver {
 		}
 		
 		int[][] x = add(poly1, poly2);
-		i = 0 ;
+		i = 0;
 		if(negative == 'A') {
 			while (a.get(i) != null) {
 				a.set(i, -1 * (int) a.get(i));
