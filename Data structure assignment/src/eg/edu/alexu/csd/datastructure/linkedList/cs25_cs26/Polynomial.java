@@ -731,13 +731,13 @@ public class Polynomial implements IPolynomialSolver {
 		int count = 0;
 		int maxExp = reArr[0][1];
 		int c = 0;
-		for(int ii = 0 ;ii < r.size() ;ii++) {
-			if((int) r.get(ii) != 0) {
+		for(int ii = 0 ;ii < r.size() ;ii++){
+			if((int) r.get(ii) != 0){
 				c++;
 			}
 		}
 		int[][] multi1 = new int[c][2];
-		for(int j = 0 ;j < r.size() ;j++) {
+		for(int j = 0 ;j < r.size() ;j++){
 			if((int) r.get(j) != 0) {
 				multi1[count][0] = (int) r.get(j);
 				multi1[count][1] = maxExp;
@@ -753,12 +753,12 @@ public class Polynomial implements IPolynomialSolver {
 	@Override
 	public int[][] subtract(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
-		if (poly1 != 'A' && poly1 != 'B' && poly1 != 'C') {
+		if (poly1 != 'A' && poly1 != 'B' && poly1 != 'C'){
 			throw new IllegalArgumentException("Operation"
 					+ " on polynomial "
 		+ poly1 + " is not permitted");
 		}
-		if (poly2 != 'A' && poly2 != 'B' && poly2 != 'C') {
+		if (poly2 != 'A' && poly2 != 'B' && poly2 != 'C'){
 			throw new IllegalArgumentException("Operation"
 					+ " on polynomial "
 		+ poly2 + " is not permitted");
