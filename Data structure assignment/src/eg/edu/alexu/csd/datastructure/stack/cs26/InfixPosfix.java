@@ -40,8 +40,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 				l++;
 			} else {
 				
-				if (expression.charAt(i + 1) == '+' && expression.charAt(i + 1) == '-' && expression.charAt(i + 1) == '/'
-						&& expression.charAt(i + 1) == '*') {
+				if (expression.charAt(i + 1) == '+' || expression.charAt(i + 1) == '-' || expression.charAt(i + 1) == '/'
+						|| expression.charAt(i + 1) == '*') {
 					throw new RuntimeException();
 					
 				}
