@@ -1,5 +1,6 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -30,7 +31,7 @@ public class JUnitOfPolynomial {
 		assertNull("Polynomial R is not set yet", instance.print('R'));
 		int[][] result1 = instance.add('C', 'B');
 		float a = instance.evaluatePolynomial('A', 10);
-		assertNotNull("Polynomial R must be set after evaluation", instance.print('R'));
+		assertEquals("120x^5+1x^3-27x^2-1x+1", instance.print('A'));
 		int[][] expected = new int[][] {{3, 7 }, {-75, 5 }, {175, 3 }, {27, 2 }, {129, 1 }, {-1, 0 } };
 		System.out.println();
 		for (int i = 0; i < result1.length; i++) {
