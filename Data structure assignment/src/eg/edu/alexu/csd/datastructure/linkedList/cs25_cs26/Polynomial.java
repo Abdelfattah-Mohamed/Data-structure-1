@@ -520,7 +520,7 @@ public class Polynomial implements IPolynomialSolver {
 					add[i][1] = maxExp1;
 					maxExp1--;
 				}
-			}else {
+			} else {
 				for (i = 0; i < a.size(); i++) {
 					add[i][0] = (int) a.get(i);
 					add[i][1] = maxExp1;
@@ -588,7 +588,7 @@ public class Polynomial implements IPolynomialSolver {
 					add[i][1] = maxExp1;
 					maxExp1--;
 				}
-			}else {
+			} else {
 				for (i = 0; i < b.size(); i++) {
 					add[i][0] = (int) b.get(i);
 					add[i][1] = maxExp1;
@@ -657,7 +657,7 @@ public class Polynomial implements IPolynomialSolver {
 					add[i][1] = maxExp1;
 					maxExp1--;
 				}
-			}else {
+			} else {
 				for (i = 0; i < c.size(); i++) {
 					add[i][0] = (int) c.get(i);
 					add[i][1] = maxExp1;
@@ -731,13 +731,13 @@ public class Polynomial implements IPolynomialSolver {
 		int count = 0;
 		int maxExp = reArr[0][1];
 		int c = 0;
-		for(int ii = 0; ii < r.size(); ii++) {
+		for (int ii = 0; ii < r.size(); ii++) {
 			if((int) r.get(ii) != 0) {
 				c++;
 			}
 		}
 		int[][] multi1 = new int[c][2];
-		for(int j = 0; j < r.size(); j++) {
+		for (int j = 0; j < r.size(); j++) {
 			if((int) r.get(j) != 0) {
 				multi1[count][0] = (int) r.get(j);
 				multi1[count][1] = maxExp;
@@ -810,26 +810,26 @@ public class Polynomial implements IPolynomialSolver {
 		
 		int[][] x = add(poly1, poly2);
 		i = 0;
-		if(negative == 'A') {
+		if (negative == 'A') {
 			while (a.get(i) != null) {
 				a.set(i, -1 * (int) a.get(i));
 				i++;
 			}
 		}
-		if(negative == 'B') {
+		if (negative == 'B') {
 			while (b.get(i) != null) {
 				b.set(i, -1 * (int) b.get(i));
 				i++;
 			}
 		}
-		if(negative == 'C') {
+		if (negative == 'C') {
 			while (c.get(i) != null) {
 				c.set(i, -1 * (int) c.get(i));
 				i++;
 			}
 		}
 		int[][] y = new int[1][2];
-		if(x.length == 0) {
+		if (x.length == 0) {
 			y[0][0] = 0;
 			y[0][1] = 0;
 			return y;
