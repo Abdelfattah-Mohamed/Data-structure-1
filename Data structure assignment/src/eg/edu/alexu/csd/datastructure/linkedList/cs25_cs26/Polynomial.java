@@ -358,7 +358,7 @@ public class Polynomial implements IPolynomialSolver {
 						System.out.print(r.get(i)
 								+ " ");
 					} else if (maxExp == 1) {
-						if((int) r.get(i) != 1) {
+						if ((int) r.get(i) != 1) {
 							System.out.print(r.get(i)
 									+ "x" + " ");
 							print = print + r.get(i)
