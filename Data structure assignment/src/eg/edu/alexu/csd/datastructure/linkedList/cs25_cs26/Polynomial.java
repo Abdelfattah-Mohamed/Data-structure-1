@@ -775,7 +775,6 @@ public class Polynomial implements IPolynomialSolver {
 				l++;
 			}
 		}
-		
 		int count = 0;
 		int maxExp = reArr[0][1];
 		int c = 0;
@@ -794,7 +793,6 @@ public class Polynomial implements IPolynomialSolver {
 			maxExp--;
 		}
 		return multi1;
-		
 		//return reArr;
 	}
 
@@ -855,7 +853,6 @@ public class Polynomial implements IPolynomialSolver {
 				i++;
 			}
 		}
-		
 		int[][] x = add(poly1, poly2);
 		i = 0;
 		if (negative == 'A') {
