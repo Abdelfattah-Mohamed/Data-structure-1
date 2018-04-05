@@ -28,6 +28,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 		Stack a = (Stack) new Stack();
 		int i = 0;
 		int l = 0;
+		if (expression.length() == 0) {
+			throw new RuntimeException();
+		}
 		for (; i < expression.length(); i++) {
 			if (expression.charAt(i) != '+' && expression.charAt(i) != '-' && expression.charAt(i) != '/'
 					&& expression.charAt(i) != '*') {
