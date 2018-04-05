@@ -36,7 +36,7 @@ public class JUnitOfPolynomial {
 		for(int i = 0 ; i < result1.length ; i ++) {
 			System.out.println(result1[i][1]);
 		}
-		String x = instance.print('R');
+		String x = instance.print('A');
 		System.out.println();
 		System.out.println(x);
 	}

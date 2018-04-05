@@ -195,24 +195,24 @@ public class Polynomial implements IPolynomialSolver {
 				if (a.get(i) != null
 						&& (int) a.get(i) != 0) {
 					if (maxExp == 0) {
-						print = print + "A.get(i)";
+						print = print + a.get(i);
 						System.out.print(a.get(i)
 								+ " ");
 					} else if (maxExp == 1) {
 						System.out.print(a.get(i)
 								+ "x" + " ");
-						print = print + "A.get(i)"
+						print = print + a.get(i)
 					+ "x";
 					} else {
-						print = print + "A.get(i)"
-					+ "x^" + "maxExp";
+						print = print + a.get(i)
+					+ "x^" + maxExp;
 						System.out.print(a.get(i)
 								+ "x^" + maxExp
 								+ " ");
 					}
 				}
 				if (maxExp != leastExp) {
-					if((int) a.get(i + 1) >= 0) {
+					if((int) a.get(i + 1) > 0) {
 						print = print + "+";
 					}
 					System.out.print("+"
@@ -235,17 +235,17 @@ public class Polynomial implements IPolynomialSolver {
 				if (b.get(i) != null
 						&& (int) b.get(i) != 0) {
 					if (maxExp == 0) {
-						print = print + "B.get(i)";
+						print = print + b.get(i);
 						System.out.print(b.get(i)
 								+ " ");
 					} else if (maxExp == 1) {
 						System.out.print(b.get(i)
 								+ "x" + " ");
-						print = print + "B.get(i)"
+						print = print + b.get(i)
 					+ "x";
 					} else {
-						print = print + "B.get(i)"
-					+ "x^" + "maxExp";
+						print = print + b.get(i)
+					+ "x^" + maxExp;
 						System.out.print(b.get(i)
 								+ "x^" + maxExp
 								+ " ");
@@ -273,17 +273,17 @@ public class Polynomial implements IPolynomialSolver {
 				if (c.get(i) != null
 						&& (int) c.get(i) != 0) {
 					if (maxExp == 0) {
-						print = print + "C.get(i)";
+						print = print + c.get(i);
 						System.out.print(c.get(i)
 								+ " ");
 					} else if (maxExp == 1) {
 						System.out.print(c.get(i)
 								+ "x" + " ");
-						print = print + "C.get(i)"
+						print = print + c.get(i)
 					+ "x";
 					} else {
-						print = print + "C.get(i)"
-					+ "x^" + "maxExp";
+						print = print + c.get(i)
+					+ "x^" + maxExp;
 						System.out.print(c.get(i)
 								+ "x^" + maxExp
 								+ " ");
