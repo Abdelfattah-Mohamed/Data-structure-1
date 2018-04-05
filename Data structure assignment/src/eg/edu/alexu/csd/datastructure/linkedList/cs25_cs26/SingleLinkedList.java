@@ -25,7 +25,7 @@ public class SingleLinkedList implements ILinkedList {
 	public void add(final int index, final Object element) {
 		// TODO Auto-generated method stub
 		int x = index;
-		if (x > size && x < 0) {
+		if (x > size || x < 0) {
 			throw new RuntimeException("null");
 		}
 		Snode nptr = new Snode(element, null);
