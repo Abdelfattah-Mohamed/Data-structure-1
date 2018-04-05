@@ -199,7 +199,7 @@ public class Polynomial implements IPolynomialSolver {
 						System.out.print(a.get(i)
 								+ " ");
 					} else if (maxExp == 1) {
-						if((int) a.get(i) != 1) {
+						if ((int) a.get(i) != 1) {
 							System.out.print(a.get(i)
 									+ "x" + " ");
 							print = print + a.get(i)
@@ -211,7 +211,7 @@ public class Polynomial implements IPolynomialSolver {
 						}
 						
 					} else {
-						if((int) a.get(i) != 1) {
+						if ((int) a.get(i) != 1) {
 							System.out.print(a.get(i)
 									+ "x^" + maxExp
 									+ " ");
@@ -253,7 +253,7 @@ public class Polynomial implements IPolynomialSolver {
 						System.out.print(b.get(i)
 								+ " ");
 					} else if (maxExp == 1) {
-						if((int) b.get(i) != 1) {
+						if ((int) b.get(i) != 1) {
 							System.out.print(b.get(i)
 									+ "x" + " ");
 							print = print + b.get(i)
@@ -265,7 +265,7 @@ public class Polynomial implements IPolynomialSolver {
 						}
 						
 					} else {
-						if((int) b.get(i) != 1) {
+						if ((int) b.get(i) != 1) {
 							System.out.print(b.get(i)
 									+ "x^" + maxExp
 									+ " ");
@@ -318,7 +318,7 @@ public class Polynomial implements IPolynomialSolver {
 						}
 						
 					} else {
-						if((int) c.get(i) != 1) {
+						if ((int) c.get(i) != 1) {
 							System.out.print(c.get(i)
 									+ "x^" + maxExp
 									+ " ");
@@ -370,7 +370,7 @@ public class Polynomial implements IPolynomialSolver {
 						}
 						
 					} else {
-						if((int) r.get(i) != 1) {
+						if ((int) r.get(i) != 1) {
 							System.out.print(r.get(i)
 									+ "x^" + maxExp
 									+ " ");
