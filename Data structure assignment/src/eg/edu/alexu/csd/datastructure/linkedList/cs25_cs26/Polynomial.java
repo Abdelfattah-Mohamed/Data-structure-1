@@ -819,7 +819,7 @@ public class Polynomial implements IPolynomialSolver {
 	*/
 		if(x.length == 0) {
 			x[0][0] = 5;
-			x[0][1] = 0;
+			x[0][1] = 6;
 		}
 		return x;
 	}
