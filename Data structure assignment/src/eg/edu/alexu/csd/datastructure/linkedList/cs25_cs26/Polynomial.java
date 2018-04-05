@@ -488,9 +488,9 @@ public class Polynomial implements IPolynomialSolver {
 		if (!r.isEmpty()) {
 			r.clear();
 		}
-		int[][] add = new int[a.size()
-		                      + b.size()
-		                      + c.size()][2];
+		int[][] add = new int[2 * a.size()
+		                      + 2 * b.size()
+		                      + 2 * c.size()][2];
 		if (poly1 == 'A') {
 			if (a.isEmpty()) {
 				System.out.println("Solver"
@@ -516,8 +516,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'A') {
 				maxExp2 = firstLast[0][0];
-				for (i = 0; i < a.size(); i++) {
-					add[i][0] = (int) 2 * (int)a.get(i);
+				for (; i < a.size() + a.size(); i++) {
+					add[i][0] = (int) a.get(i - a.size());
 					add[i][1] = maxExp2;
 					maxExp2--;
 				}

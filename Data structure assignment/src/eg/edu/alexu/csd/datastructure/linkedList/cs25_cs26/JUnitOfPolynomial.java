@@ -25,16 +25,16 @@ public class JUnitOfPolynomial {
 		ILinkedList object = (ILinkedList) new SingleLinkedList();
 		instance.setPolynomial('C', new int[][] { { 3, 7 }, { 45, 5 }, { 176, 3 }, { 128, 1 } });
 		instance.setPolynomial('B', new int[][] { { -120, 5 }, { -1, 3 }, { 27, 2 }, { 1, 1 }, { -1, 0 } });
-		instance.setPolynomial('A', new int[][] { { 0, 5 }, { 1, 3 }, { -27, 2 }, { -1, 1 }, { 1, 0 } });
+		instance.setPolynomial('A', new int[][] { { 120, 5 }, { 1, 3 }, { -27, 2 }, { -1, 1 }, { 1, 0 } });
 		assertNull("Polynomial R is not set yet", instance.print('R'));
-		int[][] result1 = instance.add('A', 'A');
+		int[][] result1 = instance.subtract('A', 'A');
 		float a = instance.evaluatePolynomial('A', 10);
 		
 		assertNotNull("Polynomial R must be set after evaluation", instance.print('R'));
 		int[][] expected = new int[][] { { 3, 7 }, { -75, 5 }, { 175, 3 }, { 27, 2 }, { 129, 1 }, { -1, 0 } };
 		System.out.println();
 		for(int i = 0 ; i < result1.length ; i ++) {
-			System.out.println(result1[i][0]);
+			System.out.println(result1[i][1]);
 		}
 		instance.print('R');
 	}
