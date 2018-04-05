@@ -817,9 +817,10 @@ public class Polynomial implements IPolynomialSolver {
 		}
 		return multi1;
 	*/
-		System.out.println();
-		System.out.println();
-		System.out.println(x.length);
+		if(x.length == 0) {
+			x[0][0] = 0;
+			x[0][1] = 0;
+		}
 		return x;
 	}
 
