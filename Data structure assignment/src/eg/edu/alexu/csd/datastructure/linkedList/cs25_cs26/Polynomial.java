@@ -209,7 +209,6 @@ public class Polynomial implements IPolynomialSolver {
 									+ "x" + " ");
 							print = print + "x";
 						}
-						
 					} else {
 						if ((int) a.get(i) != 1) {
 							System.out.print(a.get(i)
@@ -236,11 +235,9 @@ public class Polynomial implements IPolynomialSolver {
 				maxExp--;
 			}
 		} else if (poly == 'B') {
-
 			if (b.size() == 0) {
 				return null;
 			}
-
 			maxExp = firstLast[0][1];
 			leastExp = firstLast[1][1];
 			int i = 0;
@@ -263,7 +260,6 @@ public class Polynomial implements IPolynomialSolver {
 									+ "x" + " ");
 							print = print + "x";
 						}
-						
 					} else {
 						if ((int) b.get(i) != 1) {
 							System.out.print(b.get(i)
@@ -285,7 +281,6 @@ public class Polynomial implements IPolynomialSolver {
 						System.out.print("+"
 								+ " ");
 					}
-					
 				}
 				i++;
 				maxExp--;
@@ -395,7 +390,6 @@ public class Polynomial implements IPolynomialSolver {
 				maxExp--;
 			}
 		}
-
 		return print;
 	}
 
