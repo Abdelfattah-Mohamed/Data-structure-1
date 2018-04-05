@@ -214,9 +214,9 @@ public class Polynomial implements IPolynomialSolver {
 				if (maxExp != leastExp) {
 					if((int) a.get(i + 1) > 0) {
 						print = print + "+";
+						System.out.print("+"
+								+ " ");
 					}
-					System.out.print("+"
-				+ " ");
 				}
 				i++;
 				maxExp--;
@@ -254,9 +254,10 @@ public class Polynomial implements IPolynomialSolver {
 				if (maxExp != leastExp) {
 					if((int) b.get(i + 1) > 0) {
 						print = print + "+";
+						System.out.print("+"
+								+ " ");
 					}
-					System.out.print("+"
-				+ " ");
+					
 				}
 				i++;
 				maxExp--;
@@ -292,9 +293,9 @@ public class Polynomial implements IPolynomialSolver {
 				if (maxExp != leastExp) {
 					if((int) c.get(i + 1) > 0) {
 						print = print + "+";
+						System.out.print("+"
+								+ " ");
 					}
-					System.out.print("+"
-				+ " ");
 				}
 				i++;
 				maxExp--;
@@ -330,9 +331,9 @@ public class Polynomial implements IPolynomialSolver {
 				if (maxExp != leastExp) {
 					if((int) r.get(i + 1) > 0) {
 						print = print + "+";
+						System.out.print("+"
+								+ " ");
 					}
-					System.out.print("+"
-				+ " ");
 				}
 				i++;
 				maxExp--;
