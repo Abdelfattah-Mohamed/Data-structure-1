@@ -30,7 +30,7 @@ public class JUnitOfPolynomial {
 		assertNotNull("Polynomial R must be set after evaluation", instance.print('R'));
 		int[][] expected = new int[][] {{3, 7 }, {-75, 5 }, {175, 3 }, {27, 2 }, {129, 1 }, {-1, 0 } };
 		System.out.println();
-		for(int i = 0; i < result1.length; i++) {
+		for (int i = 0; i < result1.length; i++) {
 			System.out.println(result1[i][1]);
 		}
 		String x = instance.print('R');
