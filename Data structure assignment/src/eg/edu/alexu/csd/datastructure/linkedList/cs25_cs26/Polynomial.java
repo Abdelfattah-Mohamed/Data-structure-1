@@ -311,7 +311,6 @@ public class Polynomial implements IPolynomialSolver {
 									+ "x" + " ");
 							print = print + "x";
 						}
-						
 					} else {
 						if ((int) c.get(i) != 1) {
 							System.out.print(c.get(i)
