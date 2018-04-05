@@ -21,9 +21,9 @@ public class JUnitOfPolynomial {
 	public void cs55TestSizeContains() {
 		IPolynomialSolver instance = (IPolynomialSolver) new Polynomial();
 		ILinkedList object = (ILinkedList) new SingleLinkedList();
-		instance.setPolynomial('C', new int[][] { {3, 7 }, {45, 5 }, {176, 3 }, {128, 1} });
-		instance.setPolynomial('B', new int[][] { {-120, 5}, {-1, 3}, {27, 2}, {1, 1}, {-1, 0} });
-		instance.setPolynomial('A', new int[][] { {120, 5}, {1, 3}, {-27, 2}, {-1, 1}, {1, 0} });
+		instance.setPolynomial('C', new int[][] {{3, 7 }, {45, 5 }, {176, 3 }, {128, 1} });
+		instance.setPolynomial('B', new int[][] {{-120, 5}, {-1, 3}, {27, 2}, {1, 1}, {-1, 0} });
+		instance.setPolynomial('A', new int[][] {{120, 5}, {1, 3}, {-27, 2}, {-1, 1}, {1, 0} });
 		assertNull("Polynomial R is not set yet", instance.print('R'));
 		int[][] result1 = instance.add('C', 'B');
 		float a = instance.evaluatePolynomial('A', 10);
