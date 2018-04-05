@@ -46,13 +46,10 @@ public class InfixPosfix implements IExpressionEvaluator {
 				l++;
 			} else if (expression.charAt(i) != '+' || expression.charAt(i) != '-' || expression.charAt(i) != '/'
 						|| expression.charAt(i) != '*') {
-				
 				if (expression.charAt(i + 1) == '+' || expression.charAt(i + 1) == '-' || expression.charAt(i + 1) == '/'
 						|| expression.charAt(i + 1) == '*') {
-					throw new RuntimeException();
-					
+					throw new RuntimeException();					
 				}
-				
 				if (a.size > 0) {
 					if (expression.charAt(i) == '+' || expression.charAt(i) == '-') {
 						store[l] = (char) a.pop();
