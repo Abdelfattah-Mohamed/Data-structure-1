@@ -291,7 +291,7 @@ public class Polynomial implements IPolynomialSolver {
 					}
 				}
 				if (maxExp != leastExp) {
-					if((int) c.get(i + 1) > 0) {
+					if ((int) c.get(i + 1) > 0) {
 						print = print + "+";
 						System.out.print("+"
 								+ " ");
