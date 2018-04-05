@@ -44,8 +44,8 @@ public class JUnitOfPolynomial {
 		for(int i=0; i<3; i++) {
             c.add(i);
         }
-        c.add(0,3);
-        c.add(4,4);
+        c.add(0, 3);
+        c.add(4, 4);
         
         assertTrue(c.contains(4));
         assertTrue(c.contains(0));
