@@ -17,6 +17,9 @@ import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
  */
 public class JUnitOfPolynomial {
 
+	/**
+	 * TO TEST POLY.
+	 */
 	@Test
 	public void cs55TestSizeContains() {
 		IPolynomialSolver instance = (IPolynomialSolver) new Polynomial();
@@ -37,7 +40,9 @@ public class JUnitOfPolynomial {
 		System.out.println();
 		System.out.println(x);
 	}
-	
+	/**
+	 * TO TEST LINKED.
+	 */
 	@Test
 	public void cs56TestAddRemoveTwoLists2() {
 		ILinkedList c = (ILinkedList) new SingleLinkedList();
