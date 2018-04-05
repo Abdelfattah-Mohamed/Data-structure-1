@@ -522,7 +522,6 @@ public class Polynomial implements IPolynomialSolver {
 					maxExp2--;
 				}
 			}
-			add[i][0] = 0;
 			if (poly2 == 'B') {
 				if (b.isEmpty()) {
 					System.out.println("Solver"
