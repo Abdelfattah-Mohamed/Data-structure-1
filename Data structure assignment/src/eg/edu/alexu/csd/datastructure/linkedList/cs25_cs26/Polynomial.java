@@ -306,7 +306,7 @@ public class Polynomial implements IPolynomialSolver {
 						System.out.print(c.get(i)
 								+ " ");
 					} else if (maxExp == 1) {
-						if((int) c.get(i) != 1) {
+						if ((int) c.get(i) != 1) {
 							System.out.print(c.get(i)
 									+ "x" + " ");
 							print = print + c.get(i)
