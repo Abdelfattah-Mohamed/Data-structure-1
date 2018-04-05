@@ -26,13 +26,13 @@ public class SingleLinkedList implements ILinkedList {
 		// TODO Auto-generated method stub
 		int x = index;
 		if (x > size || x < 0) {
-			throw new RuntimeException("100");
+			throw new RuntimeException("null");
 		}
 		Snode nptr = new Snode(element, null);
 		Snode q = head;
 		if (q == null || x == 0) {
-			nptr.next = head;
 			head = nptr;
+			tail = head;
 		}
 		for (; q != null;) {
 			if (x == 1) {
