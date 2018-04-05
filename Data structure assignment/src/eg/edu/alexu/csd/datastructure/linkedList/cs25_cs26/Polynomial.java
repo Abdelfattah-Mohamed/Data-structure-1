@@ -516,9 +516,8 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (poly2 == 'A') {
 				maxExp2 = firstLast[0][0];
-				for (; i < a.size() + a.size(); i++) {
-					add[i][0] = (int) a.get(i
-							- a.size());
+				for (i = 0; i < a.size(); i++) {
+					add[i][0] = (int) 2 * (int)a.get(i);
 					add[i][1] = maxExp2;
 					maxExp2--;
 				}
