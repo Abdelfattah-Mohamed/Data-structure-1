@@ -806,6 +806,26 @@ public class Polynomial implements IPolynomialSolver {
 				i++;
 			}
 		}
+		i = 0 ;
+		if(negative == 'A') {
+			while (a.get(i) != null) {
+				a.set(i, -1 * (int) a.get(i));
+				i++;
+			}
+		}
+		if(negative == 'B') {
+			while (b.get(i) != null) {
+				b.set(i, -1 * (int) b.get(i));
+				i++;
+			}
+		}
+		if(negative == 'C') {
+			while (c.get(i) != null) {
+				c.set(i, -1 * (int) c.get(i));
+				i++;
+			}
+		}
+		
 		
 		int[][] x = add(poly1, poly2);
 		/*
