@@ -92,8 +92,6 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public int evaluate(final String expression) {
 		// TODO Auto-generated method stub
-		
 		return 0;
 	}
-
 }
