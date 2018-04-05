@@ -818,7 +818,7 @@ public class Polynomial implements IPolynomialSolver {
 		return multi1;
 	*/
 		if(x.length == 0) {
-			x[0][0] = 0;
+			x[0][0] = 5;
 			x[0][1] = 0;
 		}
 		return x;
