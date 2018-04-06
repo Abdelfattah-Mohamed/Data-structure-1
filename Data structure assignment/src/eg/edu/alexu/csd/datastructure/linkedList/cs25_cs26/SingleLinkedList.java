@@ -30,7 +30,7 @@ public class SingleLinkedList implements ILinkedList {
 		}
 		Snode nptr = new Snode(element, null);
 		Snode q = head;
-		if (q == null || x == 0) {
+		if (q == null && x == 0) {
 			nptr.next = head;
 			head = nptr;
 			tail = head;
