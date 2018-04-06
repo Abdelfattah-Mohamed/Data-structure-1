@@ -24,7 +24,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
-		char[] store = new char[expression.length()];
+		char[] store = new char[expression.length() * 2 - 1];
+		//System.out.print(expression.length());
 		Stack a = (Stack) new Stack();
 		int i = 0;
 		int l = 0;
@@ -42,10 +43,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 				}
 				store[l] = expression.charAt(i);
 				l++;
-				/*
 				store[l] = ' ';
 				l++;
-				*/
 			} else if (expression.charAt(i) != '+' || expression.charAt(i) != '-' || expression.charAt(i) != '/'
 						|| expression.charAt(i) != '*') {
 				if (expression.charAt(i + 1) == '+' || expression.charAt(i + 1) == '-' || expression.charAt(i + 1) == '/'
@@ -56,23 +55,19 @@ public class InfixPosfix implements IExpressionEvaluator {
 					if (expression.charAt(i) == '+' || expression.charAt(i) == '-') {
 						store[l] = (char) a.pop();
 						l++;
-						/*
 						if(l < 2 * expression.length() - 1) {
 							store[l] = ' ';
 							l++;
 						}
-						*/
 						a.push(expression.charAt(i));
 					} else if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
 						if ((Character) a.peek() == '*' || (Character) a.peek() == '/') {
 							store[l] = (char) a.pop();
 							l++;
-							/*
 							if(l < 2 * expression.length() - 1) {
 								store[l] = ' ';
 								l++;
 							}
-							*/
 							a.push(expression.charAt(i));
 						} else {
 							a.push(expression.charAt(i));
@@ -86,12 +81,10 @@ public class InfixPosfix implements IExpressionEvaluator {
 		while (a.head != null) {
 			store[l] = (char) a.pop();
 			l++;
-			/*
 			if(l < 2 * expression.length() - 1) {
 				store[l] = ' ';
 				l++;
 			}
-			*/
 		}
 		/*
 		 * i = 0; String str = ""; while (i < expression.length()) { str = str +
