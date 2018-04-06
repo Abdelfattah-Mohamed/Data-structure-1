@@ -41,9 +41,11 @@ public class InfixPosfix implements IExpressionEvaluator {
 					throw new RuntimeException();
 				}
 				store[l] = expression.charAt(i);
-				l++;
+				l = l + 2;
+				/*
 				store[l] = ' ';
 				l++;
+				*/
 			} else if (expression.charAt(i) != '+' || expression.charAt(i) != '-' || expression.charAt(i) != '/'
 						|| expression.charAt(i) != '*') {
 				if (expression.charAt(i + 1) == '+' || expression.charAt(i + 1) == '-' || expression.charAt(i + 1) == '/'
@@ -53,9 +55,11 @@ public class InfixPosfix implements IExpressionEvaluator {
 				if (a.size > 0) {
 					if (expression.charAt(i) == '+' || expression.charAt(i) == '-') {
 						store[l] = (char) a.pop();
-						l++;
+						l = l + 2;
+						/*
 						store[l] = ' ';
 						l++;
+						*/
 						a.push(expression.charAt(i));
 					} else if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
 						if ((Character) a.peek() == '*' || (Character) a.peek() == '/') {
@@ -73,11 +77,13 @@ public class InfixPosfix implements IExpressionEvaluator {
 		}
 		while (a.head != null) {
 			store[l] = (char) a.pop();
-			l++;
+			l = l + 2;
+			/*
 			if(l < 2 * expression.length() - 1) {
 				store[l] = ' ';
 				l++;
 			}
+			*/
 		}
 		/*
 		 * i = 0; String str = ""; while (i < expression.length()) { str = str +
