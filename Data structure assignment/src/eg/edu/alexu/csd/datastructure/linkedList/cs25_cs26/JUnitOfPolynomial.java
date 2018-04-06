@@ -24,11 +24,9 @@ public class JUnitOfPolynomial {
 	public void cs55TestSizeContains() {
 		IPolynomialSolver instance = (IPolynomialSolver) new Polynomial();
 		ILinkedList object = (ILinkedList) new SingleLinkedList();
-		/*
 		instance.setPolynomial('C', new int[][] {{3, 7 }, {45, 5 }, {176, 3 }, {128, 1 } });
 		instance.setPolynomial('B', new int[][] {{-120, 5 }, {-1, 3 }, {27, 2 }, {1, 1 }, {-1, 0 } });
 		instance.setPolynomial('A', new int[][] {{27, 2 }, {1, 1 }, {-1, 0 } });
-		*/
 		assertNull("Polynomial R is not set yet", instance.print('R'));
 		int[][] result1 = instance.add('C', 'B');
 		//float a = instance.evaluatePolynomial('A', 10);
@@ -50,12 +48,12 @@ public class JUnitOfPolynomial {
 	public void cs56TestAddRemoveTwoLists2() {
 		ILinkedList c = (ILinkedList) new SingleLinkedList();
 		for (int i = 0; i < 3; i++) {
-			c.add(i, null);
+			c.add(i, i);
 		}
-		c.add(3, null);
 		ILinkedList d = (ILinkedList) new SingleLinkedList();
-		for (int i = 0; i < 6; i++) {
-			assertEquals(c.get(i), null);
+		for (int i = 0; i < 3; i++) {
+			assertEquals(c.get(i), i);
+			System.out.println(c.get(i));
 		}
 		 
 	}
