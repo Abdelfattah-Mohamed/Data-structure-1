@@ -52,7 +52,7 @@ public class JUnitOfPolynomial {
 		}
 		c.add(3, null);
 		ILinkedList d = (ILinkedList) new SingleLinkedList();
-		for (int i=0;i<6;i++) {
+		for (int i = 0; i < 6; i++) {
 			assertEquals(c.get(i), null);
 		}
 		 
