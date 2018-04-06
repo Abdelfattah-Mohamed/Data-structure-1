@@ -37,9 +37,8 @@ public class SingleLinkedList implements ILinkedList {
 		} else {
 			for (; q != null;) {
 				if (x == 1) {
-					Snode temp = q.next;
+					nptr.next = q.next;
 					q.next = nptr;
-					nptr.next = temp;
 					break;
 				}
 				q = q.next;
