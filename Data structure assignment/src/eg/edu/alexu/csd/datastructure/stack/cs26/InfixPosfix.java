@@ -24,7 +24,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
-		char[] store = new char[expression.length() * 2 - 1];
+		char[] store = new char[expression.length() + 2];
 		//System.out.print(expression.length());
 		Stack a = (Stack) new Stack();
 		int i = 0;
@@ -81,12 +81,12 @@ public class InfixPosfix implements IExpressionEvaluator {
 			}
 		}
 		while (a.head != null) {
-			store[l] = (char) a.pop();
-			l++;
 			if(l < 2 * expression.length() - 1) {
 				store[l] = ' ';
 				l++;
 			}
+			store[l] = (char) a.pop();
+			l++;
 		}
 		/*
 		 * i = 0; String str = ""; while (i < expression.length()) { str = str +
