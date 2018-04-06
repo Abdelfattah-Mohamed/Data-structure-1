@@ -48,42 +48,13 @@ public class JUnitOfPolynomial {
 	public void cs56TestAddRemoveTwoLists2() {
 		ILinkedList c = (ILinkedList) new SingleLinkedList();
 		for (int i = 0; i < 3; i++) {
-			c.add(i);
+			c.add(i, null);
 		}
-		c.add(0, 3);
-		c.add(4, 4);
-
-		assertTrue(c.contains(4));
-		assertTrue(c.contains(0));
-		assertTrue(c.contains(1));
-		assertTrue(c.contains(2));
-		assertTrue(c.contains(3));
-		assertFalse(c.contains(9));
-		assertFalse(c.contains(7));
+		c.add(3, null);
 		ILinkedList d = (ILinkedList) new SingleLinkedList();
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		d.add(3);
-		assertTrue(d.contains(3));
-		/*
-		 * for (int i=0;i<5;i++){ assertEquals(c.get(i),d.get(i)); }
-		 */
+		for (int i=0;i<6;i++) {
+			assertEquals(c.get(i), null);
+		}
+		 
 	}
 }
