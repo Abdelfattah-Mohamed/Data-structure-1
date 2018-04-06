@@ -24,7 +24,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
-		char[] store = new char[2 * expression.length()];
+		char[] store = new char[2 * expression.length() - 1];
 		Stack a = (Stack) new Stack();
 		int i = 0;
 		int l = 0;
