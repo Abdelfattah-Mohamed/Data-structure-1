@@ -42,7 +42,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 				if (expression.charAt(i) == '~' || expression.charAt(i) == '!' || expression.charAt(i) == '&') {
 					throw new RuntimeException();
 				}
-				s = s + expression.charAt(i) + " ";
+				s = s + expression.charAt(i);
 				store[l] = expression.charAt(i);
 				l++;
 				/*
