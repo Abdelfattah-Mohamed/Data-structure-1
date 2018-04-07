@@ -75,7 +75,8 @@ public class JUnitOfLinkedList {
 	@Test
 	public void cs56TestSizeContains1() {
 		ILinkedList test = (ILinkedList) new SingleLinkedList();
-		for (int i = 0; i < 10; ++i) {
+		final int x = 10;
+		for (int i = 0; i < x; ++i) {
 			test.add(Integer.valueOf(i));
 		}
 		test.add(Integer.valueOf(100000000));
