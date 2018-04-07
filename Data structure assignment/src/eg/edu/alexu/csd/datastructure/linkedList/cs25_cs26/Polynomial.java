@@ -835,13 +835,13 @@ public class Polynomial implements IPolynomialSolver {
 		}
 		int count = 0;
 		int maxExp = reArr[0][1];
-		int c = 0;
+		int yy = 0;
 		for (int ii = 0; ii < r.size(); ii++) {
 			if ((int) r.get(ii) != 0) {
-				c++;
+				yy++;
 			}
 		}
-		int[][] multi1 = new int[c][2];
+		int[][] multi1 = new int[yy][2];
 		for (int j = 0; j < r.size(); j++) {
 			if ((int) r.get(j) != 0) {
 				multi1[count][0] = (int) r.get(j);
@@ -1258,13 +1258,13 @@ public class Polynomial implements IPolynomialSolver {
 		}
 		int count = 0;
 		int maxExp = multi[0][1];
-		int c = 0;
+		int tt = 0;
 		for (int ii = 0; ii < r.size(); ii++) {
 			if ((int) r.get(ii) != 0) {
-				c++;
+				tt++;
 			}
 		}
-		int[][] multi1 = new int[c][2];
+		int[][] multi1 = new int[tt][2];
 		for (int i = 0; i < r.size(); i++) {
 			if ((int) r.get(i) != 0) {
 				multi1[count][0] = (int) r.get(i);
