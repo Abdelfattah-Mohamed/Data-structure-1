@@ -399,13 +399,16 @@ public class Polynomial implements IPolynomialSolver {
 						if ((int) r.get(i) != 1) {
 							System.out.print(
 									r.get(i)
-									+ "x" + " ");
+									+ "x"
+									+ " ");
 							print = print
-									+ r.get(i)
+							+ r.get(i)
 						+ "x";
 						} else {
-							System.out.print(r.get(i)
-									+ "x" + " ");
+							System.out.print(
+								r.get(i)
+									+ "x"
+								+ " ");
 							print = print
 									+ "x";
 						}
@@ -413,15 +416,18 @@ public class Polynomial implements IPolynomialSolver {
 						if ((int) r.get(i) != 1) {
 							System.out.print(
 									r.get(i)
-									+ "x^" + maxExp
+									+ "x^"
+									+ maxExp
 									+ " ");
 							print = print
 									+ r.get(i)
 							+ "x^" + maxExp;
 						} else {
 							print = print
-							+ "x^" + maxExp;
-							System.out.print("x^"
+							+ "x^"
+							+ maxExp;
+							System.out.print(
+								"x^"
 							+ maxExp
 									+ " ");
 						}
@@ -429,7 +435,8 @@ public class Polynomial implements IPolynomialSolver {
 				}
 				if (maxExp != leastExp) {
 					if ((int) r.get(i + 1) > 0) {
-						print = print + "+";
+						print = print
+							+ "+";
 						System.out.print("+"
 								+ " ");
 					}
@@ -445,7 +452,8 @@ public class Polynomial implements IPolynomialSolver {
 	public void clearPolynomial(final char poly) {
 		// TODO Auto-generated method stub
 		if (poly != 'A' && poly != 'B' && poly != 'C') {
-			throw new IllegalArgumentException("Operation"
+			throw new IllegalArgumentException(
+					"Operation"
 					+ " on polynomial "
 		+ poly + " is not permitted");
 		}
