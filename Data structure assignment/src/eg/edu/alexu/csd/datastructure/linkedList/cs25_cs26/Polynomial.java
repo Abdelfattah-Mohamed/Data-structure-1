@@ -205,30 +205,33 @@ public class Polynomial implements IPolynomialSolver {
 									+ "x"
 									+ " ");
 							print = print
-									+ a.get(i)
+						+ a.get(i)
 						+ "x";
 						} else {
 							System.out.print(
-									a.get(i)
-									+ "x" + " ");
+							a.get(i)
+							+ "x"
+							+ " ");
 							print = print
-									+ "x";
+							+ "x";
 						}
 					} else {
 						if ((int) a.get(i) != 1) {
 							System.out.print(
-									a.get(i)
-									+ "x^" + maxExp
-									+ " ");
+							a.get(i)
+							+ "x^"
+							+ maxExp
+							+ " ");
 							print = print
 									+ a.get(i)
-							+ "x^" + maxExp;
+							+ "x^"
+							+ maxExp;
 						} else {
 							print = print
 							+ "x^" + maxExp;
 							System.out.print("x^"
 							+ maxExp
-									+ " ");
+							+ " ");
 						}
 					}
 				}
