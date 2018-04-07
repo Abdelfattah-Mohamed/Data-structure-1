@@ -25,7 +25,6 @@ public class InfixPosfix implements IExpressionEvaluator {
 	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
 		char[] store = new char[expression.length() + 2];
-		String s = "";
 		//System.out.print(expression.length());
 		Stack a = (Stack) new Stack();
 		int i = 0;
@@ -42,7 +41,6 @@ public class InfixPosfix implements IExpressionEvaluator {
 				if (expression.charAt(i) == '~' || expression.charAt(i) == '!' || expression.charAt(i) == '&') {
 					throw new RuntimeException();
 				}
-				s = s + expression.charAt(i);
 				store[l] = expression.charAt(i);
 				l++;
 				/*
@@ -57,7 +55,6 @@ public class InfixPosfix implements IExpressionEvaluator {
 				}
 				if (a.size > 0) {
 					if (expression.charAt(i) == '+' || expression.charAt(i) == '-') {
-						s = s + (char) a.pop() + " ";
 						store[l] = (char) a.pop();
 						l++;
 						if(l < 2 * expression.length() - 1) {
@@ -67,7 +64,6 @@ public class InfixPosfix implements IExpressionEvaluator {
 						a.push(expression.charAt(i));
 					} else if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
 						if ((Character) a.peek() == '*' || (Character) a.peek() == '/') {
-							s = s + (char) a.pop() + " ";
 							store[l] = (char) a.pop();
 							l++;
 							if(l < 2 * expression.length() - 1) {
@@ -84,19 +80,14 @@ public class InfixPosfix implements IExpressionEvaluator {
 				}
 			}
 		}
-		while (a.head.next != null) {
-			s = s + (char) a.pop() + " ";
-			/*
+		while (a.head != null) {
 			if(l < 2 * expression.length() - 1) {
-				s = s + " ";
 				store[l] = ' ';
 				l++;
 			}
 			store[l] = (char) a.pop();
 			l++;
-			*/
 		}
-		s = s + (char) a.pop();
 		/*
 		 * i = 0; String str = ""; while (i < expression.length()) { str = str +
 		 * store[i]; if (i + 1 != expression.length()) { str = str + " "; } i++; }
@@ -106,7 +97,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 		 * store[j] + " "; }
 		 */
 		String str = new String(store);
-		return s;
+		return str;
 	}
 
 	@Override
