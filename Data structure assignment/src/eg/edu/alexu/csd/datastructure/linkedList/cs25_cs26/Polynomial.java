@@ -285,17 +285,19 @@ public class Polynomial implements IPolynomialSolver {
 						if ((int) b.get(i) != 1) {
 							System.out.print(
 									b.get(i)
-									+ "x^" + maxExp
+									+ "x^"
+									+ maxExp
 									+ " ");
 							print = print
-									+ b.get(i)
+							+ b.get(i)
 							+ "x^"
 							+ maxExp;
 						} else {
 							print = print
 							+ "x^"
 							+ maxExp;
-							System.out.print("x^"
+							System.out.print(
+							"x^"
 							+ maxExp
 							+ " ");
 						}
@@ -305,7 +307,8 @@ public class Polynomial implements IPolynomialSolver {
 					if ((int) b.get(i + 1) > 0) {
 						print = print
 						+ "+";
-						System.out.print("+"
+						System.out.print(
+						"+"
 						+ " ");
 					}
 				}
