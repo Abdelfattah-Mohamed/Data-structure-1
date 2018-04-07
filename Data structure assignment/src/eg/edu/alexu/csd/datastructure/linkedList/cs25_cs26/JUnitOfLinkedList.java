@@ -24,7 +24,7 @@ public class JUnitOfLinkedList {
 	 */
 	@Test
 	public void cs55TestSizeContains() {
-		ILinkedList object = (ILinkedList) new SingleLinkedList();
+		final ILinkedList object = (ILinkedList) new SingleLinkedList();
 		object.add(0, 0);
 		object.add(1, 1); // line 365
 		object.add(2, 2);
