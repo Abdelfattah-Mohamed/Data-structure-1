@@ -223,12 +223,13 @@ public class Polynomial implements IPolynomialSolver {
 							+ maxExp
 							+ " ");
 							print = print
-									+ a.get(i)
+							+ a.get(i)
 							+ "x^"
 							+ maxExp;
 						} else {
 							print = print
-							+ "x^" + maxExp;
+							+ "x^"
+							+ maxExp;
 							System.out.print("x^"
 							+ maxExp
 							+ " ");
@@ -237,7 +238,8 @@ public class Polynomial implements IPolynomialSolver {
 				}
 				if (maxExp != leastExp) {
 					if ((int) a.get(i + 1) > 0) {
-						print = print + "+";
+						print = print
+								+ "+";
 						System.out.print("+"
 								+ " ");
 					}
