@@ -17,7 +17,6 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
  * @author Abdelrahman
  *
  */
-
 public class JUnitOfLinkedList {
 
 	/**
@@ -47,11 +46,11 @@ public class JUnitOfLinkedList {
 		assertEquals(object.get(0), null);
 
 	}
-	*/
-
+*/
 	/**
 	 * test of contain.
 	 */
+	/*
 	@Test
 	public void cs58TestContains() {
 		ILinkedList c = (ILinkedList) new SingleLinkedList();
@@ -69,7 +68,7 @@ public class JUnitOfLinkedList {
 		assertFalse(c.contains(9));
 		assertFalse(c.contains(7));
 	}
-
+*/
 	/**
 	 * test of size.
 	 */
