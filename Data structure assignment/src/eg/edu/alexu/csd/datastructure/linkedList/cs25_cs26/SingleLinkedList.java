@@ -164,8 +164,8 @@ public class SingleLinkedList implements ILinkedList {
 		Snode head1 = head;
 		ILinkedList sub = (ILinkedList) new SingleLinkedList();
 		if (fromIndex > toIndex
-				|| fromIndex > size ||
-				toIndex > size || fromIndex < 0) {
+				|| fromIndex > size
+				|| toIndex > size || fromIndex < 0) {
 			throw new IndexOutOfBoundsException();
 		}
 		while (counter <= toIndex) {
