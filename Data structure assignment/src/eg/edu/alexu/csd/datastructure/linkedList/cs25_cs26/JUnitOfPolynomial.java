@@ -18,11 +18,18 @@ public class JUnitOfPolynomial {
 	 */
 	@Test
 	public void testSolveAdd() {
-		final IPolynomialSolver instance = (IPolynomialSolver) new Polynomial();
-		instance.setPolynomial('C', new int[][] {{3, 7 }, {45, 5 }, {176, 3 }, {128, 1 } });
-		instance.setPolynomial('B', new int[][] {{-120, 5 }, {-1, 3 }, {27, 2 }, {1, 1 }, {-1, 0 } });
-		assertNull("Polynomial R is not set yet", instance.print('R'));
-		assertEquals("3x^7+45x^5+176x^3+128x", instance.print('C'));
+		final IPolynomialSolver instance =
+				(IPolynomialSolver) new Polynomial();
+		instance.setPolynomial('C',
+				new int[][] {{3, 7 }, {45, 5 },
+			{176, 3 }, {128, 1 } });
+		instance.setPolynomial('B',
+				new int[][] {{-120, 5 }, {-1, 3 },
+			{27, 2 }, {1, 1 }, {-1, 0 } });
+		assertNull("Polynomial R is not set yet",
+				instance.print('R'));
+		assertEquals("3x^7+45x^5+176x^3+128x",
+				instance.print('C'));
 	}
 
 	/**
@@ -30,9 +37,14 @@ public class JUnitOfPolynomial {
 	 */
 	@Test
 	public void testSolveMULTIBLY() {
-		final IPolynomialSolver instance = (IPolynomialSolver) new Polynomial();
-		instance.setPolynomial('A', new int[][] {{0, 7 }, {0, 5 }, {0, 3 }, {0, 1 } });
-		instance.setPolynomial('B', new int[][] {{0, 5 }, {-1, 3 }, {0, 2 }, {1, 1 }, {-1, 0 } });
+		final IPolynomialSolver instance =
+				(IPolynomialSolver) new Polynomial();
+		instance.setPolynomial('A',
+				new int[][] {{0, 7 }, {0, 5 },
+			{0, 3 }, {0, 1 } });
+		instance.setPolynomial('B',
+				new int[][] {{0, 5 }, {-1, 3 },
+			{0, 2 }, {1, 1 }, {-1, 0 } });
 		instance.multiply('A', 'B');
 		assertEquals("", instance.print('R'));
 	}
