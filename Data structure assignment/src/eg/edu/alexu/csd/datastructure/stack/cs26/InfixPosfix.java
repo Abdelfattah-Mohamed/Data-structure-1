@@ -33,13 +33,13 @@ public class InfixPosfix implements IExpressionEvaluator {
 			throw new RuntimeException();
 		}
 		if (expression.charAt(0) == '~' || expression.charAt(0) == '!' || expression.charAt(0) == '&' || expression.charAt(0) == '+' || expression.charAt(0) == '-') {
-			throw new RuntimeException();
+			throw new RuntimeException("null");
 		}
 		for (; i < expression.length(); i++) {
 			if (expression.charAt(i) != '+' && expression.charAt(i) != '-' && expression.charAt(i) != '/'
 					&& expression.charAt(i) != '*') {
 				if (expression.charAt(i) == '~' || expression.charAt(i) == '!' || expression.charAt(i) == '&') {
-					throw new RuntimeException();
+					throw new RuntimeException("null");
 				}
 				store[l] = expression.charAt(i);
 				l++;
