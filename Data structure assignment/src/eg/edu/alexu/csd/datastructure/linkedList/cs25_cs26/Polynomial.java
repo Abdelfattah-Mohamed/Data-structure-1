@@ -202,7 +202,8 @@ public class Polynomial implements IPolynomialSolver {
 						if ((int) a.get(i) != 1) {
 							System.out.print(
 									a.get(i)
-									+ "x" + " ");
+									+ "x"
+											+ " ");
 							print = print
 									+ a.get(i)
 						+ "x";
