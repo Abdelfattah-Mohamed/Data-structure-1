@@ -19,6 +19,9 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
  */
 public class JUnitOfLinkedList {
 
+	/**
+	 * test of size and contain.
+	 */
 	@Test
 	public void cs55TestSizeContains() {
 		ILinkedList object = (ILinkedList) new SingleLinkedList();
@@ -43,6 +46,9 @@ public class JUnitOfLinkedList {
 
 	}
 
+	/**
+	 * test of contain.
+	 */
 	@Test
 	public void cs58TestContains() {
 		ILinkedList c = (ILinkedList) new SingleLinkedList();
@@ -61,6 +67,9 @@ public class JUnitOfLinkedList {
 		assertFalse(c.contains(7));
 	}
 
+	/**
+	 * test of size.
+	 */
 	@Test
 	public void cs56TestSizeContains1() {
 		ILinkedList test = (ILinkedList) new SingleLinkedList();
@@ -73,6 +82,9 @@ public class JUnitOfLinkedList {
 		assertEquals(false, test.contains(Integer.valueOf(4)));
 	}
 
+	/**
+	 * test of add.
+	 */
 	@Test
 	public void cs65TestSet() {
 		ILinkedList instance = (ILinkedList) new SingleLinkedList();
@@ -83,6 +95,9 @@ public class JUnitOfLinkedList {
 		assertEquals('F', instance.get(1));
 	}
 
+	/**
+	 * test of add in invalid index.
+	 */
 	@Test
 	public void cs65TestSetError() {
 		ILinkedList instance = (ILinkedList) new SingleLinkedList();
@@ -96,6 +111,9 @@ public class JUnitOfLinkedList {
 		}
 	}
 
+	/**
+	 * test of sub list.
+	 */
 	@Test
 	public void cs65TestSubList() {
 		ILinkedList instance = (ILinkedList) new SingleLinkedList();
@@ -109,6 +127,9 @@ public class JUnitOfLinkedList {
 
 	}
 
+	/**
+	 * test of add and contain.
+	 */
 	@Test
 	public void cs56TestContains() {
 		ILinkedList c = (ILinkedList) new SingleLinkedList();
@@ -127,6 +148,9 @@ public class JUnitOfLinkedList {
 		assertFalse(c.contains(7));
 	}
 
+	/**
+	 * test of add and remove.
+	 */
 	@Test
 	public void cs56TestAddRemoveTwoLists5() {
 		ILinkedList c = (ILinkedList) new SingleLinkedList();

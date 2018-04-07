@@ -1,7 +1,6 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import org.junit.Test;
 
