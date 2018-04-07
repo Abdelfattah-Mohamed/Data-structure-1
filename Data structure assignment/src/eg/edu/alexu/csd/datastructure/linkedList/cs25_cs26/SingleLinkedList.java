@@ -30,11 +30,15 @@ public class SingleLinkedList implements ILinkedList {
 		}
 		Snode nptr = new Snode(element, null);
 		Snode q = head;
+		if (x == size) {
+			add(element);
+			return;
+		}
 		if (x == 0) {
 			nptr.next = head;
 			head = nptr;
 		} else {
-			for (; q != null;) {
+			for (; q.next != null;) {
 				if (x == 1) {
 					nptr.next = q.next;
 					q.next = nptr;
@@ -125,8 +129,7 @@ public class SingleLinkedList implements ILinkedList {
 		// TODO Auto-generated method stub
 		int x = index;
 		if (x > size || x < 0) {
-			throw new IllegalArgumentException(
-					"Remove from invalid index passed!");
+			throw new IllegalArgumentException("Remove from invalid index passed!");
 		}
 		if (x == 0) {
 			head = head.next;
@@ -158,9 +161,7 @@ public class SingleLinkedList implements ILinkedList {
 		int counter = 0;
 		Snode head1 = head;
 		ILinkedList sub = (ILinkedList) new SingleLinkedList();
-		if (fromIndex > toIndex
-				|| fromIndex > size || toIndex > size
-				|| fromIndex < 0) {
+		if (fromIndex > toIndex || fromIndex > size || toIndex > size || fromIndex < 0) {
 			throw new IndexOutOfBoundsException();
 		}
 		while (counter <= toIndex) {
