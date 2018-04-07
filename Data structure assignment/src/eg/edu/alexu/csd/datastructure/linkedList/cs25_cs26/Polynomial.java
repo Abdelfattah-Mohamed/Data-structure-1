@@ -420,7 +420,7 @@ public class Polynomial implements IPolynomialSolver {
 									+ maxExp
 									+ " ");
 							print = print
-									+ r.get(i)
+							+ r.get(i)
 							+ "x^" + maxExp;
 						} else {
 							print = print
@@ -429,7 +429,7 @@ public class Polynomial implements IPolynomialSolver {
 							System.out.print(
 								"x^"
 							+ maxExp
-									+ " ");
+							+ " ");
 						}
 					}
 				}
@@ -438,7 +438,7 @@ public class Polynomial implements IPolynomialSolver {
 						print = print
 							+ "+";
 						System.out.print("+"
-								+ " ");
+						+ " ");
 					}
 				}
 				i++;
