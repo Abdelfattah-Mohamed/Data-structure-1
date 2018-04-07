@@ -33,7 +33,6 @@ public class SingleLinkedList implements ILinkedList {
 		if (x == 0) {
 			nptr.next = head;
 			head = nptr;
-			tail = head;
 		} else {
 			for (; q != null;) {
 				if (x == 1) {
@@ -45,7 +44,6 @@ public class SingleLinkedList implements ILinkedList {
 				x--;
 			}
 		}
-		
 		size++;
 	}
 
