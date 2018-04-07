@@ -24,8 +24,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
-		char[] store = new char[expression.length() + 2];
-		//System.out.print(expression.length());
+		char[] store = new char[2 * expression.length()];
 		Stack a = (Stack) new Stack();
 		int i = 0;
 		int l = 0;
@@ -33,20 +32,18 @@ public class InfixPosfix implements IExpressionEvaluator {
 			throw new RuntimeException();
 		}
 		if (expression.charAt(0) == '~' || expression.charAt(0) == '!' || expression.charAt(0) == '&' || expression.charAt(0) == '+' || expression.charAt(0) == '-') {
-			throw new RuntimeException("null");
+			throw new RuntimeException();
 		}
 		for (; i < expression.length(); i++) {
 			if (expression.charAt(i) != '+' && expression.charAt(i) != '-' && expression.charAt(i) != '/'
 					&& expression.charAt(i) != '*') {
 				if (expression.charAt(i) == '~' || expression.charAt(i) == '!' || expression.charAt(i) == '&') {
-					throw new RuntimeException("null");
+					throw new RuntimeException();
 				}
 				store[l] = expression.charAt(i);
 				l++;
-				/*
 				store[l] = ' ';
 				l++;
-				*/
 			} else if (expression.charAt(i) != '+' || expression.charAt(i) != '-' || expression.charAt(i) != '/'
 						|| expression.charAt(i) != '*') {
 				if (expression.charAt(i + 1) == '+' || expression.charAt(i + 1) == '-' || expression.charAt(i + 1) == '/'
@@ -57,19 +54,13 @@ public class InfixPosfix implements IExpressionEvaluator {
 					if (expression.charAt(i) == '+' || expression.charAt(i) == '-') {
 						store[l] = (char) a.pop();
 						l++;
-						if(l < 2 * expression.length() - 1) {
-							store[l] = ' ';
-							l++;
-						}
+						store[l] = ' ';
+						l++;
 						a.push(expression.charAt(i));
 					} else if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
 						if ((Character) a.peek() == '*' || (Character) a.peek() == '/') {
 							store[l] = (char) a.pop();
 							l++;
-							if(l < 2 * expression.length() - 1) {
-								store[l] = ' ';
-								l++;
-							}
 							a.push(expression.charAt(i));
 						} else {
 							a.push(expression.charAt(i));
@@ -81,11 +72,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 			}
 		}
 		while (a.head != null) {
-			if(l < 2 * expression.length() - 1) {
-				store[l] = ' ';
-				l++;
-			}
 			store[l] = (char) a.pop();
+			l++;
+			store[l] = ' ';
 			l++;
 		}
 		/*
