@@ -20,12 +20,12 @@ public class JUnitOfPolynomial {
 	public void testSolveAdd() {
 		final IPolynomialSolver instance =
 				(IPolynomialSolver) new Polynomial();
-		instance.setPolynomial('C',
-				new int[][] {{3, 7 }, {45, 5 },
-			{176, 3 }, {128, 1 } });
-		instance.setPolynomial('B',
-				new int[][] {{-120, 5 }, {-1, 3 },
-			{27, 2 }, {1, 1 }, {-1, 0 } });
+		final int[][] c = {{3, 7 }, {45, 5 },
+				{176, 3 }, {128, 1 } };
+		final int[][] b ={{-120, 5 }, {-1, 3 },
+				{27, 2 }, {1, 1 }, {-1, 0 } };
+		instance.setPolynomial('C',c);
+		instance.setPolynomial('B',b);
 		assertNull("Polynomial R is not set yet",
 				instance.print('R'));
 		assertEquals("3x^7+45x^5+176x^3+128x",
