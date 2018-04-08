@@ -26,6 +26,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 		// TODO Auto-generated method stub
 		char[] store = new char[2 * expression.length()];
 		Stack a = (Stack) new Stack();
+		String str1 = "";
 		int i = 0;
 		int l = 0;
 		if (expression.length() == 0) {
@@ -42,12 +43,13 @@ public class InfixPosfix implements IExpressionEvaluator {
 						|| expression.charAt(i) == '|') {
 					throw new RuntimeException();
 				}
+				str1 = str1 + expression.charAt(i) + " ";
 				store[l] = expression.charAt(i);
 				l++;
 				store[l] = ' ';
 				l++;
-			} else if (expression.charAt(i) != '+' || expression.charAt(i) != '-' || expression.charAt(i) != '/'
-					|| expression.charAt(i) != '*') {
+			} else if (expression.charAt(i) == '+' || expression.charAt(i) == '-' || expression.charAt(i) == '/'
+					|| expression.charAt(i) == '*') {
 				if (expression.charAt(i + 1) == '+' || expression.charAt(i + 1) == '-'
 						|| expression.charAt(i + 1) == '/' || expression.charAt(i + 1) == '*') {
 					throw new RuntimeException();
@@ -60,11 +62,14 @@ public class InfixPosfix implements IExpressionEvaluator {
 						l++;
 						a.push(expression.charAt(i));
 					} else if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
-						if ((Character) a.peek() == '*' || (Character) a.peek() == '/') {
+						if ((char) a.peek() == '*' || (char) a.peek() == '/') {
+							str1 = str1 + (char) a.pop() + " ";
+							/*
 							store[l] = (char) a.pop();
 							l++;
 							store[l] = ' ';
 							l++;
+							*/
 							a.push(expression.charAt(i));
 						} else {
 							a.push(expression.charAt(i));
@@ -76,10 +81,13 @@ public class InfixPosfix implements IExpressionEvaluator {
 			}
 		}
 		while (a.head != null) {
+			str1 = str1 + (char) a.pop();
+			/*
 			store[l] = (char) a.pop();
 			l++;
 			store[l] = ' ';
 			l++;
+			*/
 		}
 		i = 0;
 		String str = "";
@@ -96,7 +104,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 		 * store[j] + " "; }
 		 */
 		str = str + store[i];
-		return str;
+		return str1;
 	}
 
 	@Override
