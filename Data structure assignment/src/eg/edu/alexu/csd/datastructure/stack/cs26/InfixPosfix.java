@@ -43,7 +43,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 						|| expression.charAt(i) == '|') {
 					throw new RuntimeException();
 				}
-				str1 = str1 + expression.charAt(i) + " ";
+				str1 = str1 + expression.charAt(i) + "  ";
 				store[l] = expression.charAt(i);
 				l++;
 				store[l] = ' ';
@@ -82,6 +82,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 		}
 		while (a.head != null) {
 			str1 = str1 + (char) a.pop();
+			if(a.head.next != null) {
+				str1 = str1 + " ";
+			}
 			/*
 			store[l] = (char) a.pop();
 			l++;
