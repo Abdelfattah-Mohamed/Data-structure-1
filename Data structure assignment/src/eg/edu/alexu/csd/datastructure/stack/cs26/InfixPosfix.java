@@ -83,20 +83,19 @@ public class InfixPosfix implements IExpressionEvaluator {
 		}
 		i = 0;
 		String str = "";
-		while (i < 2 * expression.length() - 1) {
-			str = str + store[i];
+		while (i < 2 * expression.length() - 2) {
+			str = str + store[i] + " ";
 			i++;
-			if (i < expression.length()) {
-				str = str + store[i];
-				i++;
-			}
+			i++;
+			/*
+			 * if (i < 2 * expression.length()) { str = str + store[i]; i++; }
+			 */
 		}
 		/*
-		String str = "";
-		for (int j = 0; i < store.length; i++) {
-			str = str + store[j] + " ";
-		}
-		*/
+		 * String str = ""; for (int j = 0; i < store.length; i++) { str = str +
+		 * store[j] + " "; }
+		 */
+		str = str + store[i];
 		return str;
 	}
 
