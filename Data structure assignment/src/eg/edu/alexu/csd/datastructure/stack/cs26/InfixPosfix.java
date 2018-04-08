@@ -88,7 +88,6 @@ public class InfixPosfix implements IExpressionEvaluator {
 			store[l] = ' ';
 			l++;
 			*/
-			
 		}
 		i = 0;
 		String str = "";
