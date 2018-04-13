@@ -345,16 +345,13 @@ public class Polynomial implements IPolynomialSolver {
 							+ r.get(i)
 							+ "x^" + maxExp;
 						} else {
-							print = print
-							+ "x^"
-							+ maxExp;
+							print = print + "x^" + maxExp;
 						}
 					}
 				}
 				if (maxExp != leastExp) {
 					if ((int) r.get(i + 1) > 0) {
-						print = print
-							+ "+";
+						print = print + "+";
 					}
 				}
 				i++;
