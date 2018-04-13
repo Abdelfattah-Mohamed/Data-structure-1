@@ -205,8 +205,8 @@ public class Polynomial implements IPolynomialSolver {
 						}
 					} else {
 						if ((int) a.get(i) != 1) {
-							print = print
-							+ a.get(i) + "x^" + maxExp;
+							print = print + a.get(i)
+							+ "x^" + maxExp;
 						} else {
 							print = print
 							+ "x^" + maxExp;
