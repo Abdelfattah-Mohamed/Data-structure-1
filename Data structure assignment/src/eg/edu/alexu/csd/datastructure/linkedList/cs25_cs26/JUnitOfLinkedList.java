@@ -76,12 +76,13 @@ public class JUnitOfLinkedList {
 	public void cs56TestSizeContains1() {
 		ILinkedList test = (ILinkedList) new SingleLinkedList();
 		final int x = 10;
+		final int z = 100000000;
 		for (int i = 0; i < x; ++i) {
 			test.add(Integer.valueOf(i));
 		}
-		test.add(Integer.valueOf(100000000));
+		test.add(Integer.valueOf(z));
 		assertEquals(11, test.size());
-		assertEquals(true, test.contains(Integer.valueOf(100000000)));
+		assertEquals(true, test.contains(Integer.valueOf(z)));
 		assertEquals(false, test.contains(Integer.valueOf(4)));
 	}
 
