@@ -199,29 +199,24 @@ public class Polynomial implements IPolynomialSolver {
 					} else if (maxExp == 1) {
 						if ((int) a.get(i) != 1) {
 							print = print
-						+ a.get(i)
-						+ "x";
+						+ a.get(i) + "x";
 						} else {
-							print = print
-							+ "x";
+							print = print + "x";
 						}
 					} else {
 						if ((int) a.get(i) != 1) {
 							print = print
 							+ a.get(i)
-							+ "x^"
-							+ maxExp;
+							+ "x^" + maxExp;
 						} else {
 							print = print
-							+ "x^"
-							+ maxExp;
+							+ "x^" + maxExp;
 						}
 					}
 				}
 				if (maxExp != leastExp) {
 					if ((int) a.get(i + 1) > 0) {
-						print = print
-								+ "+";
+						print = print + "+";
 					}
 				}
 				i++;
