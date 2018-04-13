@@ -289,22 +289,18 @@ public class Polynomial implements IPolynomialSolver {
 					} else if (maxExp == 1) {
 						if ((int) c.get(i) != 1) {
 							print = print
-							+ c.get(i)
-						+ "x";
+							+ c.get(i) + "x";
 						} else {
-							print = print
-							+ "x";
+							print = print + "x";
 						}
 					} else {
 						if ((int) c.get(i) != 1) {
 							print = print
 							+ c.get(i)
-							+ "x^"
-							+ maxExp;
+							+ "x^" + maxExp;
 						} else {
 							print = print
-							+ "x^"
-							+ maxExp;
+							+ "x^" + maxExp;
 						}
 					}
 				}
@@ -328,16 +324,14 @@ public class Polynomial implements IPolynomialSolver {
 				if (r.get(i) != null
 						&& (int) r.get(i) != 0) {
 					if (maxExp == 0) {
-						print = print
-								+ r.get(i);
+						print = print + r.get(i);
 					} else if (maxExp == 1) {
 						if ((int) r.get(i) != 1) {
 							print = print
 							+ r.get(i)
 						+ "x";
 						} else {
-							print = print
-									+ "x";
+							print = print + "x";
 						}
 					} else {
 						if ((int) r.get(i) != 1) {
