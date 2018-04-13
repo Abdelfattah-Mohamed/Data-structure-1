@@ -91,7 +91,7 @@ public class JUnitOfLinkedList {
 	 */
 	@Test
 	public void cs65TestSet() {
-		final ILinkedList instance = (ILinkedList) new SingleLinkedList();
+		ILinkedList instance = (ILinkedList) new SingleLinkedList();
 		instance.add(1);
 		instance.add(3);
 		instance.add(5);
