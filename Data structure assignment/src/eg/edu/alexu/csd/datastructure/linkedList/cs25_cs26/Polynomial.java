@@ -175,6 +175,16 @@ public class Polynomial implements IPolynomialSolver {
 	@Override
 	public String print(final char poly) {
 		// TODO Auto-generated method stub
+		ILinkedList z = (ILinkedList) new SingleLinkedList();
+		if (poly == 'A') {
+			z = a;
+		} else if (poly == 'B') {
+			z = b;
+		} else if (poly == 'C') {
+			z = c;
+		} else if (poly == 'R') {
+			z = r;
+		}
 		String print = "";
 		int maxExp = 0;
 		int leastExp = 0;
@@ -184,157 +194,41 @@ public class Polynomial implements IPolynomialSolver {
 					+ " on polynomial "
 		+ poly + " is not permitted");
 		}
-		if (poly == 'A') {
-			if (a.size() == 0) {
-				return null;
-			}
-			maxExp = firstLast[0][0];
-			leastExp = firstLast[1][0];
-			int i = 0;
-			while (maxExp >= leastExp) {
-				if (a.get(i) != null
-						&& (int) a.get(i) != 0) {
-					if (maxExp == 0) {
-						print = print + a.get(i);
-					} else if (maxExp == 1) {
-						if ((int) a.get(i) != 1) {
-							print = print
-							+ a.get(i) + "x";
-						} else {
-							print = print + "x";
-						}
+		if (z.size() == 0) {
+			return null;
+		}
+		maxExp = firstLast[0][0];
+		leastExp = firstLast[1][0];
+		int i = 0;
+		while (maxExp >= leastExp) {
+			if (z.get(i) != null
+					&& (int) z.get(i) != 0) {
+				if (maxExp == 0) {
+					print = print + z.get(i);
+				} else if (maxExp == 1) {
+					if ((int) z.get(i) != 1) {
+						print = print
+						+ z.get(i) + "x";
 					} else {
-						if ((int) a.get(i) != 1) {
-							print = print + a.get(i)
-							+ "x^" + maxExp;
-						} else {
-							print = print
-							+ "x^" + maxExp;
-						}
+						print = print + "x";
 					}
-				}
-				if (maxExp != leastExp) {
-					if ((int) a.get(i + 1) > 0) {
-						print = print + "+";
-					}
-				}
-				i++;
-				maxExp--;
-			}
-		} else if (poly == 'B') {
-			if (b.size() == 0) {
-				return null;
-			}
-			maxExp = firstLast[0][1];
-			leastExp = firstLast[1][1];
-			int i = 0;
-			print = "";
-			while (maxExp >= leastExp) {
-				if (b.get(i) != null
-						&& (int) b.get(i) != 0) {
-					if (maxExp == 0) {
-						print = print + b.get(i);
-					} else if (maxExp == 1) {
-						if ((int) b.get(i) != 1) {
-							print = print
-							+ b.get(i) + "x";
-						} else {
-							print = print + "x";
-						}
+				} else {
+					if ((int) z.get(i) != 1) {
+						print = print + z.get(i)
+						+ "x^" + maxExp;
 					} else {
-						if ((int) b.get(i) != 1) {
-							print = print + b.get(i)
-							+ "x^" + maxExp;
-						} else {
-							print = print
-							+ "x^" + maxExp;
-						}
+						print = print
+						+ "x^" + maxExp;
 					}
 				}
-				if (maxExp != leastExp) {
-					if ((int) b.get(i + 1) > 0) {
-						print = print + "+";
-					}
-				}
-				i++;
-				maxExp--;
 			}
-		} else if (poly == 'C') {
-			if (c.size() == 0) {
-				return null;
-			}
-			maxExp = firstLast[0][2];
-			leastExp = firstLast[1][2];
-			int i = 0;
-			print = "";
-			while (maxExp >= leastExp) {
-				if (c.get(i) != null
-						&& (int) c.get(i) != 0) {
-					if (maxExp == 0) {
-						print = print + c.get(i);
-					} else if (maxExp == 1) {
-						if ((int) c.get(i) != 1) {
-							print = print
-							+ c.get(i) + "x";
-						} else {
-							print = print + "x";
-						}
-					} else {
-						if ((int) c.get(i) != 1) {
-							print = print + c.get(i)
-							+ "x^" + maxExp;
-						} else {
-							print = print
-							+ "x^" + maxExp;
-						}
-					}
+			if (maxExp != leastExp) {
+				if ((int) z.get(i + 1) > 0) {
+					print = print + "+";
 				}
-				if (maxExp != leastExp) {
-					if ((int) c.get(i + 1) > 0) {
-						print = print + "+";
-					}
-				}
-				i++;
-				maxExp--;
 			}
-		} else if (poly == 'R') {
-			if (r.size() == 0) {
-				return null;
-			}
-			maxExp = firstLast[0][3];
-			leastExp = firstLast[1][3];
-			int i = 0;
-			print = "";
-			while (maxExp >= leastExp) {
-				if (r.get(i) != null
-						&& (int) r.get(i) != 0) {
-					if (maxExp == 0) {
-						print = print + r.get(i);
-					} else if (maxExp == 1) {
-						if ((int) r.get(i) != 1) {
-							print = print + r.get(i)
-						+ "x";
-						} else {
-							print = print + "x";
-						}
-					} else {
-						if ((int) r.get(i) != 1) {
-							print = print + r.get(i)
-							+ "x^" + maxExp;
-						} else {
-							print = print
-							+ "x^" + maxExp;
-						}
-					}
-				}
-				if (maxExp != leastExp) {
-					if ((int) r.get(i + 1) > 0) {
-						print = print + "+";
-					}
-				}
-				i++;
-				maxExp--;
-			}
+			i++;
+			maxExp--;
 		}
 		return print;
 	}
