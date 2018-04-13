@@ -81,7 +81,7 @@ public class JUnitOfLinkedList {
 			test.add(Integer.valueOf(i));
 		}
 		test.add(Integer.valueOf(z));
-		assertEquals(11, test.size());
+		assertEquals(x + 1, test.size());
 		assertEquals(true, test.contains(Integer.valueOf(z)));
 		assertEquals(false, test.contains(Integer.valueOf(4)));
 	}
