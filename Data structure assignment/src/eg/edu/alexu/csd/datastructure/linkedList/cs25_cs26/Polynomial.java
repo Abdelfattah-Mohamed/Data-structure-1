@@ -345,7 +345,8 @@ public class Polynomial implements IPolynomialSolver {
 							+ r.get(i)
 							+ "x^" + maxExp;
 						} else {
-							print = print + "x^" + maxExp;
+							print = print
+							+ "x^" + maxExp;
 						}
 					}
 				}
