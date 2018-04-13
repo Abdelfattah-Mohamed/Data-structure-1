@@ -374,6 +374,8 @@ public class Polynomial implements IPolynomialSolver {
 	@Override
 	public int[][] add(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
+		ILinkedList x = (ILinkedList) new SingleLinkedList();
+		ILinkedList y = (ILinkedList) new SingleLinkedList();
 		if (poly1 != 'A' && poly1 != 'B' && poly1 != 'C') {
 			throw new IllegalArgumentException("Operation"
 					+ " on polynomial "
@@ -386,15 +388,27 @@ public class Polynomial implements IPolynomialSolver {
 					+ poly2 + " is not"
 							+ " permitted");
 		}
+		if (poly1 == 'A') {
+			x = a;
+		} else if (poly1 == 'B') {
+			x = b;
+		} else if (poly1 == 'C') {
+			x = c;
+		}
+		if (poly2 == 'A') {
+			y = a;
+		} else if (poly2 == 'B') {
+			y = b;
+		} else if (poly2 == 'C') {
+			y = c;
+		}
 		int maxExp1 = 0;
 		int maxExp2 = 0;
 		int i = 0;
 		if (!r.isEmpty()) {
 			r.clear();
 		}
-		int[][] add = new int[2 * a.size()
-		                      + 2 * b.size()
-		                      + 2 * c.size()][2];
+		int[][] add = new int[x.size() + y.size()][2];
 		if (poly1 == 'A') {
 			if (a.isEmpty()) {
 				System.out.println("Solver"
