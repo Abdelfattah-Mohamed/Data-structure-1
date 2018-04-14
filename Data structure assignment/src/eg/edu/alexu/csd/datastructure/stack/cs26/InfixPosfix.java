@@ -21,7 +21,6 @@ public class InfixPosfix implements IExpressionEvaluator {
 		// TODO Auto-generated method stub
 		exception(expression);
 		return 0;
-		
 	}
 
 	private void exception(final String expression) {
