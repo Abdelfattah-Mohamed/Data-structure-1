@@ -12,8 +12,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
-		String x = exception(expression);
-		return x;
+		exception(expression);
+		return expression;
 	}
 
 	@Override
@@ -23,14 +23,13 @@ public class InfixPosfix implements IExpressionEvaluator {
 		return 0;
 	}
 
-	private String exception(final String expression) {
+	private void exception(final String expression) {
 		// TODO Auto-generated method stub
 		if (expression.length() == 0) {
 			throw new RuntimeException();
 		}
 		if ((expression.charAt(0) < '0' || expression.charAt(0) > '9')
-				&& (expression.charAt(0) < 'a' || expression.charAt(0) > 'z')
-				&& (expression.charAt(0) < 'A' || expression.charAt(0) > 'Z')) {
+				) {
 			throw new RuntimeException();
 		}
 		for (int i = 0; i < expression.length(); i++) {
@@ -39,13 +38,12 @@ public class InfixPosfix implements IExpressionEvaluator {
 					&& (expression.charAt(i) < 'A' || expression.charAt(i) > 'Z')) {
 				if (expression.charAt(i) != '+' && expression.charAt(i) != '-' && expression.charAt(i) != '*'
 						&& expression.charAt(i) != '/') {
-					return "zz";
+					throw new RuntimeException();
 				} else if (expression.charAt(i + 1) == '+' || expression.charAt(i + 1) == '-'
 						|| expression.charAt(i + 1) == '*' || expression.charAt(i + 1) == '/') {
 					throw new RuntimeException();
 				}
 			}
 		}
-		return expression;
 	}
 }
