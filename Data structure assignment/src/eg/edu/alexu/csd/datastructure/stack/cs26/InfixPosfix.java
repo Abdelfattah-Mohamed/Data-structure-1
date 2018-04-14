@@ -12,7 +12,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
-		exception(expression);
+		//exception(expression);
 		return expression;
 	}
 
@@ -30,7 +30,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 		if ((expression.charAt(0) < '0' || expression.charAt(0) > '9')
 				&& (expression.charAt(0) < 'a' || expression.charAt(0) > 'z')
 				&& (expression.charAt(0) < 'A' || expression.charAt(0) > 'Z')) {
-			throw new RuntimeException("null");
+			throw new RuntimeException();
 		}
 		for (int i = 0; i < expression.length(); i++) {
 			if ((expression.charAt(i) < '0' || expression.charAt(i) > '9')
