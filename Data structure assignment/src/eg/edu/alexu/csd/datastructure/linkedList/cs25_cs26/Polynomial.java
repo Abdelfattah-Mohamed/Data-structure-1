@@ -388,27 +388,43 @@ public class Polynomial implements IPolynomialSolver {
 					+ poly2 + " is not"
 							+ " permitted");
 		}
-		if (poly1 == 'A') {
-			x = a;
-		} else if (poly1 == 'B') {
-			x = b;
-		} else if (poly1 == 'C') {
-			x = c;
-		}
-		if (poly2 == 'A') {
-			y = a;
-		} else if (poly2 == 'B') {
-			y = b;
-		} else if (poly2 == 'C') {
-			y = c;
-		}
 		int maxExp1 = 0;
 		int maxExp2 = 0;
 		int i = 0;
 		if (!r.isEmpty()) {
 			r.clear();
 		}
+		if (poly1 == 'A') {
+			x = a;
+			maxExp1 = firstLast[0][0];
+		} else if (poly1 == 'B') {
+			x = b;
+			maxExp1 = firstLast[0][1];
+		} else if (poly1 == 'C') {
+			x = c;
+			maxExp1 = firstLast[0][2];
+		}
+		if (poly2 == 'A') {
+			y = a;
+			maxExp2 = firstLast[0][0];
+		} else if (poly2 == 'B') {
+			y = b;
+			maxExp2 = firstLast[0][1];
+		} else if (poly2 == 'C') {
+			y = c;
+			maxExp2 = firstLast[0][2];
+		}
 		int[][] add = new int[x.size() + y.size()][2];
+		if (x.isEmpty()) {
+			throw new IllegalArgumentException("Solver "
+					+ "evaluated unseted"
+					+ " polynomial");
+		}
+		if (y.isEmpty()) {
+			throw new IllegalArgumentException("Solver "
+					+ "evaluated unseted"
+					+ " polynomial");
+		}
 		if (poly1 == 'A') {
 			if (a.isEmpty()) {
 				System.out.println("Solver"
