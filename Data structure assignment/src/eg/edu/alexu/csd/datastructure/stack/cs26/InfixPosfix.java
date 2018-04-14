@@ -30,7 +30,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 		if ((expression.charAt(0) < '0' || expression.charAt(0) > '9')
 				&& (expression.charAt(0) < 'a' || expression.charAt(0) > 'z')
 				&& (expression.charAt(0) < 'A' || expression.charAt(0) > 'Z')) {
-			throw new RuntimeException();
+			throw new RuntimeException("null");
 		}
 		for (int i = 0; i < expression.length(); i++) {
 			if ((expression.charAt(i) < '0' || expression.charAt(i) > '9')
