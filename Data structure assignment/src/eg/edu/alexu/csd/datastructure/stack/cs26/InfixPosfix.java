@@ -13,7 +13,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
 		exception(expression);
-		return null;
+		return expression;
 	}
 
 	@Override
