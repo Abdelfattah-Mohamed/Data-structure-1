@@ -12,7 +12,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
-		// exception(expression);
+		exception(expression);
 		return null;
 	}
 
