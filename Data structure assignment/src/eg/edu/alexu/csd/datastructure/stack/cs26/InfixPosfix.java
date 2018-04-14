@@ -12,7 +12,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
-		//exception(expression);
+		// exception(expression);
 		return null;
 	}
 
@@ -24,6 +24,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 
 	private void exception(final String expression) {
 		// TODO Auto-generated method stub
+		if (expression.length() == 0) {
+			throw new RuntimeException();
+		}
 		if (expression.charAt(0) < '0' || expression.charAt(0) > '9') {
 			throw new RuntimeException();
 		}
