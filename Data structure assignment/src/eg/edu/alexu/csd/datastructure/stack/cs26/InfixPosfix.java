@@ -10,19 +10,19 @@ import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 public class InfixPosfix implements IExpressionEvaluator {
 
 	@Override
-	public String infixToPostfix(String expression) {
+	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
 		//exception(expression);
 		return null;
 	}
 
 	@Override
-	public int evaluate(String expression) {
+	public int evaluate(final String expression) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	private void exception(String expression) {
+	private void exception(final String expression) {
 		// TODO Auto-generated method stub
 		if (expression.charAt(0) < '0' || expression.charAt(0) > '9') {
 			throw new RuntimeException();
