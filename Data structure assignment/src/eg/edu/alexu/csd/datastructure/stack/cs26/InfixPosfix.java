@@ -27,13 +27,17 @@ public class InfixPosfix implements IExpressionEvaluator {
 		if (expression.length() == 0) {
 			throw new RuntimeException();
 		}
-		if (expression.charAt(0) < '0' || expression.charAt(0) > '9') {
+		if ((expression.charAt(0) < '0' || expression.charAt(0) > '9')
+				&& (expression.charAt(0) < 'a' || expression.charAt(0) > 'z')
+				&& (expression.charAt(0) < 'A' || expression.charAt(0) > 'Z')) {
 			throw new RuntimeException();
 		}
 		for (int i = 0; i < expression.length(); i++) {
-			if (expression.charAt(i) < '0' || expression.charAt(i) > '9') {
-				if (expression.charAt(i) != '+' || expression.charAt(i) != '-' || expression.charAt(i) != '*'
-						|| expression.charAt(i) != '/') {
+			if ((expression.charAt(i) < '0' || expression.charAt(i) > '9')
+					&& (expression.charAt(i) < 'a' || expression.charAt(i) > 'z')
+					&& (expression.charAt(i) < 'A' || expression.charAt(i) > 'Z')) {
+				if (expression.charAt(i) != '+' && expression.charAt(i) != '-' && expression.charAt(i) != '*'
+						&& expression.charAt(i) != '/') {
 					throw new RuntimeException();
 				} else if (expression.charAt(i + 1) == '+' || expression.charAt(i + 1) == '-'
 						|| expression.charAt(i + 1) == '*' || expression.charAt(i + 1) == '/') {
