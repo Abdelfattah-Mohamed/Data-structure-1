@@ -46,7 +46,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 					}
 				}
 				if (!braces(exp.charAt(i))) {
-					if ((str1.length() != 0) && (i > 0) && (operation(exp.charAt(i - 1)) || exp.charAt(i - 1) == ' ')) {
+					if ((str1.length() != 0) && (i > 0)
+							&& (operation(exp.charAt(i - 1)) || exp.charAt(i - 1) == ' ' || braces(exp.charAt(i - 1)))) {
 						str1 += " ";
 					}
 					str1 += Character.toString(exp.charAt(i));
