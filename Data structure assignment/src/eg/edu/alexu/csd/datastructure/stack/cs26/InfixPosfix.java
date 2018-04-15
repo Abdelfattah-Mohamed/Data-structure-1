@@ -34,21 +34,26 @@ public class InfixPosfix implements IExpressionEvaluator {
 					if (expression.charAt(i) == '(') {
 						a.push(expression.charAt(i));
 					} else {
-						// str1 = addB(a, str1);
+						str1 = addB(a, str1);
 					}
 				}
-				if ((i > 0) && (operation(expression.charAt(i - 1)) || expression.charAt(i - 1) == ' ')) {
-					str1 += " ";
+				if (!braces(expression.charAt(i))) {
+					if ((str1.length() != 0) && (i > 0)
+							&& (operation(expression.charAt(i - 1)) || expression.charAt(i - 1) == ' ')) {
+						str1 += " ";
+					}
+					str1 += Character.toString(expression.charAt(i));
 				}
-				str1 += Character.toString(expression.charAt(i));
 			} else {
 				if ((i < expression.length() - 1) && operation(expression.charAt(i + 1))) {
 					throw new RuntimeException();
 				}
 				if (a.size > 0) {
 					if (expression.charAt(i) == '+' || expression.charAt(i) == '-') {
-						str1 += " ";
-						str1 += Character.toString((char) a.pop());
+						if ((char) a.peek() != '(') {
+							str1 += " ";
+							str1 += Character.toString((char) a.pop());
+						}
 						a.push(expression.charAt(i));
 					} else if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
 						if ((char) a.peek() == '*' || (char) a.peek() == '/') {
@@ -113,9 +118,23 @@ public class InfixPosfix implements IExpressionEvaluator {
 		}
 		return false;
 	}
-	/*
-	 * private String addB(Stack a, String str1) { // TODO Auto-generated method
-	 * stub while(a.peek() != null) { if(a.peek() == (char) '(') str1 += " "; str1
-	 * += Character.toString((char) a.pop()); } return str1; }
-	 */
+
+	private String addB(Stack a, String str1) {
+		// TODO Auto-generated method
+		boolean x = false;
+		while (a.size > 0) {
+			if ((char) a.peek() == '(') {
+				a.pop();
+				x = true;
+				break;
+			}
+			str1 += " ";
+			str1 += Character.toString((char) a.pop());
+		}
+		if (x == false) {
+			throw new RuntimeException();
+		}
+		return str1;
+	}
+
 }
