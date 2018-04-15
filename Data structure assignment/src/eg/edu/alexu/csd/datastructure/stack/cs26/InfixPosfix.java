@@ -46,8 +46,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 					}
 				}
 				if (!braces(exp.charAt(i))) {
-					if ((str1.length() != 0) && (i > 0)
-							&& (operation(exp.charAt(i - 1)) || exp.charAt(i - 1) == ' ' || braces(exp.charAt(i - 1)))) {
+					if ((str1.length() != 0) && (i > 0) && (operation(exp.charAt(i - 1)) || exp.charAt(i - 1) == ' '
+							|| braces(exp.charAt(i - 1)))) {
 						str1 += " ";
 					}
 					str1 += Character.toString(exp.charAt(i));
@@ -97,7 +97,55 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public int evaluate(final String expression) {
 		// TODO Auto-generated method stub
-		return 0;
+		int size = 0;
+		for (int i = 0; i < expression.length(); i++) {
+			if (expression.charAt(i) == ' ') {
+				size++;
+			}
+		}
+		String[] exp = new String[size + 1];
+		int co = 0;
+		for (int i = 0; i < expression.length(); i++) {
+			if (exp[co] == null) {
+				exp[co] = "";
+			}
+			if (expression.charAt(i) != ' ') {
+				exp[co] = exp[co] + expression.charAt(i);
+			} else {
+				co++;
+			}
+		}
+		Stack a = (Stack) new Stack();
+		int r, l;
+		int t;
+		for (int i = 0; i <= co; i++) {
+			if (!operation(exp[i].charAt(0))) {
+				a.push(exp[i]);
+			} else {
+				if (exp[i].charAt(0) == '+') {
+					r = convert((String) a.pop());
+					l = convert((String) a.pop());
+					t = r + l;
+					a.push(Integer.toString(t));
+				} else if (exp[i].charAt(0) == '*') {
+					r = convert((String) a.pop());
+					l = convert((String) a.pop());
+					t = r * l;
+					a.push(Integer.toString(t));
+				} else if (exp[i].charAt(0) == '-') {
+					r = convert((String) a.pop());
+					l = convert((String) a.pop());
+					t = l - r;
+					a.push(Integer.toString(t));
+				} else if (exp[i].charAt(0) == '/') {
+					r = convert((String) a.pop());
+					l = convert((String) a.pop());
+					t = l / r;
+					a.push(Integer.toString(t));
+				}
+			}
+		}
+		return convert((String) a.pop());
 	}
 
 	/**
@@ -180,4 +228,12 @@ public class InfixPosfix implements IExpressionEvaluator {
 		return str;
 	}
 
+	private int convert(String x) {
+		int total = 0;
+		for (int i = 0; i < x.length(); i++) {
+			total = total * 10 + ((int) x.charAt(i) - '0');
+		}
+		return total;
+
+	}
 }
