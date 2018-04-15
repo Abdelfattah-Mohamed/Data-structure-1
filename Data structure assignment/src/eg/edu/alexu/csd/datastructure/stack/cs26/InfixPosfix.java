@@ -37,7 +37,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 						// str1 = addB(a, str1);
 					}
 				}
-				if ((i > 0) && operation(expression.charAt(i - 1))) {
+				if ((i > 0) && (operation(expression.charAt(i - 1)) || expression.charAt(i - 1) == ' ')) {
 					str1 += " ";
 				}
 				str1 += Character.toString(expression.charAt(i));
