@@ -89,9 +89,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 		return 0;
 	}
 	/**
-	 * 
-	 * @param x
-	 * @return
+	 *
+	 * @param x to check if char in operation.
+	 * @return boolean.
 	 */
 	private boolean operation(final char x) {
 		if (x == '+') {
@@ -106,9 +106,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 		return false;
 	}
 	/**
-	 * 
-	 * @param x
-	 * @return
+	 *
+	 * @param x to check if char in unary.
+	 * @return boolean
 	 */
 	private boolean unary(final char x) {
 		if (x == '~') {
@@ -123,9 +123,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 		return false;
 	}
 	/**
-	 * 
-	 * @param x
-	 * @return
+	 *
+	 * @param x to check braces.
+	 * @return boolean.
 	 */
 	private boolean braces(final char x) {
 		if (x == '(') {
@@ -136,10 +136,10 @@ public class InfixPosfix implements IExpressionEvaluator {
 		return false;
 	}
 	/**
-	 * 
-	 * @param a
-	 * @param str1
-	 * @return
+	 *
+	 * @param a to remove braces from stack.
+	 * @param str1 to add character between braces.
+	 * @return string after append.
 	 */
 	private String addB(final Stack a, final String str1) {
 		// TODO Auto-generated method
