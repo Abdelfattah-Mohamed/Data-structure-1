@@ -8,19 +8,6 @@ import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
  *
  */
 public class InfixPosfix implements IExpressionEvaluator {
-	/**
-	 * point to first node.
-	 */
-	Dnode head = null;
-	/**
-	 * point to last node.
-	 */
-	Dnode tail = null;
-	/**
-	 * size of stack.
-	 */
-	int size = 0;
-
 	@Override
 	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
@@ -36,9 +23,19 @@ public class InfixPosfix implements IExpressionEvaluator {
 			throw new RuntimeException();
 		}
 		for (; i < expression.length(); i++) {
+			if (expression.charAt(i) == ' ') {
+				i++;
+			}
 			if (!operation(expression.charAt(i))) {
 				if (unary(expression.charAt(i))) {
 					throw new RuntimeException();
+				}
+				if (braces(expression.charAt(i))) {
+					if (expression.charAt(i) == '(') {
+						a.push(expression.charAt(i));
+					} else {
+						// str1 = addB(a, str1);
+					}
 				}
 				if ((i > 0) && operation(expression.charAt(i - 1))) {
 					str1 += " ";
@@ -107,4 +104,18 @@ public class InfixPosfix implements IExpressionEvaluator {
 		}
 		return false;
 	}
+
+	private boolean braces(char x) {
+		if (x == '(') {
+			return true;
+		} else if (x == ')') {
+			return true;
+		}
+		return false;
+	}
+	/*
+	 * private String addB(Stack a, String str1) { // TODO Auto-generated method
+	 * stub while(a.peek() != null) { if(a.peek() == (char) '(') str1 += " "; str1
+	 * += Character.toString((char) a.pop()); } return str1; }
+	 */
 }
