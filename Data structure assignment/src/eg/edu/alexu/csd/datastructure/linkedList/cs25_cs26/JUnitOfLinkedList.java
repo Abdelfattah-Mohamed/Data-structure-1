@@ -30,35 +30,24 @@ public class JUnitOfLinkedList {
 		object.add(2, 2);
 		object.add(3, 3);
 		object.remove(2);
-		
 
 		assertEquals(3, object.get(3));
-		
 
 	}
-	
+
 	/**
 	 * test of contain.
 	 */
 	/*
-	@Test
-	public void cs58TestContains() {
-		ILinkedList c = (ILinkedList) new SingleLinkedList();
-		for (int i = 0; i < 3; i++) {
-			c.add(i);
-		}
-		c.add(0, 3);
-		c.add(4, 4);
-
-		assertTrue(c.contains(4));
-		assertTrue(c.contains(0));
-		assertTrue(c.contains(1));
-		assertTrue(c.contains(2));
-		assertTrue(c.contains(3));
-		assertFalse(c.contains(9));
-		assertFalse(c.contains(7));
-	}
-*/
+	 * @Test public void cs58TestContains() { ILinkedList c = (ILinkedList) new
+	 * SingleLinkedList(); for (int i = 0; i < 3; i++) { c.add(i); } c.add(0, 3);
+	 * c.add(4, 4);
+	 * 
+	 * assertTrue(c.contains(4)); assertTrue(c.contains(0));
+	 * assertTrue(c.contains(1)); assertTrue(c.contains(2));
+	 * assertTrue(c.contains(3)); assertFalse(c.contains(9));
+	 * assertFalse(c.contains(7)); }
+	 */
 	/**
 	 * test of size.
 	 */
@@ -99,12 +88,9 @@ public class JUnitOfLinkedList {
 			instance.add(1);
 			instance.add(2);
 			instance.set(4, 'F');
-			fail("You should throw an "
-					+ "exception when trying "
-					+ "to set in a wrong index");
+			fail("You should throw an " + "exception when trying " + "to set in a wrong index");
 		} catch (RuntimeException f) {
-			System.out.print("index must be "
-					+ "in litter than size");
+			System.out.print("index must be " + "in litter than size");
 		}
 	}
 
