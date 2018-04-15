@@ -89,7 +89,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 		return 0;
 	}
 
-	private boolean operation(char x) {
+	private boolean operation(final char x) {
 		if (x == '+') {
 			return true;
 		} else if (x == '-') {
@@ -102,7 +102,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 		return false;
 	}
 
-	private boolean unary(char x) {
+	private boolean unary(final char x) {
 		if (x == '~') {
 			return true;
 		} else if (x == '!') {
@@ -115,7 +115,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 		return false;
 	}
 
-	private boolean braces(char x) {
+	private boolean braces(final char x) {
 		if (x == '(') {
 			return true;
 		} else if (x == ')') {
@@ -124,8 +124,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 		return false;
 	}
 
-	private String addB(Stack a, String str1) {
+	private String addB(final Stack a, final String str1) {
 		// TODO Auto-generated method
+		String str = str1;
 		boolean x = false;
 		while (a.size > 0) {
 			if ((char) a.peek() == '(') {
@@ -133,13 +134,13 @@ public class InfixPosfix implements IExpressionEvaluator {
 				x = true;
 				break;
 			}
-			str1 += " ";
-			str1 += Character.toString((char) a.pop());
+			str += " ";
+			str += Character.toString((char) a.pop());
 		}
 		if (x == false) {
 			throw new RuntimeException();
 		}
-		return str1;
+		return str;
 	}
 
 }
