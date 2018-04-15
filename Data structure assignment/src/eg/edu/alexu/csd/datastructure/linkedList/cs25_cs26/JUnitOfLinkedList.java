@@ -42,7 +42,6 @@ public class JUnitOfLinkedList {
 	 * @Test public void cs58TestContains() { ILinkedList c = (ILinkedList) new
 	 * SingleLinkedList(); for (int i = 0; i < 3; i++) { c.add(i); } c.add(0, 3);
 	 * c.add(4, 4);
-	 * 
 	 * assertTrue(c.contains(4)); assertTrue(c.contains(0));
 	 * assertTrue(c.contains(1)); assertTrue(c.contains(2));
 	 * assertTrue(c.contains(3)); assertFalse(c.contains(9));
