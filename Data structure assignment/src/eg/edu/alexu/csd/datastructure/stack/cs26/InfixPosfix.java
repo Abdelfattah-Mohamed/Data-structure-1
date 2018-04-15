@@ -90,7 +90,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 			str1 += " ";
 			str1 += Character.toString((char) a.pop());
 		}
-		
+		if(str1.charAt(0) == ' ') {
+			str1 = "";
+		}
 		return str1;
 	}
 
