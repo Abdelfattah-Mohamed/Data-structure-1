@@ -137,7 +137,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 			str += " ";
 			str += Character.toString((char) a.pop());
 		}
-		if (x == false) {
+		if (!x) {
 			throw new RuntimeException();
 		}
 		return str;
