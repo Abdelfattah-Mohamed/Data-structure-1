@@ -11,61 +11,67 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
+		String exp = "";
+		for (int i = 0; i < expression.length(); i++) {
+			if(expression.charAt(i) != ' ') {
+				exp += Character.toString(expression.charAt(i));
+			}
+		}
 		Stack a = (Stack) new Stack();
 		String str1 = "";
 		int i = 0;
-		if (expression.length() == 0) {
+		if (exp.length() == 0) {
 			throw new RuntimeException();
 		}
-		if ((expression.charAt(0) < '0' || expression.charAt(0) > '9')
-				&& (expression.charAt(0) < 'a' || expression.charAt(0) > 'z')
-				&& (expression.charAt(0) < 'A' || expression.charAt(0) > 'Z') && (expression.charAt(0) != '(')) {
+		if ((exp.charAt(0) < '0' || exp.charAt(0) > '9')
+				&& (exp.charAt(0) < 'a' || exp.charAt(0) > 'z')
+				&& (exp.charAt(0) < 'A' || exp.charAt(0) > 'Z') && (exp.charAt(0) != '(')) {
 			throw new RuntimeException();
 		}
-		for (; i < expression.length(); i++) {
-			if (expression.charAt(i) == ' ') {
+		for (; i < exp.length(); i++) {
+			if (exp.charAt(i) == ' ') {
 				i++;
 			}
-			if (!operation(expression.charAt(i))) {
-				if (unary(expression.charAt(i))) {
+			if (!operation(exp.charAt(i))) {
+				if (unary(exp.charAt(i))) {
 					throw new RuntimeException();
 				}
-				if (braces(expression.charAt(i))) {
-					if (expression.charAt(i) == '(') {
-						a.push(expression.charAt(i));
+				if (braces(exp.charAt(i))) {
+					if (exp.charAt(i) == '(') {
+						a.push(exp.charAt(i));
 					} else {
 						str1 = addB(a, str1);
 					}
 				}
-				if (!braces(expression.charAt(i))) {
+				if (!braces(exp.charAt(i))) {
 					if ((str1.length() != 0) && (i > 0)
-							&& (operation(expression.charAt(i - 1)) || expression.charAt(i - 1) == ' ')) {
+							&& (operation(exp.charAt(i - 1)) || exp.charAt(i - 1) == ' ')) {
 						str1 += " ";
 					}
-					str1 += Character.toString(expression.charAt(i));
+					str1 += Character.toString(exp.charAt(i));
 				}
 			} else {
-				if ((i < expression.length() - 1) && operation(expression.charAt(i + 1))) {
+				if ((i < exp.length() - 1) && operation(exp.charAt(i + 1))) {
 					throw new RuntimeException();
 				}
 				if (a.size > 0) {
-					if (expression.charAt(i) == '+' || expression.charAt(i) == '-') {
+					if (exp.charAt(i) == '+' || exp.charAt(i) == '-') {
 						if ((char) a.peek() != '(') {
 							str1 += " ";
 							str1 += Character.toString((char) a.pop());
 						}
-						a.push(expression.charAt(i));
-					} else if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
+						a.push(exp.charAt(i));
+					} else if (exp.charAt(i) == '*' || exp.charAt(i) == '/') {
 						if ((char) a.peek() == '*' || (char) a.peek() == '/') {
 							str1 += " ";
 							str1 += Character.toString((char) a.pop());
-							a.push(expression.charAt(i));
+							a.push(exp.charAt(i));
 						} else {
-							a.push(expression.charAt(i));
+							a.push(exp.charAt(i));
 						}
 					}
 				} else {
-					a.push(expression.charAt(i));
+					a.push(exp.charAt(i));
 				}
 			}
 		}
@@ -88,9 +94,11 @@ public class InfixPosfix implements IExpressionEvaluator {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 	/**
 	 *
-	 * @param x to check if char in operation.
+	 * @param x
+	 *            to check if char in operation.
 	 * @return boolean.
 	 */
 	private boolean operation(final char x) {
@@ -105,9 +113,11 @@ public class InfixPosfix implements IExpressionEvaluator {
 		}
 		return false;
 	}
+
 	/**
 	 *
-	 * @param x to check if char in unary.
+	 * @param x
+	 *            to check if char in unary.
 	 * @return boolean
 	 */
 	private boolean unary(final char x) {
@@ -122,9 +132,11 @@ public class InfixPosfix implements IExpressionEvaluator {
 		}
 		return false;
 	}
+
 	/**
 	 *
-	 * @param x to check braces.
+	 * @param x
+	 *            to check braces.
 	 * @return boolean.
 	 */
 	private boolean braces(final char x) {
@@ -135,10 +147,13 @@ public class InfixPosfix implements IExpressionEvaluator {
 		}
 		return false;
 	}
+
 	/**
 	 *
-	 * @param a to remove braces from stack.
-	 * @param str1 to add character between braces.
+	 * @param a
+	 *            to remove braces from stack.
+	 * @param str1
+	 *            to add character between braces.
 	 * @return string after append.
 	 */
 	private String addB(final Stack a, final String str1) {
