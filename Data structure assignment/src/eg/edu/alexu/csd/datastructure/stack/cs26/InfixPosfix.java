@@ -27,7 +27,6 @@ public class InfixPosfix implements IExpressionEvaluator {
 		Stack a = (Stack) new Stack();
 		String str1 = "";
 		int i = 0;
-		int l = 0;
 		if (expression.length() == 0) {
 			throw new RuntimeException();
 		}
