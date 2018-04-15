@@ -141,7 +141,7 @@ public class SingleLinkedList implements ILinkedList {
 			if (x == 1) {
 				Snode temp = q.next;
 				Snode temp1 = temp.next;
-				if(q.next == tail) {
+				if (q.next == tail) {
 					tail = q;
 				}
 				q.next = temp1;
