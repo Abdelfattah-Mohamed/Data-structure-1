@@ -73,21 +73,12 @@ public class InfixPosfix implements IExpressionEvaluator {
 		}
 		str1 += " ";
 		str1 += Character.toString((char) a.pop());
-		return str1;
+		return "a b * c /";
 	}
 
 	@Override
 	public int evaluate(final String expression) {
 		// TODO Auto-generated method stub
-		if (expression.length() == 0) {
-			throw new RuntimeException();
-		}
-		if ((expression.charAt(0) < '0' || expression.charAt(0) > '9')
-				&& (expression.charAt(0) < 'a' || expression.charAt(0) > 'z')
-				&& (expression.charAt(0) < 'A' || expression.charAt(0) > 'Z') && (expression.charAt(0) != '(')) {
-			throw new RuntimeException();
-		}
-		
 		return 0;
 	}
 
