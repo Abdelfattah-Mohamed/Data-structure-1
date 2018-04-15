@@ -13,7 +13,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 		// TODO Auto-generated method stub
 		String exp = "";
 		for (int i = 0; i < expression.length(); i++) {
-			if(expression.charAt(i) != ' ') {
+			if (expression.charAt(i) != ' ') {
 				exp += Character.toString(expression.charAt(i));
 			}
 		}
@@ -23,8 +23,10 @@ public class InfixPosfix implements IExpressionEvaluator {
 		if (exp.length() == 0) {
 			throw new RuntimeException();
 		}
-		if ((exp.charAt(0) < '0' || exp.charAt(0) > '9')
-				&& (exp.charAt(0) < 'a' || exp.charAt(0) > 'z')
+		if (operation(exp.charAt(exp.length() - 1))) {
+			throw new RuntimeException();
+		}
+		if ((exp.charAt(0) < '0' || exp.charAt(0) > '9') && (exp.charAt(0) < 'a' || exp.charAt(0) > 'z')
 				&& (exp.charAt(0) < 'A' || exp.charAt(0) > 'Z') && (exp.charAt(0) != '(')) {
 			throw new RuntimeException();
 		}
@@ -44,8 +46,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 					}
 				}
 				if (!braces(exp.charAt(i))) {
-					if ((str1.length() != 0) && (i > 0)
-							&& (operation(exp.charAt(i - 1)) || exp.charAt(i - 1) == ' ')) {
+					if ((str1.length() != 0) && (i > 0) && (operation(exp.charAt(i - 1)) || exp.charAt(i - 1) == ' ')) {
 						str1 += " ";
 					}
 					str1 += Character.toString(exp.charAt(i));
