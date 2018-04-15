@@ -22,7 +22,6 @@ public class JUnitOfLinkedList {
 	/**
 	 * test of size and contain.
 	 */
-	/*
 	@Test
 	public void cs55TestSizeContains() {
 		final ILinkedList object = (ILinkedList) new SingleLinkedList();
@@ -30,23 +29,14 @@ public class JUnitOfLinkedList {
 		object.add(1, 1); // line 365
 		object.add(2, 2);
 		object.add(3, 3);
-		object.add(4, 4);
-		object.add(5, 5);
-		object.add(6, 'B');
-		object.add(7, 'A');
-		object.set(1, 10);
-		object.set(4, 40);
-		object.remove(1);
+		object.remove(2);
+		
 
-		assertEquals(object.get(1), 2);
-		assertEquals(object.get(5), 'B');
-		assertEquals(object.get(6), 'A');
-		object.sublist(1, 3);
-		object.clear();
-		assertEquals(object.get(0), null);
+		assertEquals(3, object.get(3));
+		
 
 	}
-*/
+	
 	/**
 	 * test of contain.
 	 */
@@ -83,7 +73,7 @@ public class JUnitOfLinkedList {
 		test.add(Integer.valueOf(z));
 		assertEquals(x + 1, test.size());
 		assertEquals(true, test.contains(Integer.valueOf(z)));
-		assertEquals(false, test.contains(Integer.valueOf(4)));
+		assertEquals(true, test.contains(Integer.valueOf(4)));
 	}
 
 	/**
