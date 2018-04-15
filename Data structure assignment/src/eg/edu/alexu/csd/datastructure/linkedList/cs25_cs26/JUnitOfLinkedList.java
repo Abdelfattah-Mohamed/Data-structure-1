@@ -93,7 +93,8 @@ public class JUnitOfLinkedList {
 			+ "exception when trying "
 					+ "to set in a wrong index");
 		} catch (RuntimeException f) {
-			System.out.print("index must be " + "in litter than size");
+			System.out.print("index must be "
+		+ "in litter than size");
 		}
 	}
 

@@ -15,7 +15,7 @@ public class JUnitOfStack {
 	@Test
 	public void test() {
 		IExpressionEvaluator post = new InfixPosfix();
-		final String test = "(z+d";
+		final String test = "1 a ";
 		final String ans = " ";
 		Assert.assertEquals(ans, post.infixToPostfix(test));
 		System.out.print(post.infixToPostfix(test));
