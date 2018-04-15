@@ -73,8 +73,13 @@ public class InfixPosfix implements IExpressionEvaluator {
 			str1 += " ";
 			str1 += Character.toString((char) a.pop());
 		}
-		str1 += " ";
-		str1 += Character.toString((char) a.pop());
+		if (a.size() == 1) {
+			str1 += " ";
+			str1 += Character.toString((char) a.pop());
+		}
+		if (str1.length() == 0) {
+			str1 += " ";
+		}
 		return str1;
 	}
 
