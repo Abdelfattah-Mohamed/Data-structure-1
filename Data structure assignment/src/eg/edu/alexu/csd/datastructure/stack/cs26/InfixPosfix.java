@@ -79,6 +79,15 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public int evaluate(final String expression) {
 		// TODO Auto-generated method stub
+		if (expression.length() == 0) {
+			throw new RuntimeException();
+		}
+		if ((expression.charAt(0) < '0' || expression.charAt(0) > '9')
+				&& (expression.charAt(0) < 'a' || expression.charAt(0) > 'z')
+				&& (expression.charAt(0) < 'A' || expression.charAt(0) > 'Z') && (expression.charAt(0) != '(')) {
+			throw new RuntimeException();
+		}
+		
 		return 0;
 	}
 
