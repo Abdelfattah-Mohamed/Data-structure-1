@@ -90,15 +90,14 @@ public class InfixPosfix implements IExpressionEvaluator {
 			str1 += " ";
 			str1 += Character.toString((char) a.pop());
 		}
-		if (str1.length() == 0) {
-			str1 += " ";
-		}
+		
 		return str1;
 	}
 
 	@Override
 	public int evaluate(final String expression) {
 		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
