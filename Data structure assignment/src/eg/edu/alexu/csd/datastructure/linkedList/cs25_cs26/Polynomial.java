@@ -577,6 +577,8 @@ public class Polynomial implements IPolynomialSolver {
 	@Override
 	public int[][] multiply(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
+		ILinkedList x = (ILinkedList) new SingleLinkedList();
+		ILinkedList y = (ILinkedList) new SingleLinkedList();
 		if (poly1 != 'A' && poly1 != 'B' && poly1 != 'C') {
 			throw new IllegalArgumentException(
 					"Operation"
@@ -589,40 +591,68 @@ public class Polynomial implements IPolynomialSolver {
 					+ " on polynomial "
 		+ poly2 + " is not permitted");
 		}
+		
 		int counter = 0;
 		int muliExp = 0;
 		int multiMax = 0;
-		int[][] multi = new int[(a.size() + 1)
-		                        * (b.size() + 1)
-		                        * (c.size() + 1)
-		                        * (a.size() + 1)
-		                        * (b.size() + 1)
-				* (c.size() + 1)][2];
+		if (poly1 == 'A') {
+			x = a;
+			muliExp = firstLast[0][0];
+			if (negative == 'A') {
+				negative = 'X';
+			}
+		} else if (poly1 == 'B') {
+			x = b;
+			muliExp = firstLast[0][1];
+			if (negative == 'B') {
+				negative = 'X';
+			}
+		} else if (poly1 == 'C') {
+			x = c;
+			muliExp = firstLast[0][2];
+			if (negative == 'C') {
+				negative = 'X';
+			}
+		}
+		if (poly2 == 'A') {
+			y = a;
+			muliExp += firstLast[0][0];
+			if (negative == 'A') {
+				negative = 'Y';
+			}
+		} else if (poly2 == 'B') {
+			y = b;
+			muliExp += firstLast[0][1];
+			if (negative == 'B') {
+				negative = 'Y';
+			}
+		} else if (poly2 == 'C') {
+			y = c;
+			muliExp += firstLast[0][2];
+			if (negative == 'C') {
+				negative = 'Y';
+			}
+		}
+		int[][] multi = new int[(x.size() + 1)
+		                        * (y.size() + 1)
+		                        ][2];
 		if (!r.isEmpty()) {
 			r.clear();
 		}
 		// check if poly2 insert to subtraction.
 		if (negative != '0') {
 			int i = 0;
-			if (!r.isEmpty()) {
-				r.clear();
-			}
-			if (negative == 'A') {
-				while (a.get(i) != null) {
-					a.set(i, -1 * (int) a.get(i));
+			if (negative == 'X') {
+				while (x.get(i) != null) {
+					x.set(i, -1 * (int) x.get(i));
 					i++;
 				}
-			} else if (negative == 'B') {
-				while (b.get(i) == null) {
-					b.set(i, -1 * (int) b.get(i));
+			} else if (negative == 'Y') {
+				while (y.get(i) == null) {
+					y.set(i, -1 * (int) y.get(i));
 					i++;
 				}
-			} else if (negative == 'C') {
-				while (c.get(i) == null) {
-					c.set(i, -1 * (int) c.get(i));
-					i++;
-				}
-			}
+			} 
 		}
 		negative = '0';
 		if (poly1 == 'A' && poly2 == 'B') {
