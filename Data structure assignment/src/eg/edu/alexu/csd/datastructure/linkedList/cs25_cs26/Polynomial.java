@@ -50,7 +50,7 @@ public class Polynomial implements IPolynomialSolver {
 	/**
 	 * to avoid magic number.
 	 */
-	final int xx = 3;
+	final int mm = 3;
 	/**
 	 * to avoid magic number.
 	 */
@@ -153,8 +153,8 @@ public class Polynomial implements IPolynomialSolver {
 			if (!r.isEmpty()) {
 				r.clear();
 			}
-			firstLast[0][xx] = terms[0][1];
-			firstLast[1][xx] = terms[terms.length - 1][1];
+			firstLast[0][mm] = terms[0][1];
+			firstLast[1][mm] = terms[terms.length - 1][1];
 			r.add(terms[0][0]);
 			for (int i = 0;
 					i < terms.length - 1;
@@ -652,7 +652,7 @@ public class Polynomial implements IPolynomialSolver {
 		for (int j = 0; r.get(j) != null; j++) {
 			if (r.get(j) != (Object) 0) {
 				reArr[l][0] = (int) r.get(j);
-				reArr[l][1] = firstLast[0][xx] - j;
+				reArr[l][1] = firstLast[0][mm] - j;
 				l++;
 			}
 		}
