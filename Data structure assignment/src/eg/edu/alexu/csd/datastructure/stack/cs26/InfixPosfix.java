@@ -70,8 +70,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 							if ((char) a.peek()
 								!= '(') {
 								str1 += " ";
-								str1 += Character.toString((char)
-										a.pop());
+								str1 +=
+								Character.toString((char)
+								a.pop());
 							} else {
 								break;
 							}
@@ -80,7 +81,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 					} else if (exp.charAt(i) == '*'
 						|| exp.charAt(i) == '/') {
 						if ((char) a.peek() == '*'
-							|| (char) a.peek() == '/') {
+							|| (char) a.peek()
+							== '/') {
 							str1 += " ";
 							str1 +=
 							Character.toString((char)
