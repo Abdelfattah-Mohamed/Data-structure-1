@@ -654,39 +654,36 @@ public class Polynomial implements IPolynomialSolver {
 			} 
 		}
 		negative = '0';
-		if (poly1 == 'A' && poly2 == 'B') {
-			if (a.isEmpty()) {
-				System.out.println("Solver"
-						+ " evaluated unseted"
-						+ " polynomial");
-				throw new IllegalArgumentException(
-						"Solver "
-						+ "evaluated unseted"
-						+ " polynomial");
-			} else if (b.isEmpty()) {
-				System.out.println("Solver"
-						+ " evaluated unseted"
-						+ " polynomial");
-				throw new IllegalArgumentException(
-						"Solver "
-						+ "evaluated unseted"
-						+ " polynomial");
+		if (a.isEmpty()) {
+			System.out.println("Solver"
+		+ " evaluated unseted" + " polynomial");
+			throw new IllegalArgumentException("Solver "
+		+ "evaluated unseted" + " polynomial");
+		} else if (b.isEmpty()) {
+			System.out.println("Solver"
+		+ " evaluated unseted" + " polynomial");
+			throw new IllegalArgumentException("Solver "
+		+ "evaluated unseted" + " polynomial");
+		}
+		for (int i = 0; i < x.size(); i++) {
+			multiMax = muliExp;
+			for (int j = 0; j < y.size(); j++) {
+				multi[counter][0] = (int) x.get(i) * (int) y.get(j);
+				multi[counter][1] = multiMax;
+				multiMax--;
+				counter++;
 			}
-			muliExp = firstLast[0][0] + firstLast[0][1];
-			for (int i = 0; i < a.size(); i++) {
-				multiMax = muliExp;
-				for (int j = 0; j < b.size(); j++) {
-					multi[counter][0] = (int) a.get(i)
-							* (int) b.get(j);
-					multi[counter][1] = multiMax;
-					multiMax--;
-					counter++;
-				}
-				muliExp--;
-				// multiMax = multiMax + first_last[0][1] - 1;
-			}
-			setPolynomial((char) nn, multi);
-		} else if (poly1 == 'A' && poly2 == 'C') {
+			muliExp--;
+			// multiMax = multiMax + first_last[0][1] - 1;
+		}
+		setPolynomial((char) nn, multi);
+		
+		
+		/*
+		
+		
+		
+		else if (poly1 == 'A' && poly2 == 'C') {
 			if (a.isEmpty()) {
 				System.out.println("Solver"
 						+ " evaluated unseted"
@@ -919,6 +916,7 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			setPolynomial((char) nn, multi);
 		}
+		*/
 		int count = 0;
 		int maxExp = multi[0][1];
 		int tt = 0;
