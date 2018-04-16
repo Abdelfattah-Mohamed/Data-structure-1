@@ -279,11 +279,6 @@ public class Polynomial implements IPolynomialSolver {
 						+ "evaluated unseted"
 						+ " polynomial");
 			}
-			/*
-			if (a.size() == 0) {
-				return 0;
-			}
-			*/
 			maxExp = firstLast[0][0];
 			leastExp = firstLast[1][0];
 			int i = 0;
@@ -314,11 +309,6 @@ public class Polynomial implements IPolynomialSolver {
 						+ "evaluated unseted"
 						+ " polynomial");
 			}
-			/*
-			if (b.size() == 0) {
-				return 0;
-			}
-			*/
 			maxExp = firstLast[0][1];
 			leastExp = firstLast[1][1];
 			int i = 0;
@@ -349,11 +339,6 @@ public class Polynomial implements IPolynomialSolver {
 						+ "evaluated unseted"
 						+ " polynomial");
 			}
-			/*
-			if (c.size() == 0) {
-				return 0;
-			}
-			*/
 			maxExp = firstLast[0][2];
 			leastExp = firstLast[1][2];
 			int i = 0;
