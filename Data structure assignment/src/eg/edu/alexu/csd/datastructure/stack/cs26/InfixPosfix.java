@@ -123,6 +123,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 		int t;
 		for (int i = 0; i <= co; i++) {
 			if (!operation(exp[i].charAt(0))) {
+				if (exp[i].charAt(0) < '0' || exp[i].charAt(0) > '9') {
+					throw new RuntimeException();
+				}
 				a.push(exp[i]);
 			} else {
 				if (exp[i].charAt(0) == '+') {
@@ -147,8 +150,6 @@ public class InfixPosfix implements IExpressionEvaluator {
 					a.push(Integer.toString(t));
 				}
 			}
-		}if(convert((String) a.peek()) == 15) {
-			return 0;
 		}
 		return convert((String) a.pop());
 	}
