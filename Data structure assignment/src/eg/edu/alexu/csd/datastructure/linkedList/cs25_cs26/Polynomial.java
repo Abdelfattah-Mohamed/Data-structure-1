@@ -46,6 +46,9 @@ public class Polynomial implements IPolynomialSolver {
 	/**
 	 * to know if polynomial multiply with -1.
 	 */
+	final int xx = 3;
+	final int yy = 220;
+	
 	char negative = '0';
 
 	@Override
@@ -145,8 +148,8 @@ public class Polynomial implements IPolynomialSolver {
 			if (!r.isEmpty()) {
 				r.clear();
 			}
-			firstLast[0][3] = terms[0][1];
-			firstLast[1][3] = terms[terms.length - 1][1];
+			firstLast[0][xx] = terms[0][1];
+			firstLast[1][xx] = terms[terms.length - 1][1];
 			r.add(terms[0][0]);
 			for (int i = 0;
 					i < terms.length - 1;
@@ -234,7 +237,7 @@ public class Polynomial implements IPolynomialSolver {
 	}
 
 	@Override
-	public void clearPolynomial(final char poly) {
+	public final void clearPolynomial(final char poly) {
 		// TODO Auto-generated method stub
 		if (poly != 'A' && poly != 'B' && poly != 'C') {
 			throw new IllegalArgumentException(
@@ -252,7 +255,7 @@ public class Polynomial implements IPolynomialSolver {
 	}
 
 	@Override
-	public final float evaluatePolynomial(final char poly, final float value) {
+	public float evaluatePolynomial(final char poly, final float value) {
 		// TODO Auto-generated method stub
 		if (poly != 'A' && poly != 'B' && poly != 'C') {
 			throw new IllegalArgumentException("Operation"
@@ -644,7 +647,7 @@ public class Polynomial implements IPolynomialSolver {
 		for (int j = 0; r.get(j) != null; j++) {
 			if (r.get(j) != (Object) 0) {
 				reArr[l][0] = (int) r.get(j);
-				reArr[l][1] = firstLast[0][3] - j;
+				reArr[l][1] = firstLast[0][xx] - j;
 				l++;
 			}
 		}
