@@ -409,7 +409,7 @@ public class Polynomial implements IPolynomialSolver {
 		if (poly2 == 'A') {
 			y = a;
 			maxExp2 = firstLast[0][0];
-			if(negative == 'A') {
+			if (negative == 'A') {
 				negative = 'Y';
 			}
 		} else if (poly2 == 'B') {
