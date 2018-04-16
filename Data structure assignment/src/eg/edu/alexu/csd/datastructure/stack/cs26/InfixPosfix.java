@@ -71,7 +71,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 								!= '(') {
 								str1 += " ";
 								str1 +=
-								Character.toString((char)
+						Character.toString((char)
 								a.pop());
 							} else {
 								break;
@@ -85,7 +85,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 							== '/') {
 							str1 += " ";
 							str1 +=
-							Character.toString((char)
+						Character.toString((char)
 								a.pop());
 							a.push(exp.charAt(i));
 						} else {
