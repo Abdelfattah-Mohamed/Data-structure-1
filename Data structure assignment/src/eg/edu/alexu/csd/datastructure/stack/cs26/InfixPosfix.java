@@ -46,31 +46,41 @@ public class InfixPosfix implements IExpressionEvaluator {
 					}
 				}
 				if (!braces(exp.charAt(i))) {
-					if ((str1.length() != 0) && (i > 0) && (operation(exp.charAt(i - 1)) || exp.charAt(i - 1) == ' '
-							|| braces(exp.charAt(i - 1)))) {
+					if ((str1.length() != 0)
+						&& (i > 0)
+						&& (operation(exp.charAt(i - 1))
+						|| exp.charAt(i - 1) == ' '
+						|| braces(exp.charAt(i - 1)))) {
 						str1 += " ";
 					}
-					str1 += Character.toString(exp.charAt(i));
+					str1 += Character.toString(
+							exp.charAt(i));
 				}
 			} else {
-				if ((i < exp.length() - 1) && operation(exp.charAt(i + 1))) {
+				if ((i < exp.length() - 1)
+					&& operation(exp.charAt(i + 1))) {
 					throw new RuntimeException();
 				}
 				if (a.size > 0) {
-					if (exp.charAt(i) == '+' || exp.charAt(i) == '-') {
+					if (exp.charAt(i) == '+'
+							|| exp.charAt(i) == '-') {
 						while (a.size > 0) {
 							if ((char) a.peek() != '(') {
 								str1 += " ";
-								str1 += Character.toString((char) a.pop());
+								str1 += Character.toString
+										((char) a.pop());
 							} else {
 								break;
 							}
 						}
 						a.push(exp.charAt(i));
-					} else if (exp.charAt(i) == '*' || exp.charAt(i) == '/') {
-						if ((char) a.peek() == '*' || (char) a.peek() == '/') {
+					} else if (exp.charAt(i) == '*'
+							|| exp.charAt(i) == '/') {
+						if ((char) a.peek() == '*'
+								|| (char) a.peek() == '/') {
 							str1 += " ";
-							str1 += Character.toString((char) a.pop());
+							str1 += Character.toString
+									((char) a.pop());
 							a.push(exp.charAt(i));
 						} else {
 							a.push(exp.charAt(i));
@@ -102,9 +112,10 @@ public class InfixPosfix implements IExpressionEvaluator {
 	}
 
 	@Override
-	public int evaluate(final String expression) {
+	public final int evaluate(final String expression) {
 		// TODO Auto-generated method stub
-		if (!operation(expression.charAt(expression.length() - 1))) {
+		if (!operation(expression.charAt
+				(expression.length() - 1))) {
 			return 0;
 		}
 		int size = 0;
@@ -130,7 +141,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 		float t;
 		for (int i = 0; i <= co; i++) {
 			if (!operation(exp[i].charAt(0))) {
-				if (exp[i].charAt(0) < '0' || exp[i].charAt(0) > '9') {
+				if (exp[i].charAt(0) < '0'
+					|| exp[i].charAt(0) > '9') {
 					throw new RuntimeException();
 				}
 				a.push(exp[i]);
