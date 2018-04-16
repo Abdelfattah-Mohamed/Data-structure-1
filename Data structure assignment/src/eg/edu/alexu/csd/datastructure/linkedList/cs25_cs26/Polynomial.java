@@ -436,184 +436,28 @@ public class Polynomial implements IPolynomialSolver {
 					+ "evaluated unseted"
 					+ " polynomial");
 		}
-		
-			if (negative == 'X') {
-				for (i = 0; i < x.size(); i++) {
-					add[i][0] = (int) -1 * (int) a.get(i);
-					add[i][1] = maxExp1;
-					maxExp1--;
-				}
-			} else {
-				for (i = 0; i < x.size(); i++) {
-					add[i][0] = (int) x.get(i);
-					add[i][1] = maxExp1;
-					maxExp1--;
-				}
-			}
-			
-			
-				for (; i < x.size() + y.size(); i++) {
-					add[i][0] = (int) y.get(i - x.size());
-					add[i][1] = maxExp2;
-					maxExp2--;
-				}
-			
-				
-				
-			setPolynomial((char) nn, add);
-		
-		
-		
-		/*
-		else if (poly1 == 'B') {
-			if (b.isEmpty()) {
-				System.out.println("Solver"
-						+ " evaluated unseted"
-						+ " polynomial");
-				throw new IllegalArgumentException(
-						"Solver "
-						+ "evaluated unseted"
-						+ " polynomial");
-			}
-			maxExp1 = firstLast[0][1];
-			if (negative == 'B') {
-				for (i = 0; i < b.size(); i++) {
-					add[i][0] = (int) -1 * (int) b.get(i);
-					add[i][1] = maxExp1;
-					maxExp1--;
-				}
-			} else {
-				for (i = 0; i < b.size(); i++) {
-					add[i][0] = (int) b.get(i);
-					add[i][1] = maxExp1;
-					maxExp1--;
-				}
-			}
-			if (poly2 == 'A') {
-				if (a.isEmpty()) {
-					System.out.println("Solver"
-							+ " evaluated unseted"
-							+ " polynomial");
-					throw new IllegalArgumentException(
-							"Solver "
-							+ "evaluated unseted"
-							+ " polynomial");
-				}
-				maxExp2 = firstLast[0][0];
-				for (; i < b.size() + a.size(); i++) {
-					add[i][0] = (int) a.get(i
-							- b.size());
-					add[i][1] = maxExp2;
-					maxExp2--;
-				}
-			}
-			if (poly2 == 'B') {
-				maxExp2 = firstLast[0][1];
-				for (; i < b.size() + b.size(); i++) {
-					add[i][0] = (int) b.get(i
-							- b.size());
-					add[i][1] = maxExp2;
-					maxExp2--;
-				}
-			}
-			if (poly2 == 'C') {
-				if (c.isEmpty()) {
-					System.out.println("Solver"
-							+ " evaluated unseted"
-							+ " polynomial");
-					throw new IllegalArgumentException(
-							"Solver "
-							+ "evaluated unseted"
-							+ " polynomial");
-				}
-				maxExp2 = firstLast[0][2];
-				for (; i < b.size() + c.size(); i++) {
-					add[i][0] = (int) c.get(i - b.size());
-					add[i][1] = maxExp2;
-					maxExp2--;
-				}
-			}
-			setPolynomial((char) nn, add);
-		} else if (poly1 == 'C') {
-			if (c.isEmpty()) {
-				System.out.println("Solver"
-						+ " evaluated unseted"
-						+ " polynomial");
-				throw new IllegalArgumentException(
-						"Solver "
-						+ "evaluated unseted"
-						+ " polynomial");
-			}
-			maxExp1 = firstLast[0][2];
-			if (negative == 'C') {
-				for (i = 0; i < c.size(); i++) {
-					add[i][0] = (int) -1 * (int) c.get(i);
-					add[i][1] = maxExp1;
-					maxExp1--;
-				}
-			} else {
-				for (i = 0; i < c.size(); i++) {
-					add[i][0] = (int) c.get(i);
-					add[i][1] = maxExp1;
-					maxExp1--;
-				}
-			}
-			if (poly2 == 'A') {
-				if (a.isEmpty()) {
-					System.out.println("Solver"
-							+ " evaluated unseted"
-							+ " polynomial");
-					throw new IllegalArgumentException(
-							"Solver "
-							+ "evaluated unseted"
-							+ " polynomial");
-				}
-				maxExp2 = firstLast[0][0];
-				for (; i < c.size() + a.size(); i++) {
-					add[i][0] = (int) a.get(i - c.size());
-					add[i][1] = maxExp2;
-					maxExp2--;
-				}
-			}
-			if (poly2 == 'B') {
-				if (b.isEmpty()) {
-					System.out.println("Solver"
-							+ " evaluated unseted"
-							+ " polynomial");
-					throw new IllegalArgumentException(
-							"Solver "
-							+ "evaluated unseted"
-							+ " polynomial");
-				}
-				maxExp2 = firstLast[0][1];
-				for (; i < c.size() + b.size(); i++) {
-					add[i][0] = (int) b.get(i - c.size());
-					add[i][1] = maxExp2;
-					maxExp2--;
-				}
-			}
-			if (poly2 == 'C') {
-				if (c.isEmpty()) {
-					System.out.println("Solver"
-							+ " evaluated unseted"
-							+ " polynomial");
-					throw new IllegalArgumentException(
-							"Solver "
-							+ "evaluated unseted"
-							+ " polynomial");
-				}
-				maxExp2 = firstLast[0][2];
-				for (; i < c.size() + c.size(); i++) {
-					add[i][0] = (int) c.get(i - c.size());
-					add[i][1] = maxExp2;
-					maxExp2--;
-				}
-			}
-			setPolynomial((char) nn, add);
-		}
-		
-		*/
 
+		if (negative == 'X') {
+			for (i = 0; i < x.size(); i++) {
+				add[i][0] = (int) -1 * (int) a.get(i);
+				add[i][1] = maxExp1;
+				maxExp1--;
+			}
+		} else {
+			for (i = 0; i < x.size(); i++) {
+				add[i][0] = (int) x.get(i);
+				add[i][1] = maxExp1;
+				maxExp1--;
+			}
+		}
+
+		for (; i < x.size() + y.size(); i++) {
+			add[i][0] = (int) y.get(i - x.size());
+			add[i][1] = maxExp2;
+			maxExp2--;
+		}
+
+		setPolynomial((char) nn, add);
 		int[][] reArr = new int[r.size()][2];
 		int l = 0;
 		for (int j = 0; r.get(j) != null; j++) {
