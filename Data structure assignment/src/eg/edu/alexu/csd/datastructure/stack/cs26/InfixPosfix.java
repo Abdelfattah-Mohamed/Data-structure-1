@@ -118,24 +118,25 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public final int evaluate(final String expression) {
 		// TODO Auto-generated method stub
+		StringBuilder sbl = new StringBuilder(expression);
 		if (!operation(
-				expression.charAt(expression.length() - 1))) {
+				sbl.charAt(sbl.length() - 1))) {
 			return 0;
 		}
 		int size = 0;
-		for (int i = 0; i < expression.length(); i++) {
-			if (expression.charAt(i) == ' ') {
+		for (int i = 0; i < sbl.length(); i++) {
+			if (sbl.charAt(i) == ' ') {
 				size++;
 			}
 		}
-		String[] exp = new String[size + 1];
+		StringBuilder[] exp = new StringBuilder[size + 1];
 		int co = 0;
-		for (int i = 0; i < expression.length(); i++) {
+		for (int i = 0; i < sbl.length(); i++) {
 			if (exp[co] == null) {
-				exp[co] = "";
+				exp[co].append("");
 			}
-			if (expression.charAt(i) != ' ') {
-				exp[co] = exp[co] + expression.charAt(i);
+			if (sbl.charAt(i) != ' ') {
+				exp[co].append(sbl.charAt(i));
 			} else {
 				co++;
 			}
