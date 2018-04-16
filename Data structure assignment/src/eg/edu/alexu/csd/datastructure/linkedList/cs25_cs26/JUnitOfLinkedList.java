@@ -127,7 +127,6 @@ public class JUnitOfLinkedList {
 		}
 		c.add(0, 3);
 		c.add(4, 4);
-
 		assertTrue(c.contains(4));
 		assertTrue(c.contains(0));
 		assertTrue(c.contains(1));
