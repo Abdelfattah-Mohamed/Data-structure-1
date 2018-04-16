@@ -11,14 +11,15 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public String infixToPostfix(final String expression) {
 		// TODO Auto-generated method stub
-		String exp = "";
+		StringBuilder sbl = new StringBuilder(expression);
+		StringBuilder exp = new StringBuilder();
 		for (int i = 0; i < expression.length(); i++) {
-			if (expression.charAt(i) != ' ') {
-				exp += Character.toString(expression.charAt(i));
+			if (sbl.charAt(i) != ' ') {
+				exp.append( Character.toString(expression.charAt(i)));
 			}
 		}
 		Stack a = (Stack) new Stack();
-		String str1 = "";
+		StringBuilder str1 = new StringBuilder();
 		int i = 0;
 		if (exp.length() == 0) {
 			throw new RuntimeException();
@@ -53,10 +54,10 @@ public class InfixPosfix implements IExpressionEvaluator {
 						&& (operation(exp.charAt(i - 1))
 						|| exp.charAt(i - 1) == ' '
 						|| braces(exp.charAt(i - 1)))) {
-						str1 += " ";
+						str1.append(" ");
 					}
-					str1 += Character.toString(
-							exp.charAt(i));
+					str1.append(Character.toString(
+							exp.charAt(i)));
 				}
 			} else {
 				if ((i < exp.length() - 1)
@@ -69,10 +70,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 						while (a.size > 0) {
 							if ((char) a.peek()
 								!= '(') {
-								str1 += " ";
-								str1 +=
-						Character.toString((char)
-								a.pop());
+								str1.append(" ");
+								str1.append(Character.toString((char) a.pop()));
 							} else {
 								break;
 							}
@@ -83,10 +82,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 						if ((char) a.peek() == '*'
 							|| (char) a.peek()
 							== '/') {
-							str1 += " ";
-							str1 +=
-						Character.toString((char)
-								a.pop());
+							str1.append(" ");
+							str1.append(Character.toString((char) a.pop()));
 							a.push(exp.charAt(i));
 						} else {
 							a.push(exp.charAt(i));
@@ -101,20 +98,21 @@ public class InfixPosfix implements IExpressionEvaluator {
 			if ((char) a.peek() == '(') {
 				throw new RuntimeException();
 			}
-			str1 += " ";
-			str1 += Character.toString((char) a.pop());
+			str1.append(" ");
+			str1.append(Character.toString((char) a.pop()));
 		}
 		if (a.size() == 1) {
 			if ((char) a.peek() == '(') {
 				throw new RuntimeException();
 			}
-			str1 += " ";
-			str1 += Character.toString((char) a.pop());
+			str1.append(" ");
+			str1.append(Character.toString((char) a.pop()));
 		}
 		if (str1.length() == 0) {
 			throw new RuntimeException();
 		}
-		return str1;
+		String str2 = str1.toString();
+		return str2;
 	}
 
 	@Override
@@ -240,9 +238,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 	 *            to add character between braces.
 	 * @return string after append.
 	 */
-	private String addB(final Stack a, final String str1) {
+	private StringBuilder addB(final Stack a, final StringBuilder str1) {
 		// TODO Auto-generated method
-		String str = str1;
+		StringBuilder str = new StringBuilder(str1);
 		boolean x = false;
 		while (a.size > 0) {
 			if ((char) a.peek() == '(') {
@@ -250,8 +248,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 				x = true;
 				break;
 			}
-			str += " ";
-			str += Character.toString((char) a.pop());
+			str.append(" ");
+			str.append(Character.toString((char) a.pop()));
 		}
 		if (!x) {
 			throw new RuntimeException();
