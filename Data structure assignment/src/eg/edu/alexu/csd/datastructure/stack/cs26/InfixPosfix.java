@@ -72,7 +72,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 						while (a.size > 0) {
 							if ((char) a.peek()
 								!= '(') {
-								str1.append(" ");
+						str1.append(" ");
 								str1.append(
 								Character.toString(
 								(char) a.pop()));
