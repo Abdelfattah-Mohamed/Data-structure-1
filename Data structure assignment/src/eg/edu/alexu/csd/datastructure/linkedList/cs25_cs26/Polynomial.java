@@ -7,6 +7,7 @@ import static java.lang.Math.pow;
 /**
  *
  * @author Abd El Fattah
+ * @author Abdelrahman
  *
  */
 public class Polynomial implements IPolynomialSolver {
