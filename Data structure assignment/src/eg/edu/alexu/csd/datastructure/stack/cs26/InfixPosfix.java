@@ -73,9 +73,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 							if ((char) a.peek()
 								!= '(') {
 						str1.append(" ");
-								str1.append(
-								Character.toString(
-								(char) a.pop()));
+						str1.append(
+						Character.toString(
+						(char) a.pop()));
 							} else {
 								break;
 							}
@@ -87,7 +87,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 							|| (char) a.peek()
 							== '/') {
 							str1.append(" ");
-							str1.append(Character.toString((char) a.pop()));
+							str1.append(
+							Character.toString(
+							(char) a.pop()));
 							a.push(exp.charAt(i));
 						} else {
 							a.push(exp.charAt(i));
@@ -103,14 +105,18 @@ public class InfixPosfix implements IExpressionEvaluator {
 				throw new RuntimeException();
 			}
 			str1.append(" ");
-			str1.append(Character.toString((char) a.pop()));
+			str1.append(
+			Character.toString(
+			(char) a.pop()));
 		}
 		if (a.size() == 1) {
 			if ((char) a.peek() == '(') {
 				throw new RuntimeException();
 			}
 			str1.append(" ");
-			str1.append(Character.toString((char) a.pop()));
+			str1.append(
+			Character.toString(
+			(char) a.pop()));
 		}
 		if (str1.length() == 0) {
 			throw new RuntimeException();
