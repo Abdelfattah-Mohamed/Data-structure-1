@@ -129,29 +129,29 @@ public class InfixPosfix implements IExpressionEvaluator {
 				a.push(exp[i]);
 			} else {
 				if (exp[i].charAt(0) == '+') {
-					r = convert((String) a.pop());
-					l = convert((String) a.pop());
+					r = Float.parseFloat((String) a.pop());
+					l = Float.parseFloat((String) a.pop());
 					t = r + l;
 					a.push(Float.toString(t));
 				} else if (exp[i].charAt(0) == '*') {
-					r = convert((String) a.pop());
-					l = convert((String) a.pop());
+					r = Float.parseFloat((String) a.pop());
+					l = Float.parseFloat((String) a.pop());
 					t = r * l;
 					a.push(Float.toString(t));
 				} else if (exp[i].charAt(0) == '-') {
-					r = convert((String) a.pop());
-					l = convert((String) a.pop());
+					r = Float.parseFloat((String) a.pop());
+					l = Float.parseFloat((String) a.pop());
 					t = l - r;
 					a.push(Float.toString(t));
 				} else if (exp[i].charAt(0) == '/') {
-					r = convert((String) a.pop());
-					l = convert((String) a.pop());
+					r = Float.parseFloat((String) a.pop());
+					l = Float.parseFloat((String) a.pop());
 					t = l / r;
 					a.push(Float.toString(t));
 				}
 			}
 		}
-		return (int) convert((String) a.pop());
+		return (int) Float.parseFloat((String) a.pop());
 	}
 
 	/**
@@ -242,16 +242,10 @@ public class InfixPosfix implements IExpressionEvaluator {
 	 */
 	private float convert(String x) {
 		/*
-		int total = 0;
-		for (int i = 0; i < x.length(); i++) {
-			if (x.charAt(i) != '-') {
-				total = total * 10 + ((int) x.charAt(i) - '0');
-			}
-		}
-		if (x.charAt(0) == '-') {
-			total = -total;
-		}
-		*/
+		 * int total = 0; for (int i = 0; i < x.length(); i++) { if (x.charAt(i) != '-')
+		 * { total = total * 10 + ((int) x.charAt(i) - '0'); } } if (x.charAt(0) == '-')
+		 * { total = -total; }
+		 */
 		Float.parseFloat(x);
 		return Float.parseFloat(x);
 
