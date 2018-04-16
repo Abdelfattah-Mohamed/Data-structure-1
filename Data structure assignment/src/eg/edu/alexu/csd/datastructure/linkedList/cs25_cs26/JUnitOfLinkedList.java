@@ -1,6 +1,3 @@
-/**
- *
- */
 package eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26;
 
 import static org.junit.Assert.assertEquals;
