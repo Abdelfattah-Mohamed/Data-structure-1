@@ -20,4 +20,14 @@ public class JUnitOfStack {
 		Assert.assertEquals(0, post.evaluate(test));
 		// System.out.print(post.evaluate(test));
 	}
+	/**
+	 * @Test
+	 */
+	@Test
+	public void test1() {
+		IExpressionEvaluator post = new InfixPosfix();
+		final String test = "()";
+		final String ans = "";
+		Assert.assertEquals(ans, post.infixToPostfix(test));
+	}
 }

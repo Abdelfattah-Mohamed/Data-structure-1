@@ -91,6 +91,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 			str1 += " ";
 			str1 += Character.toString((char) a.pop());
 		}
+		if(str1.length() == 0) {
+			throw new RuntimeException();
+		}
 		return str1;
 	}
 
@@ -232,22 +235,5 @@ public class InfixPosfix implements IExpressionEvaluator {
 			throw new RuntimeException();
 		}
 		return str;
-	}
-
-	/**
-	 * 
-	 * @param x
-	 *            string want to convert to integer.
-	 * @return string in integer.
-	 */
-	private float convert(String x) {
-		/*
-		 * int total = 0; for (int i = 0; i < x.length(); i++) { if (x.charAt(i) != '-')
-		 * { total = total * 10 + ((int) x.charAt(i) - '0'); } } if (x.charAt(0) == '-')
-		 * { total = -total; }
-		 */
-		Float.parseFloat(x);
-		return Float.parseFloat(x);
-
 	}
 }
