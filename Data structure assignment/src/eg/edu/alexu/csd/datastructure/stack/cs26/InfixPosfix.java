@@ -119,8 +119,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 			}
 		}
 		Stack a = (Stack) new Stack();
-		int r, l;
-		int t;
+		float r, l;
+		float t;
 		for (int i = 0; i <= co; i++) {
 			if (!operation(exp[i].charAt(0))) {
 				if (exp[i].charAt(0) < '0' || exp[i].charAt(0) > '9') {
@@ -132,26 +132,26 @@ public class InfixPosfix implements IExpressionEvaluator {
 					r = convert((String) a.pop());
 					l = convert((String) a.pop());
 					t = r + l;
-					a.push(Integer.toString(t));
+					a.push(Float.toString(t));
 				} else if (exp[i].charAt(0) == '*') {
 					r = convert((String) a.pop());
 					l = convert((String) a.pop());
 					t = r * l;
-					a.push(Integer.toString(t));
+					a.push(Float.toString(t));
 				} else if (exp[i].charAt(0) == '-') {
 					r = convert((String) a.pop());
 					l = convert((String) a.pop());
 					t = l - r;
-					a.push(Integer.toString(t));
+					a.push(Float.toString(t));
 				} else if (exp[i].charAt(0) == '/') {
 					r = convert((String) a.pop());
 					l = convert((String) a.pop());
 					t = l / r;
-					a.push(Integer.toString(t));
+					a.push(Float.toString(t));
 				}
 			}
 		}
-		return convert((String) a.pop());
+		return (int) convert((String) a.pop());
 	}
 
 	/**
@@ -240,7 +240,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 	 *            string want to convert to integer.
 	 * @return string in integer.
 	 */
-	private int convert(String x) {
+	private float convert(String x) {
 		int total = 0;
 		for (int i = 0; i < x.length(); i++) {
 			if (x.charAt(i) != '-') {
