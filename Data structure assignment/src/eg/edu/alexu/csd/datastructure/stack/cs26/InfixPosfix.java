@@ -81,8 +81,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 						if ((char) a.peek() == '*'
 								|| (char) a.peek() == '/') {
 							str1 += " ";
-							str1 += Character.toString
-									((char) a.pop());
+							str1 += Character.toString((char)
+									a.pop());
 							a.push(exp.charAt(i));
 						} else {
 							a.push(exp.charAt(i));
@@ -116,8 +116,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public final int evaluate(final String expression) {
 		// TODO Auto-generated method stub
-		if (!operation(expression.charAt
-				(expression.length() - 1))) {
+		if (!operation(
+				expression.charAt(expression.length() - 1))) {
 			return 0;
 		}
 		int size = 0;
