@@ -117,45 +117,18 @@ public class JUnitOfLinkedList {
 	}
 
 	/**
-	 * test of add and contain.
-	 */
-	@Test
-	public void cs56TestContains() {
-		ILinkedList c = (ILinkedList) new SingleLinkedList();
-		for (int i = 0; i <= 2; i++) {
-			c.add(i);
-		}
-		c.add(0, 3);
-		c.add(4, 4);
-		assertTrue(c.contains(4));
-		assertTrue(c.contains(0));
-		assertTrue(c.contains(1));
-		assertTrue(c.contains(2));
-		assertTrue(c.contains(3));
-		assertFalse(c.contains(9));
-		assertFalse(c.contains(7));
-	}
-
-	/**
 	 * test of add and remove.
 	 */
 	@Test
 	public void cs56TestAddRemoveTwoLists5() {
 		ILinkedList c = (ILinkedList) new SingleLinkedList();
-		for (int i = 0; i < 3; i++) {
-			c.add(i);
-		}
-		c.add(0, 3);
-		c.add(4, 4);
-		c.set(1, 7);
-		c.set(4, 9);
+		c.add(0, '3');
+		c.add(1, '7');
+		c.set(1, '5');
 		ILinkedList d = (ILinkedList) new SingleLinkedList();
-		d.add(3);
-		d.add(7);
-		d.add(1);
-		d.add(2);
-		d.add(9);
-		for (int i = 0; i < 5; i++) {
+		d.add('3');
+		d.add('5');
+		for (int i = 0; i < 2; i++) {
 			assertEquals(c.get(i), d.get(i));
 		}
 	}
