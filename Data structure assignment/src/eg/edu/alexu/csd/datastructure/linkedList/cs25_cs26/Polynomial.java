@@ -173,7 +173,7 @@ public class Polynomial implements IPolynomialSolver {
 	}
 
 	@Override
-	public String print(final char poly) {
+	public final String print(final char poly) {
 		// TODO Auto-generated method stub
 		ILinkedList z = (ILinkedList) new SingleLinkedList();
 		if (poly == 'A') {
@@ -252,7 +252,7 @@ public class Polynomial implements IPolynomialSolver {
 	}
 
 	@Override
-	public float evaluatePolynomial(final char poly, final float value) {
+	public final float evaluatePolynomial(final char poly, final float value) {
 		// TODO Auto-generated method stub
 		if (poly != 'A' && poly != 'B' && poly != 'C') {
 			throw new IllegalArgumentException("Operation"
@@ -670,7 +670,7 @@ public class Polynomial implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] subtract(final char poly1, final char poly2) {
+	public final int[][] subtract(final char poly1, final char poly2) {
 		// TODO Auto-generated method stub
 		if (poly1 != 'A' && poly1 != 'B' && poly1 != 'C') {
 			throw new IllegalArgumentException("Operation"
