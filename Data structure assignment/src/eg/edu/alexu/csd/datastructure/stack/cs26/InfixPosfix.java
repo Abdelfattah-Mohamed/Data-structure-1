@@ -154,23 +154,23 @@ public class InfixPosfix implements IExpressionEvaluator {
 				a.push(exp[i]);
 			} else {
 				if (exp[i].charAt(0) == '+') {
-					r = Float.parseFloat((String) a.pop());
-					l = Float.parseFloat((String) a.pop());
+					r = Float.parseFloat(a.pop().toString());
+					l = Float.parseFloat(a.pop().toString());
 					t = r + l;
 					a.push(Float.toString(t));
 				} else if (exp[i].charAt(0) == '*') {
-					r = Float.parseFloat((String) a.pop());
-					l = Float.parseFloat((String) a.pop());
+					r = Float.parseFloat(a.pop().toString());
+					l = Float.parseFloat(a.pop().toString());
 					t = r * l;
 					a.push(Float.toString(t));
 				} else if (exp[i].charAt(0) == '-') {
-					r = Float.parseFloat((String) a.pop());
-					l = Float.parseFloat((String) a.pop());
+					r = Float.parseFloat(a.pop().toString());
+					l = Float.parseFloat(a.pop().toString());
 					t = l - r;
 					a.push(Float.toString(t));
 				} else if (exp[i].charAt(0) == '/') {
-					r = Float.parseFloat((String) a.pop());
-					l = Float.parseFloat((String) a.pop());
+					r = Float.parseFloat(a.pop().toString());
+					l = Float.parseFloat(a.pop().toString());
 					t = l / r;
 					a.push(Float.toString(t));
 				}
