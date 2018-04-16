@@ -42,7 +42,7 @@ public class Polynomial implements IPolynomialSolver {
 	/**
 	 * to store max & minimum exponent.
 	 */
-	final int[][] firstLast = new int[2][4];
+	final int[][] firstLast = new int[2][2 + 2];
 	/**
 	 * to know if polynomial multiply with -1.
 	 */
