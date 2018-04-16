@@ -651,17 +651,13 @@ public class Polynomial implements IPolynomialSolver {
 					y.set(i, -1 * (int) y.get(i));
 					i++;
 				}
-			} 
+			}
 		}
 		negative = '0';
-		if (a.isEmpty()) {
-			System.out.println("Solver"
-		+ " evaluated unseted" + " polynomial");
+		if (x.isEmpty()) {
 			throw new IllegalArgumentException("Solver "
 		+ "evaluated unseted" + " polynomial");
-		} else if (b.isEmpty()) {
-			System.out.println("Solver"
-		+ " evaluated unseted" + " polynomial");
+		} else if (y.isEmpty()) {
 			throw new IllegalArgumentException("Solver "
 		+ "evaluated unseted" + " polynomial");
 		}
