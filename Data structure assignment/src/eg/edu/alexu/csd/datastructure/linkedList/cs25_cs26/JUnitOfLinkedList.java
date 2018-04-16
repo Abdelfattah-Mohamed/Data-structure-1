@@ -25,30 +25,34 @@ public class JUnitOfLinkedList {
 	@Test
 	public void cs55TestSizeContains() {
 		final ILinkedList object = (ILinkedList) new SingleLinkedList();
-		object.add(0, 0);
-		object.add(1, 1); // line 365
+		object.add(0, '0');
+		object.add(1, "1"); // line 365
 		object.add(2, 2);
-		object.add(3, 3);
-		object.remove(2);
-
-		assertEquals(3, object.get(3));
-
+		object.remove(1);
+		assertEquals(2, object.get(1));
 	}
 
 	/**
 	 * test of contain.
 	 */
-	/*
-	 * @Test public void cs58TestContains()
-	 *  { ILinkedList c = (ILinkedList) new
-	 * SingleLinkedList(); for (int i = 0; i < 3; i++)
-	 *  { c.add(i); } c.add(0, 3);
-	 * c.add(4, 4);
-	 * assertTrue(c.contains(4)); assertTrue(c.contains(0));
-	 * assertTrue(c.contains(1)); assertTrue(c.contains(2));
-	 * assertTrue(c.contains(3)); assertFalse(c.contains(9));
-	 * assertFalse(c.contains(7)); }
-	 */
+
+	@Test
+	public void cs58TestContains() {
+		ILinkedList c = (ILinkedList) new SingleLinkedList();
+		for (int i = 0; i <= 2; i++) {
+			c.add(i);
+		}
+		c.add(0, 2);
+		c.add(2, '4');
+		assertTrue(c.contains('4'));
+		assertTrue(c.contains(0));
+		assertTrue(c.contains(1));
+		assertTrue(c.contains(2));
+		assertTrue(c.contains(2));
+		assertFalse(c.contains('9'));
+		assertFalse(c.contains("19"));
+	}
+
 	/**
 	 * test of size.
 	 */
@@ -56,14 +60,13 @@ public class JUnitOfLinkedList {
 	public void cs56TestSizeContains1() {
 		ILinkedList test = (ILinkedList) new SingleLinkedList();
 		final int x = 10;
-		final int z = 100000000;
 		for (int i = 0; i < x; ++i) {
-			test.add(Integer.valueOf(i));
+			test.add(Character.valueOf((char) i));
 		}
-		test.add(Integer.valueOf(z));
+		test.add("1000000");
 		assertEquals(x + 1, test.size());
-		assertEquals(true, test.contains(Integer.valueOf(z)));
-		assertEquals(true, test.contains(Integer.valueOf(4)));
+		assertEquals(true, test.contains("1000000"));
+		assertEquals(true, test.contains(Integer.valueOf('4')));
 	}
 
 	/**
@@ -89,12 +92,9 @@ public class JUnitOfLinkedList {
 			instance.add(1);
 			instance.add(2);
 			instance.set(4, 'F');
-			fail("You should throw an "
-			+ "exception when trying "
-					+ "to set in a wrong index");
+			fail("You should throw an " + "exception when trying " + "to set in a wrong index");
 		} catch (RuntimeException f) {
-			System.out.print("index must be "
-		+ "in litter than size");
+			System.out.print("index must be " + "in litter than size");
 		}
 	}
 
