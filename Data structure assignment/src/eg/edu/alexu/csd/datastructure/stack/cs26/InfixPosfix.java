@@ -241,8 +241,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 	 * @return string in integer.
 	 */
 	private float convert(String x) {
+		/*
 		int total = 0;
-		for (int i = 0; i < x.length() && x.charAt(i) != '.'; i++) {
+		for (int i = 0; i < x.length(); i++) {
 			if (x.charAt(i) != '-') {
 				total = total * 10 + ((int) x.charAt(i) - '0');
 			}
@@ -250,7 +251,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 		if (x.charAt(0) == '-') {
 			total = -total;
 		}
-		return total;
+		*/
+		Float.parseFloat(x);
+		return Float.parseFloat(x);
 
 	}
 }
