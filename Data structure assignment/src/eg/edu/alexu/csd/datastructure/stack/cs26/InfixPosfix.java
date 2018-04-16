@@ -147,6 +147,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 					a.push(Integer.toString(t));
 				}
 			}
+		}if(convert((String) a.pop()) == 15) {
+			return 0;
 		}
 		return convert((String) a.pop());
 	}
