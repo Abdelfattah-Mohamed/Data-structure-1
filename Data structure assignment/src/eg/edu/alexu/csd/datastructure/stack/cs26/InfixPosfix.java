@@ -242,7 +242,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 	 */
 	private float convert(String x) {
 		int total = 0;
-		for (int i = 0; i < x.length(); i++) {
+		for (int i = 0; i < x.length() && x.charAt(i) != '.'; i++) {
 			if (x.charAt(i) != '-') {
 				total = total * 10 + ((int) x.charAt(i) - '0');
 			}
