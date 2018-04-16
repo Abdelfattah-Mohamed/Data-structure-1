@@ -65,9 +65,10 @@ public class InfixPosfix implements IExpressionEvaluator {
 				}
 				if (a.size > 0) {
 					if (exp.charAt(i) == '+'
-							|| exp.charAt(i) == '-') {
+						|| exp.charAt(i) == '-') {
 						while (a.size > 0) {
-							if ((char) a.peek() != '(') {
+							if ((char) a.peek()
+									!= '(') {
 								str1 += " ";
 								str1 += Character.toString((char)
 										a.pop());
@@ -77,12 +78,13 @@ public class InfixPosfix implements IExpressionEvaluator {
 						}
 						a.push(exp.charAt(i));
 					} else if (exp.charAt(i) == '*'
-							|| exp.charAt(i) == '/') {
+						|| exp.charAt(i) == '/') {
 						if ((char) a.peek() == '*'
-								|| (char) a.peek() == '/') {
+							|| (char) a.peek() == '/') {
 							str1 += " ";
-							str1 += Character.toString((char)
-									a.pop());
+							str1 +=
+							Character.toString((char)
+								a.pop());
 							a.push(exp.charAt(i));
 						} else {
 							a.push(exp.charAt(i));
