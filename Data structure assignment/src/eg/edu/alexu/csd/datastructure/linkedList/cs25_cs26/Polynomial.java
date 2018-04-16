@@ -57,7 +57,7 @@ public class Polynomial implements IPolynomialSolver {
 		int counter = 0;
 		order(terms);
 
-		if (poly != 'A' && poly != 'B' && poly != 'C' && poly != 220) {
+		if (poly != 'A' && poly != 'B' && poly != 'C' && poly != yy) {
 			throw new IllegalArgumentException("Operation "
 					+ "on polynomial "
 		+ poly + " is not permitted");
@@ -144,7 +144,7 @@ public class Polynomial implements IPolynomialSolver {
 					c.add(terms[i + 1][0]);
 				}
 			}
-		} else if (poly == 220) {
+		} else if (poly == yy) {
 			if (!r.isEmpty()) {
 				r.clear();
 			}
@@ -494,7 +494,7 @@ public class Polynomial implements IPolynomialSolver {
 					maxExp2--;
 				}
 			}
-			setPolynomial((char) 220, add);
+			setPolynomial((char) yy, add);
 		} else if (poly1 == 'B') {
 			if (b.isEmpty()) {
 				System.out.println("Solver"
@@ -563,7 +563,7 @@ public class Polynomial implements IPolynomialSolver {
 					maxExp2--;
 				}
 			}
-			setPolynomial((char) 220, add);
+			setPolynomial((char) yy, add);
 		} else if (poly1 == 'C') {
 			if (c.isEmpty()) {
 				System.out.println("Solver"
@@ -639,7 +639,7 @@ public class Polynomial implements IPolynomialSolver {
 					maxExp2--;
 				}
 			}
-			setPolynomial((char) 220, add);
+			setPolynomial((char) yy, add);
 		}
 
 		int[][] reArr = new int[r.size()][2];
@@ -840,7 +840,7 @@ public class Polynomial implements IPolynomialSolver {
 				muliExp--;
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
-			setPolynomial((char) 220, multi);
+			setPolynomial((char) yy, multi);
 		} else if (poly1 == 'A' && poly2 == 'C') {
 			if (a.isEmpty()) {
 				System.out.println("Solver"
@@ -872,7 +872,7 @@ public class Polynomial implements IPolynomialSolver {
 				muliExp--;
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
-			setPolynomial((char) 220, multi);
+			setPolynomial((char) yy, multi);
 		} else if (poly1 == 'A' && poly2 == 'A') {
 			if (a.isEmpty()) {
 				System.out.println("Solver"
@@ -896,7 +896,7 @@ public class Polynomial implements IPolynomialSolver {
 				muliExp--;
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
-			setPolynomial((char) 220, multi);
+			setPolynomial((char) yy, multi);
 		} else if (poly1 == 'B' && poly2 == 'A') {
 			if (b.isEmpty()) {
 				System.out.println("Solver"
@@ -928,7 +928,7 @@ public class Polynomial implements IPolynomialSolver {
 				muliExp--;
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
-			setPolynomial((char) 220, multi);
+			setPolynomial((char) yy, multi);
 		} else if (poly1 == 'B' && poly2 == 'B') {
 			if (b.isEmpty()) {
 				System.out.println("Solver"
@@ -952,7 +952,7 @@ public class Polynomial implements IPolynomialSolver {
 				muliExp--;
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
-			setPolynomial((char) 220, multi);
+			setPolynomial((char) yy, multi);
 		} else if (poly1 == 'B' && poly2 == 'C') {
 			if (b.isEmpty()) {
 				System.out.println("Solver"
@@ -984,7 +984,7 @@ public class Polynomial implements IPolynomialSolver {
 				muliExp--;
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
-			setPolynomial((char) 220, multi);
+			setPolynomial((char) yy, multi);
 		} else if (poly1 == 'C' && poly2 == 'A') {
 			if (c.isEmpty()) {
 				System.out.println("Solver"
@@ -1016,7 +1016,7 @@ public class Polynomial implements IPolynomialSolver {
 				muliExp--;
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
-			setPolynomial((char) 220, multi);
+			setPolynomial((char) yy, multi);
 		} else if (poly1 == 'C' && poly2 == 'B') {
 			if (c.isEmpty()) {
 				System.out.println("Solver"
@@ -1048,7 +1048,7 @@ public class Polynomial implements IPolynomialSolver {
 				muliExp--;
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
-			setPolynomial((char) 220, multi);
+			setPolynomial((char) yy, multi);
 		} else if (poly1 == 'C' && poly2 == 'C') {
 			if (c.isEmpty()) {
 				System.out.println("Solver"
@@ -1072,7 +1072,7 @@ public class Polynomial implements IPolynomialSolver {
 				muliExp--;
 				// multiMax = multiMax + first_last[0][1] - 1;
 			}
-			setPolynomial((char) 220, multi);
+			setPolynomial((char) yy, multi);
 		}
 		int count = 0;
 		int maxExp = multi[0][1];
