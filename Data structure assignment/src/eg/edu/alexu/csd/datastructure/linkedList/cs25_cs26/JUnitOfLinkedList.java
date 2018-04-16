@@ -76,8 +76,8 @@ public class JUnitOfLinkedList {
 	public void cs65TestSet() {
 		ILinkedList instance = (ILinkedList) new SingleLinkedList();
 		instance.add(1);
-		instance.add(3);
-		instance.add(5);
+		instance.add('3');
+		instance.add("5");
 		instance.set(1, 'F');
 		assertEquals('F', instance.get(1));
 	}
@@ -90,8 +90,7 @@ public class JUnitOfLinkedList {
 		ILinkedList instance = (ILinkedList) new SingleLinkedList();
 		try {
 			instance.add(1);
-			instance.add(2);
-			instance.set(4, 'F');
+			instance.set(2, 'F');
 			fail("You should throw an "
 			+ "exception when trying "
 					+ "to set in a wrong index");
@@ -123,7 +122,7 @@ public class JUnitOfLinkedList {
 	@Test
 	public void cs56TestContains() {
 		ILinkedList c = (ILinkedList) new SingleLinkedList();
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i <= 2; i++) {
 			c.add(i);
 		}
 		c.add(0, 3);
