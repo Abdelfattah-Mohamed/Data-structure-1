@@ -91,7 +91,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 			str1 += " ";
 			str1 += Character.toString((char) a.pop());
 		}
-		return str1;
+		return str1 + " ";
 	}
 
 	@Override
