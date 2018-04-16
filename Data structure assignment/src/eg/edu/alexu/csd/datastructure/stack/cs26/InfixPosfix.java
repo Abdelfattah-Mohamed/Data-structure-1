@@ -97,6 +97,9 @@ public class InfixPosfix implements IExpressionEvaluator {
 	@Override
 	public int evaluate(final String expression) {
 		// TODO Auto-generated method stub
+		if (!operation(expression.charAt(expression.length() - 1))) {
+			throw new RuntimeException();
+		}
 		int size = 0;
 		for (int i = 0; i < expression.length(); i++) {
 			if (expression.charAt(i) == ' ') {
@@ -228,6 +231,12 @@ public class InfixPosfix implements IExpressionEvaluator {
 		return str;
 	}
 
+	/**
+	 * 
+	 * @param x
+	 *            string want to convert to integer.
+	 * @return string in integer.
+	 */
 	private int convert(String x) {
 		int total = 0;
 		for (int i = 0; i < x.length(); i++) {
