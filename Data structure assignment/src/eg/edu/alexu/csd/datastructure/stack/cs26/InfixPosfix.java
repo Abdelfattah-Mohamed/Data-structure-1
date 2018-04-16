@@ -98,7 +98,7 @@ public class InfixPosfix implements IExpressionEvaluator {
 	public int evaluate(final String expression) {
 		// TODO Auto-generated method stub
 		if (!operation(expression.charAt(expression.length() - 1))) {
-			throw new RuntimeException();
+			return 0;
 		}
 		int size = 0;
 		for (int i = 0; i < expression.length(); i++) {
