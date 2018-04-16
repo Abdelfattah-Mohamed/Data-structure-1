@@ -46,10 +46,15 @@ public class Polynomial implements IPolynomialSolver {
 	/**
 	 * to know if polynomial multiply with -1.
 	 */
-	final int xx = 3;
-	final int yy = 220;
-	
 	char negative = '0';
+	/**
+	 * to avoid magic number.
+	 */
+	final int xx = 3;
+	/**
+	 * to avoid magic number.
+	 */
+	final int yy = 220;
 
 	@Override
 	public void setPolynomial(final char poly, final int[][] terms) {
