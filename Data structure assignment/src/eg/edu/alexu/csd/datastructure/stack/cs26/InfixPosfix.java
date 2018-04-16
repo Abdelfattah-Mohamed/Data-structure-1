@@ -15,7 +15,8 @@ public class InfixPosfix implements IExpressionEvaluator {
 		StringBuilder exp = new StringBuilder();
 		for (int i = 0; i < expression.length(); i++) {
 			if (sbl.charAt(i) != ' ') {
-				exp.append( Character.toString(expression.charAt(i)));
+				exp.append(Character.toString
+				(expression.charAt(i)));
 			}
 		}
 		Stack a = (Stack) new Stack();
