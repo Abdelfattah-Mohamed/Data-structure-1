@@ -664,7 +664,9 @@ public class Polynomial implements IPolynomialSolver {
 		for (int i = 0; i < x.size(); i++) {
 			multiMax = muliExp;
 			for (int j = 0; j < y.size(); j++) {
-				multi[counter][0] = (int) x.get(i) * (int) y.get(j);
+				multi[counter][0]
+					= (int) x.get(i)
+					* (int) y.get(j);
 				multi[counter][1] = multiMax;
 				multiMax--;
 				counter++;
