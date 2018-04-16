@@ -133,10 +133,11 @@ public class InfixPosfix implements IExpressionEvaluator {
 		int co = 0;
 		for (int i = 0; i < sbl.length(); i++) {
 			if (exp[co] == null) {
-				exp[co].insert(0, "");
+				exp[co] = new StringBuilder("");
 			}
 			if (sbl.charAt(i) != ' ') {
-				exp[co].append(sbl.charAt(i));
+				exp[co].append(Character.toString(
+						sbl.charAt(i)));
 			} else {
 				co++;
 			}
