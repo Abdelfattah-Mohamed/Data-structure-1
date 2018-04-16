@@ -15,9 +15,9 @@ public class JUnitOfStack {
 	@Test
 	public void test() {
 		IExpressionEvaluator post = new InfixPosfix();
-		final String test = "2 3 -";
-		//final String ans = "a*b/c";
-		Assert.assertEquals(-1, post.evaluate(test));
-		//System.out.print(post.evaluate(test));
+		final String test = "1 1 + 1 - 1 + 1 - 1 + 1 - 1 + 1 - 1 -";
+		// final String ans = "a*b/c";
+		Assert.assertEquals(1, post.evaluate(test));
+		// System.out.print(post.evaluate(test));
 	}
 }
