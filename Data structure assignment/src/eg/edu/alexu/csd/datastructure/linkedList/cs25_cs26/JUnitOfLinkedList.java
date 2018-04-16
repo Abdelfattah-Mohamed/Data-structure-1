@@ -61,12 +61,12 @@ public class JUnitOfLinkedList {
 		ILinkedList test = (ILinkedList) new SingleLinkedList();
 		final int x = 10;
 		for (int i = 0; i < x; ++i) {
-			test.add(Character.valueOf((char) i));
+			test.add(i);
 		}
 		test.add("1000000");
 		assertEquals(x + 1, test.size());
 		assertEquals(true, test.contains("1000000"));
-		assertEquals(true, test.contains(Integer.valueOf('4')));
+		assertEquals(true, test.contains(1));
 	}
 
 	/**
