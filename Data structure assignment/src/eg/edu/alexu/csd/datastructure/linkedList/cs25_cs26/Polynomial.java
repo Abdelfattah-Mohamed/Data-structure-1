@@ -591,7 +591,6 @@ public class Polynomial implements IPolynomialSolver {
 					+ " on polynomial "
 		+ poly2 + " is not permitted");
 		}
-		
 		int counter = 0;
 		int muliExp = 0;
 		int multiMax = 0;
