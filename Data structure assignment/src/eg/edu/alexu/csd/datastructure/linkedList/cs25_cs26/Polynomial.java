@@ -390,19 +390,19 @@ public class Polynomial implements IPolynomialSolver {
 		if (poly1 == 'A') {
 			x = a;
 			maxExp1 = firstLast[0][0];
-			if(negative == 'A') {
+			if (negative == 'A') {
 				negative = 'X';
 			}
 		} else if (poly1 == 'B') {
 			x = b;
 			maxExp1 = firstLast[0][1];
-			if(negative == 'B') {
+			if (negative == 'B') {
 				negative = 'X';
 			}
 		} else if (poly1 == 'C') {
 			x = c;
 			maxExp1 = firstLast[0][2];
-			if(negative == 'C') {
+			if (negative == 'C') {
 				negative = 'X';
 			}
 		}
@@ -415,13 +415,13 @@ public class Polynomial implements IPolynomialSolver {
 		} else if (poly2 == 'B') {
 			y = b;
 			maxExp2 = firstLast[0][1];
-			if(negative == 'B') {
+			if (negative == 'B') {
 				negative = 'Y';
 			}
 		} else if (poly2 == 'C') {
 			y = c;
 			maxExp2 = firstLast[0][2];
-			if(negative == 'C') {
+			if (negative == 'C') {
 				negative = 'Y';
 			}
 		}
