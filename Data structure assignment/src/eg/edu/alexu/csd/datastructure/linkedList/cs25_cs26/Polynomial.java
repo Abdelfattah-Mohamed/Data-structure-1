@@ -201,8 +201,8 @@ public class Polynomial implements IPolynomialSolver {
 			leastExp = firstLast[1][2];
 		} else if (poly == 'R') {
 			z = r;
-			maxExp = firstLast[0][3];
-			leastExp = firstLast[1][3];
+			maxExp = firstLast[0][mm];
+			leastExp = firstLast[1][mm];
 		}
 		String print = "";
 		if (poly != 'A' && poly != 'B'
