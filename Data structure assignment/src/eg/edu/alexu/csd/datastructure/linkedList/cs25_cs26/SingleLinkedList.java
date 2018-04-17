@@ -110,7 +110,7 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-		if(head != null) {
+		if (head != null) {
 			head.next = null;
 			head = null;
 			tail = head;
