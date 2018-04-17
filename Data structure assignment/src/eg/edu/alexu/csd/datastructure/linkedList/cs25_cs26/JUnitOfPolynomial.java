@@ -26,7 +26,6 @@ public class JUnitOfPolynomial {
 		instance.setPolynomial('C', c);
 		instance.setPolynomial('B', b);
 		assertEquals("3x^7+45x^5+176x^3+128x",
-				
 				instance.print('C'));
 	}
 
