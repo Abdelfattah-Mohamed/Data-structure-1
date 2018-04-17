@@ -2,6 +2,9 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.Test;
 
 import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
@@ -26,8 +29,12 @@ public class JUnitOfPolynomial {
 				{27, 2 }, {1, 1 }, {-1, 0 } };
 		instance.setPolynomial('C', c);
 		instance.setPolynomial('B', b);
-		assertNull("Polynomial R is not set yet",
-				instance.print('R'));
+		instance.subtract('C', 'B');
+		System.out.println(instance.print('R'));
+		instance.subtract('C', 'B');
+		System.out.println(instance.print('R'));
+		/*assertTrue("Polynomial R is not set yet",
+				instance.print('R'));*/
 		assertEquals("3x^7+45x^5+176x^3+128x",
 				instance.print('C'));
 	}

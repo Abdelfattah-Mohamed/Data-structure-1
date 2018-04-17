@@ -185,18 +185,26 @@ public class Polynomial implements IPolynomialSolver {
 	public final String print(final char poly) {
 		// TODO Auto-generated method stub
 		ILinkedList z = (ILinkedList) new SingleLinkedList();
-		if (poly == 'A') {
-			z = a;
-		} else if (poly == 'B') {
-			z = b;
-		} else if (poly == 'C') {
-			z = c;
-		} else if (poly == 'R') {
-			z = r;
-		}
-		String print = "";
 		int maxExp = 0;
 		int leastExp = 0;
+		if (poly == 'A') {
+			z = a;
+			maxExp = firstLast[0][0];
+			leastExp = firstLast[1][0];
+		} else if (poly == 'B') {
+			z = b;
+			maxExp = firstLast[0][1];
+			leastExp = firstLast[1][1];
+		} else if (poly == 'C') {
+			z = c;
+			maxExp = firstLast[0][2];
+			leastExp = firstLast[1][2];
+		} else if (poly == 'R') {
+			z = r;
+			maxExp = firstLast[0][3];
+			leastExp = firstLast[1][3];
+		}
+		String print = "";
 		if (poly != 'A' && poly != 'B'
 				&& poly != 'C' && poly != 'R') {
 			throw new IllegalArgumentException("Operation"
@@ -206,8 +214,6 @@ public class Polynomial implements IPolynomialSolver {
 		if (z.size() == 0) {
 			return null;
 		}
-		maxExp = firstLast[0][0];
-		leastExp = firstLast[1][0];
 		int i = 0;
 		while (maxExp >= leastExp) {
 			if (z.get(i) != null
@@ -233,7 +239,7 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			if (maxExp != leastExp) {
 				if ((int) z.get(i + 1) > 0) {
-					print = print + "+";
+					print += "+";
 				}
 			}
 			i++;
@@ -516,7 +522,7 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			negative = 'A';
 			while (a.get(i) != null) {
-				a.set(i, -1 * (int) a.get(i));
+				a.set(i, (int) a.get(i) * -1);
 				i++;
 			}
 		} else if (poly2 == 'B') {
@@ -529,7 +535,7 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			negative = 'B';
 			while (b.get(i) != null) {
-				b.set(i, -1 * (int) b.get(i));
+				b.set(i, (int) b.get(i) * -1);
 				i++;
 			}
 		} else if (poly2 == 'C') {
@@ -542,12 +548,13 @@ public class Polynomial implements IPolynomialSolver {
 			}
 			negative = 'C';
 			while (c.get(i) != null) {
-				c.set(i, -1 * (int) c.get(i));
+				c.set(i, (int) c.get(i) * -1);
 				i++;
 			}
 		}
 		int[][] x = add(poly1, poly2);
 		i = 0;
+		negative = poly2;
 		if (negative == 'A') {
 			while (a.get(i) != null) {
 				a.set(i, -1 * (int) a.get(i));
@@ -598,40 +605,22 @@ public class Polynomial implements IPolynomialSolver {
 		if (poly1 == 'A') {
 			x = a;
 			muliExp = firstLast[0][0];
-			if (negative == 'A') {
-				negative = 'X';
-			}
 		} else if (poly1 == 'B') {
 			x = b;
 			muliExp = firstLast[0][1];
-			if (negative == 'B') {
-				negative = 'X';
-			}
 		} else if (poly1 == 'C') {
 			x = c;
 			muliExp = firstLast[0][2];
-			if (negative == 'C') {
-				negative = 'X';
-			}
 		}
 		if (poly2 == 'A') {
 			y = a;
 			muliExp += firstLast[0][0];
-			if (negative == 'A') {
-				negative = 'Y';
-			}
 		} else if (poly2 == 'B') {
 			y = b;
 			muliExp += firstLast[0][1];
-			if (negative == 'B') {
-				negative = 'Y';
-			}
 		} else if (poly2 == 'C') {
 			y = c;
 			muliExp += firstLast[0][2];
-			if (negative == 'C') {
-				negative = 'Y';
-			}
 		}
 		int[][] multi = new int[(x.size() + 1)
 		                        * (y.size() + 1)
