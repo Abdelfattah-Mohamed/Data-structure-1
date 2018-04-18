@@ -4,7 +4,12 @@ import eg.edu.alexu.csd.datastructure.queue.ILinkedBased;
 import eg.edu.alexu.csd.datastructure.queue.IQueue;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 import eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26.Dlinkedlist;
-
+/**
+ * 
+ * @author Abd El Fattah
+ * @author Abd EL Rahman
+ * @author Gmal Eldien
+ */
 public class QueueLinkedList implements IQueue, ILinkedBased {
 
 	/**
