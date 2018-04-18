@@ -23,10 +23,10 @@ public class ArrayQeue implements IQueue, IArrayBased {
 		l = (l + 1) % queue.length;
 		if (l == f) {
 			throw new RuntimeException();
+		} else {
+			queue[l] = item;
+			size++;
 		}
-		queue[l] = item;
-		size++;
-
 	}
 
 	@Override
@@ -35,8 +35,10 @@ public class ArrayQeue implements IQueue, IArrayBased {
 		f = (f + 1) % queue.length;
 		size--;
 		Object q = queue[f];
-		l = -1;
-		f = -1;
+		if(l == f) {
+			l = -1;
+			f = -1;
+		}
 		return q;
 	}
 
