@@ -2,55 +2,70 @@ package eg.edu.alexu.csd.datastructure.queue.cs15_cs25_cs26;
 
 import eg.edu.alexu.csd.datastructure.queue.IArrayBased;
 import eg.edu.alexu.csd.datastructure.queue.IQueue;
-
+/**
+ *
+ * @author super
+ * @author Abd Elrahman
+ * @author Abd Elfattah
+ *
+ */
 public class ArrayQeue implements IQueue, IArrayBased {
-
+	/**
+	 * queue is an array holding elements of queue.
+	 */
 	Object[] queue;
-	int f;
-	int l;
+	/**
+	 * this is the size of queue.
+	 */
 	int size;
-
+	/**
+	 * front points to the first element.
+	 */
+	int front;
+	/**
+	 * rear points to the last element.
+	 */
+	int rear;
+/**
+ *
+ * @param n the size of queue.
+ */
 	public ArrayQeue(final int n) {
 		queue = new Object[n];
 		size = 0;
-		l = -1;
-		f = -1;
+		front = 0;
+		rear = 0;
 	}
 
 	@Override
-	public void enqueue(Object item) {
-		// TODO Auto-generated method stub
-		l = (l + 1) % queue.length;
-		if (l - 1 == f) {
-			throw new RuntimeException("Queue Is Full! You should not be able to enqueue");
-		} else {
-			queue[l] = item;
-			size++;
+	public void enqueue(final Object item) {
+		if (size == queue.length) {
+			throw new RuntimeException();
 		}
+		queue[rear] = item;
+		rear = (rear + 1) % queue.length;
+		size++;
 	}
 
 	@Override
 	public Object dequeue() {
-		// TODO Auto-generated method stub
-		f = (f + 1) % queue.length;
-		size--;
-		Object q = queue[f];
-		if (l == f) {
-			l = -1;
-			f = -1;
+		if (size == 0) {
+			throw new RuntimeException();
 		}
-		return q;
+		Object item = queue[front];
+		front = (front + 1) % queue.length;
+		size--;
+		return item;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return (l == f && f != -1);
+		return size == 0;
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
 		return size;
 	}
+
 }
