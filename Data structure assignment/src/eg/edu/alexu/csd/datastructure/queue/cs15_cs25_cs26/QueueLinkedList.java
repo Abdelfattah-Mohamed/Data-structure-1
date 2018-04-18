@@ -1,10 +1,11 @@
 package eg.edu.alexu.csd.datastructure.queue.cs15_cs25_cs26;
 
+import eg.edu.alexu.csd.datastructure.queue.ILinkedBased;
 import eg.edu.alexu.csd.datastructure.queue.IQueue;
 import eg.edu.alexu.csd.datastructure.linkedList.*;
 import eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26.SingleLinkedList;
 
-public class QueueLinkedList implements IQueue {
+public class QueueLinkedList implements IQueue,ILinkedBased {
 
 	final ILinkedList object = (ILinkedList) new SingleLinkedList();
 
