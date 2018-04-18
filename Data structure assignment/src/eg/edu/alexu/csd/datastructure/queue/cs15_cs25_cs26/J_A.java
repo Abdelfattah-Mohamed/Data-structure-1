@@ -14,12 +14,6 @@ class J_A {
 		x.enqueue(1);
 		x.enqueue(1);
 		x.enqueue(1);
-		x.dequeue();
-		x.dequeue();
-		x.dequeue();
-		x.dequeue();
-		x.dequeue();
-		x.dequeue();
 	}
 
 }
