@@ -21,8 +21,8 @@ public class ArrayQeue implements IQueue, IArrayBased {
 	public void enqueue(Object item) {
 		// TODO Auto-generated method stub
 		l = (l + 1) % queue.length;
-		if (l == f) {
-			throw new RuntimeException();
+		if (l - 1 == f) {
+			throw new RuntimeException("Queue Is Full! You should not be able to enqueue");
 		} else {
 			queue[l] = item;
 			size++;
@@ -35,7 +35,7 @@ public class ArrayQeue implements IQueue, IArrayBased {
 		f = (f + 1) % queue.length;
 		size--;
 		Object q = queue[f];
-		if(l == f) {
+		if (l == f) {
 			l = -1;
 			f = -1;
 		}
@@ -53,5 +53,4 @@ public class ArrayQeue implements IQueue, IArrayBased {
 		// TODO Auto-generated method stub
 		return size;
 	}
-
 }
