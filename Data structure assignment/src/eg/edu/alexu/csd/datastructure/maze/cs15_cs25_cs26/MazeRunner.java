@@ -111,6 +111,7 @@ public class MazeRunner implements IMazeSolver {
 			Point start, end;
 			int si = 0;
 			int sj = 0;
+			boolean flag = false;
 			boolean[][] tf = new boolean[mazeCh.length][mazeCh[0].length];
 			start = findStart(mazeCh);
 			end = findEnd(mazeCh);
@@ -128,6 +129,7 @@ public class MazeRunner implements IMazeSolver {
 						tf[si][sj] = true;
 						inI.push(si);
 						inJ.push(sj);
+						flag = true;
 					}
 				}
 				if (validPath(mazeCh.length, mazeCh[0].length, si, sj + 1)) {
@@ -136,6 +138,7 @@ public class MazeRunner implements IMazeSolver {
 						tf[si][sj] = true;
 						inI.push(si);
 						inJ.push(sj);
+						flag =true;
 					}
 				}
 				if (validPath(mazeCh.length, mazeCh[0].length, si, sj - 1)) {
@@ -144,6 +147,7 @@ public class MazeRunner implements IMazeSolver {
 						tf[si][sj] = true;
 						inI.push(si);
 						inJ.push(sj);
+						flag = true;
 					}
 				}
 				if (validPath(mazeCh.length, mazeCh[0].length, si - 1, sj)) {
@@ -152,7 +156,14 @@ public class MazeRunner implements IMazeSolver {
 						tf[si][sj] = true;
 						inI.push(si);
 						inJ.push(sj);
+						flag = true;
 					}
+				}
+				if (!flag) {
+					inI.pop();
+					inJ.pop();
+					si = (int) inI.peek();
+					sj = (int) inJ.peek();
 				}
 				if (si == end.x && sj == end.y) {
 					tf[end.x][end.y] = true;
@@ -163,6 +174,7 @@ public class MazeRunner implements IMazeSolver {
 				if (mazeCh[si][sj] == 'E' || mazeCh[si][sj] == 'e') {
 					break;
 				}
+				flag = false;
 			}
 			if (inI.isEmpty()) {
 				return null;
