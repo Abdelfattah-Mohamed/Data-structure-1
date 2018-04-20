@@ -1,26 +1,11 @@
 package eg.edu.alexu.csd.datastructure.maze.cs15_cs25_cs26;
 
-import java.io.File;
-
-import eg.edu.alexu.csd.datastructure.maze.IMazeSolver;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 import eg.edu.alexu.csd.datastructure.stack.cs26.Stack;
 
-public class Maze implements IMazeSolver {
+public class Maze {
 
 	//تحت يمين شمال فوق
-	@Override
-	public int[][] solveBFS(File maze) {
-		// TODO Auto-generated method stub
-
-		return null;
-	}
-
-	@Override
-	public int[][] solveDFS(File maze) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	public int[][] dfs() {
 		final String[] image = { 
