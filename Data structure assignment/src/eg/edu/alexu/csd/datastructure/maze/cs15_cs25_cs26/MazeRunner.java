@@ -104,39 +104,42 @@ public class MazeRunner implements IMazeSolver {
 	}
 
 	@Override
-	public final int[][] solveDFS(File maze) {
+	public int[][] solveDFS(File maze) {
 		// TODO Auto-generated method stub
 		try {
 			char[][] mazeCh = readCharArray(maze);
-			Point start;
+			Point start ,end;
 			int si = 0;
 			int sj = 0;
 			boolean[][] tf = new boolean[mazeCh.length][mazeCh[0].length];
 			start = findStart(mazeCh);
-			findEnd(mazeCh);
+			end = findEnd(mazeCh);
 			si = start.x;
 			sj = start.y;
 			IStack inI = (IStack) new Stack();
 			IStack inJ = (IStack) new Stack();
 			inI.push(si);
 			inJ.push(sj);
-			while (!inI.isEmpty()) {
+			for (int i = 0; i < (mazeCh.length * mazeCh[0].length); i++) {
 				if (si < 4 && (mazeCh[si + 1][sj] == '.' || mazeCh[si + 1][sj] == 'E') && !tf[si + 1][sj]) {
 					si++;
 					tf[si][sj] = true;
 					inI.push(si);
 					inJ.push(sj);
-				} else if (si < 4 && (mazeCh[si][sj + 1] == '.' || mazeCh[si][sj + 1] == 'E') && !tf[si][sj + 1]) {
+				} else if (sj < 4 && (mazeCh[si][sj + 1] == '.' || mazeCh[si][sj + 1] == 'E')
+						&& !tf[si][sj + 1]) {
 					sj++;
 					tf[si][sj] = true;
 					inI.push(si);
 					inJ.push(sj);
-				} else if (si < 4 && (mazeCh[si][sj - 1] == '.' || mazeCh[si][sj - 1] == 'E') && !tf[si][sj + 1]) {
+				} else if (sj > 0 && (mazeCh[si][sj - 1] == '.' || mazeCh[si][sj - 1] == 'E')
+						&& !tf[si][sj - 1]) {
 					sj--;
 					tf[si][sj] = true;
 					inI.push(si);
 					inJ.push(sj);
-				} else if (si < 4 && (mazeCh[si - 1][sj] == '.' || mazeCh[si - 1][sj] == 'E') && !tf[si - 1][sj]) {
+				} else if (si > 0 && (mazeCh[si - 1][sj] == '.' || mazeCh[si - 1][sj] == 'E')
+						&& !tf[si - 1][sj]) {
 					si--;
 					tf[si][sj] = true;
 					inI.push(si);
@@ -150,9 +153,6 @@ public class MazeRunner implements IMazeSolver {
 				if (mazeCh[si][sj] == 'E') {
 					break;
 				}
-			}
-			if (inI.isEmpty()) {
-				return null;
 			}
 			int[][] ret = new int[inI.size()][2];
 			for (int i = inI.size() - 1; i >= 0; i--) {
@@ -199,7 +199,7 @@ public class MazeRunner implements IMazeSolver {
 			for (int i = 0; i < m; i++) {
 				mazeStr[i] = br.readLine();
 			}
-			if (br.readLine() != null) {
+			if(br.readLine() != null) {
 				throw new RuntimeException();
 			}
 			mazeCh = toCharArray(mazeStr, m, n);
@@ -213,7 +213,7 @@ public class MazeRunner implements IMazeSolver {
 		char[][] mazeCh = new char[m][n];
 		for (int i = 0; i < mazeStr.length; i++) {
 			char[] temp = mazeStr[i].replaceAll("\\s", "").toCharArray();
-			if (temp.length != n) {
+			if(temp.length!=n) {
 				throw new RuntimeException();
 			}
 			for (int j = 0; j < temp.length; j++) {
