@@ -106,7 +106,63 @@ public class MazeRunner implements IMazeSolver {
 	@Override
 	public int[][] solveDFS(File maze) {
 		// TODO Auto-generated method stub
-		return null;
+		try {
+			char[][] mazeCh = readCharArray(maze);
+			Point start ,end;
+			int si = 0;
+			int sj = 0;
+			boolean[][] tf = new boolean[mazeCh.length][mazeCh[0].length];
+			start = findStart(mazeCh);
+			end = findEnd(mazeCh);
+			si = start.x;
+			sj = start.y;
+			IStack inI = (IStack) new Stack();
+			IStack inJ = (IStack) new Stack();
+			inI.push(si);
+			inJ.push(sj);
+			for (int i = 0; i < (mazeCh.length * mazeCh[0].length) && !inI.isEmpty(); i++) {
+				if (validPath(mazeCh.length, mazeCh[0].length, si + 1, sj)) {
+					si++;
+					tf[si][sj] = true;
+					inI.push(si);
+					inJ.push(sj);
+				} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj + 1)) {
+					sj++;
+					tf[si][sj] = true;
+					inI.push(si);
+					inJ.push(sj);
+				} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj - 1)) {
+					sj--;
+					tf[si][sj] = true;
+					inI.push(si);
+					inJ.push(sj);
+				} else if (validPath(mazeCh.length, mazeCh[0].length, si - 1, sj)) {
+					si--;
+					tf[si][sj] = true;
+					inI.push(si);
+					inJ.push(sj);
+				} else {
+					inI.pop();
+					inJ.pop();
+					si = (int) inI.peek();
+					sj = (int) inJ.peek();
+				}
+				if (mazeCh[si][sj] == 'E') {
+					break;
+				}
+			}
+			if(inI.isEmpty()) {
+				throw new RuntimeException();
+			}
+			int[][] ret = new int[inI.size()][2];
+			for (int i = inI.size() - 1; i >= 0; i--) {
+				ret[i][0] = (int) inI.pop();
+				ret[i][1] = (int) inJ.pop();
+			}
+			return ret;
+		} catch (Exception e) {
+			throw new RuntimeException();
+		}
 	}
 
 	private char[][] readCharArray(File maze) {
