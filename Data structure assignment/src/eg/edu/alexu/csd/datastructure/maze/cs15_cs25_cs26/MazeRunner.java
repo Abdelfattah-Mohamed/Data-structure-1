@@ -104,14 +104,16 @@ public class MazeRunner implements IMazeSolver {
 	}
 
 	@Override
-	public int[][] solveDFS(File maze) {
+	public final int[][] solveDFS(final File maze) {
 		// TODO Auto-generated method stub
 		try {
 			char[][] mazeCh = readCharArray(maze);
+			int row = mazeCh.length;
+			int col = mazeCh[0].length;
 			Point start;
 			int si = 0;
 			int sj = 0;
-			boolean[][] tf = new boolean[mazeCh.length][mazeCh[0].length];
+			boolean[][] tf = new boolean[row][col];
 			start = findStart(mazeCh);
 			findEnd(mazeCh);
 			si = start.x;
@@ -120,23 +122,23 @@ public class MazeRunner implements IMazeSolver {
 			IStack inJ = (IStack) new Stack();
 			inI.push(si);
 			inJ.push(sj);
-			while (!inI.isEmpty()) {
-				if (validPath(mazeCh.length, mazeCh[0].length, si + 1, sj)) {
+			while (!inI.isEmpty() || mazeCh[si][sj] == 'E') {
+				if (validPath(row, col, si + 1, sj)) {
 					si++;
 					tf[si][sj] = true;
 					inI.push(si);
 					inJ.push(sj);
-				} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj + 1)) {
+				} else if (validPath(row, col, si, sj + 1)) {
 					sj++;
 					tf[si][sj] = true;
 					inI.push(si);
 					inJ.push(sj);
-				} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj - 1)) {
+				} else if (validPath(row, col, si, sj - 1)) {
 					sj--;
 					tf[si][sj] = true;
 					inI.push(si);
 					inJ.push(sj);
-				} else if (validPath(mazeCh.length, mazeCh[0].length, si - 1, sj)) {
+				} else if (validPath(row, col, si - 1, sj)) {
 					si--;
 					tf[si][sj] = true;
 					inI.push(si);
