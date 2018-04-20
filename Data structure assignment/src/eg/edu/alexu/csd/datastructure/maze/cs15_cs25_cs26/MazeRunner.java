@@ -120,7 +120,7 @@ public class MazeRunner implements IMazeSolver {
 			IStack inJ = (IStack) new Stack();
 			inI.push(si);
 			inJ.push(sj);
-			for (int i = 0; i < (mazeCh.length * mazeCh[0].length) && !inI.isEmpty(); i++) {
+			for (int i = 0; !inI.isEmpty(); i++) {
 				if (validPath(mazeCh.length, mazeCh[0].length, si + 1, sj)) {
 					si++;
 					tf[si][sj] = true;
