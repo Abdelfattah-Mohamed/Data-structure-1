@@ -149,6 +149,7 @@ public class MazeRunner implements IMazeSolver {
 				}
 				if (mazeCh[si][sj] == 'E') {
 					break;
+					
 				}
 			}
 			int[][] ret = new int[inI.size()][2];
