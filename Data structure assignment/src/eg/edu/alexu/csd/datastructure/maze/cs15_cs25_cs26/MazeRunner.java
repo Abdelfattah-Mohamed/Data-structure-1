@@ -144,9 +144,6 @@ public class MazeRunner implements IMazeSolver {
 				} else {
 					inI.pop();
 					inJ.pop();
-					if(inI.isEmpty()) {
-						return null;
-					}
 					si = (int) inI.peek();
 					sj = (int) inJ.peek();
 				}
