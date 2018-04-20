@@ -152,6 +152,7 @@ public class MazeRunner implements IMazeSolver {
 				}
 			}
 			if(inI.isEmpty()) {
+				
 				return null;
 			}
 			int[][] ret = new int[inI.size()][2];
