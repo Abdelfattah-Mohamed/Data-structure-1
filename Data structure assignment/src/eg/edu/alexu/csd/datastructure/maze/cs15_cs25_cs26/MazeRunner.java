@@ -108,12 +108,12 @@ public class MazeRunner implements IMazeSolver {
 		// TODO Auto-generated method stub
 		try {
 			char[][] mazeCh = readCharArray(maze);
-			Point start ,end;
+			Point start;
 			int si = 0;
 			int sj = 0;
 			boolean[][] tf = new boolean[mazeCh.length][mazeCh[0].length];
 			start = findStart(mazeCh);
-			end = findEnd(mazeCh);
+			findEnd(mazeCh);
 			si = start.x;
 			sj = start.y;
 			IStack inI = (IStack) new Stack();
@@ -122,29 +122,37 @@ public class MazeRunner implements IMazeSolver {
 			inJ.push(sj);
 			for (int i = 0; i < (mazeCh.length * mazeCh[0].length) && !inI.isEmpty(); i++) {
 				if (validPath(mazeCh.length, mazeCh[0].length, si + 1, sj)) {
-					si++;
-					tf[si][sj] = true;
-					inI.push(si);
-					inJ.push(sj);
+					if (!tf[si + 1][sj] && mazeCh[si + 1][sj] != '#') {
+						si++;
+						tf[si][sj] = true;
+						inI.push(si);
+						inJ.push(sj);
+					}
 				} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj + 1)) {
-					sj++;
-					tf[si][sj] = true;
-					inI.push(si);
-					inJ.push(sj);
+					if (!tf[si][sj + 1] && mazeCh[si][sj + 1] != '#') {
+						sj++;
+						tf[si][sj] = true;
+						inI.push(si);
+						inJ.push(sj);
+					}
 				} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj - 1)) {
-					sj--;
-					tf[si][sj] = true;
-					inI.push(si);
-					inJ.push(sj);
+					if (!tf[si][sj - 1] && mazeCh[si][sj - 1] != '#') {
+						sj--;
+						tf[si][sj] = true;
+						inI.push(si);
+						inJ.push(sj);
+					}
 				} else if (validPath(mazeCh.length, mazeCh[0].length, si - 1, sj)) {
-					si--;
-					tf[si][sj] = true;
-					inI.push(si);
-					inJ.push(sj);
+					if (!tf[si - 1][sj] && mazeCh[si - 1][sj] != '#') {
+						si--;
+						tf[si][sj] = true;
+						inI.push(si);
+						inJ.push(sj);
+					}
 				} else {
 					inI.pop();
 					inJ.pop();
-					if(inI.isEmpty()) {
+					if (inI.isEmpty()) {
 						return null;
 					}
 					si = (int) inI.peek();
@@ -154,7 +162,7 @@ public class MazeRunner implements IMazeSolver {
 					break;
 				}
 			}
-			if(inI.isEmpty()) {
+			if (inI.isEmpty()) {
 				throw new RuntimeException();
 			}
 			int[][] ret = new int[inI.size()][2];
