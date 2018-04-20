@@ -163,7 +163,7 @@ public class MazeRunner implements IMazeSolver {
 				}
 			}
 			if (inI.isEmpty()) {
-				throw new RuntimeException();
+				return null;
 			}
 			int[][] ret = new int[inI.size()][2];
 			for (int i = inI.size() - 1; i >= 0; i--) {
