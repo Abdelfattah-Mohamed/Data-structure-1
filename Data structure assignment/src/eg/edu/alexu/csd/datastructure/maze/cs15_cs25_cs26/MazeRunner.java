@@ -108,12 +108,12 @@ public class MazeRunner implements IMazeSolver {
 		// TODO Auto-generated method stub
 		try {
 			char[][] mazeCh = readCharArray(maze);
-			Point start ,end;
+			Point start;
 			int si = 0;
 			int sj = 0;
 			boolean[][] tf = new boolean[mazeCh.length][mazeCh[0].length];
 			start = findStart(mazeCh);
-			end = findEnd(mazeCh);
+			findEnd(mazeCh);
 			si = start.x;
 			sj = start.y;
 			IStack inI = (IStack) new Stack();
@@ -152,7 +152,7 @@ public class MazeRunner implements IMazeSolver {
 				}
 			}
 			if(inI.isEmpty()) {
-				throw new RuntimeException();
+				return null;
 			}
 			int[][] ret = new int[inI.size()][2];
 			for (int i = inI.size() - 1; i >= 0; i--) {
