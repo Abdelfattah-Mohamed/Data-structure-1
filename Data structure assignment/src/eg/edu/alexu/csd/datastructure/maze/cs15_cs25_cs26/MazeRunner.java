@@ -104,7 +104,7 @@ public class MazeRunner implements IMazeSolver {
 	}
 
 	@Override
-	public final int[][] solveDFS(final File maze) {
+	public final int[][] solveDFS(File maze) {
 		// TODO Auto-generated method stub
 		try {
 			char[][] mazeCh = readCharArray(maze);
@@ -122,7 +122,7 @@ public class MazeRunner implements IMazeSolver {
 			IStack inJ = (IStack) new Stack();
 			inI.push(si);
 			inJ.push(sj);
-			while (!inI.isEmpty() || mazeCh[si][sj] == 'E') {
+			for (int i = 0;  !inI.isEmpty(); i++) {
 				if (validPath(row, col, si + 1, sj)) {
 					si++;
 					tf[si][sj] = true;
