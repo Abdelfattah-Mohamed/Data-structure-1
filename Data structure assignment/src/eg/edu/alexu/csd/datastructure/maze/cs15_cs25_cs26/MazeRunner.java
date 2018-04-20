@@ -120,7 +120,7 @@ public class MazeRunner implements IMazeSolver {
 			IStack inJ = (IStack) new Stack();
 			inI.push(si);
 			inJ.push(sj);
-			for (int i = 0; i < (mazeCh.length * mazeCh[0].length); i++) {
+			for (int i = 0; i < (mazeCh.length * mazeCh[0].length) && !inI.isEmpty(); i++) {
 				if (validPath(mazeCh.length, mazeCh[0].length, si + 1, sj)) {
 					si++;
 					tf[si][sj] = true;
@@ -150,6 +150,9 @@ public class MazeRunner implements IMazeSolver {
 				if (mazeCh[si][sj] == 'E') {
 					break;
 				}
+			}
+			if(inI.isEmpty()) {
+				throw new RuntimeException();
 			}
 			int[][] ret = new int[inI.size()][2];
 			for (int i = inI.size() - 1; i >= 0; i--) {
@@ -287,5 +290,4 @@ public class MazeRunner implements IMazeSolver {
 		}
 		return path;
 	}
-
 }
