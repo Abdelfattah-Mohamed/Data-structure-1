@@ -120,7 +120,7 @@ public class MazeRunner implements IMazeSolver {
 			IStack inJ = (IStack) new Stack();
 			inI.push(si);
 			inJ.push(sj);
-			for (int i = 0; !inI.isEmpty(); i++) {
+			while (!inI.isEmpty()) {
 				if (validPath(mazeCh.length, mazeCh[0].length, si + 1, sj)) {
 					si++;
 					tf[si][sj] = true;
@@ -151,7 +151,7 @@ public class MazeRunner implements IMazeSolver {
 					break;
 				}
 			}
-			if(inI.isEmpty()) {
+			if (inI.isEmpty()) {
 				return null;
 			}
 			int[][] ret = new int[inI.size()][2];
@@ -199,7 +199,7 @@ public class MazeRunner implements IMazeSolver {
 			for (int i = 0; i < m; i++) {
 				mazeStr[i] = br.readLine();
 			}
-			if(br.readLine() != null) {
+			if (br.readLine() != null) {
 				throw new RuntimeException();
 			}
 			mazeCh = toCharArray(mazeStr, m, n);
@@ -213,7 +213,7 @@ public class MazeRunner implements IMazeSolver {
 		char[][] mazeCh = new char[m][n];
 		for (int i = 0; i < mazeStr.length; i++) {
 			char[] temp = mazeStr[i].replaceAll("\\s", "").toCharArray();
-			if(temp.length!=n) {
+			if (temp.length != n) {
 				throw new RuntimeException();
 			}
 			for (int j = 0; j < temp.length; j++) {
