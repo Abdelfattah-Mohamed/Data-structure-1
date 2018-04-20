@@ -158,7 +158,7 @@ public class MazeRunner implements IMazeSolver {
 					si = (int) inI.peek();
 					sj = (int) inJ.peek();
 				}
-				if (mazeCh[si][sj] == 'E') {
+				if (mazeCh[si][sj] == 'E' || mazeCh[si][sj] == 'e') {
 					break;
 				}
 			}
