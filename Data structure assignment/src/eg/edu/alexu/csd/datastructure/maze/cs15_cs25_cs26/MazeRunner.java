@@ -301,5 +301,4 @@ public class MazeRunner implements IMazeSolver {
 		}
 		return path;
 	}
-
 }
