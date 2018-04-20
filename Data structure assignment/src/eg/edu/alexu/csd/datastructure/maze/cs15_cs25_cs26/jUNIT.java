@@ -1,7 +1,8 @@
 package eg.edu.alexu.csd.datastructure.maze.cs15_cs25_cs26;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+//import org.junit.jupiter.api.Test;
 
 class jUNIT {
 
