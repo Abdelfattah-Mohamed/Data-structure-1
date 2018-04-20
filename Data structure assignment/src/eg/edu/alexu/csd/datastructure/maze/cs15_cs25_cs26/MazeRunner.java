@@ -122,25 +122,33 @@ public class MazeRunner implements IMazeSolver {
 			inJ.push(sj);
 			for (int i = 0; i < (mazeCh.length * mazeCh[0].length); i++) {
 				if (validPath(mazeCh.length, mazeCh[0].length, si + 1, sj)) {
-					si++;
-					tf[si][sj] = true;
-					inI.push(si);
-					inJ.push(sj);
+					if (!tf[si + 1][sj] && mazeCh[si][sj + 1] != '#') {
+						si++;
+						tf[si][sj] = true;
+						inI.push(si);
+						inJ.push(sj);
+					}
 				} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj + 1)) {
-					sj++;
-					tf[si][sj] = true;
-					inI.push(si);
-					inJ.push(sj);
+					if (!tf[si][sj + 1] && mazeCh[si][sj + 1] != '#') {
+						sj++;
+						tf[si][sj] = true;
+						inI.push(si);
+						inJ.push(sj);
+					}
 				} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj - 1)) {
-					sj--;
-					tf[si][sj] = true;
-					inI.push(si);
-					inJ.push(sj);
+					if (!tf[si][sj - 1] && mazeCh[si][sj - 1] != '#') {
+						sj--;
+						tf[si][sj] = true;
+						inI.push(si);
+						inJ.push(sj);
+					}
 				} else if (validPath(mazeCh.length, mazeCh[0].length, si - 1, sj)) {
-					si--;
-					tf[si][sj] = true;
-					inI.push(si);
-					inJ.push(sj);
+					if (!tf[si - 1][sj] && mazeCh[si - 1][sj] != '#') {
+						si--;
+						tf[si][sj] = true;
+						inI.push(si);
+						inJ.push(sj);
+					}
 				} else {
 					inI.pop();
 					inJ.pop();
