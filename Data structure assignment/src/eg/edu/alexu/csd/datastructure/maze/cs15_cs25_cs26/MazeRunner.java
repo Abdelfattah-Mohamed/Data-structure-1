@@ -120,23 +120,23 @@ public class MazeRunner implements IMazeSolver {
 			IStack inJ = (IStack) new Stack();
 			inI.push(si);
 			inJ.push(sj);
-			for (int i = 0;  !inI.isEmpty(); i++) {
-				if (validPath(mazeCh.length, mazeCh[0].length, si + 1, sj)) {
+			while (!inI.isEmpty()) {
+				if (si < 4 && (mazeCh[si + 1][sj] == '.' || mazeCh[si + 1][sj] == 'E') && !tf[si + 1][sj]) {
 					si++;
 					tf[si][sj] = true;
 					inI.push(si);
 					inJ.push(sj);
-				} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj + 1)) {
+				} else if (si < 4 && (mazeCh[si][sj + 1] == '.' || mazeCh[si][sj + 1] == 'E') && !tf[si][sj + 1]) {
 					sj++;
 					tf[si][sj] = true;
 					inI.push(si);
 					inJ.push(sj);
-				} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj - 1)) {
+				} else if (si < 4 && (mazeCh[si][sj - 1] == '.' || mazeCh[si][sj - 1] == 'E') && !tf[si][sj + 1]) {
 					sj--;
 					tf[si][sj] = true;
 					inI.push(si);
 					inJ.push(sj);
-				} else if (validPath(mazeCh.length, mazeCh[0].length, si - 1, sj)) {
+				} else if (si < 4 && (mazeCh[si - 1][sj] == '.' || mazeCh[si - 1][sj] == 'E') && !tf[si - 1][sj]) {
 					si--;
 					tf[si][sj] = true;
 					inI.push(si);
