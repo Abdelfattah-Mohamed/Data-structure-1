@@ -108,11 +108,12 @@ public class MazeRunner implements IMazeSolver {
 		// TODO Auto-generated method stub
 		try {
 			char[][] mazeCh = readCharArray(maze);
-			Point start;
+			Point start ,end;
 			int si = 0;
 			int sj = 0;
 			boolean[][] tf = new boolean[mazeCh.length][mazeCh[0].length];
 			start = findStart(mazeCh);
+			end = findEnd(mazeCh);
 			si = start.x;
 			sj = start.y;
 			IStack inI = (IStack) new Stack();
