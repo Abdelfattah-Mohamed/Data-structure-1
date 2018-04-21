@@ -168,8 +168,8 @@ public class MazeRunner implements IMazeSolver {
 					}
 				} else {
 					tf[end.x][end.y] = true;
-					inI.push(si);
-					inJ.push(sj);
+					//inI.push(si);
+					//inJ.push(sj);
 					break;
 				}
 				flag = false;
