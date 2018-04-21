@@ -122,6 +122,8 @@ public class MazeRunner implements IMazeSolver {
 			inJ.push(sj);
 			tf[si][sj] = true;
 			while (!inI.isEmpty()) {
+				si = (int) inI.peek();
+				sj = (int) inJ.peek();
 				if (si != end.x || sj != end.y) {
 					if (validPath(mazeCh.length, mazeCh[0].length, si + 1, sj)
 							&& (!tf[si + 1][sj] && mazeCh[si + 1][sj] != '#')) {
@@ -153,8 +155,6 @@ public class MazeRunner implements IMazeSolver {
 						if (inI.isEmpty()) {
 							return null;
 						}
-						si = (int) inI.peek();
-						sj = (int) inJ.peek();
 					}
 				} else {
 					tf[end.x][end.y] = true;
