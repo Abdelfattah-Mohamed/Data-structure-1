@@ -132,7 +132,6 @@ public class MazeRunner implements IMazeSolver {
 							inI.push(si);
 							inJ.push(sj);
 							flag = true;
-							
 						}
 					} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj + 1)
 							&& (!tf[si][sj + 1] && mazeCh[si][sj + 1] != '#')) {
