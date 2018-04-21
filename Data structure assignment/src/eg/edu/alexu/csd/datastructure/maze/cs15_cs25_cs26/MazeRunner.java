@@ -104,14 +104,13 @@ public class MazeRunner implements IMazeSolver {
 	}
 
 	@Override
-	public int[][] solveDFS(File maze) {
+	public int[][] solveDFS(final File maze) {
 		// TODO Auto-generated method stub
 		try {
 			char[][] mazeCh = readCharArray(maze);
 			Point start, end;
 			int si = 0;
 			int sj = 0;
-			boolean flag = false;
 			boolean[][] tf = new boolean[mazeCh.length][mazeCh[0].length];
 			start = findStart(mazeCh);
 			end = findEnd(mazeCh);
@@ -122,7 +121,7 @@ public class MazeRunner implements IMazeSolver {
 			inI.push(si);
 			inJ.push(sj);
 			tf[si][sj] = true;
-			for (int i = 0; i < (mazeCh.length * mazeCh[0].length) && !inI.isEmpty(); i++) {
+			while (!inI.isEmpty()) {
 				if (si != end.x || sj != end.y) {
 					if (validPath(mazeCh.length, mazeCh[0].length, si + 1, sj)
 							&& (!tf[si + 1][sj] && mazeCh[si + 1][sj] != '#')) {
@@ -130,28 +129,24 @@ public class MazeRunner implements IMazeSolver {
 						tf[si][sj] = true;
 						inI.push(si);
 						inJ.push(sj);
-						flag = true;
 					} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj + 1)
 							&& (!tf[si][sj + 1] && mazeCh[si][sj + 1] != '#')) {
 						sj++;
 						tf[si][sj] = true;
 						inI.push(si);
 						inJ.push(sj);
-						flag = true;
 					} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj - 1)
 							&& (!tf[si][sj - 1] && mazeCh[si][sj - 1] != '#')) {
 						sj--;
 						tf[si][sj] = true;
 						inI.push(si);
 						inJ.push(sj);
-						flag = true;
 					} else if (validPath(mazeCh.length, mazeCh[0].length, si - 1, sj)
 							&& (!tf[si - 1][sj] && mazeCh[si - 1][sj] != '#')) {
 						si--;
 						tf[si][sj] = true;
 						inI.push(si);
 						inJ.push(sj);
-						flag = true;
 					} else {
 						inI.pop();
 						inJ.pop();
@@ -163,11 +158,8 @@ public class MazeRunner implements IMazeSolver {
 					}
 				} else {
 					tf[end.x][end.y] = true;
-					//inI.push(si);
-					//inJ.push(sj);
 					break;
 				}
-				flag = false;
 			}
 			if (inI.isEmpty()) {
 				return null;
