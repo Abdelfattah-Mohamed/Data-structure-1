@@ -122,7 +122,20 @@ public class MazeRunner implements IMazeSolver {
 			inJ.push(sj);
 			tf[si][sj] = true;
 			while (!inI.isEmpty()) {
-				if (si != end.x || sj != end.y) {
+				si = (int) inI.peek();
+				sj = (int) inJ.peek();
+				if (si == end.x && sj == end.y) {
+					tf[end.x][end.y] = true;
+					//inI.push(si);
+					//inJ.push(sj);
+					int[][] ret = new int[inI.size()][2];
+					for (int i = inI.size() - 1; i >= 0; i--) {
+						ret[i][0] = (int) inI.pop();
+						ret[i][1] = (int) inJ.pop();
+					}
+					return ret;
+				}
+				else {
 					if (validPath(mazeCh.length, mazeCh[0].length, si + 1, sj)
 							&& (!tf[si + 1][sj] && mazeCh[si + 1][sj] != '#')) {
 						si++;
@@ -153,26 +166,16 @@ public class MazeRunner implements IMazeSolver {
 						if (inI.isEmpty()) {
 							return null;
 						}
-						si = (int) inI.peek();
-						sj = (int) inJ.peek();
 					}
-				} else {
-					tf[end.x][end.y] = true;
-					break;
 				}
 			}
 			if (inI.isEmpty()) {
 				return null;
 			}
-			int[][] ret = new int[inI.size()][2];
-			for (int i = inI.size() - 1; i >= 0; i--) {
-				ret[i][0] = (int) inI.pop();
-				ret[i][1] = (int) inJ.pop();
-			}
-			return ret;
 		} catch (Exception e) {
 			throw new RuntimeException("null");
 		}
+		return null;
 	}
 
 	private char[][] readCharArray(File maze) {
