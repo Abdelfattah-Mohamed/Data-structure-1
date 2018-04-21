@@ -184,8 +184,7 @@ public class MazeRunner implements IMazeSolver {
 			}
 			return ret;
 		} catch (Exception e) {
-			return null;
-			//throw new RuntimeException("null");
+			throw new RuntimeException("null");
 		}
 	}
 
