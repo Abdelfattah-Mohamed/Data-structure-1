@@ -123,55 +123,53 @@ public class MazeRunner implements IMazeSolver {
 			inJ.push(sj);
 			tf[si][sj] = true;
 			for (int i = 0; i < (mazeCh.length * mazeCh[0].length) && !inI.isEmpty(); i++) {
-				if (validPath(mazeCh.length, mazeCh[0].length, si + 1, sj)) {
-					if (!tf[si + 1][sj] && mazeCh[si + 1][sj] != '#') {
-						si++;
-						tf[si][sj] = true;
-						inI.push(si);
-						inJ.push(sj);
-						flag = true;
+				if (si != end.x || sj != end.y) {
+					if (validPath(mazeCh.length, mazeCh[0].length, si + 1, sj)
+							&& (!tf[si + 1][sj] && mazeCh[si + 1][sj] != '#')) {
+						if (!tf[si + 1][sj] && mazeCh[si + 1][sj] != '#') {
+							si++;
+							tf[si][sj] = true;
+							inI.push(si);
+							inJ.push(sj);
+							flag = true;
+						}
+					} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj + 1)
+							&& (!tf[si][sj + 1] && mazeCh[si][sj + 1] != '#')) {
+						if (!tf[si][sj + 1] && mazeCh[si][sj + 1] != '#') {
+							sj++;
+							tf[si][sj] = true;
+							inI.push(si);
+							inJ.push(sj);
+							flag = true;
+						}
+					} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj - 1)
+							&& (!tf[si][sj - 1] && mazeCh[si][sj - 1] != '#')) {
+						if (!tf[si][sj - 1] && mazeCh[si][sj - 1] != '#') {
+							sj--;
+							tf[si][sj] = true;
+							inI.push(si);
+							inJ.push(sj);
+							flag = true;
+						}
+					} else if (validPath(mazeCh.length, mazeCh[0].length, si - 1, sj)
+							&& (!tf[si - 1][sj] && mazeCh[si - 1][sj] != '#')) {
+						if (!tf[si - 1][sj] && mazeCh[si - 1][sj] != '#') {
+							si--;
+							tf[si][sj] = true;
+							inI.push(si);
+							inJ.push(sj);
+							flag = true;
+						}
+					} else {
+						inI.pop();
+						inJ.pop();
+						si = (int) inI.peek();
+						sj = (int) inJ.peek();
 					}
-				}
-				if (validPath(mazeCh.length, mazeCh[0].length, si, sj + 1)) {
-					if (!tf[si][sj + 1] && mazeCh[si][sj + 1] != '#') {
-						sj++;
-						tf[si][sj] = true;
-						inI.push(si);
-						inJ.push(sj);
-						flag =true;
-					}
-				}
-				if (validPath(mazeCh.length, mazeCh[0].length, si, sj - 1)) {
-					if (!tf[si][sj - 1] && mazeCh[si][sj - 1] != '#') {
-						sj--;
-						tf[si][sj] = true;
-						inI.push(si);
-						inJ.push(sj);
-						flag = true;
-					}
-				}
-				if (validPath(mazeCh.length, mazeCh[0].length, si - 1, sj)) {
-					if (!tf[si - 1][sj] && mazeCh[si - 1][sj] != '#') {
-						si--;
-						tf[si][sj] = true;
-						inI.push(si);
-						inJ.push(sj);
-						flag = true;
-					}
-				}
-				if (!flag) {
-					inI.pop();
-					inJ.pop();
-					si = (int) inI.peek();
-					sj = (int) inJ.peek();
-				}
-				if (si == end.x && sj == end.y) {
+				} else {
 					tf[end.x][end.y] = true;
 					inI.push(si);
 					inJ.push(sj);
-					break;
-				}
-				if (mazeCh[si][sj] == 'E' || mazeCh[si][sj] == 'e') {
 					break;
 				}
 				flag = false;
