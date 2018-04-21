@@ -137,15 +137,15 @@ public class MazeRunner implements IMazeSolver {
 						tf[si][sj] = true;
 						inI.push(si);
 						inJ.push(sj);
-					} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj - 1)
-							&& (!tf[si][sj - 1] && mazeCh[si][sj - 1] != '#')) {
-						sj--;
-						tf[si][sj] = true;
-						inI.push(si);
-						inJ.push(sj);
 					} else if (validPath(mazeCh.length, mazeCh[0].length, si - 1, sj)
 							&& (!tf[si - 1][sj] && mazeCh[si - 1][sj] != '#')) {
 						si--;
+						tf[si][sj] = true;
+						inI.push(si);
+						inJ.push(sj);
+					} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj - 1)
+							&& (!tf[si][sj - 1] && mazeCh[si][sj - 1] != '#')) {
+						sj--;
 						tf[si][sj] = true;
 						inI.push(si);
 						inJ.push(sj);
