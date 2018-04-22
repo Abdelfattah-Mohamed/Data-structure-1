@@ -179,28 +179,33 @@ public class MazeRunner implements IMazeSolver {
 				sj = (int) inJ.peek();
 				if (si != end.x || sj != end.y) {
 					if (validPath(mazeCh.length,
-							mazeCh[0].length,
-							si + 1, sj)
+						mazeCh[0].length, si + 1, sj)
 							&& (!tf[si + 1][sj]
 					&& mazeCh[si + 1][sj] != '#')) {
 						si++;
 						tf[si][sj] = true;
 						inI.push(si);
 						inJ.push(sj);
-					} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj + 1)
-							&& (!tf[si][sj + 1] && mazeCh[si][sj + 1] != '#')) {
+					} else if (validPath(mazeCh.length,
+						mazeCh[0].length, si, sj + 1)
+							&& (!tf[si][sj + 1]
+					&& mazeCh[si][sj + 1] != '#')) {
 						sj++;
 						tf[si][sj] = true;
 						inI.push(si);
 						inJ.push(sj);
-					} else if (validPath(mazeCh.length, mazeCh[0].length, si - 1, sj)
-							&& (!tf[si - 1][sj] && mazeCh[si - 1][sj] != '#')) {
+					} else if (validPath(mazeCh.length,
+						mazeCh[0].length, si - 1, sj)
+							&& (!tf[si - 1][sj]
+						&& mazeCh[si - 1][sj] != '#')) {
 						si--;
 						tf[si][sj] = true;
 						inI.push(si);
 						inJ.push(sj);
-					} else if (validPath(mazeCh.length, mazeCh[0].length, si, sj - 1)
-							&& (!tf[si][sj - 1] && mazeCh[si][sj - 1] != '#')) {
+					} else if (validPath(mazeCh.length,
+						mazeCh[0].length, si, sj - 1)
+							&& (!tf[si][sj - 1]
+						&& mazeCh[si][sj - 1] != '#')) {
 						sj--;
 						tf[si][sj] = true;
 						inI.push(si);
@@ -228,6 +233,57 @@ public class MazeRunner implements IMazeSolver {
 			return ret;
 		} catch (Exception e) {
 			throw new RuntimeException("null");
+		}
+	}
+
+	/**
+	 * reading from file.
+	 *
+	 * @param maze
+	 *            file destination
+	 * @return char 2D array
+	 */
+	private char[][] readCharArray(final File maze) {
+		try {
+			FileReader mazeFile = new FileReader(maze);
+			@SuppressWarnings("resource")
+			BufferedReader br = new BufferedReader(mazeFile);
+			String size = br.readLine();
+			char[] sizeCh = size.toCharArray();
+			StringBuilder m = new StringBuilder();
+			StringBuilder n = new StringBuilder();
+			boolean flag = true;
+			for (int i = 0; i < sizeCh.length; i++) {
+				if (flag) {
+					while (sizeCh[i] != ' ') {
+						m.append(sizeCh[i]);
+						i++;
+					}
+					flag = false;
+				} else {
+					while (sizeCh[i] != ' ') {
+						n.append(sizeCh[i]);
+						i++;
+						if (i == sizeCh.length) {
+							break;
+						}
+					}
+				}
+			}
+			int r = Integer.parseInt(m.toString());
+			int c = Integer.parseInt(n.toString());
+			char[][] mazeCh = new char[r][c];
+			String[] mazeStr = new String[r];
+			for (int i = 0; i < r; i++) {
+				mazeStr[i] = br.readLine();
+			}
+			if (br.readLine() != null) {
+				throw new RuntimeException();
+			}
+			mazeCh = toCharArray(mazeStr, r, c);
+			return mazeCh;
+		} catch (Exception e) {
+			throw new RuntimeException();
 		}
 	}
 
