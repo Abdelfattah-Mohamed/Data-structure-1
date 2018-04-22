@@ -288,57 +288,6 @@ public class MazeRunner implements IMazeSolver {
 	}
 
 	/**
-	 * reading from file.
-	 *
-	 * @param maze
-	 *            file destination
-	 * @return char 2D array
-	 */
-	private char[][] readCharArray(final File maze) {
-		try {
-			FileReader mazeFile = new FileReader(maze);
-			@SuppressWarnings("resource")
-			BufferedReader br = new BufferedReader(mazeFile);
-			String size = br.readLine();
-			char[] sizeCh = size.toCharArray();
-			StringBuilder m = new StringBuilder();
-			StringBuilder n = new StringBuilder();
-			boolean flag = true;
-			for (int i = 0; i < sizeCh.length; i++) {
-				if (flag) {
-					while (sizeCh[i] != ' ') {
-						m.append(sizeCh[i]);
-						i++;
-					}
-					flag = false;
-				} else {
-					while (sizeCh[i] != ' ') {
-						n.append(sizeCh[i]);
-						i++;
-						if (i == sizeCh.length) {
-							break;
-						}
-					}
-				}
-			}
-			int r = Integer.parseInt(m.toString());
-			int c = Integer.parseInt(n.toString());
-			char[][] mazeCh = new char[r][c];
-			String[] mazeStr = new String[r];
-			for (int i = 0; i < r; i++) {
-				mazeStr[i] = br.readLine();
-			}
-			if (br.readLine() != null) {
-				throw new RuntimeException();
-			}
-			mazeCh = toCharArray(mazeStr, r, c);
-			return mazeCh;
-		} catch (Exception e) {
-			throw new RuntimeException();
-		}
-	}
-
-	/**
 	 * converting array of string to 2-D char array.
 	 *
 	 * @param mazeStr
@@ -469,5 +418,4 @@ public class MazeRunner implements IMazeSolver {
 		}
 		return path;
 	}
-
 }
