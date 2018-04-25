@@ -11,6 +11,9 @@ public class PriorityQueue implements IPriorityQueue {
 	@Override
 	public void insert(Object item, int key) {
 		// TODO Auto-generated method stub
+		if (key < 1) {
+			throw new RuntimeException();
+		}
 		Pq obj = new Pq(item, key);
 		Pq z = new Pq(0, 0);
 		if (!object.isEmpty()) {
