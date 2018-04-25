@@ -94,7 +94,6 @@ private long size;
 		if (index == size - 1) {
 			return trailer.getPrev().getElement();
 		}
-		
 		for (int counter = 0;
 		counter < index; counter++) {
 			first = first.getNext();
