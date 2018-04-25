@@ -8,8 +8,10 @@ import eg.edu.alexu.csd.datastructure.mailServer.IFolder;
 import eg.edu.alexu.csd.datastructure.mailServer.IMail;
 import eg.edu.alexu.csd.datastructure.mailServer.ISort;
 /**
- * 
+ *
  * @author Abd El Fattah
+ * @author Abd El Rahman
+ * @author Gamal Eldien
  *
  */
 public class App implements IApp {
