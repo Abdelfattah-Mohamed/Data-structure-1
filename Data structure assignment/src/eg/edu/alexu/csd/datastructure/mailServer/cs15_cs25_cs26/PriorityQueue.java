@@ -11,17 +11,17 @@ public class PriorityQueue implements IPriorityQueue {
 	@Override
 	public void insert(Object item, int key) {
 		// TODO Auto-generated method stub
-		Pq obj = new Pq(item,key);
-		Pq z = new Pq(0,0) ;
-		if(!object.isEmpty()) {
+		Pq obj = new Pq(item, key);
+		Pq z = new Pq(0, 0);
+		if (!object.isEmpty()) {
 			z = (Pq) object.get(object.size() - 1);
-		} 
-		if(object.isEmpty()) {
+		}
+		if (object.isEmpty()) {
 			object.add(obj);
-		} else if(key > z.key) {
+		} else if (key > z.key) {
 			object.add(obj);
 		} else {
-			for(int i = 0 ;i < object.size() ;i++) {
+			for (int i = 0; i < object.size(); i++) {
 				Pq carry = (Pq) object.get(i);
 				if (key < carry.key) {
 					object.add(i, obj);
