@@ -7,9 +7,9 @@ import eg.edu.alexu.csd.datastructure.mailServer.IPriorityQueue;
  * @author Abd El Fattah
  */
 public class PriorityTest {
-	/**
-	 * @Test
-	 */
+/**
+* @Test
+**/
 	@Test//(timeout = 300000)
 	public void test() {
 		IPriorityQueue test = new PriorityQueue();
