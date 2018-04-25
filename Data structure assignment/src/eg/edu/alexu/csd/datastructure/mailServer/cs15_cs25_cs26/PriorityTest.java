@@ -1,3 +1,4 @@
+/*
 package eg.edu.alexu.csd.datastructure.mailServer.cs15_cs25_cs26;
 
 import org.junit.jupiter.api.Test;
@@ -15,3 +16,4 @@ class PriorityTest {
 	}
 
 }
+*/
