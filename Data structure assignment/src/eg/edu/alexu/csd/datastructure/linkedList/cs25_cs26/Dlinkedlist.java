@@ -91,7 +91,7 @@ private long size;
 			throw new RuntimeException();
 		}
 		Dnode first = header.getNext();
-		if(index == size - 1) {
+		if (index == size - 1) {
 			return trailer.getPrev().getElement();
 		}
 		
