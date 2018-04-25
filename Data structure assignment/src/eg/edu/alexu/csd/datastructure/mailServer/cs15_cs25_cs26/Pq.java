@@ -18,7 +18,7 @@ public class Pq {
 	int key;
 
 	/**
-	 * 
+	 *
 	 * @param value
 	 *            to put item in element
 	 * @param pt

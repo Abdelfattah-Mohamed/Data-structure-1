@@ -12,7 +12,9 @@ import eg.edu.alexu.csd.datastructure.mailServer.IPriorityQueue;
  *
  */
 public class PriorityQueue implements IPriorityQueue {
-
+	/**
+	 * to use double linked list.
+	 */
 	final ILinkedList object = (ILinkedList) new Dlinkedlist();
 
 	@Override
