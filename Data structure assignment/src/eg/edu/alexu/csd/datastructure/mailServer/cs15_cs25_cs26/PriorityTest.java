@@ -13,7 +13,7 @@ public class PriorityTest {
 	@Test(timeout = 300000)
 	public void test() {
 		IPriorityQueue test = new PriorityQueue();
-		for (int i = 1; i < 99999999; i++) {
+		for (int i = 1; i < Integer.MAX_VALUE; i++) {
 			test.insert(i, i);
 		}
 	}
