@@ -16,5 +16,4 @@ public class Pq {
 		element = value;
 		key = pt;
 	}
-
 }
