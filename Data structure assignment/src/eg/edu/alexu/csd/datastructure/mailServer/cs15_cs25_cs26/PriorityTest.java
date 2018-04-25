@@ -1,7 +1,6 @@
 package eg.edu.alexu.csd.datastructure.mailServer.cs15_cs25_cs26;
 
 import org.junit.Test;
-
 import eg.edu.alexu.csd.datastructure.mailServer.IPriorityQueue;
 
 /**
@@ -11,10 +10,10 @@ public class PriorityTest {
 	/**
 	 * @Test
 	 */
-	@Test
+	@Test (timeout=300000)
 	public void test() {
 		IPriorityQueue test = new PriorityQueue();
-		for (int i = 0; i < 10; i++) {
+		for (int i = 1; i < 99999999; i++) {
 			test.insert(i, i);
 		}
 	}
