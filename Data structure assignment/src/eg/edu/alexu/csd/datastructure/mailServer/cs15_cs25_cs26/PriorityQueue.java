@@ -3,13 +3,19 @@ package eg.edu.alexu.csd.datastructure.mailServer.cs15_cs25_cs26;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 import eg.edu.alexu.csd.datastructure.linkedList.cs25_cs26.Dlinkedlist;
 import eg.edu.alexu.csd.datastructure.mailServer.IPriorityQueue;
-
+/**
+ *
+ * @author Abd El Fattah
+ * @author Abd El Rahman
+ * @author Gamal Eldein
+ * 
+ */
 public class PriorityQueue implements IPriorityQueue {
 
 	final ILinkedList object = (ILinkedList) new Dlinkedlist();
 
 	@Override
-	public void insert(Object item, int key) {
+	public final void insert(final Object item,final  int key) {
 		// TODO Auto-generated method stub
 		if (key < 1) {
 			throw new RuntimeException();
@@ -35,7 +41,7 @@ public class PriorityQueue implements IPriorityQueue {
 	}
 
 	@Override
-	public Object removeMin() {
+	public final Object removeMin() {
 		// TODO Auto-generated method stub
 		Pq z = (Pq) object.get(0);
 		object.remove(0);
@@ -43,20 +49,20 @@ public class PriorityQueue implements IPriorityQueue {
 	}
 
 	@Override
-	public Object min() {
+	public final Object min() {
 		// TODO Auto-generated method stub
 		Pq z = (Pq) object.get(0);
 		return z.element;
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		// TODO Auto-generated method stub
 		return object.isEmpty();
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		// TODO Auto-generated method stub
 		return object.size();
 	}
