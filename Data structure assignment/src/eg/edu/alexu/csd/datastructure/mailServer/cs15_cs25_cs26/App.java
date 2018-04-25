@@ -23,7 +23,7 @@ public class App implements IApp {
 	}
 
 	@Override
-	public boolean signup(final IContact contact) {
+	public final boolean signup(final IContact contact) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -36,7 +36,7 @@ public class App implements IApp {
 	}
 
 	@Override
-	public IMail[] listEmails(final int page) {
+	public final IMail[] listEmails(final int page) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -54,7 +54,7 @@ public class App implements IApp {
 	}
 
 	@Override
-	public boolean compose(final IMail email) {
+	public final boolean compose(final IMail email) {
 		// TODO Auto-generated method stub
 		return false;
 	}
