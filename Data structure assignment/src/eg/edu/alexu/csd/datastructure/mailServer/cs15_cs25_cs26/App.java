@@ -7,7 +7,11 @@ import eg.edu.alexu.csd.datastructure.mailServer.IFilter;
 import eg.edu.alexu.csd.datastructure.mailServer.IFolder;
 import eg.edu.alexu.csd.datastructure.mailServer.IMail;
 import eg.edu.alexu.csd.datastructure.mailServer.ISort;
-
+/**
+ * 
+ * @author Abd El Fattah
+ *
+ */
 public class App implements IApp {
 
 	@Override
@@ -23,7 +27,8 @@ public class App implements IApp {
 	}
 
 	@Override
-	public void setViewingOptions(final IFolder folder, final IFilter filter, final ISort sort) {
+	public void setViewingOptions(final IFolder folder,
+			final IFilter filter, final ISort sort) {
 		// TODO Auto-generated method stub
 
 	}
