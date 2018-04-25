@@ -10,7 +10,7 @@ public class PriorityTest {
 	/**
 	 * @Test
 	 */
-	@Test(timeout = 300000)
+	@Test//(timeout = 300000)
 	public void test() {
 		IPriorityQueue test = new PriorityQueue();
 		for (int i = 1; i < Integer.MAX_VALUE; i++) {
