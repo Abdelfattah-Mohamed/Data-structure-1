@@ -8,7 +8,7 @@ import eg.edu.alexu.csd.datastructure.mailServer.IFolder;
 import eg.edu.alexu.csd.datastructure.mailServer.IMail;
 import eg.edu.alexu.csd.datastructure.mailServer.ISort;
 
-public class App implements IApp{
+public class App implements IApp {
 
 	@Override
 	public boolean signin(final String email, final String password) {
@@ -25,7 +25,7 @@ public class App implements IApp{
 	@Override
 	public void setViewingOptions(final IFolder folder, final IFilter filter, final ISort sort) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -37,13 +37,13 @@ public class App implements IApp{
 	@Override
 	public void deleteEmails(final ILinkedList mails) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void moveEmails(final ILinkedList mails, final IFolder des) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
