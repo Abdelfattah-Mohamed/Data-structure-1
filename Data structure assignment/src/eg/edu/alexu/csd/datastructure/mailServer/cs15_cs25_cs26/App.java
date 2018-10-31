@@ -25,6 +25,7 @@ public class App implements IApp {
 	@Override
 	public final boolean signup(final IContact contact) {
 		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
